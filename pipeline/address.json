@@ -1,0 +1,646 @@
+{
+	"name": "address",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Operating Unit Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Operating Unit Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Header Reference",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Customer Header Reference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Reference",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Reference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Customer Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Site Use Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Site Use Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Primary Site Use Flag",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Primary Site Use Flag",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": " Location",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": " Location",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Bill To Orig Address Reference",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Bill To Orig Address Reference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Line 1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Line 1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Line 2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Line 2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Line 3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Line 3",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Line 4",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Line 4",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address Lines Phonetic",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address Lines Phonetic",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Province",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Province",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "County",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "County",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Postal Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Postal Code",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Receivables Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Receivables Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Revenue Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Revenue Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Tax Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Freight Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Freight Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Clearing Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Clearing Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unbilled Receivables Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unbilled Receivables Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unearned Revenue Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unearned Revenue Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Payment Method Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Payment Method Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Payment Method Primary Flag",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Payment Method Primary Flag",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer Profile",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Customer Profile",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Site Use Tax Reference",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Site Use Tax Reference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Time Zone",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Time Zone",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Language",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Language",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contributor Class at Account Site",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contributor Class at Account Site",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Use Cust Site Profile Flag at Account Site",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Use Cust Site Profile Flag at Account Site",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contributor Class at Account Site Use",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contributor Class at Account Site Use",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Use Cust Site Profile Flag at Account Site Use",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Use Cust Site Profile Flag at Account Site Use",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Economic Activity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Economic Activity",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Payment Term Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Payment Term Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Concept Code (CR)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Concept Code (CR)",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Giro (CL)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Giro (CL)",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "US Remit-to Address Mapping",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "US Remit-to Address Mapping",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "US Tax Area Id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "US Tax Area Id",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Union Local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Union Local",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TAID User Override",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAID User Override",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TAID Last Checked",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAID Last Checked",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TAID Assignment Result",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAID Assignment Result",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TAID Confidence Indicator",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAID Confidence Indicator",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TAID Precision",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAID Precision",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CRM Account",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CRM Account",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "address",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqladdress",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-10-29T14:42:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

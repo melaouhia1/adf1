@@ -1,0 +1,219 @@
+{
+	"name": "address",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ORA_FD02_CustomerAddress20201005165901.xlsx",
+				"container": "address"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer Header Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address Reference",
+				"type": "String"
+			},
+			{
+				"name": "Site Use Code",
+				"type": "String"
+			},
+			{
+				"name": "Primary Site Use Flag",
+				"type": "String"
+			},
+			{
+				"name": " Location",
+				"type": "String"
+			},
+			{
+				"name": "Bill To Orig Address Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address Line 1",
+				"type": "String"
+			},
+			{
+				"name": "Address Line 2",
+				"type": "String"
+			},
+			{
+				"name": "Address Line 3",
+				"type": "String"
+			},
+			{
+				"name": "Address Line 4",
+				"type": "String"
+			},
+			{
+				"name": "Address Lines Phonetic",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Province",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "County",
+				"type": "String"
+			},
+			{
+				"name": "Postal Code",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Receivables Account",
+				"type": "String"
+			},
+			{
+				"name": "Revenue Account",
+				"type": "String"
+			},
+			{
+				"name": "Tax Account",
+				"type": "String"
+			},
+			{
+				"name": "Freight Account",
+				"type": "String"
+			},
+			{
+				"name": "Clearing Account",
+				"type": "String"
+			},
+			{
+				"name": "Unbilled Receivables Account",
+				"type": "String"
+			},
+			{
+				"name": "Unearned Revenue Account",
+				"type": "String"
+			},
+			{
+				"name": "Payment Method Name",
+				"type": "String"
+			},
+			{
+				"name": "Payment Method Primary Flag",
+				"type": "String"
+			},
+			{
+				"name": "Customer Profile",
+				"type": "String"
+			},
+			{
+				"name": "Site Use Tax Reference",
+				"type": "String"
+			},
+			{
+				"name": "Time Zone",
+				"type": "String"
+			},
+			{
+				"name": "Language",
+				"type": "String"
+			},
+			{
+				"name": "Contributor Class at Account Site",
+				"type": "String"
+			},
+			{
+				"name": "Use Cust Site Profile Flag at Account Site",
+				"type": "String"
+			},
+			{
+				"name": "Contributor Class at Account Site Use",
+				"type": "String"
+			},
+			{
+				"name": "Use Cust Site Profile Flag at Account Site Use",
+				"type": "String"
+			},
+			{
+				"name": "Economic Activity",
+				"type": "String"
+			},
+			{
+				"name": "Operating Unit Name",
+				"type": "String"
+			},
+			{
+				"name": "Payment Term Name",
+				"type": "String"
+			},
+			{
+				"name": "Concept Code (CR)",
+				"type": "String"
+			},
+			{
+				"name": "Giro (CL)",
+				"type": "String"
+			},
+			{
+				"name": "US Remit-to Address Mapping",
+				"type": "String"
+			},
+			{
+				"name": "US Tax Area Id",
+				"type": "String"
+			},
+			{
+				"name": "Union Local",
+				"type": "String"
+			},
+			{
+				"name": "TAID User Override",
+				"type": "String"
+			},
+			{
+				"name": "TAID Last Checked",
+				"type": "String"
+			},
+			{
+				"name": "TAID Assignment Result",
+				"type": "String"
+			},
+			{
+				"name": "TAID Confidence Indicator",
+				"type": "String"
+			},
+			{
+				"name": "TAID Precision",
+				"type": "String"
+			},
+			{
+				"name": "CRM Account",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,48 @@
+{
+	"name": "DriveType",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "Equipment Id FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DriveType_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "DriveType_ExternalID",
+				"type": "varchar"
+			},
+			{
+				"name": "DriveType_Name1",
+				"type": "varchar"
+			},
+			{
+				"name": "DriveType_Name2",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "DriveType"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

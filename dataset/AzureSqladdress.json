@@ -1,0 +1,214 @@
+{
+	"name": "AzureSqladdress",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Operating Unit Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Header Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Site Use Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary Site Use Flag",
+				"type": "varchar"
+			},
+			{
+				"name": " Location",
+				"type": "varchar"
+			},
+			{
+				"name": "Bill To Orig Address Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Line 1",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Line 2",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Line 3",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Line 4",
+				"type": "varchar"
+			},
+			{
+				"name": "Address Lines Phonetic",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Province",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "County",
+				"type": "varchar"
+			},
+			{
+				"name": "Postal Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Receivables Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Revenue Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Freight Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Clearing Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Unbilled Receivables Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Unearned Revenue Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Method Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Method Primary Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Profile",
+				"type": "varchar"
+			},
+			{
+				"name": "Site Use Tax Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Time Zone",
+				"type": "varchar"
+			},
+			{
+				"name": "Language",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor Class at Account Site",
+				"type": "varchar"
+			},
+			{
+				"name": "Use Cust Site Profile Flag at Account Site",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor Class at Account Site Use",
+				"type": "varchar"
+			},
+			{
+				"name": "Use Cust Site Profile Flag at Account Site Use",
+				"type": "varchar"
+			},
+			{
+				"name": "Economic Activity",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Term Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Concept Code (CR)",
+				"type": "varchar"
+			},
+			{
+				"name": "Giro (CL)",
+				"type": "varchar"
+			},
+			{
+				"name": "US Remit-to Address Mapping",
+				"type": "varchar"
+			},
+			{
+				"name": "US Tax Area Id",
+				"type": "varchar"
+			},
+			{
+				"name": "Union Local",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID User Override",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID Last Checked",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID Assignment Result",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID Confidence Indicator",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID Precision",
+				"type": "varchar"
+			},
+			{
+				"name": "CRM Account",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "address"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

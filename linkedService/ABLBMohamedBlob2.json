@@ -1,0 +1,13 @@
+{
+	"name": "ABLBMohamedBlob2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Connect to mohamed azure blob storage account",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=mohamedstorage;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIk1PSEFNRURBRDFfZjRhYmY4NTUtNTE1Yy00YWE2LTk0OGQtNDY5NDQ3MzgxZDQ1Ig0KfQ=="
+		}
+	}
+}

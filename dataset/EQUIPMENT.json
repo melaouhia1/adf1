@@ -1,0 +1,43 @@
+{
+	"name": "EQUIPMENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "Floors",
+				"type": "varchar"
+			},
+			{
+				"name": "NumberofFrontOpenings",
+				"type": "varchar"
+			},
+			{
+				"name": "NumberofRearOpenings",
+				"type": "varchar"
+			},
+			{
+				"name": "Unit_CapacityLbs",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "EQUIPMENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

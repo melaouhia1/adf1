@@ -1,0 +1,1247 @@
+{
+	"name": "pipelineunit",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Unit_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_UnitAttributes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_UnitAttributes",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_EquipmentIdentification",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_EquipmentIdentification",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Building",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Building",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Building_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Building_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Building_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Building_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Building_BuildingNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Building_BuildingNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Building_Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Building_Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Building_Name2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Building_Name2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MarketSegment",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MarketSegment",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service_Address1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service_Address1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service_Address2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service_Address2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service_City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service_City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Service_State",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Service_State",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ServiceLocation_Zip",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ServiceLocation_Zip",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_ElevatorBank",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_ElevatorBank",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ElevatorBank_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ElevatorBank_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ElevatorBank_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ElevatorBank_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ElevatorBank_BankName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ElevatorBank_BankName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ElevatorBank_AccessCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ElevatorBank_AccessCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Branch",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Branch",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Branch_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Branch_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchName1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BranchName1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchName2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BranchName2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_GovernmentID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_GovernmentID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_NickName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_NickName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Customer_BillingReference",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Customer_BillingReference",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_DownInd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_DownInd",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_RegisteredNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_RegisteredNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_MfgYear",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_MfgYear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Equipment",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Equipment",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_EquipmentType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_EquipmentType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EquipmentType_Okeefe_EquipName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EquipmentType_Okeefe_EquipName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EquipmentType_TKE_EquipName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EquipmentType_TKE_EquipName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EquipmentType_TKE_EquipClassification",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EquipmentType_TKE_EquipClassification",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Manufacturer",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Manufacturer",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Manufacturer_VIEWId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Manufacturer_VIEWId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Manufacturer_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Manufacturer_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Manufacturer_Name1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Manufacturer_Name1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Manufacturer_Name2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Manufacturer_Name2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Controller1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Controller1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller_Name1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller_Name1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_DriveType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_DriveType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DriveType_Name1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DriveType_Name1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NumberofFloors",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NumberofFloors",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NumberofFrontOpenings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NumberofFrontOpenings",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Maintenance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Maintenance",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_MaintenanceRun",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_MaintenanceRun",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MaintenanceRun_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MaintenanceRun_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MaintenanceRun_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MaintenanceRun_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MaintenanceRun_RouteNo_TerritoryCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MaintenanceRun_RouteNo_TerritoryCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_DefaultScheduling",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_DefaultScheduling",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_HoursPerVisit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_HoursPerVisit",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "HoursPerVisit_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HoursPerVisit_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "HoursPerVisit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HoursPerVisit",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "VisitsPerYear",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VisitsPerYear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SLA_AnnualVisitsRequired",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SLA_AnnualVisitsRequired",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SLA_VisitsRequired",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SLA_VisitsRequired",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SLA_HoursRequiredPerVisit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SLA_HoursRequiredPerVisit",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SLA_HoursRequired",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SLA_HoursRequired",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SLA_Comments",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SLA_Comments",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TechnicianNotes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TechnicianNotes",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_WarrantyStartDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_WarrantyStartDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_WarrantyEndDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_WarrantyEndDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_InstallDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_InstallDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_HandoverDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_HandoverDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AnnualSafetyTest_LastInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AnnualSafetyTest_LastInspectionDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AnnualSafetyTest_NextInspectionDueDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AnnualSafetyTest_NextInspectionDueDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AnnualSafetyTest_CoveredInContract",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AnnualSafetyTest_CoveredInContract",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PeriodicSafetyTest_LastInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PeriodicSafetyTest_LastInspectionDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PeriodicSafetyTest_Frequency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PeriodicSafetyTest_Frequency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PeriodicSafetyTest_NextInspectionDueDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PeriodicSafetyTest_NextInspectionDueDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PeriodicSafetyTest_CoveredInContract",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PeriodicSafetyTest_CoveredInContract",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FiremansRecall_LastInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FiremansRecall_LastInspectionDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FiremansRecall_ Frequency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FiremansRecall_ Frequency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_JobNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_JobNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_FactorySerialNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_FactorySerialNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_Smart_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_Smart_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_Smart_InstallationDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_Smart_InstallationDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Contract",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Contract",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contract_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contract_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contract_ExternalID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contract_ExternalID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contract_StartDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contract_StartDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contract_EndDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contract_EndDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Contract_MoValue",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Contract_MoValue",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ContractNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractCoverage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ContractCoverage",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NumberofRearOpenings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NumberofRearOpenings",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Unit_CapacityLbs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Unit_CapacityLbs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_Speed",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_Speed",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Speed_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Speed_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Speed_FPM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Speed_FPM",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_FrontDoorComplexity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_FrontDoorComplexity",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FrontDoorComplexity_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FrontDoorComplexity_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FrontDoorComplexity_Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FrontDoorComplexity_Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Array_RearDoorComplexity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Array_RearDoorComplexity",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RearDoorComplexity_ViewID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RearDoorComplexity_ViewID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RearDoorComplexity_Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RearDoorComplexity_Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "FullRawDataExtract20201005",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "stgunit",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-10-07T23:18:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

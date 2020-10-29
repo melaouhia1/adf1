@@ -1,0 +1,52 @@
+{
+	"name": "AzureSqlUILDING",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "identification FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Building_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "Building_ExternalID",
+				"type": "varchar"
+			},
+			{
+				"name": "Building_BuildingNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "BUILDING"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

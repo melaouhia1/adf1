@@ -1,0 +1,60 @@
+{
+	"name": "EQUIPMENTType",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "Equipment Id FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EquipmentType_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "EquipmentType_ExternalID",
+				"type": "varchar"
+			},
+			{
+				"name": "EquipmentType_Okeefe_EquipName",
+				"type": "varchar"
+			},
+			{
+				"name": "EquipmentType_TKE_EquipClassification",
+				"type": "varchar"
+			},
+			{
+				"name": "NumberofRearOpenings",
+				"type": "varchar"
+			},
+			{
+				"name": "Unit_CapacityLbs",
+				"type": "varchar"
+			},
+			{
+				"name": "EquipmentType_TKE_EquipName",
+				"type": "varchar"
+			},
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "EQUIPMENT Type"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

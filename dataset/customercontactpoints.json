@@ -1,0 +1,79 @@
+{
+	"name": "customercontactpoints",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ORA_FD02_CustomerContactPoints20201005174313.xlsx",
+				"container": "customercontactpoints"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer Header Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address Reference",
+				"type": "String"
+			},
+			{
+				"name": "Contact Point Type",
+				"type": "String"
+			},
+			{
+				"name": "Contact Point Status",
+				"type": "String"
+			},
+			{
+				"name": "Primary Flag",
+				"type": "String"
+			},
+			{
+				"name": "Contact point Purpose",
+				"type": "String"
+			},
+			{
+				"name": "Phone Country Code",
+				"type": "String"
+			},
+			{
+				"name": "Phone Area Code",
+				"type": "String"
+			},
+			{
+				"name": "Phone Number",
+				"type": "String"
+			},
+			{
+				"name": "Phone Extension",
+				"type": "String"
+			},
+			{
+				"name": "Phone Line Type",
+				"type": "String"
+			},
+			{
+				"name": "Email Address",
+				"type": "String"
+			},
+			{
+				"name": "Email Format",
+				"type": "String"
+			},
+			{
+				"name": "Operating Unit Name",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

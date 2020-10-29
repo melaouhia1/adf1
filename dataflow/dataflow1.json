@@ -1,0 +1,175 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlunit",
+						"type": "DatasetReference"
+					},
+					"name": "unit1"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlIdentification",
+						"type": "DatasetReference"
+					},
+					"name": "Identification1"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlBank",
+						"type": "DatasetReference"
+					},
+					"name": "Bank"
+				},
+				{
+					"dataset": {
+						"referenceName": "BUILDING1",
+						"type": "DatasetReference"
+					},
+					"name": "BUILDING"
+				},
+				{
+					"dataset": {
+						"referenceName": "EQUIPMENT",
+						"type": "DatasetReference"
+					},
+					"name": "EQUIPMENT"
+				},
+				{
+					"dataset": {
+						"referenceName": "EQUIPMENTTypeSQl",
+						"type": "DatasetReference"
+					},
+					"name": "EQUIPMENTType"
+				},
+				{
+					"dataset": {
+						"referenceName": "sqlManufacturer",
+						"type": "DatasetReference"
+					},
+					"name": "Manufacturer"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlController",
+						"type": "DatasetReference"
+					},
+					"name": "Controller"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlSpeed",
+						"type": "DatasetReference"
+					},
+					"name": "speed"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlDriveType",
+						"type": "DatasetReference"
+					},
+					"name": "DriveType"
+				},
+				{
+					"dataset": {
+						"referenceName": "office",
+						"type": "DatasetReference"
+					},
+					"name": "office"
+				},
+				{
+					"dataset": {
+						"referenceName": "maintenance",
+						"type": "DatasetReference"
+					},
+					"name": "maintenance"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CosmosDbSqlApiCollection1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Sort1"
+				},
+				{
+					"name": "DerivedColumn1"
+				},
+				{
+					"name": "BankArray"
+				},
+				{
+					"name": "JoinBankidentification"
+				},
+				{
+					"name": "JoinidentificationBuilding"
+				},
+				{
+					"name": "EQUIPMENTDC1"
+				},
+				{
+					"name": "Join2"
+				},
+				{
+					"name": "arrayType"
+				},
+				{
+					"name": "Join3"
+				},
+				{
+					"name": "ManufacturerArray"
+				},
+				{
+					"name": "Join4"
+				},
+				{
+					"name": "controllerArray"
+				},
+				{
+					"name": "Join5"
+				},
+				{
+					"name": "speedArray"
+				},
+				{
+					"name": "Join6"
+				},
+				{
+					"name": "DriveTypearray"
+				},
+				{
+					"name": "Join7"
+				},
+				{
+					"name": "joinmanufacter"
+				},
+				{
+					"name": "JoinController"
+				},
+				{
+					"name": "Joinspeed"
+				},
+				{
+					"name": "EQUIPMENTDC"
+				},
+				{
+					"name": "JoinDriveType"
+				}
+			],
+			"script": "source(output(\n\t\tunit_id as string,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select unit_id,TechnicianNotes \\n  FROM [unit].[unit]',\n\tformat: 'query') ~> unit1\nsource(output(\n\t\t{UnitId FK} as string,\n\t\tUnit_GovernmentID as string,\n\t\tUnit_NickName as string,\n\t\tCustomer_BillingReference as string,\n\t\tUnit_DownInd as string,\n\t\tUnit_RegisteredNo as string,\n\t\tUnit_MfgYear as string,\n\t\tUnit_WarrantyStartDate as string,\n\t\tUnit_WarrantyEndDate as string,\n\t\tUnit_InstallDate as string,\n\t\tUnit_HandoverDate as string,\n\t\tAnnualSafetyTest_LastInspectionDate as string,\n\t\tUnit_JobNo as string,\n\t\tUnit_FactorySerialNo as string,\n\t\tUnit_Smart_ViewID as string,\n\t\tUnit_Smart_ExternalID as string,\n\t\tUnit_Smart_InstallationDate as string,\n\t\tUnit_SmartMAX_ViewID as string,\n\t\tUnit_SmartMAX_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select * from [unit].[Identification]',\n\tformat: 'query') ~> Identification1\nsource(output(\n\t\t{Identification FK} as integer,\n\t\t{UnitId FK} as string,\n\t\tElevatorBank_ViewID as string,\n\t\tElevatorBank_ExternalID as string,\n\t\tElevatorBank_BankName as string,\n\t\tElevatorBank_AccessCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Bank\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{identification FK} as integer,\n\t\tBuilding_ViewID as string,\n\t\tBuilding_ExternalID as string,\n\t\tBuilding_BuildingNo as string,\n\t\tName_en as string,\n\t\tName_local as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> BUILDING\nsource(output(\n\t\t{UnitId FK} as string,\n\t\tFloors as string,\n\t\tNumberofFrontOpenings as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENT\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tEquipmentType_ViewID as string,\n\t\tEquipmentType_ExternalID as string,\n\t\tEquipmentType_Okeefe_EquipName as string,\n\t\tEquipmentType_TKE_EquipClassification as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tEquipmentType_TKE_EquipName as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENTType\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tManufacturer_VIEWId as string,\n\t\tManufacturer_ExternalID as string,\n\t\tManufacturer_Name1 as string,\n\t\tManufacturer_Name2 as string,\n\t\tAfterHoursCallbackRun_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Manufacturer\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tController_Name1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Controller\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tSpeed_ViewID as string,\n\t\tSpeed_FPM as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> speed\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tDriveType_ViewID as string,\n\t\tDriveType_ExternalID as string,\n\t\tDriveType_Name1 as string,\n\t\tDriveType_Name2 as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> DriveType\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\t{identification Id FK} as integer,\n\t\tBranch_ViewID as string,\n\t\tBranchName1 as string,\n\t\tBranchName2 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> office\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tArray_MaintenanceRun as string,\n\t\tMaintenanceRun_RouteNo_TerritoryCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> maintenance\nSort1, JoinidentificationBuilding join(unit_id == Bank@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nunit1 sort(asc(unit_id, true)) ~> Sort1\nJoin7 derive(unit_id = unit_id,\n\t\tTechnicianNotes = TechnicianNotes,\n\t\tIdentification = @(BANK=@(ElevatorBank_ViewID=ElevatorBank_ViewID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\tBuilding=@(Building_ViewID=Building_ViewID)),\n\t\tEQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=NumberofRearOpenings,\n\t\tUnit_CapacityLbs=Unit_CapacityLbs,\n\t\tUNITTYPE=UNITTYPE,\n\t\tManufacturer=Manufacturer,\n\t\tController=Controller,\n\t\tSpeed=Speed,\n\t\tDriveType=DriveType)) ~> DerivedColumn1\nBank derive(Bank = @(ElevatorBank_ViewID=ElevatorBank_ViewID,\n\t\tElevatorBank_ExternalID=ElevatorBank_ExternalID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\t{Identification FK} = {Identification FK}) ~> BankArray\nIdentification1, BankArray join(Identification1@ID == {Identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinBankidentification\nJoinBankidentification, BUILDING join(BankArray@{Identification FK} == BUILDING@{identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinidentificationBuilding\nEQUIPMENT derive(EQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=NumberofRearOpenings),\n\t\tUnitId = {UnitId FK},\n\t\tID = ID) ~> EQUIPMENTDC1\nEQUIPMENTType, EQUIPMENTDC1 join({Equipment Id FK} == EQUIPMENTDC1@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join2\nJoin2 derive(UNITTYPE = @(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENTType@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENTType@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> arrayType\nManufacturer, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join3\nJoin3 derive(Manufacturerarray = @(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID)) ~> ManufacturerArray\nController, EQUIPMENT join({Equipment Id FK} == ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join4\nJoin4 derive(controllerArray = @(Controller_Name1=Controller_Name1),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> controllerArray\nspeed, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join5\nJoin5 derive(Speed = @(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> speedArray\nDriveType, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join6\nJoin6 derive(DriveTypeArray = @(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name1=DriveType_Name1,\n\t\tDriveType_Name2=DriveType_Name2)) ~> DriveTypearray\nJoin1, EQUIPMENTDC join(unit_id == EQUIPMENTDC@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join7\narrayType, Manufacturer join(arrayType@{Equipment Id FK} == Manufacturer@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> joinmanufacter\njoinmanufacter, Controller join(Manufacturer@{Equipment Id FK} == Controller@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinController\nJoinController, speed join(arrayType@{Equipment Id FK} == speed@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinspeed\nJoinDriveType derive(ArrayType = @(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\tManufacturer = @(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID),\n\t\tController = @(Controller_Name1=Controller_Name1),\n\t\tSpeed = @(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\tDriveType = @(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name2=DriveType_Name2,\n\t\tDriveType_Name1=DriveType_Name1),\n\t\tEQUIPMENT = EQUIPMENT,\n\t\tFloors = Floors,\n\t\tNumberofFrontOpenings = NumberofFrontOpenings,\n\t\tNumberofRearOpenings = EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs = EQUIPMENT@Unit_CapacityLbs,\n\t\t{UnitId FK} = EQUIPMENT@{UnitId FK}) ~> EQUIPMENTDC\nJoinspeed, DriveType join(arrayType@{Equipment Id FK} == DriveType@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinDriveType\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tmapColumn(\n\t\tID,\n\t\tTechnicianNotes,\n\t\tIdentification,\n\t\tunit_id,\n\t\tEQUIPMENT\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"name": "lBANK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Identification FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UnitId FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ElevatorBank_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "ElevatorBank_ExternalID",
+				"type": "varchar"
+			},
+			{
+				"name": "ElevatorBank_BankName",
+				"type": "varchar"
+			},
+			{
+				"name": "ElevatorBank_AccessCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "BANK"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

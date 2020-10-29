@@ -1,0 +1,31 @@
+{
+	"name": "apitest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://start.exactonline.nl/api/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"Content-Type": " application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=refresh_token&client_id=000000-11111-2222-3333-5b2c48c2fae4&client_secret=50DaGMXKDDI1&refresh_token=abcde_very_long_token_abcdefg4343"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-10-29T14:42:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

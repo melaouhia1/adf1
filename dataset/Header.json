@@ -1,0 +1,179 @@
+{
+	"name": "Header",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ORA_FD02_CustomerHeader20201005164552.xlsx",
+				"container": "header"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer Party Reference Number",
+				"type": "String"
+			},
+			{
+				"name": "Customer Account Reference Number",
+				"type": "String"
+			},
+			{
+				"name": "Customer Type",
+				"type": "String"
+			},
+			{
+				"name": "Customer Profile",
+				"type": "String"
+			},
+			{
+				"name": "Payment Method Name",
+				"type": "String"
+			},
+			{
+				"name": "Payment Method Primary Flag",
+				"type": "String"
+			},
+			{
+				"name": "Global Customer Flag",
+				"type": "String"
+			},
+			{
+				"name": "Origin (AR)",
+				"type": "String"
+			},
+			{
+				"name": "Primary ID Type",
+				"type": "String"
+			},
+			{
+				"name": "Primary ID Validation Digit",
+				"type": "String"
+			},
+			{
+				"name": "Taxpayer ID",
+				"type": "String"
+			},
+			{
+				"name": "Fiscal Classification Type Code",
+				"type": "String"
+			},
+			{
+				"name": "Fiscal Classification Code",
+				"type": "String"
+			},
+			{
+				"name": "Effective Date From",
+				"type": "String"
+			},
+			{
+				"name": "Document Type (CO)",
+				"type": "String"
+			},
+			{
+				"name": "Taxpayer ID (CO)",
+				"type": "String"
+			},
+			{
+				"name": "Nature (CO)",
+				"type": "String"
+			},
+			{
+				"name": "Regimen (CO)",
+				"type": "String"
+			},
+			{
+				"name": "Special Customer Flag",
+				"type": "String"
+			},
+			{
+				"name": "Operating Unit Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer Class Code",
+				"type": "String"
+			},
+			{
+				"name": "Payment Term Name",
+				"type": "String"
+			},
+			{
+				"name": "Order Number of the Cedula (GT)",
+				"type": "String"
+			},
+			{
+				"name": "Register Number of the Cedula (GT)",
+				"type": "String"
+			},
+			{
+				"name": "Document Type (SV)",
+				"type": "String"
+			},
+			{
+				"name": "Contributor Regristry number (SV)",
+				"type": "String"
+			},
+			{
+				"name": "Person Category (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Person Type (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Document Type (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Document Number (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Last Name (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Second Last Name (PE)",
+				"type": "String"
+			},
+			{
+				"name": "First Name (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Middle Name (PE)",
+				"type": "String"
+			},
+			{
+				"name": "Origin",
+				"type": "String"
+			},
+			{
+				"name": "Nature",
+				"type": "String"
+			},
+			{
+				"name": "Document Type (UY)",
+				"type": "String"
+			},
+			{
+				"name": "Perception Agent (PE)",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

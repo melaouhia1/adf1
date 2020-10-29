@@ -1,0 +1,174 @@
+{
+	"name": "AzureSqlheader",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Customer Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Party Reference Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Account Reference Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Profile",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Method Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Method Primary Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Global Customer Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Origin (AR)",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary ID Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary ID Validation Digit",
+				"type": "varchar"
+			},
+			{
+				"name": "Taxpayer ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Fiscal Classification Type Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Fiscal Classification Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Effective Date From",
+				"type": "varchar"
+			},
+			{
+				"name": "Document Type (CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Taxpayer ID (CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Nature (CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Regimen (CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Special Customer Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Operating Unit Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer Class Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment Term Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Order Number of the Cedula (GT)",
+				"type": "varchar"
+			},
+			{
+				"name": "Register Number of the Cedula (GT)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document Type (SV)",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor Regristry number (SV)",
+				"type": "varchar"
+			},
+			{
+				"name": "Person Category (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Person Type (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document Type (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document Number (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Last Name (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Second Last Name (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "First Name (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Middle Name (PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Origin",
+				"type": "varchar"
+			},
+			{
+				"name": "Nature",
+				"type": "varchar"
+			},
+			{
+				"name": "Document Type (UY)",
+				"type": "varchar"
+			},
+			{
+				"name": "Perception Agent (PE)",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Header stg"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

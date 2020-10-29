@@ -1,0 +1,27 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Unit_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TechnicianNotes",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "unit"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,38 @@
+{
+	"name": "office",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "identification Id FK",
+				"type": "varchar"
+			},
+			{
+				"name": "Branch_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchName1",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchName2",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "office"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

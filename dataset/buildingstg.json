@@ -1,0 +1,214 @@
+{
+	"name": "buildingstg",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ExternalBuildingId",
+				"type": "varchar"
+			},
+			{
+				"name": "BuildingName_local",
+				"type": "varchar"
+			},
+			{
+				"name": "StreetAddress_Local",
+				"type": "varchar"
+			},
+			{
+				"name": "City_Local",
+				"type": "varchar"
+			},
+			{
+				"name": "Postcode",
+				"type": "varchar"
+			},
+			{
+				"name": "MainTypeViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "MainTypeName_En",
+				"type": "varchar"
+			},
+			{
+				"name": "SubTypeViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "SubTypeName_En",
+				"type": "varchar"
+			},
+			{
+				"name": "BuildingNo",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerNo",
+				"type": "varchar"
+			},
+			{
+				"name": "SumOfTotalUnits",
+				"type": "varchar"
+			},
+			{
+				"name": "SumOfUnitsInService",
+				"type": "varchar"
+			},
+			{
+				"name": "OfficeViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "OfficeName_En",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitsScheduleHours",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitsScheduleHoursViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitsScheduleTime",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitsScheduleTimeViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "TargetCallRate",
+				"type": "varchar"
+			},
+			{
+				"name": "RunInfo",
+				"type": "varchar"
+			},
+			{
+				"name": "RunTypeViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "RunTypeName",
+				"type": "varchar"
+			},
+			{
+				"name": "RunViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "RunName",
+				"type": "varchar"
+			},
+			{
+				"name": "BHSWPResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "BHStopResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "BHOthersResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "AHSWPResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "AHStopResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "AHOthersResponse",
+				"type": "varchar"
+			},
+			{
+				"name": "Notes",
+				"type": "varchar"
+			},
+			{
+				"name": "BusinessHourContactInfo",
+				"type": "varchar"
+			},
+			{
+				"name": "BHSiteContact",
+				"type": "varchar"
+			},
+			{
+				"name": "BHContactPhone1",
+				"type": "varchar"
+			},
+			{
+				"name": "BHContactMobile",
+				"type": "varchar"
+			},
+			{
+				"name": "BHContactRoleViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "BHContactRoleName",
+				"type": "varchar"
+			},
+			{
+				"name": "AfterHourContactInfo",
+				"type": "varchar"
+			},
+			{
+				"name": "AHSiteContact",
+				"type": "varchar"
+			},
+			{
+				"name": "AHContactPhone1",
+				"type": "varchar"
+			},
+			{
+				"name": "AHContactMobile",
+				"type": "varchar"
+			},
+			{
+				"name": "AHContactRoleViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "AHContactRoleViewName",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeZone",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerCode",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "building stg"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

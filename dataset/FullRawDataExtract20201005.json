@@ -1,0 +1,419 @@
+{
+	"name": "FullRawDataExtract20201005",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Full Raw Data Extract_20201005",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "OKeefe Data Collection_20201006GS.xlsx",
+				"container": "unit"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Unit_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "Unit_ID",
+				"type": "String"
+			},
+			{
+				"name": "Array_UnitAttributes",
+				"type": "String"
+			},
+			{
+				"name": "Array_EquipmentIdentification",
+				"type": "String"
+			},
+			{
+				"name": "Array_Building",
+				"type": "String"
+			},
+			{
+				"name": "Building_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "Building_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "Building_BuildingNo",
+				"type": "String"
+			},
+			{
+				"name": "Building_Name",
+				"type": "String"
+			},
+			{
+				"name": "Building_Name2",
+				"type": "String"
+			},
+			{
+				"name": "MarketSegment",
+				"type": "String"
+			},
+			{
+				"name": "Service_Address1",
+				"type": "String"
+			},
+			{
+				"name": "Service_Address2",
+				"type": "String"
+			},
+			{
+				"name": "Service_City",
+				"type": "String"
+			},
+			{
+				"name": "Service_State",
+				"type": "String"
+			},
+			{
+				"name": "ServiceLocation_Zip",
+				"type": "String"
+			},
+			{
+				"name": "Array_ElevatorBank",
+				"type": "String"
+			},
+			{
+				"name": "ElevatorBank_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "ElevatorBank_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "ElevatorBank_BankName",
+				"type": "String"
+			},
+			{
+				"name": "ElevatorBank_AccessCode",
+				"type": "String"
+			},
+			{
+				"name": "Array_Branch",
+				"type": "String"
+			},
+			{
+				"name": "Branch_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "BranchName1",
+				"type": "String"
+			},
+			{
+				"name": "BranchName2",
+				"type": "String"
+			},
+			{
+				"name": "Unit_GovernmentID",
+				"type": "String"
+			},
+			{
+				"name": "Unit_NickName",
+				"type": "String"
+			},
+			{
+				"name": "Customer_BillingReference",
+				"type": "String"
+			},
+			{
+				"name": "Unit_DownInd",
+				"type": "String"
+			},
+			{
+				"name": "Unit_RegisteredNo",
+				"type": "String"
+			},
+			{
+				"name": "Unit_MfgYear",
+				"type": "String"
+			},
+			{
+				"name": "Array_Equipment",
+				"type": "String"
+			},
+			{
+				"name": "Array_EquipmentType",
+				"type": "String"
+			},
+			{
+				"name": "EquipmentType_Okeefe_EquipName",
+				"type": "String"
+			},
+			{
+				"name": "EquipmentType_TKE_EquipName",
+				"type": "String"
+			},
+			{
+				"name": "EquipmentType_TKE_EquipClassification",
+				"type": "String"
+			},
+			{
+				"name": "Array_Manufacturer",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer_VIEWId",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer_Name1",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer_Name2",
+				"type": "String"
+			},
+			{
+				"name": "Array_Controller1",
+				"type": "String"
+			},
+			{
+				"name": "Controller_Name1",
+				"type": "String"
+			},
+			{
+				"name": "Array_DriveType",
+				"type": "String"
+			},
+			{
+				"name": "DriveType_Name1",
+				"type": "String"
+			},
+			{
+				"name": "NumberofFloors",
+				"type": "String"
+			},
+			{
+				"name": "NumberofFrontOpenings",
+				"type": "String"
+			},
+			{
+				"name": "Array_Maintenance",
+				"type": "String"
+			},
+			{
+				"name": "Array_MaintenanceRun",
+				"type": "String"
+			},
+			{
+				"name": "MaintenanceRun_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "MaintenanceRun_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "MaintenanceRun_RouteNo_TerritoryCode",
+				"type": "String"
+			},
+			{
+				"name": "Array_DefaultScheduling",
+				"type": "String"
+			},
+			{
+				"name": "Array_HoursPerVisit",
+				"type": "String"
+			},
+			{
+				"name": "HoursPerVisit_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "HoursPerVisit",
+				"type": "String"
+			},
+			{
+				"name": "VisitsPerYear",
+				"type": "String"
+			},
+			{
+				"name": "SLA_AnnualVisitsRequired",
+				"type": "String"
+			},
+			{
+				"name": "SLA_VisitsRequired",
+				"type": "String"
+			},
+			{
+				"name": "SLA_HoursRequiredPerVisit",
+				"type": "String"
+			},
+			{
+				"name": "SLA_HoursRequired",
+				"type": "String"
+			},
+			{
+				"name": "SLA_Comments",
+				"type": "String"
+			},
+			{
+				"name": "TechnicianNotes",
+				"type": "String"
+			},
+			{
+				"name": "Unit_WarrantyStartDate",
+				"type": "String"
+			},
+			{
+				"name": "Unit_WarrantyEndDate",
+				"type": "String"
+			},
+			{
+				"name": "Unit_InstallDate",
+				"type": "String"
+			},
+			{
+				"name": "Unit_HandoverDate",
+				"type": "String"
+			},
+			{
+				"name": "AnnualSafetyTest_LastInspectionDate",
+				"type": "String"
+			},
+			{
+				"name": "AnnualSafetyTest_NextInspectionDueDate",
+				"type": "String"
+			},
+			{
+				"name": "AnnualSafetyTest_CoveredInContract",
+				"type": "String"
+			},
+			{
+				"name": "PeriodicSafetyTest_LastInspectionDate",
+				"type": "String"
+			},
+			{
+				"name": "PeriodicSafetyTest_Frequency",
+				"type": "String"
+			},
+			{
+				"name": "PeriodicSafetyTest_NextInspectionDueDate",
+				"type": "String"
+			},
+			{
+				"name": "PeriodicSafetyTest_CoveredInContract",
+				"type": "String"
+			},
+			{
+				"name": "FiremansRecall_LastInspectionDate",
+				"type": "String"
+			},
+			{
+				"name": "FiremansRecall_ Frequency",
+				"type": "String"
+			},
+			{
+				"name": "Unit_JobNo",
+				"type": "String"
+			},
+			{
+				"name": "Unit_FactorySerialNo",
+				"type": "String"
+			},
+			{
+				"name": "Unit_Smart_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "Unit_Smart_InstallationDate",
+				"type": "String"
+			},
+			{
+				"name": "Array_Contract",
+				"type": "String"
+			},
+			{
+				"name": "Contract_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "Contract_ExternalID",
+				"type": "String"
+			},
+			{
+				"name": "Contract_StartDate",
+				"type": "String"
+			},
+			{
+				"name": "Contract_EndDate",
+				"type": "String"
+			},
+			{
+				"name": "Contract_MoValue",
+				"type": "String"
+			},
+			{
+				"name": "ContractNo",
+				"type": "String"
+			},
+			{
+				"name": "ContractCoverage",
+				"type": "String"
+			},
+			{
+				"name": "NumberofRearOpenings",
+				"type": "String"
+			},
+			{
+				"name": "Unit_CapacityLbs",
+				"type": "String"
+			},
+			{
+				"name": "Array_Speed",
+				"type": "String"
+			},
+			{
+				"name": "Speed_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "Speed_FPM",
+				"type": "String"
+			},
+			{
+				"name": "Array_FrontDoorComplexity",
+				"type": "String"
+			},
+			{
+				"name": "FrontDoorComplexity_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "FrontDoorComplexity_Name",
+				"type": "String"
+			},
+			{
+				"name": "Array_RearDoorComplexity",
+				"type": "String"
+			},
+			{
+				"name": "RearDoorComplexity_ViewID",
+				"type": "String"
+			},
+			{
+				"name": "RearDoorComplexity_Name",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,36 @@
+{
+	"name": "maintenance",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Array_MaintenanceRun",
+				"type": "varchar"
+			},
+			{
+				"name": "MaintenanceRun_RouteNo_TerritoryCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "maintenance"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

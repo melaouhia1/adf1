@@ -1,0 +1,30 @@
+{
+	"name": "DS_SQLSERVER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Table_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TABLE_CATALOG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "process_type",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipeline_parameter"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

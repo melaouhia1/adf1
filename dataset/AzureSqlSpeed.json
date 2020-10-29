@@ -1,0 +1,40 @@
+{
+	"name": "AzureSqlSpeed",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UnitId FK",
+				"type": "varchar"
+			},
+			{
+				"name": "Equipment Id FK",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Speed_ViewID",
+				"type": "varchar"
+			},
+			{
+				"name": "Speed_FPM",
+				"type": "varchar"
+			},
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "unit",
+			"table": "Speed"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

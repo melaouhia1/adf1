@@ -1,0 +1,19 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"annotations": [
+			"AzureSqlDatabase1"
+		],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2020-09-23T21:25:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
