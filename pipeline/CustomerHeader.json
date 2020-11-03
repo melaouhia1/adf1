@@ -1,0 +1,9 @@
+{
+	"name": "CustomerHeader",
+	"properties": {
+		"folder": {
+			"name": "CustomerOKH"
+		},
+		"annotations": []
+	}
+}
