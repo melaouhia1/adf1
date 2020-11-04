@@ -196,13 +196,6 @@
 									"type": "String",
 									"physicalType": "varchar"
 								}
-							},
-							{
-								"sink": {
-									"name": "Column 14",
-									"type": "String",
-									"physicalType": "varchar"
-								}
 							}
 						],
 						"typeConversion": true,
