@@ -1,0 +1,78 @@
+{
+	"name": "ExcelCustomerContactPoints",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSMohamed",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "OKFNotes_ORA_FD02_CustomerContactPoints20201028141248.xlsx",
+				"fileSystem": "customerdm11032020"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer_Header_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Point_Type",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Point_Status",
+				"type": "String"
+			},
+			{
+				"name": "Primary_Flag",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Point_Purpose",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Country_Code",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Area_Code",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Number",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Extension",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Line_Type",
+				"type": "String"
+			},
+			{
+				"name": "Email_Address",
+				"type": "String"
+			},
+			{
+				"name": "Email_Format",
+				"type": "String"
+			},
+			{
+				"name": "Operating_Unit_Name",
+				"type": "String"
+			}
+		]
+	}
+}
