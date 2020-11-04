@@ -1,0 +1,173 @@
+{
+	"name": "AzureSqlTCustomerHeader",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Customer_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Party_Reference_Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Account_Reference_Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Profile",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Method_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Method_Primary_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Global_Customer_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Origin_(AR)",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary_ID_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary_ID_Validation_Digit",
+				"type": "varchar"
+			},
+			{
+				"name": "Taxpayer_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Fiscal_Classification_Type_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Fiscal_Classification_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Effective_Date_From",
+				"type": "varchar"
+			},
+			{
+				"name": "Document_Type_(CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Taxpayer_ID_(CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Nature_(CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Regimen_(CO)",
+				"type": "varchar"
+			},
+			{
+				"name": "Special_Customer_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Operating_Unit_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Class_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Term_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Order_Number_of_the_Cedula_(GT)",
+				"type": "varchar"
+			},
+			{
+				"name": "Register_Number_of_the_Cedula_(GT)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document_Type_(SV)",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor_Registry_Number_(SV)",
+				"type": "varchar"
+			},
+			{
+				"name": "Person_Category_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Person_Type_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document_Type_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Document_Number_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Last_Name_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Second_Last_Name_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "First_Name_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Middle_Name_(PE)",
+				"type": "varchar"
+			},
+			{
+				"name": "Origin",
+				"type": "varchar"
+			},
+			{
+				"name": "Nature",
+				"type": "varchar"
+			},
+			{
+				"name": "Document_Type_(UY)",
+				"type": "varchar"
+			},
+			{
+				"name": "Perception_Agent_(PE)",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "customer",
+			"table": "header"
+		}
+	}
+}
