@@ -1,0 +1,218 @@
+{
+	"name": "ExcelCustomerAddress",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSMohamed",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "OKFNotes_ORA_FD02_CustomerAddress20201028132930.xlsx",
+				"fileSystem": "customerdm11032020"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer_Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer_Header_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Site_Use_Code",
+				"type": "String"
+			},
+			{
+				"name": "Primary_Site_Use_Flag",
+				"type": "String"
+			},
+			{
+				"name": "Location",
+				"type": "String"
+			},
+			{
+				"name": "Bill_To_Orig_Address_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address_Line_1",
+				"type": "String"
+			},
+			{
+				"name": "Address_Line_2",
+				"type": "String"
+			},
+			{
+				"name": "Address_Line_3",
+				"type": "String"
+			},
+			{
+				"name": "Address_Line_4",
+				"type": "String"
+			},
+			{
+				"name": "Address_Lines_Phonetic",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Province",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "County",
+				"type": "String"
+			},
+			{
+				"name": "Postal_Code",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Receivables_Account",
+				"type": "String"
+			},
+			{
+				"name": "Revenue_Account",
+				"type": "String"
+			},
+			{
+				"name": "Tax_Account",
+				"type": "String"
+			},
+			{
+				"name": "Freight_Account",
+				"type": "String"
+			},
+			{
+				"name": "Clearing_Account",
+				"type": "String"
+			},
+			{
+				"name": "Unbilled_Receivables_Account",
+				"type": "String"
+			},
+			{
+				"name": "Unearned_Revenue_Account",
+				"type": "String"
+			},
+			{
+				"name": "Payment_Method_Name",
+				"type": "String"
+			},
+			{
+				"name": "Payment_Method_Primary_Flag",
+				"type": "String"
+			},
+			{
+				"name": "Customer_Profile",
+				"type": "String"
+			},
+			{
+				"name": "Site_Use_Tax_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Time_Zone",
+				"type": "String"
+			},
+			{
+				"name": "Language",
+				"type": "String"
+			},
+			{
+				"name": "Contributor_Class_at_Account_Site",
+				"type": "String"
+			},
+			{
+				"name": "Use_Cust_Site_Profile_Flag_at_Account_Site",
+				"type": "String"
+			},
+			{
+				"name": "Contributor_Class_at_Account_Site_Use",
+				"type": "String"
+			},
+			{
+				"name": "Use_Cust_Site_Profile_Flag_at_Account_Site_Use",
+				"type": "String"
+			},
+			{
+				"name": "Economic_Activity",
+				"type": "String"
+			},
+			{
+				"name": "Operating_Unit_Name",
+				"type": "String"
+			},
+			{
+				"name": "Payment_Term_Name",
+				"type": "String"
+			},
+			{
+				"name": "Concept_Code_(CR)",
+				"type": "String"
+			},
+			{
+				"name": "Giro_(CL)",
+				"type": "String"
+			},
+			{
+				"name": "US_Remit-to_Address_Mapping",
+				"type": "String"
+			},
+			{
+				"name": "US_Tax_Area_Id",
+				"type": "String"
+			},
+			{
+				"name": "Union_Local",
+				"type": "String"
+			},
+			{
+				"name": "TAID_User_Override",
+				"type": "String"
+			},
+			{
+				"name": "TAID_Last_Checked",
+				"type": "String"
+			},
+			{
+				"name": "TAID_Assignment_Result",
+				"type": "String"
+			},
+			{
+				"name": "TAID_Confidence_Indicator",
+				"type": "String"
+			},
+			{
+				"name": "TAID_Precision",
+				"type": "String"
+			},
+			{
+				"name": "CRM_Account",
+				"type": "String"
+			}
+		]
+	}
+}

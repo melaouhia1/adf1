@@ -1,0 +1,213 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Operating_Unit_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Header_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Site_Use_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary_Site_Use_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Location",
+				"type": "varchar"
+			},
+			{
+				"name": "Bill_To_Orig_Address_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Line_1",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Line_2",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Line_3",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Line_4",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Lines_Phonetic",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Province",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "County",
+				"type": "varchar"
+			},
+			{
+				"name": "Postal_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Receivables_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Revenue_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Tax_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Freight_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Clearing_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Unbilled_Receivables_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Unearned_Revenue_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Method_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Method_Primary_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Customer_Profile",
+				"type": "varchar"
+			},
+			{
+				"name": "Site_Use_Tax_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Time_Zone",
+				"type": "varchar"
+			},
+			{
+				"name": "Language",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor_Class_at_Account_Site",
+				"type": "varchar"
+			},
+			{
+				"name": "Use_Cust_Site_Profile_Flag_at_Account_Site",
+				"type": "varchar"
+			},
+			{
+				"name": "Contributor_Class_at_Account_Site_Use",
+				"type": "varchar"
+			},
+			{
+				"name": "Use_Cust_Site_Profile_Flag_at_Account_Site_Use",
+				"type": "varchar"
+			},
+			{
+				"name": "Economic_Activity",
+				"type": "varchar"
+			},
+			{
+				"name": "Payment_Term_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Concept_Code_(CR)",
+				"type": "varchar"
+			},
+			{
+				"name": "Giro_(CL)",
+				"type": "varchar"
+			},
+			{
+				"name": "US_Remit-to_Address_Mapping",
+				"type": "varchar"
+			},
+			{
+				"name": "US_Tax_Area_Id",
+				"type": "varchar"
+			},
+			{
+				"name": "Union_Local",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID_User_Override",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID_Last_Checked",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID_Assignment_Result",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID_Confidence_Indicator",
+				"type": "varchar"
+			},
+			{
+				"name": "TAID_Precision",
+				"type": "varchar"
+			},
+			{
+				"name": "CRM_Account",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "customer",
+			"table": "CustomerAddress"
+		}
+	}
+}
