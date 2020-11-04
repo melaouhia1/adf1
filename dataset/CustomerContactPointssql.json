@@ -1,0 +1,73 @@
+{
+	"name": "CustomerContactPointssql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Operating_Unit_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "ï»¿Customer_Header_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Point_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Point_Status",
+				"type": "varchar"
+			},
+			{
+				"name": "Primary_Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Point_Purpose",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Country_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Area_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Number",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Extension",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Line_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Email_Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Email_Format",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "customer",
+			"table": "CustomerContactPoints"
+		}
+	}
+}
