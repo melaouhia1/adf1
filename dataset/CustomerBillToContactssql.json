@@ -1,0 +1,77 @@
+{
+	"name": "CustomerBillToContactssql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Operating_Unit_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "ï»¿Customer_Header_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Country_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone_Extension",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Point Reference",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_First_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact_Last_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Contact Point_Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Area_Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Telephone_Number",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL_Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Invoice_Delivery_Method",
+				"type": "varchar"
+			},
+			{
+				"name": "Column 14",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "customer",
+			"table": "CustomerBillToContacts"
+		}
+	}
+}

@@ -1,0 +1,78 @@
+{
+	"name": "ExcelCustomerBillToContacts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "OKFNotes_ORA_FD02_CustomerBillToContacts_20201028135846.xlsx",
+				"container": "customerdm11032020"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer_Header_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Address_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Reference",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Point Reference",
+				"type": "String"
+			},
+			{
+				"name": "Contact_First_Name",
+				"type": "String"
+			},
+			{
+				"name": "Contact_Last_Name",
+				"type": "String"
+			},
+			{
+				"name": "Contact Point_Type",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Country_Code",
+				"type": "String"
+			},
+			{
+				"name": "Area_Code",
+				"type": "String"
+			},
+			{
+				"name": "Telephone_Number",
+				"type": "String"
+			},
+			{
+				"name": "Phone_Extension",
+				"type": "String"
+			},
+			{
+				"name": "EMAIL_Address",
+				"type": "String"
+			},
+			{
+				"name": "Invoice_Delivery_Method",
+				"type": "String"
+			},
+			{
+				"name": "Operating_Unit_Name",
+				"type": "String"
+			}
+		]
+	}
+}
