@@ -8,10 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "OKFNotes_ORA_FD02_CustomerBillToContacts_20201028135846.xlsx",
+				"fileName": "ORA_FD02_CustomerBillToContacts_20201104153540.xlsx",
 				"container": "customerdm11032020"
 			},
 			"firstRowAsHeader": true
