@@ -11,7 +11,7 @@
 			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "OKFNotes_ORA_FD02_CustomerAddress20201028132930.xlsx",
+				"fileName": "ORA_FD02_CustomerAddress_20201104145318.xlsx",
 				"fileSystem": "customerdm11032020"
 			},
 			"firstRowAsHeader": true
