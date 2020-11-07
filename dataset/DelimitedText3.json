@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "OKFNotes_View_Building_20201028182935.csv",
+				"fileName": "View_Building_20201104172958.xlsx",
 				"fileSystem": "customerdm11032020"
 			},
 			"columnDelimiter": ",",
