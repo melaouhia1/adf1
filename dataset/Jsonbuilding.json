@@ -1,0 +1,18 @@
+{
+	"name": "Jsonbuilding",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSMohamed",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "customerdm11032020"
+			}
+		},
+		"schema": {}
+	}
+}
