@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "bld",
 				"fileSystem": "customerdm11032020"
 			}
 		},
