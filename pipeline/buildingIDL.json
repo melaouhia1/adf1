@@ -1,0 +1,9 @@
+{
+	"name": "buildingIDL",
+	"properties": {
+		"folder": {
+			"name": "Building"
+		},
+		"annotations": []
+	}
+}
