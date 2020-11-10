@@ -13,6 +13,363 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/dataflow2')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlunit",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "CosmosDbSqlApiCollection1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"script": "source(output(\n\t\tUnit_ID as integer,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow4')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlunit",
+								"type": "DatasetReference"
+							},
+							"name": "unit"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTEQUIPMENT",
+								"type": "DatasetReference"
+							},
+							"name": "EQUIPMENT"
+						},
+						{
+							"dataset": {
+								"referenceName": "EQUIPMENTType",
+								"type": "DatasetReference"
+							},
+							"name": "EQUIPMENTType"
+						},
+						{
+							"dataset": {
+								"referenceName": "Manufacturer",
+								"type": "DatasetReference"
+							},
+							"name": "Manufacturer"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqController",
+								"type": "DatasetReference"
+							},
+							"name": "Controller"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSpeed",
+								"type": "DatasetReference"
+							},
+							"name": "speed"
+						},
+						{
+							"dataset": {
+								"referenceName": "DriveType",
+								"type": "DatasetReference"
+							},
+							"name": "DriveType"
+						},
+						{
+							"dataset": {
+								"referenceName": "SqlIdentification",
+								"type": "DatasetReference"
+							},
+							"name": "Identification"
+						},
+						{
+							"dataset": {
+								"referenceName": "AzureSqlUILDING",
+								"type": "DatasetReference"
+							},
+							"name": "bUILDING"
+						},
+						{
+							"dataset": {
+								"referenceName": "lBANK",
+								"type": "DatasetReference"
+							},
+							"name": "BANK"
+						},
+						{
+							"dataset": {
+								"referenceName": "Azuremaintenance",
+								"type": "DatasetReference"
+							},
+							"name": "maintenance"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "Json1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "Join1"
+						},
+						{
+							"name": "Join2EQUIPMENTType"
+						},
+						{
+							"name": "JoinManufacturer"
+						},
+						{
+							"name": "JoinController"
+						},
+						{
+							"name": "JoinSpeed"
+						},
+						{
+							"name": "JoinDriveType"
+						},
+						{
+							"name": "Identificationjoin"
+						},
+						{
+							"name": "JoinBUILDING"
+						},
+						{
+							"name": "Joinbank"
+						},
+						{
+							"name": "Joinmaintenance"
+						},
+						{
+							"name": "DerivedColumn1"
+						}
+					],
+					"script": "source(output(\n\t\tUnit_ID as integer,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> unit\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tFloors as string,\n\t\tNumberofFrontOpenings as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENT\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tEquipmentType_ViewID as string,\n\t\tEquipmentType_ExternalID as string,\n\t\tEquipmentType_Okeefe_EquipName as string,\n\t\tEquipmentType_TKE_EquipClassification as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tEquipmentType_TKE_EquipName as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENTType\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tManufacturer_VIEWId as string,\n\t\tManufacturer_ExternalID as string,\n\t\tManufacturer_Name1 as string,\n\t\tManufacturer_Name2 as string,\n\t\tAfterHoursCallbackRun_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Manufacturer\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tController_Name1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Controller\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tSpeed_ViewID as string,\n\t\tSpeed_FPM as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> speed\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tDriveType_ViewID as string,\n\t\tDriveType_ExternalID as string,\n\t\tDriveType_Name1 as string,\n\t\tDriveType_Name2 as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> DriveType\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tUnit_GovernmentID as string,\n\t\tUnit_NickName as string,\n\t\tCustomer_BillingReference as string,\n\t\tUnit_DownInd as string,\n\t\tUnit_RegisteredNo as string,\n\t\tUnit_MfgYear as string,\n\t\tUnit_WarrantyStartDate as string,\n\t\tUnit_WarrantyEndDate as string,\n\t\tUnit_InstallDate as string,\n\t\tUnit_HandoverDate as string,\n\t\tAnnualSafetyTest_LastInspectionDate as string,\n\t\tUnit_JobNo as string,\n\t\tUnit_FactorySerialNo as string,\n\t\tUnit_Smart_ViewID as string,\n\t\tUnit_Smart_ExternalID as string,\n\t\tUnit_Smart_InstallationDate as string,\n\t\tUnit_SmartMAX_ViewID as string,\n\t\tUnit_SmartMAX_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Identification\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{identification FK} as integer,\n\t\tBuilding_ViewID as string,\n\t\tBuilding_ExternalID as string,\n\t\tBuilding_BuildingNo as string,\n\t\tName_en as string,\n\t\tName_local as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> bUILDING\nsource(output(\n\t\t{Identification FK} as integer,\n\t\t{UnitId FK} as integer,\n\t\tElevatorBank_ViewID as string,\n\t\tElevatorBank_ExternalID as string,\n\t\tElevatorBank_BankName as string,\n\t\tElevatorBank_AccessCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> BANK\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tArray_MaintenanceRun as string,\n\t\tMaintenanceRun_RouteNo_TerritoryCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> maintenance\nunit, EQUIPMENT join(Unit_ID == {UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nJoin1, EQUIPMENTType join(EQUIPMENT@ID == {Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join2EQUIPMENTType\nJoin2EQUIPMENTType, Manufacturer join(EQUIPMENT@ID == Manufacturer@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinManufacturer\nJoinManufacturer, Controller join(EQUIPMENTType@id == Controller@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinController\nJoinController, speed join(EQUIPMENT@ID == speed@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinSpeed\nJoinSpeed, DriveType join(EQUIPMENT@ID == DriveType@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinDriveType\nJoinDriveType, Identification join(Unit_ID == Identification@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Identificationjoin\nIdentificationjoin, bUILDING join(Identification@ID == {identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinBUILDING\nJoinBUILDING, BANK join(Identification@ID == BANK@{Identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinbank\nJoinbank, maintenance join(Unit_ID == maintenance@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinmaintenance\nJoinmaintenance derive(Unit_ID = Unit_ID,\n\t\tTechnicianNotes = TechnicianNotes,\n\t\tidentification = @(Unit_GovernmentID=Unit_GovernmentID,\n\t\tUnit_NickName=Unit_NickName,\n\t\tCustomer_BillingReference=Customer_BillingReference,\n\t\tUnit_DownInd=Unit_DownInd,\n\t\tUnit_RegisteredNo=Unit_RegisteredNo,\n\t\tUnit_MfgYear=Unit_MfgYear,\n\t\tUnit_WarrantyStartDate=Unit_WarrantyStartDate,\n\t\tUnit_WarrantyEndDate=Unit_WarrantyEndDate,\n\t\tUnit_InstallDate=Unit_InstallDate,\n\t\tUnit_HandoverDate=Unit_HandoverDate,\n\t\tAnnualSafetyTest_LastInspectionDate=AnnualSafetyTest_LastInspectionDate,\n\t\tUnit_JobNo=Unit_JobNo,\n\t\tUnit_FactorySerialNo=Unit_FactorySerialNo,\n\t\tUnit_Smart_ViewID=Unit_Smart_ViewID,\n\t\tUnit_Smart_ExternalID=Unit_Smart_ExternalID,\n\t\tUnit_Smart_InstallationDate=Unit_Smart_InstallationDate,\n\t\tUnit_SmartMAX_ViewID=Unit_SmartMAX_ViewID,\n\t\tUnit_SmartMAX_ExternalID=Unit_SmartMAX_ExternalID,\n\t\tBank=@({ ElevatorBank_ViewID}=ElevatorBank_ViewID,\n\t\tElevatorBank_ExternalID=ElevatorBank_ExternalID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\tBUILDING=@(Building_ViewID=Building_ViewID,\n\t\tBuilding_ExternalID=Building_ExternalID,\n\t\tBuilding_BuildingNo=Building_BuildingNo,\n\t\tName_en=Name_en,\n\t\tName_local=Name_local)),\n\t\tEQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\t{EQUIPMENT Type}=@(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\tManufacturer=@(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID),\n\t\tController=@(Controller_Name1=Controller_Name1),\n\t\tSpeed=@(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\tDriveType=@(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name1=DriveType_Name1,\n\t\tDriveType_Name2=DriveType_Name2)),\n\t\tmaintenance = @(MaintenanceRun_RouteNo_TerritoryCode=MaintenanceRun_RouteNo_TerritoryCode)) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['unit'],\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow5')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "sqlbuilding",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "Jsonbuilding1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "DerivedColumn1"
+						}
+					],
+					"script": "source(output(\n\t\tBuilding_ExternalBuildingId as string,\n\t\tBuilding_BuildingName_local as string,\n\t\tBuilding_BuildingName_en as string,\n\t\tBuilding_Height as string,\n\t\tBuilding_StreetAddress_En as string,\n\t\tBuilding_StreetAddress_Local as string,\n\t\tBuilding_Suburb_En as string,\n\t\tBuilding_Suburb_Local as string,\n\t\tBuilding_City_En as string,\n\t\tBuilding_City_Local as string,\n\t\tBuilding_Postcode as string,\n\t\tBuilding_MainTypeViewId as string,\n\t\tBuilding_MainTypeName_En as string,\n\t\tBuilding_MainTypeName_Local as string,\n\t\tBuilding_SubTypeViewId as string,\n\t\tBuilding_SubTypeName_En as string,\n\t\tBuilding_SubTypeName_Local as string,\n\t\tBuilding_BuildingNo as string,\n\t\tBuilding_IsStandbybuilding as string,\n\t\tBuilding_CostingNo as string,\n\t\tBuilding_CustomerNo as string,\n\t\tBuilding_SumOfTotalUnits as string,\n\t\tBuilding_SumOfUnitsInService as string,\n\t\tBuilding_QuickTurnover as string,\n\t\tBuilding_Latitude as string,\n\t\tBuilding_Longitude as string,\n\t\tBuilding_OfficeViewId as string,\n\t\tBuilding_OfficeName_En as string,\n\t\tBuilding_OfficeName_Local as string,\n\t\tBuilding_TKManagerEmployeeViewId as string,\n\t\tBuilding_TKManagerEmployeeExternalId as string,\n\t\tBuilding_TKManagerName as string,\n\t\tBuilding_IsRepairCorres as string,\n\t\tBuilding_IsCalendar as string,\n\t\tBuilding_IsGeneralCorres as string,\n\t\tBuilding_IsCard as string,\n\t\tBuilding_IsMonthlyReport as string,\n\t\tBuilding_UnitsScheduleHours as string,\n\t\tBuilding_UnitsScheduleHoursViewId as string,\n\t\tBuilding_UnitsScheduleTime as string,\n\t\tBuilding_UnitsScheduleTimeViewId as string,\n\t\tBuilding_UnitsScheduleDay as string,\n\t\tBuilding_UnitsScheduleDayViewId as string,\n\t\tBuilding_UnitsScheduleDayFrequency as string,\n\t\tBuilding_TargetCallRate as string,\n\t\tArray_RunInfo as string,\n\t\tRunInfo_RunTypeViewId as string,\n\t\tRunInfo_RunTypeName as string,\n\t\tRunInfo_RunViewId as string,\n\t\tRunInfo_RunName as string,\n\t\tRunInfo_BHSWPResponse as string,\n\t\tRunInfo_BHStopResponse as string,\n\t\tRunInfo_BHOthersResponse as string,\n\t\tRunInfo_AHSWPResponse as string,\n\t\tRunInfo_AHStopResponse as string,\n\t\tRunInfo_AHOthersResponse as string,\n\t\tRunInfo_Notes as string,\n\t\tRunInfo_PropertyManagerEmployeeViewId as string,\n\t\tRunInfo_PropertyManagerEmployeeName as string,\n\t\tArray_BusinessHourContactInfo as string,\n\t\tBusinessHourContactInfo_BHSiteContact as string,\n\t\tBusinessHourContactInfo_BHContactLocation_En as string,\n\t\tBusinessHourContactInfo_BHContactLocation_Local as string,\n\t\tBusinessHourContactInfo_BHContactPhone1 as string,\n\t\tBusinessHourContactInfo_BHContactPhone2 as string,\n\t\tBusinessHourContactInfo_BHContactMobile as string,\n\t\tBusinessHourContactInfo_BHContactFax as string,\n\t\tBusinessHourContactInfo_BHContactRoleViewId as string,\n\t\tBusinessHourContactInfo_BHContactRoleName as string,\n\t\tArray_AfterHourContactInfo as string,\n\t\tAfterHourContactInfo_AHSiteContact as string,\n\t\tAfterHourContactInfo_AHContactLocation_En as string,\n\t\tAfterHourContactInfo_AHContactLocation_Local as string,\n\t\tAfterHourContactInfo_AHContactPhone1 as string,\n\t\tAfterHourContactInfo_AHContactMobile as string,\n\t\tAfterHourContactInfo_AHContactFax as string,\n\t\tAfterHourContactInfo_AHContactRoleViewId as string,\n\t\tAfterHourContactInfo_AHContactRoleViewName as string,\n\t\tAfterHourContactInfo_AHContactAccessCode as string,\n\t\tArray_BuildingContactInfo as string,\n\t\tBuildingContactInfo_ContactViewId as string,\n\t\tBuildingContactInfo_ContactExternalId as string,\n\t\tBuildingContactInfo_ContactName as string,\n\t\tBuildingContactInfo_IsBusinessHours as string,\n\t\tBuilding_VFMCustomerName_En as string,\n\t\tBuilding_VFMCustomerName_Local as string,\n\t\tBuilding_VFMCustomerMail as string,\n\t\tBuilding_VFMMailTemplateSubject as string,\n\t\tBuilding_VFMMailTemplateContent as string,\n\t\tBuilding_IsCustomisedMail as string,\n\t\tBuilding_ReportFrequencyViewId as string,\n\t\tBuilding_ReportFrequency as string,\n\t\tBuilding_ReportTypeViewId as string,\n\t\tBuilding_ReportType as string,\n\t\tBuilding_IsReportInvoice as string,\n\t\tBuilding_ReportSendTo as string,\n\t\tBuilding_ReportAuditRequired as string,\n\t\tBuilding_ReportAuditDetail as string,\n\t\tBuilding_ReportServiceDockets as string,\n\t\tBuilding_FromProjectId as string,\n\t\tBuilding_FromProjectLabel as string,\n\t\tArray_BuildingCustomerInfo as string,\n\t\tBuildingCustomerInfo_CustomerViewId as string,\n\t\tBuildingCustomerInfo_CustomerExternalId as string,\n\t\tBuildingCustomerInfo_CustomerName as string,\n\t\tArray_State as string,\n\t\tState_ViewId as string,\n\t\tState_Name as string,\n\t\tBuiliding_TimeZone as string,\n\t\tBuiliding_CustomerCode as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 derive(ExternalBuildingId = Building_ExternalBuildingId,\n\t\tBuilding_BuildingName_local = Building_BuildingName_local,\n\t\tBuildingName_en = Building_BuildingName_en,\n\t\tHeight = Building_Height,\n\t\tStreetAddress = Building_StreetAddress_En,\n\t\tSuburb = Building_Suburb_En,\n\t\tCity = Building_City_En,\n\t\tPostcode = Building_Postcode,\n\t\tMainTypeViewId = Building_MainTypeViewId,\n\t\tMainTypeName_En = Building_MainTypeName_En,\n\t\tMainTypeName_Local = Building_MainTypeName_Local,\n\t\tSubTypeViewId = Building_SubTypeViewId,\n\t\tSubTypeName_En = Building_SubTypeName_En,\n\t\tSubTypeName_Local = Building_SubTypeName_Local,\n\t\tBuildingNo = Building_BuildingNo,\n\t\tIsStandbybuilding = Building_IsStandbybuilding,\n\t\tCostingNo = Building_CostingNo,\n\t\tCustomerNo = Building_CustomerNo,\n\t\tSumOfTotalUnits = Building_SumOfTotalUnits,\n\t\tSumOfUnitsInService = Building_SumOfUnitsInService,\n\t\tQuickTurnover = Building_QuickTurnover,\n\t\tLatitude = Building_Latitude,\n\t\tLongitude = Building_Longitude,\n\t\tOfficeViewId = Building_OfficeViewId,\n\t\tOfficeName_En = Building_OfficeName_En,\n\t\tOfficeName_Local = Building_OfficeName_Local,\n\t\tTKManagerEmployeeViewId = Building_TKManagerEmployeeViewId,\n\t\tTKManagerEmployeeExternalId = Building_TKManagerEmployeeExternalId,\n\t\tTKManagerName = Building_TKManagerName,\n\t\tIsRepairCorres = Building_IsRepairCorres,\n\t\tIsCalendar = Building_IsCalendar,\n\t\tIsGeneralCorres = Building_IsGeneralCorres,\n\t\tIsCard = Building_IsCard,\n\t\tIsMonthlyReport = Building_IsMonthlyReport,\n\t\tUnitsScheduleHours = Building_UnitsScheduleHours,\n\t\tUnitsScheduleHoursViewId = Building_UnitsScheduleHoursViewId,\n\t\tUnitsScheduleTime = Building_UnitsScheduleTime,\n\t\tUnitsScheduleTimeViewId = Building_UnitsScheduleTimeViewId,\n\t\tUnitsScheduleDay = Building_UnitsScheduleDay,\n\t\tUnitsScheduleDayViewId = Building_UnitsScheduleDayViewId,\n\t\tUnitsScheduleDayFrequency = Building_UnitsScheduleDayFrequency,\n\t\tTargetCallRate = Building_TargetCallRate,\n\t\tRunInfo = @(RunTypeViewId=RunInfo_RunTypeViewId,\n\t\tRunTypeName=RunInfo_RunTypeName,\n\t\tRunViewId=RunInfo_RunViewId,\n\t\tRunName=RunInfo_RunName),\n\t\tBHSWPResponse = RunInfo_BHSWPResponse,\n\t\tBHOthersResponse = RunInfo_BHOthersResponse,\n\t\tAHSWPResponse = RunInfo_AHSWPResponse,\n\t\tAHStopResponse = RunInfo_AHStopResponse,\n\t\tAHOthersResponse = RunInfo_AHOthersResponse,\n\t\tNotes = RunInfo_Notes,\n\t\tPropertyManagerEmployeeViewId = RunInfo_PropertyManagerEmployeeViewId,\n\t\tPropertyManagerEmployeeName = RunInfo_PropertyManagerEmployeeName,\n\t\tBusinessHourContactInfo = @(BHSiteContact=BusinessHourContactInfo_BHSiteContact,\n\t\tBHContactLocation=BusinessHourContactInfo_BHContactLocation_En,\n\t\tBHContactPhone1=BusinessHourContactInfo_BHContactPhone1,\n\t\tBHContactPhone2=BusinessHourContactInfo_BHContactPhone2,\n\t\tBHContactMobile=BusinessHourContactInfo_BHContactMobile,\n\t\tBHContactFax=BusinessHourContactInfo_BHContactFax,\n\t\tBHContactRoleViewId=BusinessHourContactInfo_BHContactRoleViewId,\n\t\tBHContactRoleName=BusinessHourContactInfo_BHContactRoleName),\n\t\tAfterHourContactInfo = @(AHSiteContact=AfterHourContactInfo_AHSiteContact,\n\t\tAHContactLocation=AfterHourContactInfo_AHContactLocation_En,\n\t\tAHContactPhone1=AfterHourContactInfo_AHContactPhone1,\n\t\tAHContactMobile=AfterHourContactInfo_AHContactMobile,\n\t\tAHContactFax=AfterHourContactInfo_AHContactFax,\n\t\tAHContactRoleViewId=AfterHourContactInfo_AHContactRoleViewId,\n\t\tAHContactAccessCode=AfterHourContactInfo_AHContactAccessCode),\n\t\tBuildingContactInfo = @(ContactViewId=BuildingContactInfo_ContactViewId,\n\t\tContactExternalId=BuildingContactInfo_ContactExternalId,\n\t\tContactName=BuildingContactInfo_ContactName,\n\t\tIsBusinessHours=BuildingContactInfo_IsBusinessHours),\n\t\tVFMCustomerName_En = Building_VFMCustomerName_En,\n\t\tVFMCustomerName_ = Building_VFMCustomerName_En,\n\t\tVFMCustomerMail = Building_VFMCustomerMail,\n\t\tVFMMailTemplateSubject = Building_VFMMailTemplateSubject,\n\t\tVFMMailTemplateContent = Building_VFMMailTemplateContent,\n\t\tIsCustomisedMail = Building_IsCustomisedMail,\n\t\tReportFrequencyViewId = Building_ReportFrequencyViewId,\n\t\tReportFrequency = Building_ReportFrequency,\n\t\tReportTypeViewId = Building_ReportTypeViewId,\n\t\tReportType = Building_ReportType,\n\t\tIsReportInvoice = Building_IsReportInvoice,\n\t\tReportSendTo = Building_ReportSendTo,\n\t\tReportAuditRequired = Building_ReportAuditRequired,\n\t\tReportAuditDetail = Building_ReportAuditDetail,\n\t\tReportServiceDockets = Building_ReportServiceDockets,\n\t\tFromProjectId = Building_FromProjectId,\n\t\tFromProjectLabel = Building_FromProjectLabel,\n\t\tBuildingCustomerInfo = @(CustomerViewId=BuildingCustomerInfo_CustomerViewId,\n\t\tCustomerExternalId=BuildingCustomerInfo_CustomerExternalId,\n\t\tCustomerName=Building_VFMCustomerName_En)) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['buildingjson'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CosmosDbTest')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "dataflow4",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow4",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"unit": {},
+									"EQUIPMENT": {},
+									"EQUIPMENTType": {},
+									"Manufacturer": {},
+									"Controller": {},
+									"speed": {},
+									"DriveType": {},
+									"Identification": {},
+									"bUILDING": {},
+									"BANK": {},
+									"maintenance": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							}
+						}
+					}
+				],
+				"folder": {
+					"name": "AzureTocosmosDB"
+				},
+				"annotations": [],
+				"lastPublishTime": "2020-10-29T14:42:52Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow4')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DBtoCosmosunit')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "dataflow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow1",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"unit1": {},
+									"Identification1": {},
+									"Bank": {},
+									"BUILDING": {},
+									"EQUIPMENT": {},
+									"EQUIPMENTType": {},
+									"Manufacturer": {},
+									"Controller": {},
+									"speed": {},
+									"DriveType": {},
+									"office": {},
+									"maintenance": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							}
+						}
+					}
+				],
+				"folder": {
+					"name": "AzureTocosmosDB"
+				},
+				"annotations": [],
+				"lastPublishTime": "2020-10-29T14:42:48Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/buildingIDL')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "dataflow5",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow5",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							}
+						}
+					}
+				],
+				"folder": {
+					"name": "Building"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow5')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -109,7 +466,9 @@
 				"annotations": [],
 				"lastPublishTime": "2020-10-29T14:42:45Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow2')]"
+			]
 		}
 	]
 }

@@ -13,6 +13,82 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlcustomerContactpoints')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Operating Unit Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer Header Reference",
+						"type": "varchar"
+					},
+					{
+						"name": "Address Reference",
+						"type": "varchar"
+					},
+					{
+						"name": "Contact Point Type",
+						"type": "varchar"
+					},
+					{
+						"name": "Contact Point Status",
+						"type": "varchar"
+					},
+					{
+						"name": "Primary Flag",
+						"type": "varchar"
+					},
+					{
+						"name": "Contact point Purpose",
+						"type": "varchar"
+					},
+					{
+						"name": "Phone Country Code",
+						"type": "varchar"
+					},
+					{
+						"name": "Phone Area Code",
+						"type": "varchar"
+					},
+					{
+						"name": "Phone Number",
+						"type": "varchar"
+					},
+					{
+						"name": "Phone Extension",
+						"type": "varchar"
+					},
+					{
+						"name": "Phone Line Type",
+						"type": "varchar"
+					},
+					{
+						"name": "Email Address",
+						"type": "varchar"
+					},
+					{
+						"name": "Email Format",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "customerContactpoints"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlcustomerbillTocontacts')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1278,7 +1354,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "OKFNotes_View_Building_20201028182935.csv",
+						"fileName": "View_Building_20201104172958.xlsx",
 						"fileSystem": "customerdm11032020"
 					},
 					"columnDelimiter": ",",
@@ -1822,68 +1898,6 @@
 				"typeProperties": {
 					"schema": "unit",
 					"table": "EQUIPMENT"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EQUIPMENTType')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Equipment Id FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "EquipmentType_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "EquipmentType_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "EquipmentType_Okeefe_EquipName",
-						"type": "varchar"
-					},
-					{
-						"name": "EquipmentType_TKE_EquipClassification",
-						"type": "varchar"
-					},
-					{
-						"name": "NumberofRearOpenings",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_CapacityLbs",
-						"type": "varchar"
-					},
-					{
-						"name": "EquipmentType_TKE_EquipName",
-						"type": "varchar"
-					},
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "EQUIPMENT Type"
 				}
 			},
 			"dependsOn": []
