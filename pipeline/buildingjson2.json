@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Stored procedure1",
-				"type": "SqlServerStoredProcedure",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,12 +15,25 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[customer].[BuildingToJson]"
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[customer].[BuildingToJson]",
+						"storedProcedureParameters": {
+							"result": {
+								"type": "String"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
 				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				}
+				"inputs": [
+					{
+						"referenceName": "BuildingToJson",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
