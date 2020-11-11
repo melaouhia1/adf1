@@ -14,11 +14,15 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "Jsonbuilding1",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
 			"transformations": [],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'DECLARE\t@return_value int,\\n\t\t@result varchar(max)\\n\\nEXEC\t@return_value = [customer].[BuildingToJson]\\n\t\t@result = @result OUTPUT\\n\\nSELECT\t@result as N\\'@result\\'',\n\tformat: 'query') ~> source1\nsource1 sink(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'DECLARE\t@return_value int,\\n\t\t@result varchar(max)\\n\\nEXEC\t@return_value = [customer].[BuildingToJson]\\n\t\t@result = @result OUTPUT\\n\\nSELECT\t@result as N\\'@result\\'',\n\tformat: 'query') ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
