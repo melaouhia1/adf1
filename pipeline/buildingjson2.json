@@ -21,7 +21,7 @@
 						"storedProcedureParameters": {
 							"result": {
 								"type": "String",
-								"value": "json"
+								"value": null
 							}
 						},
 						"queryTimeout": "02:00:00",
