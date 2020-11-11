@@ -30,11 +30,21 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"sink": {
+									"path": "$"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSpeed",
+						"referenceName": "spBuildingToJson",
 						"type": "DatasetReference"
 					}
 				],
