@@ -20,17 +20,33 @@
 						"sqlReaderStoredProcedureName": "[customer].[BuildingToJson]",
 						"storedProcedureParameters": {
 							"result": {
-								"type": "String"
+								"type": "String",
+								"value": "json"
 							}
 						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "BuildingToJson",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Jsonbuilding",
 						"type": "DatasetReference"
 					}
 				]
