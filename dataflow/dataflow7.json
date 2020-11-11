@@ -1,0 +1,24 @@
+{
+	"name": "dataflow7",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlbuilding",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'DECLARE\t@return_value int,\\n\t\t@result varchar(max)\\n\\nEXEC\t@return_value = [customer].[BuildingToJson]\\n\t\t@result = @result OUTPUT\\n\\nSELECT\t@result as N\\'@result\\'',\n\tformat: 'query') ~> source1\nsource1 sink(skipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}
