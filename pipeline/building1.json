@@ -38,7 +38,13 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('metaGetExcell').output.childItems",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"folder": {
