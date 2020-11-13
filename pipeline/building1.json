@@ -45,7 +45,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith('item().name.variable('buildingv')",
+						"value": "@startswith(item().name,variables('buildingv'))",
 						"type": "Expression"
 					}
 				}
