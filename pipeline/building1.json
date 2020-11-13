@@ -45,7 +45,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@endswith('item.name','.xlsx')",
+						"value": "@startswith('item.name','.View_Building')",
 						"type": "Expression"
 					}
 				}
@@ -75,7 +75,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "building",
+							"wildcardFolderPath": "source",
 							"wildcardFileName": {
 								"value": "@activity('Filterxlsx').output.value[0].name",
 								"type": "Expression"
