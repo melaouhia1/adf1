@@ -23,7 +23,8 @@
 						"childItems"
 					],
 					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings"
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true
 					}
 				}
 			},
@@ -74,6 +75,7 @@
 						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
+							"throwExceptionWhenNavigateEmptyFolder": false,
 							"recursive": true,
 							"wildcardFolderPath": "source",
 							"wildcardFileName": {
