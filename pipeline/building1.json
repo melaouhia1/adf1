@@ -28,7 +28,7 @@
 				}
 			},
 			{
-				"name": "Filter xlsx",
+				"name": "Filterxlsx",
 				"type": "Filter",
 				"dependsOn": [
 					{
@@ -55,7 +55,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Filter xlsx",
+						"activity": "Filterxlsx",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -77,7 +77,7 @@
 							"recursive": true,
 							"wildcardFolderPath": "valid",
 							"wildcardFileName": {
-								"value": "@activity('Filter xlsx').output.value[0].name",
+								"value": "@activity('Filterxlsx').output.value[0].name",
 								"type": "Expression"
 							}
 						}
