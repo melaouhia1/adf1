@@ -43,6 +43,10 @@
 					"items": {
 						"value": "@activity('metaGetExcell').output.childItems",
 						"type": "Expression"
+					},
+					"condition": {
+						"value": "@endswith('item.name','.xlsx')",
+						"type": "Expression"
 					}
 				}
 			}
