@@ -111,6 +111,12 @@
 				]
 			}
 		],
+		"variables": {
+			"buildingv": {
+				"type": "String",
+				"defaultValue": "View_Building"
+			}
+		},
 		"folder": {
 			"name": "ingest"
 		},
