@@ -1,0 +1,19 @@
+{
+	"name": "building3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "building"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
