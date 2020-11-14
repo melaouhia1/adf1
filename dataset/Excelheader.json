@@ -2,7 +2,7 @@
 	"name": "Excelheader",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage6",
+			"referenceName": "ADLSMohamed",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
