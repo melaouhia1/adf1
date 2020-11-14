@@ -77,7 +77,7 @@
 							"type": "AzureBlobStorageReadSettings",
 							"throwExceptionWhenNavigateEmptyFolder": false,
 							"recursive": true,
-							"wildcardFolderPath": "source",
+							"wildcardFolderPath": "Source",
 							"wildcardFileName": {
 								"value": "@activity('Filterxlsx').output.value[0].name",
 								"type": "Expression"
