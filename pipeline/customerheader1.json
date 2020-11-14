@@ -1,0 +1,9 @@
+{
+	"name": "customerheader1",
+	"properties": {
+		"folder": {
+			"name": "ingest"
+		},
+		"annotations": []
+	}
+}
