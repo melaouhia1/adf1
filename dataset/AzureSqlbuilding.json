@@ -9,7 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "Building_ExternalBuildingId",
+				"name": "ExternalBuildingId",
 				"type": "varchar"
 			},
 			{
