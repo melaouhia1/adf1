@@ -13,439 +13,195 @@
 				"type": "varchar"
 			},
 			{
-				"name": "Building_BuildingName_local",
+				"name": "BuildingName_local",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_BuildingName_en",
+				"name": "StreetAddress_Local",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Height",
+				"name": "City_Local",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_StreetAddress_En",
+				"name": "Postcode",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_StreetAddress_Local",
+				"name": "MainTypeViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Suburb_En",
+				"name": "MainTypeName_En",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Suburb_Local",
+				"name": "SubTypeViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_City_En",
+				"name": "SubTypeName_En",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_City_Local",
+				"name": "BuildingNo",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Postcode",
+				"name": "CustomerNo",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_MainTypeViewId",
+				"name": "SumOfTotalUnits",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_MainTypeName_En",
+				"name": "SumOfUnitsInService",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_MainTypeName_Local",
+				"name": "OfficeViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_SubTypeViewId",
+				"name": "OfficeName_En",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_SubTypeName_En",
+				"name": "UnitsScheduleHours",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_SubTypeName_Local",
+				"name": "UnitsScheduleHoursViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_BuildingNo",
+				"name": "UnitsScheduleTime",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsStandbybuilding",
+				"name": "UnitsScheduleTimeViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_CostingNo",
+				"name": "TargetCallRate",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_CustomerNo",
+				"name": "RunInfo",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_SumOfTotalUnits",
+				"name": "RunTypeViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_SumOfUnitsInService",
+				"name": "RunTypeName",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_QuickTurnover",
+				"name": "RunViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Latitude",
+				"name": "RunName",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_Longitude",
+				"name": "BHSWPResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_OfficeViewId",
+				"name": "BHStopResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_OfficeName_En",
+				"name": "BHOthersResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_OfficeName_Local",
+				"name": "AHSWPResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_TKManagerEmployeeViewId",
+				"name": "AHStopResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_TKManagerEmployeeExternalId",
+				"name": "AHOthersResponse",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_TKManagerName",
+				"name": "Notes",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsRepairCorres",
+				"name": "BusinessHourContactInfo",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsCalendar",
+				"name": "BHSiteContact",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsGeneralCorres",
+				"name": "BHContactPhone1",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsCard",
+				"name": "BHContactMobile",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_IsMonthlyReport",
+				"name": "BHContactRoleViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleHours",
+				"name": "BHContactRoleName",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleHoursViewId",
+				"name": "AfterHourContactInfo",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleTime",
+				"name": "AHSiteContact",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleTimeViewId",
+				"name": "AHContactPhone1",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleDay",
+				"name": "AHContactMobile",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleDayViewId",
+				"name": "AHContactRoleViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_UnitsScheduleDayFrequency",
+				"name": "AHContactRoleViewName",
 				"type": "varchar"
 			},
 			{
-				"name": "Building_TargetCallRate",
+				"name": "State",
 				"type": "varchar"
 			},
 			{
-				"name": "Array_RunInfo",
+				"name": "ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "RunInfo_RunTypeViewId",
+				"name": "Name",
 				"type": "varchar"
 			},
 			{
-				"name": "RunInfo_RunTypeName",
+				"name": "TimeZone",
 				"type": "varchar"
 			},
 			{
-				"name": "RunInfo_RunViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_RunName",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_BHSWPResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_BHStopResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_BHOthersResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_AHSWPResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_AHStopResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_AHOthersResponse",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_Notes",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_PropertyManagerEmployeeViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "RunInfo_PropertyManagerEmployeeName",
-				"type": "varchar"
-			},
-			{
-				"name": "Array_BusinessHourContactInfo",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHSiteContact",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactLocation_En",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactLocation_Local",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactPhone1",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactPhone2",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactMobile",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactFax",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactRoleViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "BusinessHourContactInfo_BHContactRoleName",
-				"type": "varchar"
-			},
-			{
-				"name": "Array_AfterHourContactInfo",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHSiteContact",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactLocation_En",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactLocation_Local",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactPhone1",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactMobile",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactFax",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactRoleViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactRoleViewName",
-				"type": "varchar"
-			},
-			{
-				"name": "AfterHourContactInfo_AHContactAccessCode",
-				"type": "varchar"
-			},
-			{
-				"name": "Array_BuildingContactInfo",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingContactInfo_ContactViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingContactInfo_ContactExternalId",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingContactInfo_ContactName",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingContactInfo_IsBusinessHours",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_VFMCustomerName_En",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_VFMCustomerName_Local",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_VFMCustomerMail",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_VFMMailTemplateSubject",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_VFMMailTemplateContent",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_IsCustomisedMail",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportFrequencyViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportFrequency",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportTypeViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportType",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_IsReportInvoice",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportSendTo",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportAuditRequired",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportAuditDetail",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_ReportServiceDockets",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_FromProjectId",
-				"type": "varchar"
-			},
-			{
-				"name": "Building_FromProjectLabel",
-				"type": "varchar"
-			},
-			{
-				"name": "Array_BuildingCustomerInfo",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingCustomerInfo_CustomerViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingCustomerInfo_CustomerExternalId",
-				"type": "varchar"
-			},
-			{
-				"name": "BuildingCustomerInfo_CustomerName",
-				"type": "varchar"
-			},
-			{
-				"name": "Array_State",
-				"type": "varchar"
-			},
-			{
-				"name": "State_ViewId",
-				"type": "varchar"
-			},
-			{
-				"name": "State_Name",
-				"type": "varchar"
-			},
-			{
-				"name": "Builiding_TimeZone",
-				"type": "varchar"
-			},
-			{
-				"name": "Builiding_CustomerCode",
+				"name": "CustomerCode",
 				"type": "varchar"
 			}
 		],
