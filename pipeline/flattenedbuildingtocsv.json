@@ -1,0 +1,9 @@
+{
+	"name": "flattenedbuildingtocsv",
+	"properties": {
+		"folder": {
+			"name": "Output"
+		},
+		"annotations": []
+	}
+}
