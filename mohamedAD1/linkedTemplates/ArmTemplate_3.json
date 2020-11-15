@@ -13,6 +13,101 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedTextflattenedbuilding')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "flattened.csv",
+						"container": "flatenedcsv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DriveType')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1979,108 +2074,6 @@
 					"compressionCodec": "snappy"
 				},
 				"schema": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlIdentification')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Unit_GovernmentID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_NickName",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_BillingReference",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_DownInd",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_RegisteredNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_MfgYear",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_WarrantyStartDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_WarrantyEndDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_InstallDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_HandoverDate",
-						"type": "varchar"
-					},
-					{
-						"name": "AnnualSafetyTest_LastInspectionDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_JobNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_FactorySerialNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_InstallationDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_SmartMAX_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_SmartMAX_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "Identification"
-				}
 			},
 			"dependsOn": []
 		}
