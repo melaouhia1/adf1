@@ -1,0 +1,35 @@
+{
+	"name": "am_da_ds_dst_exviewBuildingapi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CustomerCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Data",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varbinary"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "building",
+			"table": "am_da_ds_dst_exviewBuildingapi"
+		}
+	}
+}
