@@ -520,6 +520,43 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/BuildingName_en')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "customerdm11032020"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Buildingsql')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1804,101 +1841,6 @@
 						"type": "String"
 					}
 				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DriveType')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Equipment Id FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "DriveType_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_Name1",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_Name2",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "DriveType"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EQUIPMENT')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Floors",
-						"type": "varchar"
-					},
-					{
-						"name": "NumberofFrontOpenings",
-						"type": "varchar"
-					},
-					{
-						"name": "NumberofRearOpenings",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_CapacityLbs",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "EQUIPMENT"
-				}
 			},
 			"dependsOn": []
 		}

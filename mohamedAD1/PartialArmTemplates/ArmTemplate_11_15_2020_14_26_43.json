@@ -1,0 +1,816 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "mohamedAD1"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Buildingjson')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "dataflow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow1",
+								"type": "DataFlowReference"
+							},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"folder": {
+					"name": "Building"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/building1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "metaGetExcell",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "building3",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true
+							}
+						}
+					},
+					{
+						"name": "Filterxlsx",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "metaGetExcell",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('metaGetExcell').output.childItems",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('buildingv'))",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy file to proceed",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filterxlsx",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"throwExceptionWhenNavigateEmptyFolder": false,
+									"recursive": true,
+									"wildcardFolderPath": "Source",
+									"wildcardFileName": {
+										"value": "@activity('Filterxlsx').output.value[0].name",
+										"type": "Expression"
+									}
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "truncate table [customer].[Building]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "building3",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlbuilding",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"variables": {
+					"buildingv": {
+						"type": "String",
+						"defaultValue": "View_Building"
+					}
+				},
+				"folder": {
+					"name": "ingest"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/building3')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlbuilding')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/building_output')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "select * from  [building].[Viewbuilding_API_add]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "CustomerCode",
+											"type": "String",
+											"physicalType": "nvarchar"
+										},
+										"sink": {
+											"name": "CustomerCode",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Data",
+											"type": "String",
+											"physicalType": "nvarchar"
+										},
+										"sink": {
+											"name": "Data",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "HashKey",
+											"type": "Byte[]",
+											"physicalType": "varbinary"
+										},
+										"sink": {
+											"name": "HashKey",
+											"type": "Byte[]",
+											"physicalType": "varbinary"
+										}
+									},
+									{
+										"source": {
+											"name": "ETL_Load_Date_Time",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										},
+										"sink": {
+											"name": "ETL_Load_Date_Time",
+											"type": "DateTime",
+											"physicalType": "datetime"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Azuremaintenance",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "am_da_ds_dst_exviewBuildingapi",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Output"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/am_da_ds_dst_exviewBuildingapi')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/buildingjson2')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderStoredProcedureName": "[[customer].[BuildingToJson]",
+								"storedProcedureParameters": {
+									"result": {
+										"type": "String",
+										"value": null
+									}
+								},
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "JsonSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "JsonWriteSettings"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "BuildingToJson",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Jsonbuilding",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Building"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/BuildingToJson')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/customerheader1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "metaGetExcell",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Excelheader",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"itemName"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true
+							}
+						}
+					}
+				],
+				"folder": {
+					"name": "ingest"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Excelheader')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlbuilding')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ExternalBuildingId",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingName_local",
+						"type": "varchar"
+					},
+					{
+						"name": "StreetAddress_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "City_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Postcode",
+						"type": "varchar"
+					},
+					{
+						"name": "MainTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "MainTypeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "SubTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "SubTypeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingNo",
+						"type": "varchar"
+					},
+					{
+						"name": "CustomerNo",
+						"type": "varchar"
+					},
+					{
+						"name": "SumOfTotalUnits",
+						"type": "varchar"
+					},
+					{
+						"name": "SumOfUnitsInService",
+						"type": "varchar"
+					},
+					{
+						"name": "OfficeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "OfficeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "UnitsScheduleHours",
+						"type": "varchar"
+					},
+					{
+						"name": "UnitsScheduleHoursViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "UnitsScheduleTime",
+						"type": "varchar"
+					},
+					{
+						"name": "UnitsScheduleTimeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "TargetCallRate",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "RunTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "RunTypeName",
+						"type": "varchar"
+					},
+					{
+						"name": "RunViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "RunName",
+						"type": "varchar"
+					},
+					{
+						"name": "BHSWPResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "BHStopResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "BHOthersResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "AHSWPResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "AHStopResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "AHOthersResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "Notes",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "BHSiteContact",
+						"type": "varchar"
+					},
+					{
+						"name": "BHContactPhone1",
+						"type": "varchar"
+					},
+					{
+						"name": "BHContactMobile",
+						"type": "varchar"
+					},
+					{
+						"name": "BHContactRoleViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "BHContactRoleName",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "AHSiteContact",
+						"type": "varchar"
+					},
+					{
+						"name": "AHContactPhone1",
+						"type": "varchar"
+					},
+					{
+						"name": "AHContactMobile",
+						"type": "varchar"
+					},
+					{
+						"name": "AHContactRoleViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "AHContactRoleViewName",
+						"type": "varchar"
+					},
+					{
+						"name": "State",
+						"type": "varchar"
+					},
+					{
+						"name": "ViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Name",
+						"type": "varchar"
+					},
+					{
+						"name": "TimeZone",
+						"type": "varchar"
+					},
+					{
+						"name": "CustomerCode",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "customer",
+					"table": "Building"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BuildingName_en')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "customerdm11032020"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Excelheader')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Sheet1",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "ORA_FD02_CustomerHeader_20201104103740.xlsx",
+						"fileSystem": "customerdm11032020"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/JsonBuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "customerdm11032020"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/am_da_ds_dst_exviewBuildingapi')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "CustomerCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Data",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HashKey",
+						"type": "varbinary"
+					},
+					{
+						"name": "ETL_Load_Date_Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "building",
+					"table": "am_da_ds_dst_exviewBuildingapi"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/building3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Sheet1",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "building"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/spBuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow7')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlbuilding",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "BuildingName_en",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "DerivedColumn1"
+						}
+					],
+					"script": "source(output(\n\t\tOperator as string,\n\t\tETL_Load_Date_Time as timestamp,\n\t\tFunctions as string,\n\t\tExternalBuildingId as string,\n\t\tBuilding_BuildingName_local as string,\n\t\tBuilding_BuildingName_en as string,\n\t\tBuilding_Height as string,\n\t\tBuilding_StreetAddress_En as string,\n\t\tBuilding_StreetAddress_Local as string,\n\t\tBuilding_Suburb_En as string,\n\t\tBuilding_Suburb_Local as string,\n\t\tBuilding_City_En as string,\n\t\tBuilding_City_Local as string,\n\t\tBuilding_Postcode as string,\n\t\tBuilding_MainTypeViewId as string,\n\t\tBuilding_MainTypeName_En as string,\n\t\tBuilding_MainTypeName_Local as string,\n\t\tBuilding_SubTypeViewId as string,\n\t\tBuilding_SubTypeName_En as string,\n\t\tBuilding_SubTypeName_Local as string,\n\t\tBuilding_BuildingNo as string,\n\t\tBuilding_IsStandbybuilding as string,\n\t\tBuilding_CostingNo as string,\n\t\tBuilding_CustomerNo as string,\n\t\tBuilding_SumOfTotalUnits as string,\n\t\tBuilding_SumOfUnitsInService as string,\n\t\tBuilding_QuickTurnover as string,\n\t\tBuilding_Latitude as string,\n\t\tBuilding_Longitude as string,\n\t\tBuilding_OfficeViewId as string,\n\t\tBuilding_OfficeName_En as string,\n\t\tBuilding_OfficeName_Local as string,\n\t\tBuilding_TKManagerEmployeeViewId as string,\n\t\tBuilding_TKManagerEmployeeExternalId as string,\n\t\tBuilding_TKManagerName as string,\n\t\tBuilding_IsRepairCorres as string,\n\t\tBuilding_IsCalendar as string,\n\t\tBuilding_IsGeneralCorres as string,\n\t\tBuilding_IsCard as string,\n\t\tBuilding_IsMonthlyReport as string,\n\t\tBuilding_UnitsScheduleHours as string,\n\t\tBuilding_UnitsScheduleHoursViewId as string,\n\t\tBuilding_UnitsScheduleTime as string,\n\t\tBuilding_UnitsScheduleTimeViewId as string,\n\t\tBuilding_UnitsScheduleDay as string,\n\t\tBuilding_UnitsScheduleDayViewId as string,\n\t\tBuilding_UnitsScheduleDayFrequency as string,\n\t\tBuilding_TargetCallRate as string,\n\t\tArray_RunInfo as string,\n\t\tRunInfo_RunTypeViewId as string,\n\t\tRunInfo_RunTypeName as string,\n\t\tRunInfo_RunViewId as string,\n\t\tRunInfo_RunName as string,\n\t\tRunInfo_BHSWPResponse as string,\n\t\tRunInfo_BHStopResponse as string,\n\t\tRunInfo_BHOthersResponse as string,\n\t\tRunInfo_AHSWPResponse as string,\n\t\tRunInfo_AHStopResponse as string,\n\t\tRunInfo_AHOthersResponse as string,\n\t\tRunInfo_Notes as string,\n\t\tRunInfo_PropertyManagerEmployeeViewId as string,\n\t\tRunInfo_PropertyManagerEmployeeName as string,\n\t\tArray_BusinessHourContactInfo as string,\n\t\tBusinessHourContactInfo_BHSiteContact as string,\n\t\tBusinessHourContactInfo_BHContactLocation_En as string,\n\t\tBusinessHourContactInfo_BHContactLocation_Local as string,\n\t\tBusinessHourContactInfo_BHContactPhone1 as string,\n\t\tBusinessHourContactInfo_BHContactPhone2 as string,\n\t\tBusinessHourContactInfo_BHContactMobile as string,\n\t\tBusinessHourContactInfo_BHContactFax as string,\n\t\tBusinessHourContactInfo_BHContactRoleViewId as string,\n\t\tBusinessHourContactInfo_BHContactRoleName as string,\n\t\tArray_AfterHourContactInfo as string,\n\t\tAfterHourContactInfo_AHSiteContact as string,\n\t\tAfterHourContactInfo_AHContactLocation_En as string,\n\t\tAfterHourContactInfo_AHContactLocation_Local as string,\n\t\tAfterHourContactInfo_AHContactPhone1 as string,\n\t\tAfterHourContactInfo_AHContactMobile as string,\n\t\tAfterHourContactInfo_AHContactFax as string,\n\t\tAfterHourContactInfo_AHContactRoleViewId as string,\n\t\tAfterHourContactInfo_AHContactRoleViewName as string,\n\t\tAfterHourContactInfo_AHContactAccessCode as string,\n\t\tArray_BuildingContactInfo as string,\n\t\tBuildingContactInfo_ContactViewId as string,\n\t\tBuildingContactInfo_ContactExternalId as string,\n\t\tBuildingContactInfo_ContactName as string,\n\t\tBuildingContactInfo_IsBusinessHours as string,\n\t\tBuilding_VFMCustomerName_En as string,\n\t\tBuilding_VFMCustomerName_Local as string,\n\t\tBuilding_VFMCustomerMail as string,\n\t\tBuilding_VFMMailTemplateSubject as string,\n\t\tBuilding_VFMMailTemplateContent as string,\n\t\tBuilding_IsCustomisedMail as string,\n\t\tBuilding_ReportFrequencyViewId as string,\n\t\tBuilding_ReportFrequency as string,\n\t\tBuilding_ReportTypeViewId as string,\n\t\tBuilding_ReportType as string,\n\t\tBuilding_IsReportInvoice as string,\n\t\tBuilding_ReportSendTo as string,\n\t\tBuilding_ReportAuditRequired as string,\n\t\tBuilding_ReportAuditDetail as string,\n\t\tBuilding_ReportServiceDockets as string,\n\t\tBuilding_FromProjectId as string,\n\t\tBuilding_FromProjectLabel as string,\n\t\tArray_BuildingCustomerInfo as string,\n\t\tBuildingCustomerInfo_CustomerViewId as string,\n\t\tBuildingCustomerInfo_CustomerExternalId as string,\n\t\tBuildingCustomerInfo_CustomerName as string,\n\t\tArray_State as string,\n\t\tState_ViewId as string,\n\t\tState_Name as string,\n\t\tBuiliding_TimeZone as string,\n\t\tBuiliding_CustomerCode as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: ' SELECT\\n                      \\'add\\'                                                                              AS Operator\\n\t\t\t\t\t  ,SYSDATETIME()                                                                     as ETL_Load_Date_Time\\n                    ,\\'building\\'                                                                          as Functions\\n\t\t\t\t\t,[Building_ExternalBuildingId]                                                   as ExternalBuildingId\\n                   \\n      ,[Building_BuildingName_local]\\n      ,[Building_BuildingName_en]\\n      ,[Building_Height]\\n      ,[Building_StreetAddress_En]\\n      ,[Building_StreetAddress_Local]\\n      ,[Building_Suburb_En]\\n      ,[Building_Suburb_Local]\\n      ,[Building_City_En]\\n      ,[Building_City_Local]\\n      ,[Building_Postcode]\\n      ,[Building_MainTypeViewId]\\n      ,[Building_MainTypeName_En]\\n      ,[Building_MainTypeName_Local]\\n      ,[Building_SubTypeViewId]\\n      ,[Building_SubTypeName_En]\\n      ,[Building_SubTypeName_Local]\\n      ,[Building_BuildingNo]\\n      ,[Building_IsStandbybuilding]\\n      ,[Building_CostingNo]\\n      ,[Building_CustomerNo]\\n      ,[Building_SumOfTotalUnits]\\n      ,[Building_SumOfUnitsInService]\\n      ,[Building_QuickTurnover]\\n      ,[Building_Latitude]\\n      ,[Building_Longitude]\\n      ,[Building_OfficeViewId]\\n      ,[Building_OfficeName_En]\\n      ,[Building_OfficeName_Local]\\n      ,[Building_TKManagerEmployeeViewId]\\n      ,[Building_TKManagerEmployeeExternalId]\\n      ,[Building_TKManagerName]\\n      ,[Building_IsRepairCorres]\\n      ,[Building_IsCalendar]\\n      ,[Building_IsGeneralCorres]\\n      ,[Building_IsCard]\\n      ,[Building_IsMonthlyReport]\\n      ,[Building_UnitsScheduleHours]\\n      ,[Building_UnitsScheduleHoursViewId]\\n      ,[Building_UnitsScheduleTime]\\n      ,[Building_UnitsScheduleTimeViewId]\\n      ,[Building_UnitsScheduleDay]\\n      ,[Building_UnitsScheduleDayViewId]\\n      ,[Building_UnitsScheduleDayFrequency]\\n      ,[Building_TargetCallRate]\\n      ,[Array_RunInfo]\\n      ,[RunInfo_RunTypeViewId]\\n      ,[RunInfo_RunTypeName]\\n      ,[RunInfo_RunViewId]\\n      ,[RunInfo_RunName]\\n      ,[RunInfo_BHSWPResponse]\\n      ,[RunInfo_BHStopResponse]\\n      ,[RunInfo_BHOthersResponse]\\n      ,[RunInfo_AHSWPResponse]\\n      ,[RunInfo_AHStopResponse]\\n      ,[RunInfo_AHOthersResponse]\\n      ,[RunInfo_Notes]\\n      ,[RunInfo_PropertyManagerEmployeeViewId]\\n      ,[RunInfo_PropertyManagerEmployeeName]\\n      ,[Array_BusinessHourContactInfo]\\n      ,[BusinessHourContactInfo_BHSiteContact]\\n      ,[BusinessHourContactInfo_BHContactLocation_En]\\n      ,[BusinessHourContactInfo_BHContactLocation_Local]\\n      ,[BusinessHourContactInfo_BHContactPhone1]\\n      ,[BusinessHourContactInfo_BHContactPhone2]\\n      ,[BusinessHourContactInfo_BHContactMobile]\\n      ,[BusinessHourContactInfo_BHContactFax]\\n      ,[BusinessHourContactInfo_BHContactRoleViewId]\\n      ,[BusinessHourContactInfo_BHContactRoleName]\\n      ,[Array_AfterHourContactInfo]\\n      ,[AfterHourContactInfo_AHSiteContact]\\n      ,[AfterHourContactInfo_AHContactLocation_En]\\n      ,[AfterHourContactInfo_AHContactLocation_Local]\\n      ,[AfterHourContactInfo_AHContactPhone1]\\n      ,[AfterHourContactInfo_AHContactMobile]\\n      ,[AfterHourContactInfo_AHContactFax]\\n      ,[AfterHourContactInfo_AHContactRoleViewId]\\n      ,[AfterHourContactInfo_AHContactRoleViewName]\\n      ,[AfterHourContactInfo_AHContactAccessCode]\\n      ,[Array_BuildingContactInfo]\\n      ,[BuildingContactInfo_ContactViewId]\\n      ,[BuildingContactInfo_ContactExternalId]\\n      ,[BuildingContactInfo_ContactName]\\n      ,[BuildingContactInfo_IsBusinessHours]\\n      ,[Building_VFMCustomerName_En]\\n      ,[Building_VFMCustomerName_Local]\\n      ,[Building_VFMCustomerMail]\\n      ,[Building_VFMMailTemplateSubject]\\n      ,[Building_VFMMailTemplateContent]\\n      ,[Building_IsCustomisedMail]\\n      ,[Building_ReportFrequencyViewId]\\n      ,[Building_ReportFrequency]\\n      ,[Building_ReportTypeViewId]\\n      ,[Building_ReportType]\\n      ,[Building_IsReportInvoice]\\n      ,[Building_ReportSendTo]\\n      ,[Building_ReportAuditRequired]\\n      ,[Building_ReportAuditDetail]\\n      ,[Building_ReportServiceDockets]\\n      ,[Building_FromProjectId]\\n      ,[Building_FromProjectLabel]\\n      ,[Array_BuildingCustomerInfo]\\n      ,[BuildingCustomerInfo_CustomerViewId]\\n      ,[BuildingCustomerInfo_CustomerExternalId]\\n      ,[BuildingCustomerInfo_CustomerName]\\n      ,[Array_State]\\n      ,[State_ViewId]\\n      ,[State_Name]\\n      ,[Builiding_TimeZone]\\n      ,[Builiding_CustomerCode]\\n\t\t\t\t\t\\n\t\t\t\t\tFROM [customer].[Building]   ',\n\tformat: 'query') ~> source1\nsource1 derive(Function = Functions,\n\t\tSendTimestamp = ETL_Load_Date_Time,\n\t\tOperator = Operator,\n\t\tdata = @(ViewBuildingId=ExternalBuildingId,\n\t\tExternalBuildingId=ExternalBuildingId,\n\t\tBuildingName_local=Building_BuildingName_local,\n\t\tBuildingName_en=Building_BuildingName_en,\n\t\tHeight=Building_Height,\n\t\tstreetAddress=Building_StreetAddress_En,\n\t\tSuburb=Building_Suburb_En,\n\t\tCity=Building_City_En,\n\t\tPostcode=Building_Postcode,\n\t\tBuilding_MainTypeViewId=Building_MainTypeViewId,\n\t\tMainTypeName_En=Building_MainTypeName_En,\n\t\tMainTypeName_Local=Building_MainTypeName_Local,\n\t\tSubTypeViewId=Building_SubTypeViewId,\n\t\tSubTypeName_En=Building_SubTypeName_En,\n\t\tSubTypeName_Local=Building_SubTypeName_Local,\n\t\tBuildingNo=Building_BuildingNo,\n\t\tIsStandbybuilding=Building_IsStandbybuilding,\n\t\tCostingNo=Building_CostingNo,\n\t\tCustomerNo=Building_CustomerNo,\n\t\tSumOfTotalUnits=Building_SumOfTotalUnits,\n\t\tSumOfUnitsInService=Building_SumOfUnitsInService,\n\t\tQuickTurnover=Building_QuickTurnover,\n\t\tLatitude=Building_Latitude,\n\t\tLongitude=Building_Longitude,\n\t\tOfficeViewId=Building_OfficeViewId,\n\t\tOfficeName_En=Building_OfficeName_En,\n\t\tOfficeName_Local=Building_OfficeName_Local,\n\t\tTKManagerEmployeeViewId=Building_TKManagerEmployeeViewId,\n\t\tTKManagerEmployeeExternalId=Building_TKManagerEmployeeExternalId,\n\t\tTKManagerName=Building_TKManagerName,\n\t\tIsRepairCorres=Building_IsRepairCorres,\n\t\tIsCalendar=Building_IsCalendar,\n\t\tIsGeneralCorres=Building_IsGeneralCorres,\n\t\tIsCard=Building_IsCard,\n\t\tIsMonthlyReport=Building_IsMonthlyReport,\n\t\tUnitsScheduleHours=Building_UnitsScheduleHours,\n\t\tUnitsScheduleHoursViewId=Building_UnitsScheduleHoursViewId,\n\t\tUnitsScheduleDay=Building_UnitsScheduleDay,\n\t\tUnitsScheduleDayViewId=Building_UnitsScheduleDayViewId,\n\t\tUnitsScheduleDayFrequency=Building_UnitsScheduleDayFrequency,\n\t\tTargetCallRate=Building_TargetCallRate,\n\t\tRunInfo=@(RunTypeViewId=RunInfo_RunTypeViewId,\n\t\tRunTypeName=RunInfo_RunTypeName,\n\t\tRunViewId=RunInfo_RunViewId),\n\t\tBHSWPResponse=RunInfo_BHSWPResponse,\n\t\tBHStopResponse=RunInfo_BHStopResponse,\n\t\tBHOthersResponse=RunInfo_BHOthersResponse,\n\t\tAHSWPResponse=RunInfo_AHSWPResponse,\n\t\tAHStopResponse=RunInfo_AHStopResponse,\n\t\tAHOthersResponse=RunInfo_AHOthersResponse,\n\t\tNotes=RunInfo_Notes,\n\t\tPropertyManagerEmployeeViewId=RunInfo_PropertyManagerEmployeeViewId,\n\t\tPropertyManagerEmployeeName=RunInfo_PropertyManagerEmployeeName,\n\t\tBusinessHourContactInfo=@(BHSiteContact=BusinessHourContactInfo_BHSiteContact,\n\t\tBHContactLocation=BusinessHourContactInfo_BHContactLocation_En,\n\t\tBHContactPhone1=BusinessHourContactInfo_BHContactPhone1,\n\t\tBHContactPhone2=BusinessHourContactInfo_BHContactPhone2,\n\t\tBHContactMobile=BusinessHourContactInfo_BHContactMobile,\n\t\tBHContactFax=BusinessHourContactInfo_BHContactFax,\n\t\tBHContactRoleViewId=BusinessHourContactInfo_BHContactRoleViewId,\n\t\tBHContactRoleName=BusinessHourContactInfo_BHContactRoleName),\n\t\tAfterHourContactInfo=@(AHSiteContact=AfterHourContactInfo_AHSiteContact,\n\t\tAHContactLocation=AfterHourContactInfo_AHContactLocation_En,\n\t\tAHContactPhone1=AfterHourContactInfo_AHContactPhone1,\n\t\tAHContactMobile=AfterHourContactInfo_AHContactMobile,\n\t\tAHContactFax=AfterHourContactInfo_AHContactFax,\n\t\tAHContactRoleViewId=AfterHourContactInfo_AHContactRoleViewId,\n\t\tAHContactRoleName=AfterHourContactInfo_AHContactRoleViewName,\n\t\tAHContactAccessCode=AfterHourContactInfo_AHContactAccessCode),\n\t\tBuildingContactInfo=@(ContactViewId=BuildingContactInfo_ContactViewId,\n\t\tContactExternalId=BuildingContactInfo_ContactExternalId,\n\t\tContactName=BuildingContactInfo_ContactName,\n\t\tIsBusinessHours=BuildingContactInfo_IsBusinessHours),\n\t\tVFMCustomerName_En=Building_VFMCustomerName_En,\n\t\tVFMCustomerName_Local=Building_VFMCustomerName_Local,\n\t\tVFMCustomerMail=Building_VFMCustomerMail,\n\t\tVFMMailTemplateSubject=Building_VFMMailTemplateSubject,\n\t\tVFMMailTemplateContent=Building_VFMMailTemplateContent,\n\t\tIsCustomisedMail=Building_IsCustomisedMail,\n\t\tReportFrequencyViewId=Building_ReportFrequencyViewId,\n\t\tReportFrequency=Building_ReportFrequency,\n\t\tReportTypeViewId=Building_ReportTypeViewId,\n\t\tReportType=Building_ReportType,\n\t\tIsReportInvoice=Building_IsReportInvoice,\n\t\tReportSendTo=Building_ReportSendTo,\n\t\tReportAuditRequired=Building_ReportAuditRequired,\n\t\tReportAuditDetail=Building_ReportAuditDetail,\n\t\tReportServiceDockets=Building_ReportServiceDockets,\n\t\tFromProjectId=Building_FromProjectId,\n\t\tFromProjectLabel=Building_FromProjectLabel,\n\t\tBuildingCustomerInfo=@(CustomerViewId=BuildingCustomerInfo_CustomerViewId,\n\t\tCustomerExternalId=BuildingCustomerInfo_CustomerExternalId,\n\t\tCustomerName=BuildingCustomerInfo_CustomerName),\n\t\tState=@(ViewId=State_ViewId,\n\t\tName=State_Name),\n\t\tTimeZone=currentDate(),\n\t\tCustomerCode=Builiding_CustomerCode)) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/AzureSqlbuilding')]",
+				"[concat(variables('factoryId'), '/datasets/BuildingName_en')]"
+			]
+		}
+	]
+}

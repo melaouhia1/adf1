@@ -13,6 +13,101 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/DriveType')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Equipment Id FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "DriveType_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_Name1",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_Name2",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "DriveType"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EQUIPMENT')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Floors",
+						"type": "varchar"
+					},
+					{
+						"name": "NumberofFrontOpenings",
+						"type": "varchar"
+					},
+					{
+						"name": "NumberofRearOpenings",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_CapacityLbs",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "EQUIPMENT"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/EQUIPMENTType')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1071,7 +1166,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage6",
+					"referenceName": "ADLSMohamed",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -1085,164 +1180,7 @@
 					},
 					"firstRowAsHeader": true
 				},
-				"schema": [
-					{
-						"name": "Customer_Name",
-						"type": "String"
-					},
-					{
-						"name": "Customer_Party_Reference_Number",
-						"type": "String"
-					},
-					{
-						"name": "Customer_Account_Reference_Number",
-						"type": "String"
-					},
-					{
-						"name": "Customer_Type",
-						"type": "String"
-					},
-					{
-						"name": "Customer_Profile",
-						"type": "String"
-					},
-					{
-						"name": "Payment_Method_Name",
-						"type": "String"
-					},
-					{
-						"name": "Payment_Method_Primary_Flag",
-						"type": "String"
-					},
-					{
-						"name": "Global_Customer_Flag",
-						"type": "String"
-					},
-					{
-						"name": "Origin_(AR)",
-						"type": "String"
-					},
-					{
-						"name": "Primary_ID_Type",
-						"type": "String"
-					},
-					{
-						"name": "Primary_ID_Validation_Digit",
-						"type": "String"
-					},
-					{
-						"name": "Taxpayer_ID",
-						"type": "String"
-					},
-					{
-						"name": "Fiscal_Classification_Type_Code",
-						"type": "String"
-					},
-					{
-						"name": "Fiscal_Classification_Code",
-						"type": "String"
-					},
-					{
-						"name": "Effective_Date_From",
-						"type": "String"
-					},
-					{
-						"name": "Document_Type_(CO)",
-						"type": "String"
-					},
-					{
-						"name": "Taxpayer_ID_(CO)",
-						"type": "String"
-					},
-					{
-						"name": "Nature_(CO)",
-						"type": "String"
-					},
-					{
-						"name": "Regimen_(CO)",
-						"type": "String"
-					},
-					{
-						"name": "Special_Customer_Flag",
-						"type": "String"
-					},
-					{
-						"name": "Operating_Unit_Name",
-						"type": "String"
-					},
-					{
-						"name": "Customer_Class_Code",
-						"type": "String"
-					},
-					{
-						"name": "Payment_Term_Name",
-						"type": "String"
-					},
-					{
-						"name": "Order_Number_of_the_Cedula_(GT)",
-						"type": "String"
-					},
-					{
-						"name": "Register_Number_of_the_Cedula_(GT)",
-						"type": "String"
-					},
-					{
-						"name": "Document_Type_(SV)",
-						"type": "String"
-					},
-					{
-						"name": "Contributor_Registry_Number_(SV)",
-						"type": "String"
-					},
-					{
-						"name": "Person_Category_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Person_Type_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Document_Type_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Document_Number_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Last_Name_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Second_Last_Name_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "First_Name_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Middle_Name_(PE)",
-						"type": "String"
-					},
-					{
-						"name": "Origin",
-						"type": "String"
-					},
-					{
-						"name": "Nature",
-						"type": "String"
-					},
-					{
-						"name": "Document_Type_(UY)",
-						"type": "String"
-					},
-					{
-						"name": "Perception_Agent_(PE)",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": []
 		},
@@ -1870,6 +1808,27 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/JsonBuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "customerdm11032020"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Jsonbuilding')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2122,664 +2081,6 @@
 					"schema": "unit",
 					"table": "Identification"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/address')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "Sheet1",
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "ORA_FD02_CustomerAddress20201005165901.xlsx",
-						"container": "address"
-					},
-					"firstRowAsHeader": true
-				},
-				"schema": [
-					{
-						"name": "Customer Name",
-						"type": "String"
-					},
-					{
-						"name": "Customer Header Reference",
-						"type": "String"
-					},
-					{
-						"name": "Address Reference",
-						"type": "String"
-					},
-					{
-						"name": "Site Use Code",
-						"type": "String"
-					},
-					{
-						"name": "Primary Site Use Flag",
-						"type": "String"
-					},
-					{
-						"name": " Location",
-						"type": "String"
-					},
-					{
-						"name": "Bill To Orig Address Reference",
-						"type": "String"
-					},
-					{
-						"name": "Address Line 1",
-						"type": "String"
-					},
-					{
-						"name": "Address Line 2",
-						"type": "String"
-					},
-					{
-						"name": "Address Line 3",
-						"type": "String"
-					},
-					{
-						"name": "Address Line 4",
-						"type": "String"
-					},
-					{
-						"name": "Address Lines Phonetic",
-						"type": "String"
-					},
-					{
-						"name": "City",
-						"type": "String"
-					},
-					{
-						"name": "Province",
-						"type": "String"
-					},
-					{
-						"name": "State",
-						"type": "String"
-					},
-					{
-						"name": "County",
-						"type": "String"
-					},
-					{
-						"name": "Postal Code",
-						"type": "String"
-					},
-					{
-						"name": "Country",
-						"type": "String"
-					},
-					{
-						"name": "Receivables Account",
-						"type": "String"
-					},
-					{
-						"name": "Revenue Account",
-						"type": "String"
-					},
-					{
-						"name": "Tax Account",
-						"type": "String"
-					},
-					{
-						"name": "Freight Account",
-						"type": "String"
-					},
-					{
-						"name": "Clearing Account",
-						"type": "String"
-					},
-					{
-						"name": "Unbilled Receivables Account",
-						"type": "String"
-					},
-					{
-						"name": "Unearned Revenue Account",
-						"type": "String"
-					},
-					{
-						"name": "Payment Method Name",
-						"type": "String"
-					},
-					{
-						"name": "Payment Method Primary Flag",
-						"type": "String"
-					},
-					{
-						"name": "Customer Profile",
-						"type": "String"
-					},
-					{
-						"name": "Site Use Tax Reference",
-						"type": "String"
-					},
-					{
-						"name": "Time Zone",
-						"type": "String"
-					},
-					{
-						"name": "Language",
-						"type": "String"
-					},
-					{
-						"name": "Contributor Class at Account Site",
-						"type": "String"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site",
-						"type": "String"
-					},
-					{
-						"name": "Contributor Class at Account Site Use",
-						"type": "String"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site Use",
-						"type": "String"
-					},
-					{
-						"name": "Economic Activity",
-						"type": "String"
-					},
-					{
-						"name": "Operating Unit Name",
-						"type": "String"
-					},
-					{
-						"name": "Payment Term Name",
-						"type": "String"
-					},
-					{
-						"name": "Concept Code (CR)",
-						"type": "String"
-					},
-					{
-						"name": "Giro (CL)",
-						"type": "String"
-					},
-					{
-						"name": "US Remit-to Address Mapping",
-						"type": "String"
-					},
-					{
-						"name": "US Tax Area Id",
-						"type": "String"
-					},
-					{
-						"name": "Union Local",
-						"type": "String"
-					},
-					{
-						"name": "TAID User Override",
-						"type": "String"
-					},
-					{
-						"name": "TAID Last Checked",
-						"type": "String"
-					},
-					{
-						"name": "TAID Assignment Result",
-						"type": "String"
-					},
-					{
-						"name": "TAID Confidence Indicator",
-						"type": "String"
-					},
-					{
-						"name": "TAID Precision",
-						"type": "String"
-					},
-					{
-						"name": "CRM Account",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/building')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "ExternalBuildingId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingName_local",
-						"type": "varchar"
-					},
-					{
-						"name": "StreetAddress_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "City_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Postcode",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerNo",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfTotalUnits",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfUnitsInService",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHours",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHoursViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTime",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTimeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "TargetCallRate",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeName",
-						"type": "varchar"
-					},
-					{
-						"name": "RunViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunName",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "Notes",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleName",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewName",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "ViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Name",
-						"type": "varchar"
-					},
-					{
-						"name": "TimeZone",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerCode",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "building stg"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/buildingsrc')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "Sheet1",
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "View_Building_20201005094320.xlsx",
-						"container": "building"
-					},
-					"firstRowAsHeader": true
-				},
-				"schema": [
-					{
-						"name": "ExternalBuildingId",
-						"type": "String"
-					},
-					{
-						"name": "BuildingName_local",
-						"type": "String"
-					},
-					{
-						"name": "StreetAddress_Local",
-						"type": "String"
-					},
-					{
-						"name": "City_Local",
-						"type": "String"
-					},
-					{
-						"name": "Postcode",
-						"type": "String"
-					},
-					{
-						"name": "MainTypeViewId",
-						"type": "String"
-					},
-					{
-						"name": "MainTypeName_En",
-						"type": "String"
-					},
-					{
-						"name": "SubTypeViewId",
-						"type": "String"
-					},
-					{
-						"name": "SubTypeName_En",
-						"type": "String"
-					},
-					{
-						"name": "BuildingNo",
-						"type": "String"
-					},
-					{
-						"name": "CustomerNo",
-						"type": "String"
-					},
-					{
-						"name": "SumOfTotalUnits",
-						"type": "String"
-					},
-					{
-						"name": "SumOfUnitsInService",
-						"type": "String"
-					},
-					{
-						"name": "OfficeViewId",
-						"type": "String"
-					},
-					{
-						"name": "OfficeName_En",
-						"type": "String"
-					},
-					{
-						"name": "UnitsScheduleHours",
-						"type": "String"
-					},
-					{
-						"name": "UnitsScheduleHoursViewId",
-						"type": "String"
-					},
-					{
-						"name": "UnitsScheduleTime",
-						"type": "String"
-					},
-					{
-						"name": "UnitsScheduleTimeViewId",
-						"type": "String"
-					},
-					{
-						"name": "TargetCallRate",
-						"type": "String"
-					},
-					{
-						"name": "RunInfo",
-						"type": "String"
-					},
-					{
-						"name": "RunTypeViewId",
-						"type": "String"
-					},
-					{
-						"name": "RunTypeName",
-						"type": "String"
-					},
-					{
-						"name": "RunViewId",
-						"type": "String"
-					},
-					{
-						"name": "RunName",
-						"type": "String"
-					},
-					{
-						"name": "BHSWPResponse",
-						"type": "String"
-					},
-					{
-						"name": "BHStopResponse",
-						"type": "String"
-					},
-					{
-						"name": "BHOthersResponse",
-						"type": "String"
-					},
-					{
-						"name": "AHSWPResponse",
-						"type": "String"
-					},
-					{
-						"name": "AHStopResponse",
-						"type": "String"
-					},
-					{
-						"name": "AHOthersResponse",
-						"type": "String"
-					},
-					{
-						"name": "Notes",
-						"type": "String"
-					},
-					{
-						"name": "BusinessHourContactInfo",
-						"type": "String"
-					},
-					{
-						"name": "BHSiteContact",
-						"type": "String"
-					},
-					{
-						"name": "BHContactPhone1",
-						"type": "String"
-					},
-					{
-						"name": "BHContactMobile",
-						"type": "String"
-					},
-					{
-						"name": "BHContactRoleViewId",
-						"type": "String"
-					},
-					{
-						"name": "BHContactRoleName",
-						"type": "String"
-					},
-					{
-						"name": "AfterHourContactInfo",
-						"type": "String"
-					},
-					{
-						"name": "AHSiteContact",
-						"type": "String"
-					},
-					{
-						"name": "AHContactPhone1",
-						"type": "String"
-					},
-					{
-						"name": "AHContactMobile",
-						"type": "String"
-					},
-					{
-						"name": "AHContactRoleViewId",
-						"type": "String"
-					},
-					{
-						"name": "AHContactRoleViewName",
-						"type": "String"
-					},
-					{
-						"name": "State",
-						"type": "String"
-					},
-					{
-						"name": "ViewId",
-						"type": "String"
-					},
-					{
-						"name": "Name",
-						"type": "String"
-					},
-					{
-						"name": "TimeZone",
-						"type": "String"
-					},
-					{
-						"name": "CustomerCode",
-						"type": "String"
-					}
-				]
 			},
 			"dependsOn": []
 		}
