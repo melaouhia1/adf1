@@ -1,0 +1,9 @@
+{
+	"name": "building_output",
+	"properties": {
+		"folder": {
+			"name": "Output"
+		},
+		"annotations": []
+	}
+}
