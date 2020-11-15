@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "building"
+				"fileName": "flattened.csv",
+				"container": "flatenedcsv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
