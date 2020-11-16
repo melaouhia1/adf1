@@ -281,6 +281,22 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlCustomerBillToContactsidl')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDriveType')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -941,6 +957,22 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlUILDING')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -990,438 +1022,6 @@
 				"typeProperties": {
 					"schema": "unit",
 					"table": "BUILDING"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqladdress')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Operating Unit Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Header Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Site Use Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary Site Use Flag",
-						"type": "varchar"
-					},
-					{
-						"name": " Location",
-						"type": "varchar"
-					},
-					{
-						"name": "Bill To Orig Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 1",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 2",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 3",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 4",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Lines Phonetic",
-						"type": "varchar"
-					},
-					{
-						"name": "City",
-						"type": "varchar"
-					},
-					{
-						"name": "Province",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "County",
-						"type": "varchar"
-					},
-					{
-						"name": "Postal Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Country",
-						"type": "varchar"
-					},
-					{
-						"name": "Receivables Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Revenue Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Tax Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Freight Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Clearing Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unbilled Receivables Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unearned Revenue Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Primary Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Profile",
-						"type": "varchar"
-					},
-					{
-						"name": "Site Use Tax Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Time Zone",
-						"type": "varchar"
-					},
-					{
-						"name": "Language",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor Class at Account Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor Class at Account Site Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Economic Activity",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Term Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Concept Code (CR)",
-						"type": "varchar"
-					},
-					{
-						"name": "Giro (CL)",
-						"type": "varchar"
-					},
-					{
-						"name": "US Remit-to Address Mapping",
-						"type": "varchar"
-					},
-					{
-						"name": "US Tax Area Id",
-						"type": "varchar"
-					},
-					{
-						"name": "Union Local",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID User Override",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Last Checked",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Assignment Result",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Confidence Indicator",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Precision",
-						"type": "varchar"
-					},
-					{
-						"name": "CRM Account",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "address"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlbuilding')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "ExternalBuildingId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingName_local",
-						"type": "varchar"
-					},
-					{
-						"name": "StreetAddress_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "City_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Postcode",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerNo",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfTotalUnits",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfUnitsInService",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHours",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHoursViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTime",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTimeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "TargetCallRate",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeName",
-						"type": "varchar"
-					},
-					{
-						"name": "RunViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunName",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "Notes",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleName",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewName",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "ViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Name",
-						"type": "varchar"
-					},
-					{
-						"name": "TimeZone",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerCode",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "customer",
-					"table": "Building"
 				}
 			},
 			"dependsOn": []

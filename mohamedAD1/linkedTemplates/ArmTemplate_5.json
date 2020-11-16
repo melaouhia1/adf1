@@ -13,6 +13,1292 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/maintenance')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Array_MaintenanceRun",
+						"type": "varchar"
+					},
+					{
+						"name": "MaintenanceRun_RouteNo_TerritoryCode",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "maintenance"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/office')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "identification Id FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Branch_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "BranchName1",
+						"type": "varchar"
+					},
+					{
+						"name": "BranchName2",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "office"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/spBuildingToJson')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sqlManufacturer')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Equipment Id FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Manufacturer_VIEWId",
+						"type": "varchar"
+					},
+					{
+						"name": "Manufacturer_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "Manufacturer_Name1",
+						"type": "varchar"
+					},
+					{
+						"name": "Manufacturer_Name2",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHoursCallbackRun_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "Manufacturer"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sqlbuilding')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Building_ExternalBuildingId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_BuildingName_local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_BuildingName_en",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Height",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_StreetAddress_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_StreetAddress_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Suburb_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Suburb_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_City_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_City_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Postcode",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_MainTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_MainTypeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_MainTypeName_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_SubTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_SubTypeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_SubTypeName_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_BuildingNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsStandbybuilding",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_CostingNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_CustomerNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_SumOfTotalUnits",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_SumOfUnitsInService",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_QuickTurnover",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Latitude",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_Longitude",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_OfficeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_OfficeName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_OfficeName_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_TKManagerEmployeeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_TKManagerEmployeeExternalId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_TKManagerName",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsRepairCorres",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsCalendar",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsGeneralCorres",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsCard",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsMonthlyReport",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleHours",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleHoursViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleTime",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleTimeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleDay",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleDayViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_UnitsScheduleDayFrequency",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_TargetCallRate",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_RunInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_RunTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_RunTypeName",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_RunViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_RunName",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_BHSWPResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_BHStopResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_BHOthersResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_AHSWPResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_AHStopResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_AHOthersResponse",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_Notes",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_PropertyManagerEmployeeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "RunInfo_PropertyManagerEmployeeName",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_BusinessHourContactInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHSiteContact",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactLocation_En",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactLocation_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactPhone1",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactPhone2",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactMobile",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactFax",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactRoleViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "BusinessHourContactInfo_BHContactRoleName",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_AfterHourContactInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHSiteContact",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactLocation_En",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactLocation_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactPhone1",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactMobile",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactFax",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactRoleViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactRoleViewName",
+						"type": "varchar"
+					},
+					{
+						"name": "AfterHourContactInfo_AHContactAccessCode",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_BuildingContactInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingContactInfo_ContactViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingContactInfo_ContactExternalId",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingContactInfo_ContactName",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingContactInfo_IsBusinessHours",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_VFMCustomerName_En",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_VFMCustomerName_Local",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_VFMCustomerMail",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_VFMMailTemplateSubject",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_VFMMailTemplateContent",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsCustomisedMail",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportFrequencyViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportFrequency",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportTypeViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportType",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_IsReportInvoice",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportSendTo",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportAuditRequired",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportAuditDetail",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_ReportServiceDockets",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_FromProjectId",
+						"type": "varchar"
+					},
+					{
+						"name": "Building_FromProjectLabel",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_BuildingCustomerInfo",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingCustomerInfo_CustomerViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingCustomerInfo_CustomerExternalId",
+						"type": "varchar"
+					},
+					{
+						"name": "BuildingCustomerInfo_CustomerName",
+						"type": "varchar"
+					},
+					{
+						"name": "Array_State",
+						"type": "varchar"
+					},
+					{
+						"name": "State_ViewId",
+						"type": "varchar"
+					},
+					{
+						"name": "State_Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Builiding_TimeZone",
+						"type": "varchar"
+					},
+					{
+						"name": "Builiding_CustomerCode",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "customer",
+					"table": "Building"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/stgunit')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "unit stg"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Addressidl')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT \n      [Customer Name]\n\t   ,[Customer Header Reference]\n      ,[Address Reference]\n      ,[Site Use Code]\n      ,[Primary Site Use Flag]\n      ,[ Location]\n      ,[Bill To Orig Address Reference]\n      ,'' as [Address Line 1]\n      ,'' as[Address Line 2]\n      ,'' as [Address Line 3]\n      ,'' as [Address Line 4]\n      ,'' as [Address Lines Phonetic]\n      ,[City]\n      ,[Province]\n      ,[State]\n      ,[County]\n      ,[Postal Code]\n      ,[Country]\n      ,'100020.11111100.0000.00.00.000000.000000.000000.000000.901745' as [Receivables Account]\n      ,'XXXXXX.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Revenue Account]\n      ,'100020.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Tax Account]\n      ,'100020.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Freight Account]\n      ,'100020.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Clearing Account]\n      ,'100020.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Unbilled Receivables Account]\n      ,'XXXXXX.11111100.0000.00.00.000000.000000.000000.000000. 901745' as [Unearned Revenue Account]\n      ,[Payment Method Name]\n      ,[Payment Method Primary Flag]\n      ,[Customer Profile]\n      ,[Site Use Tax Reference]\n      ,[Time Zone]\n      ,[Language]\n      ,[Contributor Class at Account Site]\n      ,[Use Cust Site Profile Flag at Account Site]\n      ,[Contributor Class at Account Site Use]\n      ,[Use Cust Site Profile Flag at Account Site Use]\n      ,[Economic Activity]\n      ,[Payment Term Name]\n      ,[Concept Code (CR)]\n      ,[Giro (CL)]\n      ,[US Remit-to Address Mapping]\n      ,[US Tax Area Id]\n      ,[Union Local]\n      ,[TAID User Override]\n      ,[TAID Last Checked]\n      ,[TAID Assignment Result]\n      ,[TAID Confidence Indicator]\n      ,[TAID Precision]\n      ,[CRM Account]\n\t   ,[Operating Unit Name]\n     \n  FROM [dbo].[address]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Customer Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer Header Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer Header Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Site Use Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Site Use Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Primary Site Use Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Primary Site Use Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": " Location",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": " Location",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Bill To Orig Address Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Bill To Orig Address Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Line 1",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Line 1",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Line 2",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Line 2",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Line 3",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Line 3",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Line 4",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Line 4",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address Lines Phonetic",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address Lines Phonetic",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "City",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "City",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Province",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Province",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "State",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "State",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "County",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "County",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Postal Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Postal Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Country",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Country",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Receivables Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Receivables Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Revenue Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Revenue Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Tax Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Tax Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Freight Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Freight Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Clearing Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Clearing Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Unbilled Receivables Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Unbilled Receivables Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Unearned Revenue Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Unearned Revenue Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment Method Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment Method Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment Method Primary Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment Method Primary Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer Profile",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer Profile",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Site Use Tax Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Site Use Tax Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Time Zone",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Time Zone",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Language",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Language",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contributor Class at Account Site",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contributor Class at Account Site",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Use Cust Site Profile Flag at Account Site",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Use Cust Site Profile Flag at Account Site",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contributor Class at Account Site Use",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contributor Class at Account Site Use",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Use Cust Site Profile Flag at Account Site Use",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Use Cust Site Profile Flag at Account Site Use",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Economic Activity",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Economic Activity",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment Term Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment Term Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Concept Code (CR)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Concept Code (CR)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Giro (CL)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Giro (CL)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "US Remit-to Address Mapping",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "US Remit-to Address Mapping",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "US Tax Area Id",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "US Tax Area Id",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Union Local",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Union Local",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TAID User Override",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TAID User Override",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TAID Last Checked",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TAID Last Checked",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TAID Assignment Result",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TAID Assignment Result",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TAID Confidence Indicator",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TAID Confidence Indicator",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TAID Precision",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TAID Precision",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "CRM Account",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "CRM Account",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Operating Unit Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Operating Unit Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "am_da_ds_dst_exviewBuildingapi",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Delimitedaddressidl",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Output"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Building')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -2049,6 +3335,233 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/CustomerBillToContactsiidl')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  \n      [ï»¿Customer_Header_Reference] as [Customer Header Reference]\n      ,[Address_Reference]\n      --,[Phone_Country_Code]\n      --,[Phone_Extension]\n      ,[Contact_Reference]\n      ,[Contact_Point Reference]\n      ,[Contact_First_Name]\n      ,[Contact_Last_Name]\n      ,[Contact Point_Type]\n      ,[Area_Code]\n      ,[Telephone_Number]\n\t  ,CASE COALESCE([Phone_Extension],'')  when ''  then '' else [Phone_Extension] end as [Phone_Extension]\n      ,[EMAIL_Address]\n      ,[Invoice_Delivery_Method]\n       ,[Operating_Unit_Name]\n  FROM [customer].[CustomerBillToContacts]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Customer Header Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 1
+										}
+									},
+									{
+										"source": {
+											"name": "Address_Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 2
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 3
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Point Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 4
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_First_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 5
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Last_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 6
+										}
+									},
+									{
+										"source": {
+											"name": "Contact Point_Type",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 7
+										}
+									},
+									{
+										"source": {
+											"name": "Area_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 8
+										}
+									},
+									{
+										"source": {
+											"name": "Telephone_Number",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 9
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Extension",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 10
+										}
+									},
+									{
+										"source": {
+											"name": "EMAIL_Address",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 11
+										}
+									},
+									{
+										"source": {
+											"name": "Invoice_Delivery_Method",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 12
+										}
+									},
+									{
+										"source": {
+											"name": "Operating_Unit_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"type": "String",
+											"physicalType": "String",
+											"ordinal": 13
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlCustomerBillToContactsidl",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "CustomerBillToContactscsv",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Output"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CustomerContactPoint')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -2275,6 +3788,245 @@
 				],
 				"folder": {
 					"name": "CustomerOKH"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CustomerContactPointsidl')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  \n      [ï»¿Customer_Header_Reference] as [Customer Header Reference]\n      ,[Address_Reference]\n      ,[Contact_Point_Type]\n      ,[Contact_Point_Status]\n      ,[Primary_Flag]\n      ,[Contact_Point_Purpose]\n      ,[Phone_Country_Code]\n      ,[Phone_Area_Code]\n      ,[Phone_Number]\n        ,CASE COALESCE([Phone_Extension],'')  when ''  then '' else [Phone_Extension] end as [Phone_Extension]\n      ,[Phone_Line_Type]\n      ,[Email_Address]\n      ,[Email_Format]\n\t , [Operating_Unit_Name]\n  FROM [customer].[CustomerContactPoints]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Customer Header Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer Header Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Address_Reference",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Address_Reference",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Point_Type",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contact_Point_Type",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Point_Status",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contact_Point_Status",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Primary_Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Primary_Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contact_Point_Purpose",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contact_Point_Purpose",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Country_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Phone_Country_Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Area_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Phone_Area_Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Number",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Phone_Number",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Extension",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Phone_Extension",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone_Line_Type",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Phone_Line_Type",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Email_Address",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Email_Address",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Email_Format",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Email_Format",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Operating_Unit_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Operating_Unit_Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "CustomerContactPointsidl",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText5",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Output"
 				},
 				"annotations": []
 			},
@@ -4465,6 +6217,545 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Header_idl')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [Customer_Name]\n      ,[Customer_Party_Reference_Number]\n      ,[Customer_Account_Reference_Number]\n      ,[Customer_Type]\n      ,[Customer_Profile]\n      ,'' as [Payment_Method_Name]\n      ,'' as [Payment_Method_Primary_Flag]\n      ,[Global_Customer_Flag]\n      ,'' as [Origin_(AR)]\n      ,'' as [Primary_ID_Type]\n      ,'' as [Primary_ID_Validation_Digit]\n      ,'' as [Taxpayer_ID]\n      ,'' as [Fiscal_Classification_Type_Code]\n      ,'' as [Fiscal_Classification_Code]\n      ,'' as [Effective_Date_From]\n      ,'' as [Document_Type_(CO)]\n      ,'' as [Taxpayer_ID_(CO)]\n      , '' as [Nature_(CO)]\n      ,'' as [Regimen_(CO)]\n      ,'' as [Special_Customer_Flag]\n      ,[Operating_Unit_Name]\n      ,'' as [Customer_Class_Code]\n      ,[Payment_Term_Name]\n      ,'' as [Order_Number_of_the_Cedula_(GT)]\n      ,'' as [Register_Number_of_the_Cedula_(GT)]\n      ,'' as [Document_Type_(SV)]\n      ,'' as [Contributor_Registry_Number_(SV)]\n      ,'' as [Person_Category_(PE)]\n      ,'' as [Person_Type_(PE)]\n      ,'' as [Document_Type_(PE)]\n      ,'' as [Document_Number_(PE)]\n      ,'' as [Last_Name_(PE)]\n      ,'' as [Second_Last_Name_(PE)]\n      ,'' as [First_Name_(PE)]\n      ,'' as [Middle_Name_(PE)]\n      ,'' as [Origin]\n      ,'' as [Nature]\n      ,'' as [Document_Type_(UY)]\n      ,'' as [Perception_Agent_(PE)]\n  FROM [customer].[header]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Customer_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Party_Reference_Number",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Party_Reference_Number",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Account_Reference_Number",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Account_Reference_Number",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Type",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Type",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Profile",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Profile",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment_Method_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment_Method_Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment_Method_Primary_Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment_Method_Primary_Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Global_Customer_Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Global_Customer_Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Origin_(AR)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Origin_(AR)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Primary_ID_Type",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Primary_ID_Type",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Primary_ID_Validation_Digit",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Primary_ID_Validation_Digit",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Taxpayer_ID",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Taxpayer_ID",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Fiscal_Classification_Type_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Fiscal_Classification_Type_Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Fiscal_Classification_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Fiscal_Classification_Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Effective_Date_From",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Effective_Date_From",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Document_Type_(CO)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Document_Type_(CO)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Taxpayer_ID_(CO)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Taxpayer_ID_(CO)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nature_(CO)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Nature_(CO)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Regimen_(CO)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Regimen_(CO)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Special_Customer_Flag",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Special_Customer_Flag",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Operating_Unit_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Operating_Unit_Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Class_Code",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Customer_Class_Code",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Payment_Term_Name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Payment_Term_Name",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Order_Number_of_the_Cedula_(GT)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Order_Number_of_the_Cedula_(GT)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Register_Number_of_the_Cedula_(GT)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Register_Number_of_the_Cedula_(GT)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Document_Type_(SV)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Document_Type_(SV)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Contributor_Registry_Number_(SV)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Contributor_Registry_Number_(SV)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Person_Category_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Person_Category_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Person_Type_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Person_Type_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Document_Type_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Document_Type_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Document_Number_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Document_Number_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Last_Name_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Last_Name_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Second_Last_Name_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Second_Last_Name_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "First_Name_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "First_Name_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Middle_Name_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Middle_Name_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Origin",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Origin",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Nature",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Nature",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Document_Type_(UY)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Document_Type_(UY)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "Perception_Agent_(PE)",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "Perception_Agent_(PE)",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlTable3",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText4",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Output"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/address')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -5650,2974 +7941,6 @@
 				],
 				"annotations": [],
 				"lastPublishTime": "2020-10-29T14:42:45Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/customerbilltocontact')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Operating_Unit_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Operating_Unit_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Header_Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ï»¿Customer_Header_Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Address_Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Address_Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone_Country_Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone_Country_Code",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone_Extension",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone_Extension",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact_Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact_Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact_Point Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact_Point Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact_First_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact_First_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact_Last_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact_Last_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact Point_Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact Point_Type",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Area_Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Area_Code",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Telephone_Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Telephone_Number",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "EMAIL_Address",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EMAIL_Address",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Invoice_Delivery_Method",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Invoice_Delivery_Method",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "ExcelCustomerBillToContacts",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "CustomerBillToContactssql",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "CustomerOKH"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/customercontactpoints')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Operating Unit Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Operating Unit Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer Header Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Customer Header Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Address Reference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Address Reference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact Point Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact Point Type",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact Point Status",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact Point Status",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Primary Flag",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Primary Flag",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contact point Purpose",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contact point Purpose",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone Country Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone Country Code",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone Area Code",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone Area Code",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone Number",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone Number",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone Extension",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone Extension",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Phone Line Type",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Phone Line Type",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Email Address",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Email Address",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Email Format",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Email Format",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "contactpontex",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AzureSqlcustomerContactpoints",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"annotations": [],
-				"lastPublishTime": "2020-10-29T14:42:51Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/customerheader1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "metaGetExcell",
-						"type": "GetMetadata",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataset": {
-								"referenceName": "Excelheader",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"fieldList": [
-								"itemName"
-							],
-							"storeSettings": {
-								"type": "AzureBlobFSReadSettings",
-								"recursive": true
-							}
-						}
-					}
-				],
-				"folder": {
-					"name": "ingest"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/flattenedbuildingtocsv')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderStoredProcedureName": "[[dbo].[flattened building]",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "CustomerCode",
-											"type": "String"
-										},
-										"sink": {
-											"name": "CustomerCode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "HashKey",
-											"type": "Byte[]"
-										},
-										"sink": {
-											"name": "HashKey",
-											"type": "Byte[]"
-										}
-									},
-									{
-										"source": {
-											"name": "ETL_Load_Date_Time",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "ETL_Load_Date_Time",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "type",
-											"type": "String"
-										},
-										"sink": {
-											"name": "type",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ExternalBuildingId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "ExternalBuildingId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "BuildingName_local",
-											"type": "String"
-										},
-										"sink": {
-											"name": "BuildingName_local",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "StreetAddress_Local",
-											"type": "String"
-										},
-										"sink": {
-											"name": "StreetAddress_Local",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "City_Local",
-											"type": "String"
-										},
-										"sink": {
-											"name": "City_Local",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Postcode",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Postcode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "MainTypeViewId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "MainTypeViewId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "MainTypeName_En",
-											"type": "String"
-										},
-										"sink": {
-											"name": "MainTypeName_En",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "SubTypeViewId",
-											"type": "String"
-										},
-										"sink": {
-											"name": "SubTypeViewId",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "SubTypeName_En",
-											"type": "String"
-										},
-										"sink": {
-											"name": "SubTypeName_En",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "BuildingNo",
-											"type": "String"
-										},
-										"sink": {
-											"name": "BuildingNo",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "CustomerNo",
-											"type": "String"
-										},
-										"sink": {
-											"name": "CustomerNo",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "SumOfTotalUnits",
-											"type": "String"
-										},
-										"sink": {
-											"name": "SumOfTotalUnits",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "SumOfUnitsInService",
-											"type": "String"
-										},
-										"sink": {
-											"name": "SumOfUnitsInService",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "TargetCallRate",
-											"type": "String"
-										},
-										"sink": {
-											"name": "TargetCallRate",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Notes",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Notes",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "BHContactPhone1",
-											"type": "String"
-										},
-										"sink": {
-											"name": "BHContactPhone1",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "State",
-											"type": "String"
-										},
-										"sink": {
-											"name": "State",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Name",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "TimeZone",
-											"type": "String"
-										},
-										"sink": {
-											"name": "TimeZone",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "flattenedbuilding",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedTextflattenedbuilding",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Output"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipelineunit')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink",
-								"tableOption": "autoCreate"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Unit_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_ID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_UnitAttributes",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_UnitAttributes",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_EquipmentIdentification",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_EquipmentIdentification",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Building",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Building",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Building_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Building_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Building_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Building_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Building_BuildingNo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Building_BuildingNo",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Building_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Building_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Building_Name2",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Building_Name2",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "MarketSegment",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "MarketSegment",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Service_Address1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Service_Address1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Service_Address2",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Service_Address2",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Service_City",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Service_City",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Service_State",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Service_State",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ServiceLocation_Zip",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ServiceLocation_Zip",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_ElevatorBank",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_ElevatorBank",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ElevatorBank_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ElevatorBank_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ElevatorBank_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ElevatorBank_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ElevatorBank_BankName",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ElevatorBank_BankName",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ElevatorBank_AccessCode",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ElevatorBank_AccessCode",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Branch",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Branch",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Branch_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Branch_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "BranchName1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "BranchName1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "BranchName2",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "BranchName2",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_GovernmentID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_GovernmentID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_NickName",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_NickName",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_BillingReference",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Customer_BillingReference",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_DownInd",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_DownInd",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_RegisteredNo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_RegisteredNo",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_MfgYear",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_MfgYear",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Equipment",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Equipment",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_EquipmentType",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_EquipmentType",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "EquipmentType_Okeefe_EquipName",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EquipmentType_Okeefe_EquipName",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "EquipmentType_TKE_EquipName",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EquipmentType_TKE_EquipName",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "EquipmentType_TKE_EquipClassification",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EquipmentType_TKE_EquipClassification",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Manufacturer",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Manufacturer",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Manufacturer_VIEWId",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Manufacturer_VIEWId",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Manufacturer_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Manufacturer_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Manufacturer_Name1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Manufacturer_Name1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Manufacturer_Name2",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Manufacturer_Name2",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Controller1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Controller1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Controller_Name1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Controller_Name1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_DriveType",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_DriveType",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "DriveType_Name1",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "DriveType_Name1",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "NumberofFloors",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "NumberofFloors",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "NumberofFrontOpenings",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "NumberofFrontOpenings",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Maintenance",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Maintenance",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_MaintenanceRun",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_MaintenanceRun",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "MaintenanceRun_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "MaintenanceRun_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "MaintenanceRun_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "MaintenanceRun_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "MaintenanceRun_RouteNo_TerritoryCode",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "MaintenanceRun_RouteNo_TerritoryCode",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_DefaultScheduling",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_DefaultScheduling",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_HoursPerVisit",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_HoursPerVisit",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "HoursPerVisit_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "HoursPerVisit_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "HoursPerVisit",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "HoursPerVisit",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "VisitsPerYear",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "VisitsPerYear",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "SLA_AnnualVisitsRequired",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SLA_AnnualVisitsRequired",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "SLA_VisitsRequired",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SLA_VisitsRequired",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "SLA_HoursRequiredPerVisit",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SLA_HoursRequiredPerVisit",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "SLA_HoursRequired",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SLA_HoursRequired",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "SLA_Comments",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SLA_Comments",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "TechnicianNotes",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "TechnicianNotes",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_WarrantyStartDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_WarrantyStartDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_WarrantyEndDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_WarrantyEndDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_InstallDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_InstallDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_HandoverDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_HandoverDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "AnnualSafetyTest_LastInspectionDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "AnnualSafetyTest_LastInspectionDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "AnnualSafetyTest_NextInspectionDueDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "AnnualSafetyTest_NextInspectionDueDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "AnnualSafetyTest_CoveredInContract",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "AnnualSafetyTest_CoveredInContract",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PeriodicSafetyTest_LastInspectionDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PeriodicSafetyTest_LastInspectionDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PeriodicSafetyTest_Frequency",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PeriodicSafetyTest_Frequency",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PeriodicSafetyTest_NextInspectionDueDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PeriodicSafetyTest_NextInspectionDueDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PeriodicSafetyTest_CoveredInContract",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PeriodicSafetyTest_CoveredInContract",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FiremansRecall_LastInspectionDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FiremansRecall_LastInspectionDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FiremansRecall_ Frequency",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FiremansRecall_ Frequency",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_JobNo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_JobNo",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_FactorySerialNo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_FactorySerialNo",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_Smart_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_Smart_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_Smart_InstallationDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_Smart_InstallationDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Contract",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Contract",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contract_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contract_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contract_ExternalID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contract_ExternalID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contract_StartDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contract_StartDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contract_EndDate",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contract_EndDate",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Contract_MoValue",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Contract_MoValue",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ContractNo",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ContractNo",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ContractCoverage",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ContractCoverage",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "NumberofRearOpenings",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "NumberofRearOpenings",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Unit_CapacityLbs",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Unit_CapacityLbs",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_Speed",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_Speed",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Speed_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Speed_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Speed_FPM",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Speed_FPM",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_FrontDoorComplexity",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_FrontDoorComplexity",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FrontDoorComplexity_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FrontDoorComplexity_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FrontDoorComplexity_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FrontDoorComplexity_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "Array_RearDoorComplexity",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "Array_RearDoorComplexity",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "RearDoorComplexity_ViewID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "RearDoorComplexity_ViewID",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									},
-									{
-										"source": {
-											"name": "RearDoorComplexity_Name",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "RearDoorComplexity_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "FullRawDataExtract20201005",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "stgunit",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"annotations": [],
-				"lastPublishTime": "2020-10-07T23:18:22Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "AzureSqlunit",
-								"type": "DatasetReference"
-							},
-							"name": "unit1"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlIdentification",
-								"type": "DatasetReference"
-							},
-							"name": "Identification1"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlBank",
-								"type": "DatasetReference"
-							},
-							"name": "Bank"
-						},
-						{
-							"dataset": {
-								"referenceName": "BUILDING1",
-								"type": "DatasetReference"
-							},
-							"name": "BUILDING"
-						},
-						{
-							"dataset": {
-								"referenceName": "EQUIPMENT",
-								"type": "DatasetReference"
-							},
-							"name": "EQUIPMENT"
-						},
-						{
-							"dataset": {
-								"referenceName": "EQUIPMENTTypeSQl",
-								"type": "DatasetReference"
-							},
-							"name": "EQUIPMENTType"
-						},
-						{
-							"dataset": {
-								"referenceName": "sqlManufacturer",
-								"type": "DatasetReference"
-							},
-							"name": "Manufacturer"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlController",
-								"type": "DatasetReference"
-							},
-							"name": "Controller"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlSpeed",
-								"type": "DatasetReference"
-							},
-							"name": "speed"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlDriveType",
-								"type": "DatasetReference"
-							},
-							"name": "DriveType"
-						},
-						{
-							"dataset": {
-								"referenceName": "office",
-								"type": "DatasetReference"
-							},
-							"name": "office"
-						},
-						{
-							"dataset": {
-								"referenceName": "maintenance",
-								"type": "DatasetReference"
-							},
-							"name": "maintenance"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "CosmosDbSqlApiCollection1",
-								"type": "DatasetReference"
-							},
-							"name": "sink1"
-						}
-					],
-					"transformations": [
-						{
-							"name": "Join1"
-						},
-						{
-							"name": "Sort1"
-						},
-						{
-							"name": "DerivedColumn1"
-						},
-						{
-							"name": "BankArray"
-						},
-						{
-							"name": "JoinBankidentification"
-						},
-						{
-							"name": "JoinidentificationBuilding"
-						},
-						{
-							"name": "EQUIPMENTDC1"
-						},
-						{
-							"name": "Join2"
-						},
-						{
-							"name": "arrayType"
-						},
-						{
-							"name": "Join3"
-						},
-						{
-							"name": "ManufacturerArray"
-						},
-						{
-							"name": "Join4"
-						},
-						{
-							"name": "controllerArray"
-						},
-						{
-							"name": "Join5"
-						},
-						{
-							"name": "speedArray"
-						},
-						{
-							"name": "Join6"
-						},
-						{
-							"name": "DriveTypearray"
-						},
-						{
-							"name": "Join7"
-						},
-						{
-							"name": "joinmanufacter"
-						},
-						{
-							"name": "JoinController"
-						},
-						{
-							"name": "Joinspeed"
-						},
-						{
-							"name": "EQUIPMENTDC"
-						},
-						{
-							"name": "JoinDriveType"
-						}
-					],
-					"script": "source(output(\n\t\tunit_id as string,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select unit_id,TechnicianNotes \\n  FROM [unit].[unit]',\n\tformat: 'query') ~> unit1\nsource(output(\n\t\t{UnitId FK} as string,\n\t\tUnit_GovernmentID as string,\n\t\tUnit_NickName as string,\n\t\tCustomer_BillingReference as string,\n\t\tUnit_DownInd as string,\n\t\tUnit_RegisteredNo as string,\n\t\tUnit_MfgYear as string,\n\t\tUnit_WarrantyStartDate as string,\n\t\tUnit_WarrantyEndDate as string,\n\t\tUnit_InstallDate as string,\n\t\tUnit_HandoverDate as string,\n\t\tAnnualSafetyTest_LastInspectionDate as string,\n\t\tUnit_JobNo as string,\n\t\tUnit_FactorySerialNo as string,\n\t\tUnit_Smart_ViewID as string,\n\t\tUnit_Smart_ExternalID as string,\n\t\tUnit_Smart_InstallationDate as string,\n\t\tUnit_SmartMAX_ViewID as string,\n\t\tUnit_SmartMAX_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select * from [unit].[Identification]',\n\tformat: 'query') ~> Identification1\nsource(output(\n\t\t{Identification FK} as integer,\n\t\t{UnitId FK} as string,\n\t\tElevatorBank_ViewID as string,\n\t\tElevatorBank_ExternalID as string,\n\t\tElevatorBank_BankName as string,\n\t\tElevatorBank_AccessCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Bank\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{identification FK} as integer,\n\t\tBuilding_ViewID as string,\n\t\tBuilding_ExternalID as string,\n\t\tBuilding_BuildingNo as string,\n\t\tName_en as string,\n\t\tName_local as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> BUILDING\nsource(output(\n\t\t{UnitId FK} as string,\n\t\tFloors as string,\n\t\tNumberofFrontOpenings as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENT\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tEquipmentType_ViewID as string,\n\t\tEquipmentType_ExternalID as string,\n\t\tEquipmentType_Okeefe_EquipName as string,\n\t\tEquipmentType_TKE_EquipClassification as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tEquipmentType_TKE_EquipName as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENTType\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tManufacturer_VIEWId as string,\n\t\tManufacturer_ExternalID as string,\n\t\tManufacturer_Name1 as string,\n\t\tManufacturer_Name2 as string,\n\t\tAfterHoursCallbackRun_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Manufacturer\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tController_Name1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Controller\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tSpeed_ViewID as string,\n\t\tSpeed_FPM as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> speed\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tDriveType_ViewID as string,\n\t\tDriveType_ExternalID as string,\n\t\tDriveType_Name1 as string,\n\t\tDriveType_Name2 as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> DriveType\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\t{identification Id FK} as integer,\n\t\tBranch_ViewID as string,\n\t\tBranchName1 as string,\n\t\tBranchName2 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> office\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tArray_MaintenanceRun as string,\n\t\tMaintenanceRun_RouteNo_TerritoryCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> maintenance\nSort1, JoinidentificationBuilding join(unit_id == Bank@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nunit1 sort(asc(unit_id, true)) ~> Sort1\nJoin7 derive(unit_id = unit_id,\n\t\tTechnicianNotes = TechnicianNotes,\n\t\tIdentification = @(BANK=@(ElevatorBank_ViewID=ElevatorBank_ViewID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\tBuilding=@(Building_ViewID=Building_ViewID)),\n\t\tEQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=NumberofRearOpenings,\n\t\tUnit_CapacityLbs=Unit_CapacityLbs,\n\t\tUNITTYPE=UNITTYPE,\n\t\tManufacturer=Manufacturer,\n\t\tController=Controller,\n\t\tSpeed=Speed,\n\t\tDriveType=DriveType)) ~> DerivedColumn1\nBank derive(Bank = @(ElevatorBank_ViewID=ElevatorBank_ViewID,\n\t\tElevatorBank_ExternalID=ElevatorBank_ExternalID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\t{Identification FK} = {Identification FK}) ~> BankArray\nIdentification1, BankArray join(Identification1@ID == {Identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinBankidentification\nJoinBankidentification, BUILDING join(BankArray@{Identification FK} == BUILDING@{identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinidentificationBuilding\nEQUIPMENT derive(EQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=NumberofRearOpenings),\n\t\tUnitId = {UnitId FK},\n\t\tID = ID) ~> EQUIPMENTDC1\nEQUIPMENTType, EQUIPMENTDC1 join({Equipment Id FK} == EQUIPMENTDC1@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join2\nJoin2 derive(UNITTYPE = @(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENTType@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENTType@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> arrayType\nManufacturer, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join3\nJoin3 derive(Manufacturerarray = @(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID)) ~> ManufacturerArray\nController, EQUIPMENT join({Equipment Id FK} == ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join4\nJoin4 derive(controllerArray = @(Controller_Name1=Controller_Name1),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> controllerArray\nspeed, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join5\nJoin5 derive(Speed = @(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\t{Equipment Id FK} = {Equipment Id FK}) ~> speedArray\nDriveType, EQUIPMENT join({Equipment Id FK} == EQUIPMENT@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join6\nJoin6 derive(DriveTypeArray = @(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name1=DriveType_Name1,\n\t\tDriveType_Name2=DriveType_Name2)) ~> DriveTypearray\nJoin1, EQUIPMENTDC join(unit_id == EQUIPMENTDC@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join7\narrayType, Manufacturer join(arrayType@{Equipment Id FK} == Manufacturer@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> joinmanufacter\njoinmanufacter, Controller join(Manufacturer@{Equipment Id FK} == Controller@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinController\nJoinController, speed join(arrayType@{Equipment Id FK} == speed@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinspeed\nJoinDriveType derive(ArrayType = @(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\tManufacturer = @(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID),\n\t\tController = @(Controller_Name1=Controller_Name1),\n\t\tSpeed = @(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\tDriveType = @(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name2=DriveType_Name2,\n\t\tDriveType_Name1=DriveType_Name1),\n\t\tEQUIPMENT = EQUIPMENT,\n\t\tFloors = Floors,\n\t\tNumberofFrontOpenings = NumberofFrontOpenings,\n\t\tNumberofRearOpenings = EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs = EQUIPMENT@Unit_CapacityLbs,\n\t\t{UnitId FK} = EQUIPMENT@{UnitId FK}) ~> EQUIPMENTDC\nJoinspeed, DriveType join(arrayType@{Equipment Id FK} == DriveType@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinDriveType\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tmapColumn(\n\t\tID,\n\t\tTechnicianNotes,\n\t\tIdentification,\n\t\tunit_id,\n\t\tEQUIPMENT\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/dataflow2')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "AzureSqlunit",
-								"type": "DatasetReference"
-							},
-							"name": "source1"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "CosmosDbSqlApiCollection1",
-								"type": "DatasetReference"
-							},
-							"name": "sink1"
-						}
-					],
-					"transformations": [],
-					"script": "source(output(\n\t\tUnit_ID as integer,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/dataflow4')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "AzureSqlunit",
-								"type": "DatasetReference"
-							},
-							"name": "unit"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlTEQUIPMENT",
-								"type": "DatasetReference"
-							},
-							"name": "EQUIPMENT"
-						},
-						{
-							"dataset": {
-								"referenceName": "EQUIPMENTType",
-								"type": "DatasetReference"
-							},
-							"name": "EQUIPMENTType"
-						},
-						{
-							"dataset": {
-								"referenceName": "Manufacturer",
-								"type": "DatasetReference"
-							},
-							"name": "Manufacturer"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqController",
-								"type": "DatasetReference"
-							},
-							"name": "Controller"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSpeed",
-								"type": "DatasetReference"
-							},
-							"name": "speed"
-						},
-						{
-							"dataset": {
-								"referenceName": "DriveType",
-								"type": "DatasetReference"
-							},
-							"name": "DriveType"
-						},
-						{
-							"dataset": {
-								"referenceName": "SqlIdentification",
-								"type": "DatasetReference"
-							},
-							"name": "Identification"
-						},
-						{
-							"dataset": {
-								"referenceName": "AzureSqlUILDING",
-								"type": "DatasetReference"
-							},
-							"name": "bUILDING"
-						},
-						{
-							"dataset": {
-								"referenceName": "lBANK",
-								"type": "DatasetReference"
-							},
-							"name": "BANK"
-						},
-						{
-							"dataset": {
-								"referenceName": "Azuremaintenance",
-								"type": "DatasetReference"
-							},
-							"name": "maintenance"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "Json1",
-								"type": "DatasetReference"
-							},
-							"name": "sink1"
-						}
-					],
-					"transformations": [
-						{
-							"name": "Join1"
-						},
-						{
-							"name": "Join2EQUIPMENTType"
-						},
-						{
-							"name": "JoinManufacturer"
-						},
-						{
-							"name": "JoinController"
-						},
-						{
-							"name": "JoinSpeed"
-						},
-						{
-							"name": "JoinDriveType"
-						},
-						{
-							"name": "Identificationjoin"
-						},
-						{
-							"name": "JoinBUILDING"
-						},
-						{
-							"name": "Joinbank"
-						},
-						{
-							"name": "Joinmaintenance"
-						},
-						{
-							"name": "DerivedColumn1"
-						}
-					],
-					"script": "source(output(\n\t\tUnit_ID as integer,\n\t\tTechnicianNotes as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> unit\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tFloors as string,\n\t\tNumberofFrontOpenings as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENT\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tEquipmentType_ViewID as string,\n\t\tEquipmentType_ExternalID as string,\n\t\tEquipmentType_Okeefe_EquipName as string,\n\t\tEquipmentType_TKE_EquipClassification as string,\n\t\tNumberofRearOpenings as string,\n\t\tUnit_CapacityLbs as string,\n\t\tEquipmentType_TKE_EquipName as string,\n\t\tid as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> EQUIPMENTType\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tManufacturer_VIEWId as string,\n\t\tManufacturer_ExternalID as string,\n\t\tManufacturer_Name1 as string,\n\t\tManufacturer_Name2 as string,\n\t\tAfterHoursCallbackRun_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Manufacturer\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tController_Name1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Controller\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tSpeed_ViewID as string,\n\t\tSpeed_FPM as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> speed\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{Equipment Id FK} as integer,\n\t\tDriveType_ViewID as string,\n\t\tDriveType_ExternalID as string,\n\t\tDriveType_Name1 as string,\n\t\tDriveType_Name2 as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> DriveType\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tUnit_GovernmentID as string,\n\t\tUnit_NickName as string,\n\t\tCustomer_BillingReference as string,\n\t\tUnit_DownInd as string,\n\t\tUnit_RegisteredNo as string,\n\t\tUnit_MfgYear as string,\n\t\tUnit_WarrantyStartDate as string,\n\t\tUnit_WarrantyEndDate as string,\n\t\tUnit_InstallDate as string,\n\t\tUnit_HandoverDate as string,\n\t\tAnnualSafetyTest_LastInspectionDate as string,\n\t\tUnit_JobNo as string,\n\t\tUnit_FactorySerialNo as string,\n\t\tUnit_Smart_ViewID as string,\n\t\tUnit_Smart_ExternalID as string,\n\t\tUnit_Smart_InstallationDate as string,\n\t\tUnit_SmartMAX_ViewID as string,\n\t\tUnit_SmartMAX_ExternalID as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> Identification\nsource(output(\n\t\t{UnitId FK} as string,\n\t\t{identification FK} as integer,\n\t\tBuilding_ViewID as string,\n\t\tBuilding_ExternalID as string,\n\t\tBuilding_BuildingNo as string,\n\t\tName_en as string,\n\t\tName_local as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> bUILDING\nsource(output(\n\t\t{Identification FK} as integer,\n\t\t{UnitId FK} as integer,\n\t\tElevatorBank_ViewID as string,\n\t\tElevatorBank_ExternalID as string,\n\t\tElevatorBank_BankName as string,\n\t\tElevatorBank_AccessCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> BANK\nsource(output(\n\t\t{UnitId FK} as integer,\n\t\tArray_MaintenanceRun as string,\n\t\tMaintenanceRun_RouteNo_TerritoryCode as string,\n\t\tID as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> maintenance\nunit, EQUIPMENT join(Unit_ID == {UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nJoin1, EQUIPMENTType join(EQUIPMENT@ID == {Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join2EQUIPMENTType\nJoin2EQUIPMENTType, Manufacturer join(EQUIPMENT@ID == Manufacturer@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinManufacturer\nJoinManufacturer, Controller join(EQUIPMENTType@id == Controller@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinController\nJoinController, speed join(EQUIPMENT@ID == speed@{Equipment Id FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinSpeed\nJoinSpeed, DriveType join(EQUIPMENT@ID == DriveType@ID,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinDriveType\nJoinDriveType, Identification join(Unit_ID == Identification@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Identificationjoin\nIdentificationjoin, bUILDING join(Identification@ID == {identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> JoinBUILDING\nJoinBUILDING, BANK join(Identification@ID == BANK@{Identification FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinbank\nJoinbank, maintenance join(Unit_ID == maintenance@{UnitId FK},\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Joinmaintenance\nJoinmaintenance derive(Unit_ID = Unit_ID,\n\t\tTechnicianNotes = TechnicianNotes,\n\t\tidentification = @(Unit_GovernmentID=Unit_GovernmentID,\n\t\tUnit_NickName=Unit_NickName,\n\t\tCustomer_BillingReference=Customer_BillingReference,\n\t\tUnit_DownInd=Unit_DownInd,\n\t\tUnit_RegisteredNo=Unit_RegisteredNo,\n\t\tUnit_MfgYear=Unit_MfgYear,\n\t\tUnit_WarrantyStartDate=Unit_WarrantyStartDate,\n\t\tUnit_WarrantyEndDate=Unit_WarrantyEndDate,\n\t\tUnit_InstallDate=Unit_InstallDate,\n\t\tUnit_HandoverDate=Unit_HandoverDate,\n\t\tAnnualSafetyTest_LastInspectionDate=AnnualSafetyTest_LastInspectionDate,\n\t\tUnit_JobNo=Unit_JobNo,\n\t\tUnit_FactorySerialNo=Unit_FactorySerialNo,\n\t\tUnit_Smart_ViewID=Unit_Smart_ViewID,\n\t\tUnit_Smart_ExternalID=Unit_Smart_ExternalID,\n\t\tUnit_Smart_InstallationDate=Unit_Smart_InstallationDate,\n\t\tUnit_SmartMAX_ViewID=Unit_SmartMAX_ViewID,\n\t\tUnit_SmartMAX_ExternalID=Unit_SmartMAX_ExternalID,\n\t\tBank=@({ ElevatorBank_ViewID}=ElevatorBank_ViewID,\n\t\tElevatorBank_ExternalID=ElevatorBank_ExternalID,\n\t\tElevatorBank_BankName=ElevatorBank_BankName,\n\t\tElevatorBank_AccessCode=ElevatorBank_AccessCode),\n\t\tBUILDING=@(Building_ViewID=Building_ViewID,\n\t\tBuilding_ExternalID=Building_ExternalID,\n\t\tBuilding_BuildingNo=Building_BuildingNo,\n\t\tName_en=Name_en,\n\t\tName_local=Name_local)),\n\t\tEQUIPMENT = @(Floors=Floors,\n\t\tNumberofFrontOpenings=NumberofFrontOpenings,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\t{EQUIPMENT Type}=@(EquipmentType_ViewID=EquipmentType_ViewID,\n\t\tEquipmentType_ExternalID=EquipmentType_ExternalID,\n\t\tEquipmentType_Okeefe_EquipName=EquipmentType_Okeefe_EquipName,\n\t\tEquipmentType_TKE_EquipClassification=EquipmentType_TKE_EquipClassification,\n\t\tNumberofRearOpenings=EQUIPMENT@NumberofRearOpenings,\n\t\tUnit_CapacityLbs=EQUIPMENT@Unit_CapacityLbs,\n\t\tEquipmentType_TKE_EquipName=EquipmentType_TKE_EquipName),\n\t\tManufacturer=@(Manufacturer_VIEWId=Manufacturer_VIEWId,\n\t\tManufacturer_ExternalID=Manufacturer_ExternalID,\n\t\tManufacturer_Name1=Manufacturer_Name1,\n\t\tManufacturer_Name2=Manufacturer_Name2,\n\t\tAfterHoursCallbackRun_ExternalID=AfterHoursCallbackRun_ExternalID),\n\t\tController=@(Controller_Name1=Controller_Name1),\n\t\tSpeed=@(Speed_ViewID=Speed_ViewID,\n\t\tSpeed_FPM=Speed_FPM),\n\t\tDriveType=@(DriveType_ViewID=DriveType_ViewID,\n\t\tDriveType_ExternalID=DriveType_ExternalID,\n\t\tDriveType_Name1=DriveType_Name1,\n\t\tDriveType_Name2=DriveType_Name2)),\n\t\tmaintenance = @(MaintenanceRun_RouteNo_TerritoryCode=MaintenanceRun_RouteNo_TerritoryCode)) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['unit'],\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/dataflow7')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "AzureSqlbuilding",
-								"type": "DatasetReference"
-							},
-							"name": "source1"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "BuildingName_en",
-								"type": "DatasetReference"
-							},
-							"name": "sink1"
-						}
-					],
-					"transformations": [
-						{
-							"name": "DerivedColumn1"
-						}
-					],
-					"script": "source(output(\n\t\tOperator as string,\n\t\tETL_Load_Date_Time as timestamp,\n\t\tFunctions as string,\n\t\tExternalBuildingId as string,\n\t\tBuilding_BuildingName_local as string,\n\t\tBuilding_BuildingName_en as string,\n\t\tBuilding_Height as string,\n\t\tBuilding_StreetAddress_En as string,\n\t\tBuilding_StreetAddress_Local as string,\n\t\tBuilding_Suburb_En as string,\n\t\tBuilding_Suburb_Local as string,\n\t\tBuilding_City_En as string,\n\t\tBuilding_City_Local as string,\n\t\tBuilding_Postcode as string,\n\t\tBuilding_MainTypeViewId as string,\n\t\tBuilding_MainTypeName_En as string,\n\t\tBuilding_MainTypeName_Local as string,\n\t\tBuilding_SubTypeViewId as string,\n\t\tBuilding_SubTypeName_En as string,\n\t\tBuilding_SubTypeName_Local as string,\n\t\tBuilding_BuildingNo as string,\n\t\tBuilding_IsStandbybuilding as string,\n\t\tBuilding_CostingNo as string,\n\t\tBuilding_CustomerNo as string,\n\t\tBuilding_SumOfTotalUnits as string,\n\t\tBuilding_SumOfUnitsInService as string,\n\t\tBuilding_QuickTurnover as string,\n\t\tBuilding_Latitude as string,\n\t\tBuilding_Longitude as string,\n\t\tBuilding_OfficeViewId as string,\n\t\tBuilding_OfficeName_En as string,\n\t\tBuilding_OfficeName_Local as string,\n\t\tBuilding_TKManagerEmployeeViewId as string,\n\t\tBuilding_TKManagerEmployeeExternalId as string,\n\t\tBuilding_TKManagerName as string,\n\t\tBuilding_IsRepairCorres as string,\n\t\tBuilding_IsCalendar as string,\n\t\tBuilding_IsGeneralCorres as string,\n\t\tBuilding_IsCard as string,\n\t\tBuilding_IsMonthlyReport as string,\n\t\tBuilding_UnitsScheduleHours as string,\n\t\tBuilding_UnitsScheduleHoursViewId as string,\n\t\tBuilding_UnitsScheduleTime as string,\n\t\tBuilding_UnitsScheduleTimeViewId as string,\n\t\tBuilding_UnitsScheduleDay as string,\n\t\tBuilding_UnitsScheduleDayViewId as string,\n\t\tBuilding_UnitsScheduleDayFrequency as string,\n\t\tBuilding_TargetCallRate as string,\n\t\tArray_RunInfo as string,\n\t\tRunInfo_RunTypeViewId as string,\n\t\tRunInfo_RunTypeName as string,\n\t\tRunInfo_RunViewId as string,\n\t\tRunInfo_RunName as string,\n\t\tRunInfo_BHSWPResponse as string,\n\t\tRunInfo_BHStopResponse as string,\n\t\tRunInfo_BHOthersResponse as string,\n\t\tRunInfo_AHSWPResponse as string,\n\t\tRunInfo_AHStopResponse as string,\n\t\tRunInfo_AHOthersResponse as string,\n\t\tRunInfo_Notes as string,\n\t\tRunInfo_PropertyManagerEmployeeViewId as string,\n\t\tRunInfo_PropertyManagerEmployeeName as string,\n\t\tArray_BusinessHourContactInfo as string,\n\t\tBusinessHourContactInfo_BHSiteContact as string,\n\t\tBusinessHourContactInfo_BHContactLocation_En as string,\n\t\tBusinessHourContactInfo_BHContactLocation_Local as string,\n\t\tBusinessHourContactInfo_BHContactPhone1 as string,\n\t\tBusinessHourContactInfo_BHContactPhone2 as string,\n\t\tBusinessHourContactInfo_BHContactMobile as string,\n\t\tBusinessHourContactInfo_BHContactFax as string,\n\t\tBusinessHourContactInfo_BHContactRoleViewId as string,\n\t\tBusinessHourContactInfo_BHContactRoleName as string,\n\t\tArray_AfterHourContactInfo as string,\n\t\tAfterHourContactInfo_AHSiteContact as string,\n\t\tAfterHourContactInfo_AHContactLocation_En as string,\n\t\tAfterHourContactInfo_AHContactLocation_Local as string,\n\t\tAfterHourContactInfo_AHContactPhone1 as string,\n\t\tAfterHourContactInfo_AHContactMobile as string,\n\t\tAfterHourContactInfo_AHContactFax as string,\n\t\tAfterHourContactInfo_AHContactRoleViewId as string,\n\t\tAfterHourContactInfo_AHContactRoleViewName as string,\n\t\tAfterHourContactInfo_AHContactAccessCode as string,\n\t\tArray_BuildingContactInfo as string,\n\t\tBuildingContactInfo_ContactViewId as string,\n\t\tBuildingContactInfo_ContactExternalId as string,\n\t\tBuildingContactInfo_ContactName as string,\n\t\tBuildingContactInfo_IsBusinessHours as string,\n\t\tBuilding_VFMCustomerName_En as string,\n\t\tBuilding_VFMCustomerName_Local as string,\n\t\tBuilding_VFMCustomerMail as string,\n\t\tBuilding_VFMMailTemplateSubject as string,\n\t\tBuilding_VFMMailTemplateContent as string,\n\t\tBuilding_IsCustomisedMail as string,\n\t\tBuilding_ReportFrequencyViewId as string,\n\t\tBuilding_ReportFrequency as string,\n\t\tBuilding_ReportTypeViewId as string,\n\t\tBuilding_ReportType as string,\n\t\tBuilding_IsReportInvoice as string,\n\t\tBuilding_ReportSendTo as string,\n\t\tBuilding_ReportAuditRequired as string,\n\t\tBuilding_ReportAuditDetail as string,\n\t\tBuilding_ReportServiceDockets as string,\n\t\tBuilding_FromProjectId as string,\n\t\tBuilding_FromProjectLabel as string,\n\t\tArray_BuildingCustomerInfo as string,\n\t\tBuildingCustomerInfo_CustomerViewId as string,\n\t\tBuildingCustomerInfo_CustomerExternalId as string,\n\t\tBuildingCustomerInfo_CustomerName as string,\n\t\tArray_State as string,\n\t\tState_ViewId as string,\n\t\tState_Name as string,\n\t\tBuiliding_TimeZone as string,\n\t\tBuiliding_CustomerCode as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: ' SELECT\\n                      \\'add\\'                                                                              AS Operator\\n\t\t\t\t\t  ,SYSDATETIME()                                                                     as ETL_Load_Date_Time\\n                    ,\\'building\\'                                                                          as Functions\\n\t\t\t\t\t,[Building_ExternalBuildingId]                                                   as ExternalBuildingId\\n                   \\n      ,[Building_BuildingName_local]\\n      ,[Building_BuildingName_en]\\n      ,[Building_Height]\\n      ,[Building_StreetAddress_En]\\n      ,[Building_StreetAddress_Local]\\n      ,[Building_Suburb_En]\\n      ,[Building_Suburb_Local]\\n      ,[Building_City_En]\\n      ,[Building_City_Local]\\n      ,[Building_Postcode]\\n      ,[Building_MainTypeViewId]\\n      ,[Building_MainTypeName_En]\\n      ,[Building_MainTypeName_Local]\\n      ,[Building_SubTypeViewId]\\n      ,[Building_SubTypeName_En]\\n      ,[Building_SubTypeName_Local]\\n      ,[Building_BuildingNo]\\n      ,[Building_IsStandbybuilding]\\n      ,[Building_CostingNo]\\n      ,[Building_CustomerNo]\\n      ,[Building_SumOfTotalUnits]\\n      ,[Building_SumOfUnitsInService]\\n      ,[Building_QuickTurnover]\\n      ,[Building_Latitude]\\n      ,[Building_Longitude]\\n      ,[Building_OfficeViewId]\\n      ,[Building_OfficeName_En]\\n      ,[Building_OfficeName_Local]\\n      ,[Building_TKManagerEmployeeViewId]\\n      ,[Building_TKManagerEmployeeExternalId]\\n      ,[Building_TKManagerName]\\n      ,[Building_IsRepairCorres]\\n      ,[Building_IsCalendar]\\n      ,[Building_IsGeneralCorres]\\n      ,[Building_IsCard]\\n      ,[Building_IsMonthlyReport]\\n      ,[Building_UnitsScheduleHours]\\n      ,[Building_UnitsScheduleHoursViewId]\\n      ,[Building_UnitsScheduleTime]\\n      ,[Building_UnitsScheduleTimeViewId]\\n      ,[Building_UnitsScheduleDay]\\n      ,[Building_UnitsScheduleDayViewId]\\n      ,[Building_UnitsScheduleDayFrequency]\\n      ,[Building_TargetCallRate]\\n      ,[Array_RunInfo]\\n      ,[RunInfo_RunTypeViewId]\\n      ,[RunInfo_RunTypeName]\\n      ,[RunInfo_RunViewId]\\n      ,[RunInfo_RunName]\\n      ,[RunInfo_BHSWPResponse]\\n      ,[RunInfo_BHStopResponse]\\n      ,[RunInfo_BHOthersResponse]\\n      ,[RunInfo_AHSWPResponse]\\n      ,[RunInfo_AHStopResponse]\\n      ,[RunInfo_AHOthersResponse]\\n      ,[RunInfo_Notes]\\n      ,[RunInfo_PropertyManagerEmployeeViewId]\\n      ,[RunInfo_PropertyManagerEmployeeName]\\n      ,[Array_BusinessHourContactInfo]\\n      ,[BusinessHourContactInfo_BHSiteContact]\\n      ,[BusinessHourContactInfo_BHContactLocation_En]\\n      ,[BusinessHourContactInfo_BHContactLocation_Local]\\n      ,[BusinessHourContactInfo_BHContactPhone1]\\n      ,[BusinessHourContactInfo_BHContactPhone2]\\n      ,[BusinessHourContactInfo_BHContactMobile]\\n      ,[BusinessHourContactInfo_BHContactFax]\\n      ,[BusinessHourContactInfo_BHContactRoleViewId]\\n      ,[BusinessHourContactInfo_BHContactRoleName]\\n      ,[Array_AfterHourContactInfo]\\n      ,[AfterHourContactInfo_AHSiteContact]\\n      ,[AfterHourContactInfo_AHContactLocation_En]\\n      ,[AfterHourContactInfo_AHContactLocation_Local]\\n      ,[AfterHourContactInfo_AHContactPhone1]\\n      ,[AfterHourContactInfo_AHContactMobile]\\n      ,[AfterHourContactInfo_AHContactFax]\\n      ,[AfterHourContactInfo_AHContactRoleViewId]\\n      ,[AfterHourContactInfo_AHContactRoleViewName]\\n      ,[AfterHourContactInfo_AHContactAccessCode]\\n      ,[Array_BuildingContactInfo]\\n      ,[BuildingContactInfo_ContactViewId]\\n      ,[BuildingContactInfo_ContactExternalId]\\n      ,[BuildingContactInfo_ContactName]\\n      ,[BuildingContactInfo_IsBusinessHours]\\n      ,[Building_VFMCustomerName_En]\\n      ,[Building_VFMCustomerName_Local]\\n      ,[Building_VFMCustomerMail]\\n      ,[Building_VFMMailTemplateSubject]\\n      ,[Building_VFMMailTemplateContent]\\n      ,[Building_IsCustomisedMail]\\n      ,[Building_ReportFrequencyViewId]\\n      ,[Building_ReportFrequency]\\n      ,[Building_ReportTypeViewId]\\n      ,[Building_ReportType]\\n      ,[Building_IsReportInvoice]\\n      ,[Building_ReportSendTo]\\n      ,[Building_ReportAuditRequired]\\n      ,[Building_ReportAuditDetail]\\n      ,[Building_ReportServiceDockets]\\n      ,[Building_FromProjectId]\\n      ,[Building_FromProjectLabel]\\n      ,[Array_BuildingCustomerInfo]\\n      ,[BuildingCustomerInfo_CustomerViewId]\\n      ,[BuildingCustomerInfo_CustomerExternalId]\\n      ,[BuildingCustomerInfo_CustomerName]\\n      ,[Array_State]\\n      ,[State_ViewId]\\n      ,[State_Name]\\n      ,[Builiding_TimeZone]\\n      ,[Builiding_CustomerCode]\\n\t\t\t\t\t\\n\t\t\t\t\tFROM [customer].[Building]   ',\n\tformat: 'query') ~> source1\nsource1 derive(Function = Functions,\n\t\tSendTimestamp = ETL_Load_Date_Time,\n\t\tOperator = Operator,\n\t\tdata = @(ViewBuildingId=ExternalBuildingId,\n\t\tExternalBuildingId=ExternalBuildingId,\n\t\tBuildingName_local=Building_BuildingName_local,\n\t\tBuildingName_en=Building_BuildingName_en,\n\t\tHeight=Building_Height,\n\t\tstreetAddress=Building_StreetAddress_En,\n\t\tSuburb=Building_Suburb_En,\n\t\tCity=Building_City_En,\n\t\tPostcode=Building_Postcode,\n\t\tBuilding_MainTypeViewId=Building_MainTypeViewId,\n\t\tMainTypeName_En=Building_MainTypeName_En,\n\t\tMainTypeName_Local=Building_MainTypeName_Local,\n\t\tSubTypeViewId=Building_SubTypeViewId,\n\t\tSubTypeName_En=Building_SubTypeName_En,\n\t\tSubTypeName_Local=Building_SubTypeName_Local,\n\t\tBuildingNo=Building_BuildingNo,\n\t\tIsStandbybuilding=Building_IsStandbybuilding,\n\t\tCostingNo=Building_CostingNo,\n\t\tCustomerNo=Building_CustomerNo,\n\t\tSumOfTotalUnits=Building_SumOfTotalUnits,\n\t\tSumOfUnitsInService=Building_SumOfUnitsInService,\n\t\tQuickTurnover=Building_QuickTurnover,\n\t\tLatitude=Building_Latitude,\n\t\tLongitude=Building_Longitude,\n\t\tOfficeViewId=Building_OfficeViewId,\n\t\tOfficeName_En=Building_OfficeName_En,\n\t\tOfficeName_Local=Building_OfficeName_Local,\n\t\tTKManagerEmployeeViewId=Building_TKManagerEmployeeViewId,\n\t\tTKManagerEmployeeExternalId=Building_TKManagerEmployeeExternalId,\n\t\tTKManagerName=Building_TKManagerName,\n\t\tIsRepairCorres=Building_IsRepairCorres,\n\t\tIsCalendar=Building_IsCalendar,\n\t\tIsGeneralCorres=Building_IsGeneralCorres,\n\t\tIsCard=Building_IsCard,\n\t\tIsMonthlyReport=Building_IsMonthlyReport,\n\t\tUnitsScheduleHours=Building_UnitsScheduleHours,\n\t\tUnitsScheduleHoursViewId=Building_UnitsScheduleHoursViewId,\n\t\tUnitsScheduleDay=Building_UnitsScheduleDay,\n\t\tUnitsScheduleDayViewId=Building_UnitsScheduleDayViewId,\n\t\tUnitsScheduleDayFrequency=Building_UnitsScheduleDayFrequency,\n\t\tTargetCallRate=Building_TargetCallRate,\n\t\tRunInfo=@(RunTypeViewId=RunInfo_RunTypeViewId,\n\t\tRunTypeName=RunInfo_RunTypeName,\n\t\tRunViewId=RunInfo_RunViewId),\n\t\tBHSWPResponse=RunInfo_BHSWPResponse,\n\t\tBHStopResponse=RunInfo_BHStopResponse,\n\t\tBHOthersResponse=RunInfo_BHOthersResponse,\n\t\tAHSWPResponse=RunInfo_AHSWPResponse,\n\t\tAHStopResponse=RunInfo_AHStopResponse,\n\t\tAHOthersResponse=RunInfo_AHOthersResponse,\n\t\tNotes=RunInfo_Notes,\n\t\tPropertyManagerEmployeeViewId=RunInfo_PropertyManagerEmployeeViewId,\n\t\tPropertyManagerEmployeeName=RunInfo_PropertyManagerEmployeeName,\n\t\tBusinessHourContactInfo=@(BHSiteContact=BusinessHourContactInfo_BHSiteContact,\n\t\tBHContactLocation=BusinessHourContactInfo_BHContactLocation_En,\n\t\tBHContactPhone1=BusinessHourContactInfo_BHContactPhone1,\n\t\tBHContactPhone2=BusinessHourContactInfo_BHContactPhone2,\n\t\tBHContactMobile=BusinessHourContactInfo_BHContactMobile,\n\t\tBHContactFax=BusinessHourContactInfo_BHContactFax,\n\t\tBHContactRoleViewId=BusinessHourContactInfo_BHContactRoleViewId,\n\t\tBHContactRoleName=BusinessHourContactInfo_BHContactRoleName),\n\t\tAfterHourContactInfo=@(AHSiteContact=AfterHourContactInfo_AHSiteContact,\n\t\tAHContactLocation=AfterHourContactInfo_AHContactLocation_En,\n\t\tAHContactPhone1=AfterHourContactInfo_AHContactPhone1,\n\t\tAHContactMobile=AfterHourContactInfo_AHContactMobile,\n\t\tAHContactFax=AfterHourContactInfo_AHContactFax,\n\t\tAHContactRoleViewId=AfterHourContactInfo_AHContactRoleViewId,\n\t\tAHContactRoleName=AfterHourContactInfo_AHContactRoleViewName,\n\t\tAHContactAccessCode=AfterHourContactInfo_AHContactAccessCode),\n\t\tBuildingContactInfo=@(ContactViewId=BuildingContactInfo_ContactViewId,\n\t\tContactExternalId=BuildingContactInfo_ContactExternalId,\n\t\tContactName=BuildingContactInfo_ContactName,\n\t\tIsBusinessHours=BuildingContactInfo_IsBusinessHours),\n\t\tVFMCustomerName_En=Building_VFMCustomerName_En,\n\t\tVFMCustomerName_Local=Building_VFMCustomerName_Local,\n\t\tVFMCustomerMail=Building_VFMCustomerMail,\n\t\tVFMMailTemplateSubject=Building_VFMMailTemplateSubject,\n\t\tVFMMailTemplateContent=Building_VFMMailTemplateContent,\n\t\tIsCustomisedMail=Building_IsCustomisedMail,\n\t\tReportFrequencyViewId=Building_ReportFrequencyViewId,\n\t\tReportFrequency=Building_ReportFrequency,\n\t\tReportTypeViewId=Building_ReportTypeViewId,\n\t\tReportType=Building_ReportType,\n\t\tIsReportInvoice=Building_IsReportInvoice,\n\t\tReportSendTo=Building_ReportSendTo,\n\t\tReportAuditRequired=Building_ReportAuditRequired,\n\t\tReportAuditDetail=Building_ReportAuditDetail,\n\t\tReportServiceDockets=Building_ReportServiceDockets,\n\t\tFromProjectId=Building_FromProjectId,\n\t\tFromProjectLabel=Building_FromProjectLabel,\n\t\tBuildingCustomerInfo=@(CustomerViewId=BuildingCustomerInfo_CustomerViewId,\n\t\tCustomerExternalId=BuildingCustomerInfo_CustomerExternalId,\n\t\tCustomerName=BuildingCustomerInfo_CustomerName),\n\t\tState=@(ViewId=State_ViewId,\n\t\tName=State_Name),\n\t\tTimeZone=currentDate(),\n\t\tCustomerCode=Builiding_CustomerCode)) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Header_idl')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [Customer_Name]\n      ,[Customer_Party_Reference_Number]\n      ,[Customer_Account_Reference_Number]\n      ,[Customer_Type]\n      ,[Customer_Profile]\n      ,'' as [Payment_Method_Name]\n      ,'' as [Payment_Method_Primary_Flag]\n      ,[Global_Customer_Flag]\n      ,'' as [Origin_(AR)]\n      ,'' as [Primary_ID_Type]\n      ,'' as [Primary_ID_Validation_Digit]\n      ,'' as [Taxpayer_ID]\n      ,'' as [Fiscal_Classification_Type_Code]\n      ,'' as [Fiscal_Classification_Code]\n      ,'' as [Effective_Date_From]\n      ,'' as [Document_Type_(CO)]\n      ,'' as [Taxpayer_ID_(CO)]\n      , '' as [Nature_(CO)]\n      ,'' as [Regimen_(CO)]\n      ,'' as [Special_Customer_Flag]\n      ,[Operating_Unit_Name]\n      ,'' as [Customer_Class_Code]\n      ,[Payment_Term_Name]\n      ,'' as [Order_Number_of_the_Cedula_(GT)]\n      ,'' as [Register_Number_of_the_Cedula_(GT)]\n      ,'' as [Document_Type_(SV)]\n      ,'' as [Contributor_Registry_Number_(SV)]\n      ,'' as [Person_Category_(PE)]\n      ,'' as [Person_Type_(PE)]\n      ,'' as [Document_Type_(PE)]\n      ,'' as [Document_Number_(PE)]\n      ,'' as [Last_Name_(PE)]\n      ,'' as [Second_Last_Name_(PE)]\n      ,'' as [First_Name_(PE)]\n      ,'' as [Middle_Name_(PE)]\n      ,'' as [Origin]\n      ,'' as [Nature]\n      ,'' as [Document_Type_(UY)]\n      ,'' as [Perception_Agent_(PE)]\n  FROM [customer].[header]",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Customer_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Name",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Party_Reference_Number",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Party_Reference_Number",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Account_Reference_Number",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Account_Reference_Number",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Type",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Type",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Profile",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Profile",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment_Method_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Payment_Method_Name",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment_Method_Primary_Flag",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Payment_Method_Primary_Flag",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Global_Customer_Flag",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Global_Customer_Flag",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Origin_(AR)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Origin_(AR)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Primary_ID_Type",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Primary_ID_Type",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Primary_ID_Validation_Digit",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Primary_ID_Validation_Digit",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Taxpayer_ID",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Taxpayer_ID",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Fiscal_Classification_Type_Code",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Fiscal_Classification_Type_Code",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Fiscal_Classification_Code",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Fiscal_Classification_Code",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Effective_Date_From",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Effective_Date_From",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Document_Type_(CO)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Document_Type_(CO)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Taxpayer_ID_(CO)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Taxpayer_ID_(CO)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Nature_(CO)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Nature_(CO)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Regimen_(CO)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Regimen_(CO)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Special_Customer_Flag",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Special_Customer_Flag",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Operating_Unit_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Operating_Unit_Name",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Customer_Class_Code",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Customer_Class_Code",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Payment_Term_Name",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Payment_Term_Name",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Order_Number_of_the_Cedula_(GT)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Order_Number_of_the_Cedula_(GT)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Register_Number_of_the_Cedula_(GT)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Register_Number_of_the_Cedula_(GT)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Document_Type_(SV)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Document_Type_(SV)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Contributor_Registry_Number_(SV)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Contributor_Registry_Number_(SV)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Person_Category_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Person_Category_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Person_Type_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Person_Type_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Document_Type_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Document_Type_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Document_Number_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Document_Number_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Last_Name_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Last_Name_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Second_Last_Name_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Second_Last_Name_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "First_Name_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "First_Name_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Middle_Name_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Middle_Name_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Origin",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Origin",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Nature",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Nature",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Document_Type_(UY)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Document_Type_(UY)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Perception_Agent_(PE)",
-											"type": "String",
-											"physicalType": "varchar"
-										},
-										"sink": {
-											"name": "Perception_Agent_(PE)",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "AzureSqlTable3",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedText4",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Output"
-				},
-				"annotations": []
 			},
 			"dependsOn": []
 		}
