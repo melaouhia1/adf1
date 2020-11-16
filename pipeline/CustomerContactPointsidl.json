@@ -1,0 +1,9 @@
+{
+	"name": "CustomerContactPointsidl",
+	"properties": {
+		"folder": {
+			"name": "Output"
+		},
+		"annotations": []
+	}
+}
