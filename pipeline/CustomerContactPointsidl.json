@@ -232,7 +232,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "CustomerContactPointscsvot",
+						"referenceName": "DelimitedText5",
 						"type": "DatasetReference"
 					}
 				]
