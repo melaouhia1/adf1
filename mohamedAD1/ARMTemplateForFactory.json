@@ -6572,8 +6572,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 1
+											"name": "CustomerCode",
+											"type": "String"
 										}
 									},
 									{
@@ -6582,8 +6582,8 @@
 											"type": "Byte[]"
 										},
 										"sink": {
-											"type": "Byte[]",
-											"ordinal": 2
+											"name": "HashKey",
+											"type": "Byte[]"
 										}
 									},
 									{
@@ -6592,8 +6592,8 @@
 											"type": "DateTime"
 										},
 										"sink": {
-											"type": "DateTime",
-											"ordinal": 3
+											"name": "ETL_Load_Date_Time",
+											"type": "DateTime"
 										}
 									},
 									{
@@ -6602,8 +6602,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 4
+											"name": "type",
+											"type": "String"
 										}
 									},
 									{
@@ -6612,8 +6612,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 5
+											"name": "ExternalBuildingId",
+											"type": "String"
 										}
 									},
 									{
@@ -6622,8 +6622,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 6
+											"name": "BuildingName_local",
+											"type": "String"
 										}
 									},
 									{
@@ -6632,8 +6632,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 7
+											"name": "StreetAddress_Local",
+											"type": "String"
 										}
 									},
 									{
@@ -6642,8 +6642,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 8
+											"name": "City_Local",
+											"type": "String"
 										}
 									},
 									{
@@ -6652,8 +6652,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 9
+											"name": "Postcode",
+											"type": "String"
 										}
 									},
 									{
@@ -6662,8 +6662,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 10
+											"name": "MainTypeViewId",
+											"type": "String"
 										}
 									},
 									{
@@ -6672,8 +6672,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 11
+											"name": "MainTypeName_En",
+											"type": "String"
 										}
 									},
 									{
@@ -6682,8 +6682,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 12
+											"name": "SubTypeViewId",
+											"type": "String"
 										}
 									},
 									{
@@ -6692,8 +6692,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 13
+											"name": "SubTypeName_En",
+											"type": "String"
 										}
 									},
 									{
@@ -6702,8 +6702,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 14
+											"name": "BuildingNo",
+											"type": "String"
 										}
 									},
 									{
@@ -6712,8 +6712,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 15
+											"name": "CustomerNo",
+											"type": "String"
 										}
 									},
 									{
@@ -6722,8 +6722,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 16
+											"name": "SumOfTotalUnits",
+											"type": "String"
 										}
 									},
 									{
@@ -6732,8 +6732,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 17
+											"name": "SumOfUnitsInService",
+											"type": "String"
 										}
 									},
 									{
@@ -6742,8 +6742,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 18
+											"name": "TargetCallRate",
+											"type": "String"
 										}
 									},
 									{
@@ -6752,8 +6752,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 19
+											"name": "Notes",
+											"type": "String"
 										}
 									},
 									{
@@ -6762,8 +6762,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 20
+											"name": "BHContactPhone1",
+											"type": "String"
 										}
 									},
 									{
@@ -6772,8 +6772,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 21
+											"name": "State",
+											"type": "String"
 										}
 									},
 									{
@@ -6782,8 +6782,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 22
+											"name": "Name",
+											"type": "String"
 										}
 									},
 									{
@@ -6792,8 +6792,8 @@
 											"type": "String"
 										},
 										"sink": {
-											"type": "String",
-											"ordinal": 23
+											"name": "TimeZone",
+											"type": "String"
 										}
 									}
 								]
@@ -11406,76 +11406,100 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
 					{
+						"name": "CustomerCode",
 						"type": "String"
 					},
 					{
+						"name": "HashKey",
 						"type": "String"
 					},
 					{
+						"name": "ETL_Load_Date_Time",
 						"type": "String"
 					},
 					{
+						"name": "type",
 						"type": "String"
 					},
 					{
+						"name": "ExternalBuildingId",
 						"type": "String"
 					},
 					{
+						"name": "BuildingName_local",
 						"type": "String"
 					},
 					{
+						"name": "StreetAddress_Local",
 						"type": "String"
 					},
 					{
+						"name": "City_Local",
 						"type": "String"
 					},
 					{
+						"name": "Postcode",
 						"type": "String"
 					},
 					{
+						"name": "MainTypeViewId",
 						"type": "String"
 					},
 					{
+						"name": "MainTypeName_En",
 						"type": "String"
 					},
 					{
+						"name": "SubTypeViewId",
 						"type": "String"
 					},
 					{
+						"name": "SubTypeName_En",
 						"type": "String"
 					},
 					{
+						"name": "BuildingNo",
 						"type": "String"
 					},
 					{
+						"name": "CustomerNo",
 						"type": "String"
 					},
 					{
+						"name": "SumOfTotalUnits",
 						"type": "String"
 					},
 					{
+						"name": "SumOfUnitsInService",
 						"type": "String"
 					},
 					{
+						"name": "TargetCallRate",
 						"type": "String"
 					},
 					{
+						"name": "Notes",
 						"type": "String"
 					},
 					{
+						"name": "BHContactPhone1",
 						"type": "String"
 					},
 					{
+						"name": "State",
 						"type": "String"
 					},
 					{
+						"name": "Name",
 						"type": "String"
 					},
 					{
+						"name": "TimeZone",
 						"type": "String"
 					}
 				]

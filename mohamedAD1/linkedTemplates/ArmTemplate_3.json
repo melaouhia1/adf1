@@ -31,76 +31,100 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
 					{
+						"name": "CustomerCode",
 						"type": "String"
 					},
 					{
+						"name": "HashKey",
 						"type": "String"
 					},
 					{
+						"name": "ETL_Load_Date_Time",
 						"type": "String"
 					},
 					{
+						"name": "type",
 						"type": "String"
 					},
 					{
+						"name": "ExternalBuildingId",
 						"type": "String"
 					},
 					{
+						"name": "BuildingName_local",
 						"type": "String"
 					},
 					{
+						"name": "StreetAddress_Local",
 						"type": "String"
 					},
 					{
+						"name": "City_Local",
 						"type": "String"
 					},
 					{
+						"name": "Postcode",
 						"type": "String"
 					},
 					{
+						"name": "MainTypeViewId",
 						"type": "String"
 					},
 					{
+						"name": "MainTypeName_En",
 						"type": "String"
 					},
 					{
+						"name": "SubTypeViewId",
 						"type": "String"
 					},
 					{
+						"name": "SubTypeName_En",
 						"type": "String"
 					},
 					{
+						"name": "BuildingNo",
 						"type": "String"
 					},
 					{
+						"name": "CustomerNo",
 						"type": "String"
 					},
 					{
+						"name": "SumOfTotalUnits",
 						"type": "String"
 					},
 					{
+						"name": "SumOfUnitsInService",
 						"type": "String"
 					},
 					{
+						"name": "TargetCallRate",
 						"type": "String"
 					},
 					{
+						"name": "Notes",
 						"type": "String"
 					},
 					{
+						"name": "BHContactPhone1",
 						"type": "String"
 					},
 					{
+						"name": "State",
 						"type": "String"
 					},
 					{
+						"name": "Name",
 						"type": "String"
 					},
 					{
+						"name": "TimeZone",
 						"type": "String"
 					}
 				]
