@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [Operating_Unit_Name]\n      ,[ï»¿Customer_Header_Reference] as [Customer Header Reference]\n      ,[Address_Reference]\n      ,[Contact_Point_Type]\n      ,[Contact_Point_Status]\n      ,[Primary_Flag]\n      ,[Contact_Point_Purpose]\n      ,[Phone_Country_Code]\n      ,[Phone_Area_Code]\n      ,[Phone_Number]\n        ,CASE COALESCE([Phone_Extension],'')  when ''  then '' else [Phone_Extension] end as [Phone_Extension]\n      ,[Phone_Line_Type]\n      ,[Email_Address]\n      ,[Email_Format]\n\t , [Operating_Unit_Name]\n  FROM [customer].[CustomerContactPoints]",
+						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  \n      [ï»¿Customer_Header_Reference] as [Customer Header Reference]\n      ,[Address_Reference]\n      ,[Contact_Point_Type]\n      ,[Contact_Point_Status]\n      ,[Primary_Flag]\n      ,[Contact_Point_Purpose]\n      ,[Phone_Country_Code]\n      ,[Phone_Area_Code]\n      ,[Phone_Number]\n        ,CASE COALESCE([Phone_Extension],'')  when ''  then '' else [Phone_Extension] end as [Phone_Extension]\n      ,[Phone_Line_Type]\n      ,[Email_Address]\n      ,[Email_Format]\n\t , [Operating_Unit_Name]\n  FROM [customer].[CustomerContactPoints]",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
