@@ -38,26 +38,14 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Operating_Unit_Name",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"type": "String",
-									"physicalType": "String",
-									"ordinal": 1
-								}
-							},
-							{
-								"source": {
 									"name": "Customer Header Reference",
 									"type": "String",
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Customer Header Reference",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 2
+									"physicalType": "String"
 								}
 							},
 							{
@@ -67,9 +55,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Address_Reference",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 3
+									"physicalType": "String"
 								}
 							},
 							{
@@ -79,9 +67,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Contact_Point_Type",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 4
+									"physicalType": "String"
 								}
 							},
 							{
@@ -91,9 +79,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Contact_Point_Status",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 5
+									"physicalType": "String"
 								}
 							},
 							{
@@ -103,9 +91,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Primary_Flag",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 6
+									"physicalType": "String"
 								}
 							},
 							{
@@ -115,9 +103,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Contact_Point_Purpose",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 7
+									"physicalType": "String"
 								}
 							},
 							{
@@ -127,9 +115,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Phone_Country_Code",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 8
+									"physicalType": "String"
 								}
 							},
 							{
@@ -139,9 +127,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Phone_Area_Code",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 9
+									"physicalType": "String"
 								}
 							},
 							{
@@ -151,9 +139,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Phone_Number",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 10
+									"physicalType": "String"
 								}
 							},
 							{
@@ -163,9 +151,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Phone_Extension",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 11
+									"physicalType": "String"
 								}
 							},
 							{
@@ -175,9 +163,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Phone_Line_Type",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 12
+									"physicalType": "String"
 								}
 							},
 							{
@@ -187,9 +175,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Email_Address",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 13
+									"physicalType": "String"
 								}
 							},
 							{
@@ -199,9 +187,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Email_Format",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 14
+									"physicalType": "String"
 								}
 							},
 							{
@@ -211,9 +199,9 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
+									"name": "Operating_Unit_Name",
 									"type": "String",
-									"physicalType": "String",
-									"ordinal": 15
+									"physicalType": "String"
 								}
 							}
 						],
