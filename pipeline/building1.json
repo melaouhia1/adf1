@@ -169,6 +169,606 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ExternalBuildingId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ExternalBuildingId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BuildingName_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BuildingName_local",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "StreetAddress_Local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "StreetAddress_Local",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "City_Local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "City_Local",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Postcode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Postcode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MainTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MainTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MainTypeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MainTypeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SubTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SubTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SubTypeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SubTypeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BuildingNo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BuildingNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerNo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CustomerNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SumOfTotalUnits",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SumOfTotalUnits",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SumOfUnitsInService",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SumOfUnitsInService",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OfficeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "OfficeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OfficeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "OfficeName_En",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitsScheduleHours",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UnitsScheduleHours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitsScheduleHoursViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UnitsScheduleHoursViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitsScheduleTime",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UnitsScheduleTime",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitsScheduleTimeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UnitsScheduleTimeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TargetCallRate",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "TargetCallRate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RunInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RunTypeViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunTypeName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RunTypeName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RunViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RunName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RunName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHSWPResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHSWPResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHStopResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHStopResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHOthersResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHOthersResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHSWPResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHSWPResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHStopResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHStopResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHOthersResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHOthersResponse",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Notes",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Notes",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessHourContactInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BusinessHourContactInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHSiteContact",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHSiteContact",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHContactPhone1",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHContactPhone1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHContactMobile",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHContactMobile",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHContactRoleViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHContactRoleViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BHContactRoleName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BHContactRoleName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AfterHourContactInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AfterHourContactInfo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHSiteContact",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHSiteContact",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHContactPhone1",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHContactPhone1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHContactMobile",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHContactMobile",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHContactRoleViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHContactRoleViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AHContactRoleViewName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "AHContactRoleViewName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeZone",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "TimeZone",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CustomerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LastModifytime",
+									"physicalType": "timestamp"
+								},
+								"sink": {
+									"name": "LastModifytime",
+									"physicalType": "timestamp"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
