@@ -13,6 +13,30 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Excelheader')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSMohamed",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Sheet1",
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "ORA_FD02_CustomerHeader_20201104103740.xlsx",
+						"fileSystem": "customerdm11032020"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/FullRawDataExtract20201005')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2022,57 +2046,6 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/lBANK')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Identification FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "UnitId FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ElevatorBank_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_BankName",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_AccessCode",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "BANK"
-				}
 			},
 			"dependsOn": []
 		}

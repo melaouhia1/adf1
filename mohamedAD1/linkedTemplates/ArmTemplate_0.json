@@ -79,6 +79,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CosmosDb3'"
 		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
+		},
 		"ADLSMohamed_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mohamedstoragelake.dfs.core.windows.net"
@@ -110,45 +114,20 @@
 		"AzureKeyVault1Mohamed_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://mohamed.vault.azure.net/"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://www.websitename.org/api"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "mohamed"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/apitest')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Web1",
-						"type": "WebActivity",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://start.exactonline.nl/api/oauth2/token",
-							"method": "POST",
-							"headers": {
-								"Content-Type": " application/x-www-form-urlencoded"
-							},
-							"body": "grant_type=refresh_token&client_id=000000-11111-2222-3333-5b2c48c2fae4&client_secret=50DaGMXKDDI1&refresh_token=abcde_very_long_token_abcdefg4343"
-						}
-					}
-				],
-				"annotations": [],
-				"lastPublishTime": "2020-10-29T14:42:43Z"
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ABLBMohamedBlob2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -422,6 +401,26 @@
 				"type": "CosmosDb",
 				"typeProperties": {
 					"connectionString": "[parameters('CosmosDb3_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer1_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer1_password')]"
+					}
 				}
 			},
 			"dependsOn": []

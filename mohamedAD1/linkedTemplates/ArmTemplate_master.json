@@ -208,6 +208,9 @@
 					"CosmosDb3_connectionString": {
 						"value": "[parameters('CosmosDb3_connectionString')]"
 					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
+					},
 					"ADLSMohamed_properties_typeProperties_url": {
 						"value": "[parameters('ADLSMohamed_properties_typeProperties_url')]"
 					},
@@ -231,6 +234,12 @@
 					},
 					"AzureKeyVault1Mohamed_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1Mohamed_properties_typeProperties_baseUrl')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -250,17 +259,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"HttpServer1_password": {
-						"value": "[parameters('HttpServer1_password')]"
-					},
 					"buildingstorage_connectionString": {
 						"value": "[parameters('buildingstorage_connectionString')]"
-					},
-					"HttpServer1_properties_typeProperties_url": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
-					},
-					"HttpServer1_properties_typeProperties_userName": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
