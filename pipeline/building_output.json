@@ -22,7 +22,9 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table [building].[am_da_ds_dst_exviewBuildingapi]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
