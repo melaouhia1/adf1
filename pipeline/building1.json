@@ -86,6 +86,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "  truncate table [customer].[Building]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
