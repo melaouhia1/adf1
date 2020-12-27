@@ -72,7 +72,7 @@
 							"type": "Expression"
 						},
 						"UpdateActionType": {
-							"value": "S",
+							"value": "E",
 							"type": "String"
 						}
 					}
