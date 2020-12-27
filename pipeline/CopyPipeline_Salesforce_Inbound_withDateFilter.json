@@ -86,7 +86,7 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "SetLastExtractEnd",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
