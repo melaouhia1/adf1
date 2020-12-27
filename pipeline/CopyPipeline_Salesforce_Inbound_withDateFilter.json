@@ -38,7 +38,7 @@
 				}
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "SetLastExtractStart",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -68,11 +68,14 @@
 							"type": "String"
 						},
 						"ExtractDateTime": {
-							"value": "",
-							"type": "String"
+							"value": {
+								"value": "@pipeline().parameters.actualRunTime",
+								"type": "Expression"
+							},
+							"type": "Expression"
 						},
 						"UpdateActionType": {
-							"value": "",
+							"value": "S",
 							"type": "String"
 						}
 					}
