@@ -60,11 +60,11 @@
 					"storedProcedureName": "[ETL].[usp_ADF_Set_ADFControl]",
 					"storedProcedureParameters": {
 						"CoreFileName": {
-							"value": "",
+							"value": "[building].[Viewbuilding_API_add]",
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "",
+							"value": "Azuremaintenance",
 							"type": "String"
 						},
 						"ExtractDateTime": {
