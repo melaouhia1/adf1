@@ -159,7 +159,24 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[ETL].[usp_ADF_Get_ADFControl_NextExtract]",
+					"storedProcedureParameters": {
+						"CoreFileName": {
+							"value": "[building].[Viewbuilding_API_add]",
+							"type": "String"
+						},
+						"DataSource": {
+							"value": "",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
