@@ -60,19 +60,19 @@
 					"storedProcedureName": "[ETL].[usp_ADF_Set_ADFControl]",
 					"storedProcedureParameters": {
 						"CoreFileName": {
-							"value": "[building].[Viewbuilding_API_add]",
+							"value": null,
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "SFDC",
+							"value": null,
 							"type": "String"
 						},
 						"ExtractDateTime": {
-							"value": "@utcnow()",
-							"type": "Expression"
+							"value": null,
+							"type": "String"
 						},
 						"UpdateActionType": {
-							"value": "E",
+							"value": null,
 							"type": "String"
 						}
 					}
