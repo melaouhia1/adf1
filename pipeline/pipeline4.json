@@ -64,7 +64,7 @@
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "AzureSqlDatabase2",
+							"value": "SFDC",
 							"type": "String"
 						},
 						"ExtractDateTime": {
