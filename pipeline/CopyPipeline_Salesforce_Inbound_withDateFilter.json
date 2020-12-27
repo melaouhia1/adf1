@@ -36,6 +36,51 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[ETL].[usp_ADF_Set_ADFControl]",
+					"storedProcedureParameters": {
+						"CoreFileName": {
+							"value": "",
+							"type": "String"
+						},
+						"DataSource": {
+							"value": "",
+							"type": "String"
+						},
+						"ExtractDateTime": {
+							"value": "",
+							"type": "String"
+						},
+						"UpdateActionType": {
+							"value": "",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
