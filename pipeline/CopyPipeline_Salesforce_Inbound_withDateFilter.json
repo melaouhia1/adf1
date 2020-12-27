@@ -69,7 +69,7 @@
 						},
 						"ExtractDateTime": {
 							"value": {
-								"value": "@pipeline().parameters.actualRunTime",
+								"value": "@utcnow()",
 								"type": "Expression"
 							},
 							"type": "Expression"
