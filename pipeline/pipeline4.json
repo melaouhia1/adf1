@@ -72,7 +72,7 @@
 							"type": "String"
 						},
 						"UpdateActionType": {
-							"value": null,
+							"value": "E",
 							"type": "String"
 						}
 					}
