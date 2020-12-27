@@ -106,8 +106,23 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "select * from [building].[Viewbuilding_API_add]\nwhere [ETL_Load_Date_Time]>=@(format((activity(''lookup').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ'))",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "am_da_ds_dst_exviewBuildingapi",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
