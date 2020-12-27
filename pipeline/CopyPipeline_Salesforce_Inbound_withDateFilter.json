@@ -168,7 +168,7 @@
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "",
+							"value": "Azuremaintenance",
 							"type": "String"
 						}
 					}
