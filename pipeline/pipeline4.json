@@ -78,7 +78,7 @@
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
+					"referenceName": "linkedService1",
 					"type": "LinkedServiceReference"
 				}
 			}
