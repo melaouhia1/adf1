@@ -2,25 +2,34 @@
 	"name": "AzureSqlTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "AzureSqlDatabase5",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "Unit_ID",
-				"type": "int",
-				"precision": 10
+				"name": "buildingCode",
+				"type": "nvarchar"
 			},
 			{
-				"name": "TechnicianNotes",
-				"type": "varchar"
+				"name": "Data",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varbinary"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
 			}
 		],
 		"typeProperties": {
-			"schema": "unit",
-			"table": "unit"
+			"schema": "building",
+			"table": "Viewbuilding_API_adddesd"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
