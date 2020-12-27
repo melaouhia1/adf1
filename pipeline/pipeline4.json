@@ -64,7 +64,7 @@
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "Azuremaintenance",
+							"value": "AzureSqlDatabase2",
 							"type": "String"
 						},
 						"ExtractDateTime": {
