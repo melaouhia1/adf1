@@ -24,7 +24,8 @@
 								"value": "[building].[Viewbuilding_API_add]"
 							},
 							"DataSource": {
-								"type": "String"
+								"type": "String",
+								"value": "Azuremaintenance"
 							}
 						},
 						"queryTimeout": "02:00:00",
