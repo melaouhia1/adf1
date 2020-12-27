@@ -1,6 +1,42 @@
 {
 	"name": "CopyPipeline_Salesforce_Inbound_withDateFilter",
 	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[ETL].[usp_ADF_Get_ADFControl_NextExtract]",
+						"storedProcedureParameters": {
+							"CoreFileName": {
+								"type": "String",
+								"value": "[building].[Viewbuilding_API_add]"
+							},
+							"DataSource": {
+								"type": "String"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "Azuremaintenance",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
 		"folder": {
 			"name": "Training"
 		},
