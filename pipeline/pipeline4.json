@@ -25,7 +25,7 @@
 							},
 							"DataSource": {
 								"type": "String",
-								"value": "Azuremaintenance"
+								"value": "sfdv"
 							}
 						},
 						"queryTimeout": "02:00:00",
