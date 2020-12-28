@@ -1,0 +1,16 @@
+{
+	"name": "Viewbuilding_API_addtest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "building",
+			"table": "Viewbuilding_API_addtest"
+		}
+	}
+}
