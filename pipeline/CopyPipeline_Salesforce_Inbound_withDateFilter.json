@@ -109,22 +109,14 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from [building].[Viewbuilding_API_add]\nwhere [ETL_Load_Date_Time]>=@(format((activity(''lookup').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ'))",
+							"value": "select * from [building].[Viewbuilding_API_add]\nwhere [ETL_Load_Date_Time]>=@(formatDateTime((activity(''lookup').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ'))",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -144,7 +136,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText6",
+						"referenceName": "Viewbuilding_API_addtest",
 						"type": "DatasetReference"
 					}
 				]
