@@ -7,7 +7,26 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "buildingCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Data",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varbinary"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
 		"typeProperties": {
 			"schema": "building",
 			"table": "Viewbuilding_API_addtest"
