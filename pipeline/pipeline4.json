@@ -84,6 +84,62 @@
 					"referenceName": "linkedService1",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"description": "Pull SFDC AccountPartner to TXT files in Azure Blob Storage",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "SetLastExtractStart",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "select * from [building].[Viewbuilding_API_add]\nwhere [ETL_Load_Date_Time]>=@(formatDateTime((activity(''lookup').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ'))",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "am_da_ds_dst_exviewBuildingapi",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Viewbuilding_API_addtest",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
