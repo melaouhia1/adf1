@@ -72,7 +72,7 @@
 								"value": "@utcnow()",
 								"type": "Expression"
 							},
-							"type": "Expression"
+							"type": "Datetime"
 						},
 						"UpdateActionType": {
 							"value": "S",
