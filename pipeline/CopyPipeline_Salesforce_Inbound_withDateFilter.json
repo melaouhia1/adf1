@@ -168,7 +168,7 @@
 							"type": "String"
 						},
 						"DataSource": {
-							"value": "Azuremaintenance",
+							"value": "sfdv",
 							"type": "String"
 						}
 					}
