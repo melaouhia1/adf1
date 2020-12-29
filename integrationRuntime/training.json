@@ -1,0 +1,6 @@
+{
+	"name": "training",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
