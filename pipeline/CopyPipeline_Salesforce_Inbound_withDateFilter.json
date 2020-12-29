@@ -109,7 +109,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "\n\nSELECT [ETL_Load_Date_Time]  FROM [building].[Viewbuilding_API_add] WHERE [ETL_Load_Date_Time]>= @{formatDateTime(activity('lookup1').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ')}",
+							"value": "\n\nSELECT [ETL_Load_Date_Time]  FROM [building].[Viewbuilding_API_add] WHERE SYSDATETIMEOFFSET()>= @{formatDateTime(activity('lookup1').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ')}",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
