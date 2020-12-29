@@ -109,7 +109,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from [building].[Viewbuilding_API_add]\n\nwhere [ETL_Load_Date_Time]>=@{formatDateTime(activity('Lookup1').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH\\\\:mm\\\\:ss.fffffffzzz')}\n                ",
+							"value": "select * from [building].[Viewbuilding_API_add]\n\nwhere [ETL_Load_Date_Time]>=@{formatDateTime(activity('Lookup1').output.firstRow.NextExtractStartDateTime)}\n                ",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
