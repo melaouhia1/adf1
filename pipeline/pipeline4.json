@@ -29,18 +29,6 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "AccountKey",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "AccountKey",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
 									"name": "ParentAccountKey",
 									"type": "Int32",
 									"physicalType": "int"
