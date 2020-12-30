@@ -3,101 +3,12 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
-					"retryIntervalInSeconds": 30
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderStoredProcedureName": "[ETL].[usp_ADF_Get_ADFControl_NextExtract]",
-						"storedProcedureParameters": {
-							"CoreFileName": {
-								"type": "String",
-								"value": "[building].[Viewbuilding_API_add]"
-							},
-							"DataSource": {
-								"type": "String",
-								"value": "sfdv"
-							}
-						},
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "Azuremaintenance",
-						"type": "DatasetReference"
-					}
-				}
-			},
-			{
-				"name": "SetLastExtractStart",
-				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[ETL].[usp_ADF_Set_ADFControl]",
-					"storedProcedureParameters": {
-						"CoreFileName": {
-							"value": "[building].[Viewbuilding_API_add]",
-							"type": "String"
-						},
-						"DataSource": {
-							"value": "sfdv",
-							"type": "String"
-						},
-						"ExtractDateTime": {
-							"value": {
-								"value": "@utcnow()",
-								"type": "Expression"
-							},
-							"type": "Datetime"
-						},
-						"UpdateActionType": {
-							"value": "E",
-							"type": "String"
-						}
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "linkedService1",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "Copy data1",
-				"description": "Pull SFDC AccountPartner to TXT files in Azure Blob Storage",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "SetLastExtractStart",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
@@ -105,27 +16,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": {
-							"value": "\nselect * from [building].[Viewbuilding_API_add]\n\nwhere [ETL_Load_Date_Time]>=@{formatDateTime(activity('Lookup1').output.firstRow.NextExtractStartDateTime,'yyyy-MM-ddTHH:mm:ssZ')}\n                ",
-							"type": "Expression"
-						},
+						"type": "SqlServerSource",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
-					"enableSkipIncompatibleRow": true,
 					"translator": {
 						"type": "TabularTranslator",
 						"typeConversion": true,
@@ -137,13 +35,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "am_da_ds_dst_exviewBuildingapi",
+						"referenceName": "SqlServerTable2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText7",
+						"referenceName": "AzureSqlTable4DimAccount",
 						"type": "DatasetReference"
 					}
 				]
