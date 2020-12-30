@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
+						"sqlReaderQuery": " select * from [dbo].[DimAccount]",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -27,6 +28,18 @@
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
+							{
+								"source": {
+									"name": "AccountKey",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "AccountKey",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
 							{
 								"source": {
 									"name": "ParentAccountKey",
@@ -157,12 +170,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"actualRunTime": {
-				"type": "string",
-				"defaultValue": "2018-02-26 10:09:08"
-			}
-		},
 		"folder": {
 			"name": "Training"
 		},
