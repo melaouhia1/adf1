@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_gv3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "topmovies",
+			"table": "Azure Blob Storage file"
+		}
+	}
+}
