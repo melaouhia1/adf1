@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
 		},
+		"AzureBlobTraining_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobTraining'"
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
@@ -67,9 +71,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase4'"
 		},
-		"CosmosDb1_connectionString": {
+		"AzureSqlDatabase5_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase5'"
 		},
 		"CosmosDb2_connectionString": {
 			"type": "secureString",
@@ -83,9 +87,21 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'HttpServer1'"
 		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+		},
+		"SqlServer2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer2'"
+		},
 		"buildingstorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'buildingstorage'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
 		"ADLSMohamed_properties_typeProperties_url": {
 			"type": "string",
@@ -126,6 +142,14 @@
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mohamed"
+		},
+		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
+			"type": "string",
+			"defaultValue": "@{addhours(trigger().scheduledTime, -24)}"
+		},
+		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd": {
+			"type": "string",
+			"defaultValue": "@trigger().scheduledTime"
 		},
 		"containerUri": {
 			"type": "string",
@@ -169,6 +193,9 @@
 					"AzureBlobStorage3_connectionString": {
 						"value": "[parameters('AzureBlobStorage3_connectionString')]"
 					},
+					"AzureBlobTraining_connectionString": {
+						"value": "[parameters('AzureBlobTraining_connectionString')]"
+					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
@@ -199,17 +226,14 @@
 					"AzureSqlDatabase4_connectionString": {
 						"value": "[parameters('AzureSqlDatabase4_connectionString')]"
 					},
-					"CosmosDb1_connectionString": {
-						"value": "[parameters('CosmosDb1_connectionString')]"
+					"AzureSqlDatabase5_connectionString": {
+						"value": "[parameters('AzureSqlDatabase5_connectionString')]"
 					},
 					"CosmosDb2_connectionString": {
 						"value": "[parameters('CosmosDb2_connectionString')]"
 					},
 					"CosmosDb3_connectionString": {
 						"value": "[parameters('CosmosDb3_connectionString')]"
-					},
-					"HttpServer1_password": {
-						"value": "[parameters('HttpServer1_password')]"
 					},
 					"ADLSMohamed_properties_typeProperties_url": {
 						"value": "[parameters('ADLSMohamed_properties_typeProperties_url')]"
@@ -234,12 +258,6 @@
 					},
 					"AzureKeyVault1Mohamed_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1Mohamed_properties_typeProperties_baseUrl')]"
-					},
-					"HttpServer1_properties_typeProperties_url": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
-					},
-					"HttpServer1_properties_typeProperties_userName": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -259,8 +277,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
+					},
 					"buildingstorage_connectionString": {
 						"value": "[parameters('buildingstorage_connectionString')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -341,6 +371,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
 					}
 				}
 			},
@@ -361,11 +394,40 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer2_connectionString": {
+						"value": "[parameters('SqlServer2_connectionString')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
+						"value": "[parameters('Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart')]"
+					},
+					"Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd": {
+						"value": "[parameters('Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_6')]"
 			]
 		}
 	]

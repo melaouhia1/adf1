@@ -20,6 +20,9 @@
 		"AzureBlobStorage3_connectionString": {
 			"value": ""
 		},
+		"AzureBlobTraining_connectionString": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
@@ -50,7 +53,7 @@
 		"AzureSqlDatabase4_connectionString": {
 			"value": ""
 		},
-		"CosmosDb1_connectionString": {
+		"AzureSqlDatabase5_connectionString": {
 			"value": ""
 		},
 		"CosmosDb2_connectionString": {
@@ -62,7 +65,16 @@
 		"HttpServer1_password": {
 			"value": ""
 		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
+			"value": ""
+		},
 		"buildingstorage_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
 			"value": ""
 		},
 		"ADLSMohamed_properties_typeProperties_url": {
@@ -94,6 +106,12 @@
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"value": "mohamed"
+		},
+		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
+			"value": "@{addhours(trigger().scheduledTime, -24)}"
+		},
+		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd": {
+			"value": "@trigger().scheduledTime"
 		},
 		"containerUri": {
 			"value": ""

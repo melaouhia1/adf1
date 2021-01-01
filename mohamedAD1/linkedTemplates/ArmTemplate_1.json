@@ -7,15 +7,51 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "mohamedAD1"
 		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
+		},
 		"buildingstorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'buildingstorage'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://www.websitename.org/api"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "mohamed"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/HttpServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer1_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('HttpServer1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('HttpServer1_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/buildingstorage')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -25,6 +61,39 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('buildingstorage_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('linkedService1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Trigger_gv3')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 24,
+						"startTime": "2020-12-31T22:58:00Z",
+						"timeZone": "UTC"
+					}
 				}
 			},
 			"dependsOn": []
@@ -72,42 +141,31 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MohamedSelfHstedRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Onpremir')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TutorialIntegrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"preventDataExfiltration": false
 			},
 			"dependsOn": []
 		},
@@ -705,258 +763,35 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
+					"referenceName": "AzureSqlDatabase5",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [
 					{
-						"name": "Unit_ID",
-						"type": "int",
-						"precision": 10
+						"name": "buildingCode",
+						"type": "nvarchar"
 					},
 					{
-						"name": "TechnicianNotes",
-						"type": "varchar"
+						"name": "Data",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HashKey",
+						"type": "varbinary"
+					},
+					{
+						"name": "ETL_Load_Date_Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
 					}
 				],
 				"typeProperties": {
-					"schema": "unit",
-					"table": "unit"
+					"schema": "building",
+					"table": "Viewbuilding_API_adddesd"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Operating_Unit_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Header_Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Site_Use_Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary_Site_Use_Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Location",
-						"type": "varchar"
-					},
-					{
-						"name": "Bill_To_Orig_Address_Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Line_1",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Line_2",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Line_3",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Line_4",
-						"type": "varchar"
-					},
-					{
-						"name": "Address_Lines_Phonetic",
-						"type": "varchar"
-					},
-					{
-						"name": "City",
-						"type": "varchar"
-					},
-					{
-						"name": "Province",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "County",
-						"type": "varchar"
-					},
-					{
-						"name": "Postal_Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Country",
-						"type": "varchar"
-					},
-					{
-						"name": "Receivables_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Revenue_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Tax_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Freight_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Clearing_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unbilled_Receivables_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unearned_Revenue_Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Method_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Method_Primary_Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Profile",
-						"type": "varchar"
-					},
-					{
-						"name": "Site_Use_Tax_Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Time_Zone",
-						"type": "varchar"
-					},
-					{
-						"name": "Language",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor_Class_at_Account_Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Use_Cust_Site_Profile_Flag_at_Account_Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor_Class_at_Account_Site_Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Use_Cust_Site_Profile_Flag_at_Account_Site_Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Economic_Activity",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Term_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Concept_Code_(CR)",
-						"type": "varchar"
-					},
-					{
-						"name": "Giro_(CL)",
-						"type": "varchar"
-					},
-					{
-						"name": "US_Remit-to_Address_Mapping",
-						"type": "varchar"
-					},
-					{
-						"name": "US_Tax_Area_Id",
-						"type": "varchar"
-					},
-					{
-						"name": "Union_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID_User_Override",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID_Last_Checked",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID_Assignment_Result",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID_Confidence_Indicator",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID_Precision",
-						"type": "varchar"
-					},
-					{
-						"name": "CRM_Account",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "customer",
-					"table": "CustomerAddress"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
 			},
 			"dependsOn": []
 		}
