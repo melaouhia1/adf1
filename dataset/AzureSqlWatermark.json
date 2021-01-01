@@ -1,0 +1,29 @@
+{
+	"name": "AzureSqlWatermark",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "training"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "tableName",
+				"type": "varchar"
+			},
+			{
+				"name": "waterMarkVal",
+				"type": "datetime2",
+				"scale": 7
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "WaterMark"
+		}
+	}
+}
