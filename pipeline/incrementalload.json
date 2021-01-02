@@ -17,6 +17,10 @@
 			"stgTableName": {
 				"type": "string",
 				"defaultValue": "stgStudent"
+			},
+			"storedProcUpsert": {
+				"type": "string",
+				"defaultValue": "usp_upsert_Student"
 			}
 		},
 		"folder": {
