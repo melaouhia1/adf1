@@ -5,6 +5,10 @@
 			"finalTableName": {
 				"type": "string",
 				"defaultValue": "Student"
+			},
+			"srcTableName": {
+				"type": "string",
+				"defaultValue": "Student"
 			}
 		},
 		"folder": {
