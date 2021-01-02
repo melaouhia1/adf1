@@ -9,6 +9,10 @@
 			"srcTableName": {
 				"type": "string",
 				"defaultValue": "Student"
+			},
+			"waterMarkCol": {
+				"type": "string",
+				"defaultValue": "updateDate"
 			}
 		},
 		"folder": {
