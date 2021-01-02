@@ -113,7 +113,7 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "usp_upsert_Student",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
