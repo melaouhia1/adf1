@@ -159,7 +159,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[usp_write_watermark]"
+					"storedProcedureName": "[dbo].[usp_write_watermark]",
+					"storedProcedureParameters": {
+						"LastModifiedtime": {
+							"value": {
+								"value": "@activity('lookupNewWaterMark').output.firstRow.NewwaterMarkVal",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"TableName": {
+							"value": "@{pipeline().parameters.finalTableName}",
+							"type": "String"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase2",
