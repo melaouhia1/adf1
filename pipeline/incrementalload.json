@@ -1,6 +1,12 @@
 {
 	"name": "incrementalload",
 	"properties": {
+		"parameters": {
+			"finalTableName": {
+				"type": "string",
+				"defaultValue": "Student"
+			}
+		},
 		"folder": {
 			"name": "Training"
 		},
