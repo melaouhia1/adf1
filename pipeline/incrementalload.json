@@ -28,7 +28,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "lookupNewWaterMark",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
