@@ -1,0 +1,9 @@
+{
+	"name": "ssis",
+	"properties": {
+		"folder": {
+			"name": "Training"
+		},
+		"annotations": []
+	}
+}
