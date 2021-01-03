@@ -1,6 +1,41 @@
 {
 	"name": "ssis",
 	"properties": {
+		"activities": [
+			{
+				"name": "Execute SSIS package1",
+				"type": "ExecuteSSISPackage",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"packageLocation": {
+						"packagePath": "test/testp/Package1.dtsx",
+						"type": "SSISDB"
+					},
+					"environmentPath": null,
+					"connectVia": {
+						"referenceName": "integrationRuntime3",
+						"type": "IntegrationRuntimeReference"
+					},
+					"executionCredential": {
+						"domain": "DESKTOP-STG8UJC",
+						"userName": "mohamed",
+						"password": {
+							"type": "SecureString",
+							"value": "**********"
+						}
+					},
+					"loggingLevel": "Basic"
+				}
+			}
+		],
 		"folder": {
 			"name": "Training"
 		},
