@@ -90,12 +90,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Parquet4",
-									"type": "DatasetReference",
-									"parameters": {
-										"tablename": "@{item().Table_Name}",
-										"tablecatalogname": "@{item().Table_Catalog}"
-									}
+									"referenceName": "dsADLS2",
+									"type": "DatasetReference"
 								}
 							]
 						}
