@@ -1,0 +1,15 @@
+{
+	"name": "adventre",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AdventureWorksDW2019",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "training"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
