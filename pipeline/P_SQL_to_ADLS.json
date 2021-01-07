@@ -59,7 +59,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "USE @{item().Table_Catalog} SELECT * FROM @{item().Table_Name}",
+									"sqlReaderQuery": {
+										"value": "USE @{item().Table_Catalog} SELECT * FROM @{item().Table_Name}",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -91,7 +94,11 @@
 							"outputs": [
 								{
 									"referenceName": "Parquet4",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": "@{item().Table_Name}",
+										"tablecatalogname": "@{item().Table_Catalog}"
+									}
 								}
 							]
 						}
