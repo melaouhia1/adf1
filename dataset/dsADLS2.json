@@ -21,8 +21,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@{item().Table_Name}/@{formatDateTime(utcnow(),'yyyy')}/@{formatDateTime(utcnow(),'MM')}/@{formatDateTime(utcnow(),'dd')}/@{item().Table_Name}@{formatDateTime(utcnow(),'HH')}",
-				"folderPath": "@concat('lake/raw/on_prem2/',dataset().table_catalog_name)"
+				"fileName": {
+					"value": "\n@{item().Table_Name}/@{formatDateTime(utcnow(),'yyyy')}/@{formatDateTime(utcnow(),'MM')}/@{formatDateTime(utcnow(),'dd')}/@{item().Table_Name}@{formatDateTime(utcnow(),'HH')}",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('lake/raw/on_prem2/',dataset().table_catalog_name)",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
