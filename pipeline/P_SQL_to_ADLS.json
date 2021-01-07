@@ -23,7 +23,8 @@
 					"dataset": {
 						"referenceName": "DS_ASQLDB_PIPEINE_PARAMETER",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
