@@ -59,11 +59,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureSqlSource",
-									"sqlReaderQuery": {
-										"value": "USE @{item().Table_Catalog} SELECT * FROM @{item().Table_Name}",
-										"type": "Expression"
-									},
+									"type": "SqlServerSource",
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -88,7 +84,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DS_SQLSERVER",
+									"referenceName": "SqlServerTable2",
 									"type": "DatasetReference"
 								}
 							],
