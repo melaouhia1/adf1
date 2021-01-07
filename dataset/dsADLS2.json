@@ -5,6 +5,14 @@
 			"referenceName": "ADLS2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			},
+			"table_catalog_name": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "training"
 		},
