@@ -91,7 +91,11 @@
 							"outputs": [
 								{
 									"referenceName": "dsADLS2",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"table_name": "@{item().Table_Name}",
+										"table_catalog_name": "@{item().Table_Catalog}"
+									}
 								}
 							]
 						}
