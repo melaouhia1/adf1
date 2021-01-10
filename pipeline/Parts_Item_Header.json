@@ -1,0 +1,9 @@
+{
+	"name": "Parts_Item_Header",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory"
+		},
+		"annotations": []
+	}
+}
