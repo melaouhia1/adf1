@@ -1,0 +1,129 @@
+{
+	"name": "AzureSqParts_Item_Header",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION_ESA",
+				"type": "varchar"
+			},
+			{
+				"name": "ORANIZATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TEMPLATE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LIST_PRICE_PER_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "WEIGHT_UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_WEIGHT",
+				"type": "varchar"
+			},
+			{
+				"name": "VOLUME_UOM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "UNIT_VOLUME",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN_MINMAX_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "MAX_MINMAX_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "FULL_LEAD_TIME",
+				"type": "varchar"
+			},
+			{
+				"name": "FIXED_LOT_MULTIPLIER",
+				"type": "varchar"
+			},
+			{
+				"name": "FIXED_ORDER_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "MINIMUM_ORDER_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "MAXIMUM_ORDER_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "LONG_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_INV_APPLICATION",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_CONDITION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ADJUSTMENT_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "CORRECTION_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "SALES_COST_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "FOUR_DIGIT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE1",
+				"type": "varchar"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE2",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Item_Header"
+		}
+	}
+}
