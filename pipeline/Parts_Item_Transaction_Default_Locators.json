@@ -1,0 +1,9 @@
+{
+	"name": "Parts_Item_Transaction_Default_Locators",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory"
+		},
+		"annotations": []
+	}
+}
