@@ -1,0 +1,21 @@
+{
+	"name": "Parts_Item_Category_Assignment",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Parts_Item_Category_Assignment_20210105151430.xlsx",
+				"container": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
