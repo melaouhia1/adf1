@@ -1,0 +1,42 @@
+{
+	"name": "MFG_Part_Number",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Parts_MFG_Part_Number_20210105151636 (1).xlsx",
+				"container": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "MANUFACTURER",
+				"type": "String"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "PART_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ITEM_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "String"
+			}
+		]
+	}
+}
