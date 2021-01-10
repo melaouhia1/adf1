@@ -1,0 +1,9 @@
+{
+	"name": "Parts_MFG_Part_Number",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory/transform"
+		},
+		"annotations": []
+	}
+}
