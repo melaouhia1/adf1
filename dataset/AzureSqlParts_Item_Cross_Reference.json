@@ -1,0 +1,41 @@
+{
+	"name": "AzureSqlParts_Item_Cross_Reference",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CROSS_REFERENCE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CROSS_REFERENCE",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Item_Cross_Reference"
+		}
+	}
+}

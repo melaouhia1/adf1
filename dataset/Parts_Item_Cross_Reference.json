@@ -1,0 +1,46 @@
+{
+	"name": "Parts_Item_Cross_Reference",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Parts_Item_Cross_Reference_20210105151523.xlsx",
+				"container": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "CROSS_REFERENCE_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "CROSS_REFERENCE",
+				"type": "String"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "String"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "String"
+			}
+		]
+	}
+}
