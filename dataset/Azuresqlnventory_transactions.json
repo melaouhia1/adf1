@@ -1,0 +1,73 @@
+{
+	"name": "Azuresqlnventory_transactions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBINVENTORY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_QUANTITY",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_REFERENCE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATOR_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_COST",
+				"type": "varchar"
+			},
+			{
+				"name": "FM_SERIAL_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TO_SERIAL_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "Distribution_Account",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE1",
+				"type": "varchar"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE2",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Inventory_Transactions"
+		}
+	}
+}

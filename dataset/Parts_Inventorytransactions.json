@@ -1,0 +1,78 @@
+{
+	"name": "Parts_Inventorytransactions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "TRANSACTIONS",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Parts_Inventory_Transactions_20210105151858.xlsx",
+				"container": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "String"
+			},
+			{
+				"name": "SUBINVENTORY_NAME",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_QUANTITY",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_DATE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_REFERENCE",
+				"type": "String"
+			},
+			{
+				"name": "LOCATOR_NAME",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_COST",
+				"type": "String"
+			},
+			{
+				"name": "FM_SERIAL_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "TO_SERIAL_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "Distribution_Account",
+				"type": "String"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "String"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE1",
+				"type": "String"
+			},
+			{
+				"name": "PE_EXT_ATTRIBUTE2",
+				"type": "String"
+			}
+		]
+	}
+}
