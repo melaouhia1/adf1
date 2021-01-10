@@ -1,0 +1,9 @@
+{
+	"name": "Inventory_Transactions_",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory"
+		},
+		"annotations": []
+	}
+}
