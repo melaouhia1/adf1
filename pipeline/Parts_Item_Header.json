@@ -29,6 +29,344 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ITEM_NUMBER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ITEM_NUMBER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCRIPTION_ESA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DESCRIPTION_ESA",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ORANIZATION_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ORANIZATION_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPLATE_NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TEMPLATE_NAME",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LIST_PRICE_PER_UNIT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LIST_PRICE_PER_UNIT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UOM_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UOM_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "WEIGHT_UOM_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "WEIGHT_UOM_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_WEIGHT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UNIT_WEIGHT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLUME_UOM_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VOLUME_UOM_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UNIT_VOLUME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UNIT_VOLUME",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MIN_MINMAX_QUANTITY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MIN_MINMAX_QUANTITY",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MAX_MINMAX_QUANTITY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MAX_MINMAX_QUANTITY",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FULL_LEAD_TIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FULL_LEAD_TIME",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FIXED_LOT_MULTIPLIER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FIXED_LOT_MULTIPLIER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FIXED_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FIXED_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MINIMUM_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MINIMUM_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXIMUM_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MAXIMUM_ORDER_QUANTITY",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LONG_DESCRIPTION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LONG_DESCRIPTION",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_INV_APPLICATION",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ITEM_INV_APPLICATION",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSACTION_CONDITION_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TRANSACTION_CONDITION_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ADJUSTMENT_ACCOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ADJUSTMENT_ACCOUNT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CORRECTION_ACCOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CORRECTION_ACCOUNT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SALES_COST_ACCOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SALES_COST_ACCOUNT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FOUR_DIGIT_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FOUR_DIGIT_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ORG_NAME",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PE_EXT_ATTRIBUTE1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PE_EXT_ATTRIBUTE1",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PE_EXT_ATTRIBUTE2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PE_EXT_ATTRIBUTE2",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
