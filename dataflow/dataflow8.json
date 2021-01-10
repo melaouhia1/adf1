@@ -1,0 +1,24 @@
+{
+	"name": "dataflow8",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlMFG_Part_Number",
+						"type": "DatasetReference"
+					},
+					"name": "mfgsql"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "source(output(\n\t\tMANUFACTURER as string,\n\t\tDESCRIPTION as string,\n\t\tPART_NUMBER as string,\n\t\tITEM_NUMBER as string,\n\t\tORG_NAME as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> mfgsql\nmfgsql derive(MANUFACTURER = MANUFACTURER,\n\t\tDESCRIPTION = DESCRIPTION,\n\t\tPART_NUMBER = PART_NUMBER,\n\t\tITEM_NUMBER = ITEM_NUMBER,\n\t\tORG_NAME = ORG_NAME) ~> DerivedColumn1"
+		}
+	}
+}
