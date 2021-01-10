@@ -1,0 +1,9 @@
+{
+	"name": "Parts_Item_Cross_Reference",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory"
+		},
+		"annotations": []
+	}
+}
