@@ -1,0 +1,38 @@
+{
+	"name": "Parts_Item_Transaction_Default_Subinventories",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Parts_Item_Transaction_Default_Subinventories_20210105151805.xlsx",
+				"container": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "String"
+			},
+			{
+				"name": "SUBINVENTORY_NAME",
+				"type": "String"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "String"
+			}
+		]
+	}
+}
