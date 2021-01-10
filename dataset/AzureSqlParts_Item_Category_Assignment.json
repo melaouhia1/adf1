@@ -1,0 +1,37 @@
+{
+	"name": "AzureSqlParts_Item_Category_Assignment",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CATEGORY_SET_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CONCAT_CATEGORY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORANIZATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Item_Category_Assignment"
+		}
+	}
+}
