@@ -12,17 +12,11 @@
 				"type": "AzureBlobFSLocation",
 				"fileSystem": "inventoryoutput"
 			},
-			"columnDelimiter": "|",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
 		"schema": [
-			{
-				"type": "String"
-			},
-			{
-				"type": "String"
-			},
 			{
 				"type": "String"
 			},
