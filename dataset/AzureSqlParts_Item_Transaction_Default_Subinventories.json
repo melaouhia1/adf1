@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlParts_Item_Transaction_Default_Subinventories",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Item_Transaction_Default_Subinventories"
+		}
+	}
+}
