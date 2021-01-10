@@ -1,0 +1,9 @@
+{
+	"name": "MFG_Part_Number",
+	"properties": {
+		"folder": {
+			"name": "ingest/inventory"
+		},
+		"annotations": []
+	}
+}
