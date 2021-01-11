@@ -73,18 +73,6 @@
 							},
 							{
 								"source": {
-									"name": "LOCATOR_NAME",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "LOCATOR_NAME",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "ORG_NAME",
 									"type": "String",
 									"physicalType": "varchar"
