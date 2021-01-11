@@ -111,7 +111,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedTex_Transaction_Default",
+						"referenceName": "Parts_Item_Transaction_Default_Subinv",
 						"type": "DatasetReference"
 					}
 				]
