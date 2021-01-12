@@ -1,6 +1,21 @@
 {
 	"name": "am_da_pl_CD_02_inventory_Project",
 	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata_Transactions",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
 		"folder": {
 			"name": "inventory"
 		},
