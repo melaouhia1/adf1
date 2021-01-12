@@ -41,6 +41,10 @@
 			"Parts_Item_Cross_Reference": {
 				"type": "string",
 				"defaultValue": "Parts_Item_Cross_Reference"
+			},
+			"Parts_Item_Header_": {
+				"type": "string",
+				"defaultValue": "Parts_Item_Header"
 			}
 		},
 		"folder": {
