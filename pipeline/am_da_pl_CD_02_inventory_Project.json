@@ -45,6 +45,14 @@
 			"Parts_Item_Header_": {
 				"type": "string",
 				"defaultValue": "Parts_Item_Header"
+			},
+			"Parts_Item_Transaction_Default_Locators": {
+				"type": "string",
+				"defaultValue": "Parts_Item_Transaction_Default_Locators"
+			},
+			"Parts_MFG_Part_Number": {
+				"type": "string",
+				"defaultValue": "Parts_MFG_Part_Number"
 			}
 		},
 		"folder": {
