@@ -37,6 +37,10 @@
 			"Parts_Item_Category_Assignment": {
 				"type": "string",
 				"defaultValue": "Parts_Item_Category_Assignment"
+			},
+			"Parts_Item_Cross_Reference": {
+				"type": "string",
+				"defaultValue": "Parts_Item_Cross_Reference"
 			}
 		},
 		"folder": {
