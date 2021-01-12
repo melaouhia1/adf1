@@ -14,6 +14,19 @@
 					"secureInput": false
 				},
 				"userProperties": []
+			},
+			{
+				"name": "Filter_transaction",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata_Transactions",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"folder": {
