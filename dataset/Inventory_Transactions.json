@@ -1,0 +1,20 @@
+{
+	"name": "Inventory_Transactions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Category_Assignment",
+				"fileSystem": "inventory"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
