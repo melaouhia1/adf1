@@ -33,6 +33,10 @@
 			"Parts_Inventory_Transactions": {
 				"type": "string",
 				"defaultValue": "Parts_Inventory_Transactions"
+			},
+			"Parts_Item_Category_Assignment": {
+				"type": "string",
+				"defaultValue": "Parts_Item_Category_Assignment"
 			}
 		},
 		"folder": {
