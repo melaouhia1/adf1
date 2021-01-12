@@ -29,6 +29,12 @@
 				"userProperties": []
 			}
 		],
+		"parameters": {
+			"Parts_Inventory_Transactions": {
+				"type": "string",
+				"defaultValue": "Parts_Inventory_Transactions"
+			}
+		},
 		"folder": {
 			"name": "inventory"
 		},
