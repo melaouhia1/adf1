@@ -26,7 +26,17 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get Metadata_Transactions').output.childItems",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_Inventory_Transactions'))pipeline().parameters.Parts_Inventory_Transactions",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -57,6 +67,12 @@
 			"Parts_Item_Transaction_Default_Locators_subinventory": {
 				"type": "string",
 				"defaultValue": "Parts_Item_Transaction_Default_Locators_subinventory"
+			}
+		},
+		"variables": {
+			"Parts_Inventory_Transactions": {
+				"type": "String",
+				"defaultValue": "Parts_Inventory_Transactions"
 			}
 		},
 		"folder": {
