@@ -246,6 +246,29 @@
 						"enablePartitionDiscovery": false
 					}
 				}
+			},
+			{
+				"name": "Filter Item_Category_Assignment",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "GetMetadataItem_category_assignment",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetMetadataItem_category_assignment').output.childItems\n",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
