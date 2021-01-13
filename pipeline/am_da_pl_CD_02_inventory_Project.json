@@ -93,6 +93,10 @@
 			"Parts_MFG_Part_Number": {
 				"type": "String",
 				"defaultValue": "Parts_MFG_Part_Number"
+			},
+			"Parts_Item_Transaction_Default_Locators_subinventory": {
+				"type": "String",
+				"defaultValue": "Parts_Item_Transaction_Default_Locators_subinventory"
 			}
 		},
 		"folder": {
