@@ -76,6 +76,10 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFileName": {
+								"value": "@activity('Filter_transaction').output.value[0].name\n\n",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						}
 					},
