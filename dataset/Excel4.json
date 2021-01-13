@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@activity('').output.Value[0].name",
+					"value": "@activity('Filter_transaction').output.Value[0].name",
 					"type": "Expression"
 				},
 				"container": "inventoryoutput"
