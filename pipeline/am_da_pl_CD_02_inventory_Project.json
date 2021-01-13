@@ -480,7 +480,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
+						"value": "@startswith(item().name,variables('Parts_Item_Cross_Reference'))\n",
 						"type": "Expression"
 					}
 				}
