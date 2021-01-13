@@ -565,8 +565,26 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": {
+								"value": "@activity('Filter Cross_Reference').output.value[0].name",
+								"type": "Expression"
+							},
+							"enablePartitionDiscovery": false
+						}
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "Parts_Item_Cross_Reference",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
