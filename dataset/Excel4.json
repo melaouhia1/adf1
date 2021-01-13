@@ -1,0 +1,23 @@
+{
+	"name": "Excel4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABLBMohamedBlob2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@activity('').output.Value[0].name",
+					"type": "Expression"
+				},
+				"container": "inventoryoutput"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
