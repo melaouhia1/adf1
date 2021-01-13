@@ -107,7 +107,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Azuresqlnventory_transactions",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
@@ -302,11 +302,30 @@
 							"enablePartitionDiscovery": false
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "  truncate table [inventory].[Parts_Item_Category_Assignment]",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "ExcelItem_Category_Assignment",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTAzureSqlParts_Item_Category_Assignment",
 						"type": "DatasetReference"
 					}
 				]
