@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					}
 				}
@@ -112,36 +113,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"Parts_Inventory_Transactions": {
-				"type": "string",
-				"defaultValue": "Parts_Inventory_Transactions"
-			},
-			"Parts_Item_Category_Assignment": {
-				"type": "string",
-				"defaultValue": "Parts_Item_Category_Assignment"
-			},
-			"Parts_Item_Cross_Reference": {
-				"type": "string",
-				"defaultValue": "Parts_Item_Cross_Reference"
-			},
-			"Parts_Item_Header_": {
-				"type": "string",
-				"defaultValue": "Parts_Item_Header"
-			},
-			"Parts_Item_Transaction_Default_Locators": {
-				"type": "string",
-				"defaultValue": "Parts_Item_Transaction_Default_Locators"
-			},
-			"Parts_MFG_Part_Number": {
-				"type": "string",
-				"defaultValue": "Parts_MFG_Part_Number"
-			},
-			"Parts_Item_Transaction_Default_Locators_subinventory": {
-				"type": "string",
-				"defaultValue": "Parts_Item_Transaction_Default_Locators_subinventory"
-			}
-		},
 		"variables": {
 			"Parts_Inventory_Transactions": {
 				"type": "String",
