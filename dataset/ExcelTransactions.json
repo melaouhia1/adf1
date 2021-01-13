@@ -1,5 +1,5 @@
 {
-	"name": "Excel4",
+	"name": "ExcelTransactions",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ABLBMohamedBlob2",
