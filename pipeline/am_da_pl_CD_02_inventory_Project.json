@@ -450,7 +450,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ExcelItem_Category_Assignment",
+						"referenceName": "ExcelCross_Reference",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -459,6 +459,29 @@
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Filter Cross_Reference",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "GetMetadataItem_cCross_Reference",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetMetadataItem_cCross_Reference').output.childItems\n",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
+						"type": "Expression"
 					}
 				}
 			}
