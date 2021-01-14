@@ -847,7 +847,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ExcelCross_Reference",
+						"referenceName": "ExcelMFG",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -857,6 +857,29 @@
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true,
 						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Filter Item_locatord_copy1_copy1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "GetMetadataItem_MFG",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetMetadataItem_MFG').output.childItems\n",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_Item_Transaction_Default_Locators'))\n",
+						"type": "Expression"
 					}
 				}
 			}
