@@ -709,7 +709,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ExcelCross_Reference",
+						"referenceName": "Item_Header",
 						"type": "DatasetReference"
 					}
 				],
