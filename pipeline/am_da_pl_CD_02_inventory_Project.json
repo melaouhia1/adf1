@@ -737,7 +737,9 @@
 						"referenceName": "Parts_Item_Transaction_Default_Locators",
 						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
