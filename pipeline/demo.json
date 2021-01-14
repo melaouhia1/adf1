@@ -29,6 +29,12 @@
 				}
 			}
 		],
+		"variables": {
+			"Parts_MFG_Part_Number": {
+				"type": "String",
+				"defaultValue": "Parts_MFG_Part_Number"
+			}
+		},
 		"folder": {
 			"name": "inventory"
 		},
