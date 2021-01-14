@@ -42,7 +42,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get_Default_Subinventories').output.childItems",
+						"value": "@activity('getmfg').output.childItems",
 						"type": "Expression"
 					}
 				}
