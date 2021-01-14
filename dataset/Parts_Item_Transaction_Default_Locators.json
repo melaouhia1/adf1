@@ -8,10 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Parts_Item_Transaction_Default_Locators_20210105153218.xlsx",
+				"folderPath": "Transaction_Default_Locators",
 				"container": "inventory"
 			},
 			"firstRowAsHeader": true
