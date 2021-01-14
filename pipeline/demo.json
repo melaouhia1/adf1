@@ -1,0 +1,9 @@
+{
+	"name": "demo",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
