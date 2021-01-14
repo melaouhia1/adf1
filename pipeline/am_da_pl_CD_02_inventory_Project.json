@@ -1027,7 +1027,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "truncate table [inventory].[Parts_MFG_Part_Number]",
+						"preCopyScript": "truncate table [inventory].[Parts_Item_Transaction_Default_Subinventories]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
