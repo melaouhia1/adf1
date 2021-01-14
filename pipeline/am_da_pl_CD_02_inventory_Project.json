@@ -884,7 +884,7 @@
 				}
 			},
 			{
-				"name": "Copy data4",
+				"name": "Copy mfg",
 				"type": "Copy",
 				"dependsOn": [
 					{
