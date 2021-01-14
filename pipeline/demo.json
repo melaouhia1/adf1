@@ -44,6 +44,10 @@
 					"items": {
 						"value": "@activity('getmfg').output.childItems",
 						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_MFG_Part_Number'))",
+						"type": "Expression"
 					}
 				}
 			}
