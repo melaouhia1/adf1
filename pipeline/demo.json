@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "getmfg",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -25,6 +25,25 @@
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "getmfg",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get_Default_Subinventories').output.childItems",
+						"type": "Expression"
 					}
 				}
 			}
