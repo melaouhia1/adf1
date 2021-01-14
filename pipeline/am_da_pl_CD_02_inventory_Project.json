@@ -721,7 +721,7 @@
 				]
 			},
 			{
-				"name": "Get ITransaction_Default_Locators",
+				"name": "Get ITrans_D_Loc",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -741,6 +741,29 @@
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Filter Item_Header_copy1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Get ITrans_D_Loc",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get ITrans_D_Loc').output.childItems\n",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_Item_Transaction_Default_Locators'))\n",
+						"type": "Expression"
 					}
 				}
 			}
