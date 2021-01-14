@@ -1048,7 +1048,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlMFG",
+						"referenceName": "AzureSqlSubinventories",
 						"type": "DatasetReference"
 					}
 				]

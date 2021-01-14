@@ -1,0 +1,33 @@
+{
+	"name": "AzureSqlSubinventories",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORGANIZATION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SUBINVENTORY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_Item_Transaction_Default_Subinventories"
+		}
+	}
+}
