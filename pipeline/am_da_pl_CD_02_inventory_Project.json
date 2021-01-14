@@ -878,7 +878,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith(item().name,variables('Parts_Item_Transaction_Default_Locators'))\n",
+						"value": "@startswith(item().name,variables('Parts_MFG_Part_Number'))\n",
 						"type": "Expression"
 					}
 				}
