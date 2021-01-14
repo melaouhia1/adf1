@@ -994,7 +994,7 @@
 				}
 			},
 			{
-				"name": "Copy mfg_copy1",
+				"name": "Copy Subinventories",
 				"type": "Copy",
 				"dependsOn": [
 					{
