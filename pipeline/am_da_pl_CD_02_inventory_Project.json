@@ -861,7 +861,7 @@
 				}
 			},
 			{
-				"name": "Filter Item_locatord_copy1_copy1",
+				"name": "Filter mfg",
 				"type": "Filter",
 				"dependsOn": [
 					{
@@ -888,7 +888,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Filter Item_locatord_copy1_copy1",
+						"activity": "Filter mfg",
 						"dependencyConditions": [
 							"Succeeded"
 						]
