@@ -27,33 +27,8 @@
 						"enablePartitionDiscovery": false
 					}
 				}
-			},
-			{
-				"name": "Filter1",
-				"type": "Filter",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Get Metadata1').outputt.childItems",
-						"type": "Expression"
-					}
-				}
 			}
 		],
-		"parameters": {
-			"Parts_MFG_Part_Number": {
-				"type": "string",
-				"defaultValue": "Parts_MFG_Part_Number"
-			}
-		},
 		"folder": {
 			"name": "inventory"
 		},
