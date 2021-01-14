@@ -745,7 +745,7 @@
 				}
 			},
 			{
-				"name": "Filter Item_Header_copy1",
+				"name": "Filter Item_locatord_copy1",
 				"type": "Filter",
 				"dependsOn": [
 					{
@@ -766,6 +766,66 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Copy data3_copy1_copy1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Filter Item_locatord_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": {
+								"value": "@activity('Filter Item_locatord_copy1').output.value[0].name",
+								"type": "Expression"
+							},
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "  truncate table [inventory].[Parts_Item_Transaction_Default_Locators]",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Parts_Item_Transaction_Default_Locators",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlParts_Item_Transaction_Default_Locators",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
