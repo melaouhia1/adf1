@@ -957,7 +957,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ExcelMFG",
+						"referenceName": "ExcelDefault_Subinventories",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -967,6 +967,29 @@
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true,
 						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Filter mfg_copy1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Get_Default_Subinventories",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetMetadataItem_MFG').output.childItems\n",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(item().name,variables('Parts_MFG_Part_Number'))\n",
+						"type": "Expression"
 					}
 				}
 			}
