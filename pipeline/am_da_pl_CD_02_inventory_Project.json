@@ -971,7 +971,7 @@
 				}
 			},
 			{
-				"name": "Filter mfg_copy1",
+				"name": "Filter Subinventories",
 				"type": "Filter",
 				"dependsOn": [
 					{
