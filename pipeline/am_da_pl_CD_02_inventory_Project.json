@@ -803,7 +803,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "  truncate table [inventory].[Parts_Item_Transaction_Default_Locators]",
+						"preCopyScript": "truncate table [inventory].[Parts_Item_Transaction_Default_Locators]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
