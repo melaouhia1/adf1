@@ -27,7 +27,7 @@
 		],
 		"typeProperties": {
 			"schema": "inventory",
-			"table": "Parts_Item_Transaction_Default_Subinventories"
+			"table": "Parts_Item_Transaction_Default_Locators"
 		}
 	}
 }
