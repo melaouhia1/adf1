@@ -916,7 +916,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table [inventory].[Parts_MFG_Part_Number]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
