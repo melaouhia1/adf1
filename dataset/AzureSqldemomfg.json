@@ -1,0 +1,37 @@
+{
+	"name": "AzureSqldemomfg",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "MANUFACTURER",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "PART_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ITEM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "inventory",
+			"table": "Parts_MFG_Part_Number"
+		}
+	}
+}
