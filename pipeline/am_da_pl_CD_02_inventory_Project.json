@@ -1086,7 +1086,11 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "emptyinteger",
+					"value": ""
+				}
 			}
 		],
 		"variables": {
