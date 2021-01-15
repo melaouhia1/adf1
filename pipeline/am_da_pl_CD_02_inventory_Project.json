@@ -1089,7 +1089,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "emptyinteger",
-					"value": ""
+					"value": "\"empty\""
 				}
 			}
 		],
