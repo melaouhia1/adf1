@@ -8,6 +8,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "TRANSACTIONS",
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "transaction",
