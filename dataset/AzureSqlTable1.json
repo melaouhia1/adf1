@@ -28,8 +28,8 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "building",
-			"table": "Viewbuilding_API_adddesd"
+			"schema": "inventory",
+			"table": "Parts_Inventory_Transactions"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
