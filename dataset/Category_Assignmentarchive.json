@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Category_Assignment/Archive_categoryassignment",
-				"fileSystem": "inventory"
+				"fileSystem": "archives"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
