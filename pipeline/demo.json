@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "getmfg",
+				"name": "GetMetadataItem_category_assignment",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Excel5demoMFG",
+						"referenceName": "ExcelItem_Category_Assignment",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -24,16 +24,17 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					}
 				}
 			},
 			{
-				"name": "Filter1",
+				"name": "Filter Item_Category_Assignment",
 				"type": "Filter",
 				"dependsOn": [
 					{
-						"activity": "getmfg",
+						"activity": "GetMetadataItem_category_assignment",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -42,21 +43,21 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('getmfg').output.childItems",
+						"value": "@activity('GetMetadataItem_category_assignment').output.childItems\n",
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith(item().name,variables('Parts_MFG_Part_Number'))",
+						"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
 						"type": "Expression"
 					}
 				}
 			},
 			{
-				"name": "Copy mfg demo",
+				"name": "Copy data2",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Filter1",
+						"activity": "Filter Item_Category_Assignment",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -74,10 +75,10 @@
 					"source": {
 						"type": "ExcelSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"wildcardFileName": {
-								"value": "@activity('Filter1').output.value[0].name",
+								"value": "@activity('Filter Item_Category_Assignment').output.value[0].name",
 								"type": "Expression"
 							},
 							"enablePartitionDiscovery": false
@@ -85,7 +86,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "  truncate table [inventory].[Parts_MFG_Part_Number]",
+						"preCopyScript": "  truncate table [inventory].[Parts_Item_Category_Assignment]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -100,13 +101,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "demomfg",
+						"referenceName": "ExcelItem_Category_Assignment",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqldemomfg",
+						"referenceName": "AzureSqlTAzureSqlParts_Item_Category_Assignment",
 						"type": "DatasetReference"
 					}
 				]
