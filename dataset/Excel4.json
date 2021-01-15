@@ -8,10 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "TRANSACTIONS",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Inventory_Transactions",
+				"folderPath": "transaction",
 				"fileSystem": "inventory"
 			},
 			"firstRowAsHeader": true
