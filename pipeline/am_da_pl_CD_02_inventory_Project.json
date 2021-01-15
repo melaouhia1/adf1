@@ -1074,6 +1074,12 @@
 					"sleep": 1,
 					"childItems": true
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"variables": {
