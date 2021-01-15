@@ -5,7 +5,14 @@
 			{
 				"name": "Get Metadata_Transactions",
 				"type": "GetMetadata",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Validation1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -1056,14 +1063,7 @@
 			{
 				"name": "Validation1",
 				"type": "Validation",
-				"dependsOn": [
-					{
-						"activity": "Delete1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
