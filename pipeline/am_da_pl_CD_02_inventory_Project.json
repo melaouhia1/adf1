@@ -5,14 +5,7 @@
 			{
 				"name": "Get Metadata_Transactions",
 				"type": "GetMetadata",
-				"dependsOn": [
-					{
-						"activity": "Validation1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -1059,38 +1052,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Validation1",
-				"type": "Validation",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "Excel4",
-						"type": "DatasetReference"
-					},
-					"timeout": "7.00:00:00",
-					"sleep": 1,
-					"childItems": true
-				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Validation1",
-						"dependencyConditions": [
-							"Failed"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "emptyinteger",
-					"value": "\"empty\""
-				}
 			}
 		],
 		"variables": {
