@@ -366,7 +366,7 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -392,7 +392,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Category_Assignmentarchive",
+						"referenceName": "DelimitedText10",
 						"type": "DatasetReference"
 					}
 				]
@@ -418,7 +418,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Category_Assignmentarchive",
+						"referenceName": "ExcelItem_Category_Assignment",
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {
