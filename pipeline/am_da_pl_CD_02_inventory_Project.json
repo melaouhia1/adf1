@@ -1081,7 +1081,7 @@
 			},
 			"Parts_Item_Transaction_Default_Locators_subinventory": {
 				"type": "String",
-				"defaultValue": "Parts_Item_Transaction_Default_Locators_subinventory"
+				"defaultValue": "Parts_Item_Transaction_Default_Subinventories"
 			},
 			"emptyinteger": {
 				"type": "String",
