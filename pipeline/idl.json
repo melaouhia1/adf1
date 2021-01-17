@@ -1,0 +1,64 @@
+{
+	"name": "idl",
+	"properties": {
+		"activities": [
+			{
+				"name": "Inventory_Transactions",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[TRANSACTION_QUANTITY]\n      ,[TRANSACTION_DATE]\n      ,[TRANSACTION_REFERENCE]\n      ,[LOCATOR_NAME]\n      ,[TRANSACTION_COST]\n      ,[FM_SERIAL_NUMBER]\n      ,[TO_SERIAL_NUMBER]\n      ,[Distribution_Account]\n      ,[ORG_NAME]\n      ,[PE_EXT_ATTRIBUTE1]\n      ,[PE_EXT_ATTRIBUTE2]\n  FROM [inventory].[Parts_Inventory_Transactions]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Buildingsql",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dtInventory_Transactions",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Output/inventory"
+		},
+		"annotations": []
+	}
+}
