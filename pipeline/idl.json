@@ -68,8 +68,45 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT [ITEM_NUMBER]\n      ,[CATEGORY_SET_NAME]\n      ,[CONCAT_CATEGORY_NAME]\n      ,[ORANIZATION_CODE]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Category_Assignment]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureSqlParts_Item_Category_Assignment",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dtCategory_Assignment",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
