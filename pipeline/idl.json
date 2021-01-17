@@ -227,8 +227,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[LOCATOR_NAME]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Transaction_Default_Locators]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureSqlParts_Item_Transaction_Default_Locators",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
