@@ -799,7 +799,7 @@
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"wildcardFileName": {
-								"value": "@activity('Filter Item_locatord_copy1').output.value[0].name",
+								"value": "@activity('Filter Item_header2').output.value[0].name",
 								"type": "Expression"
 							},
 							"enablePartitionDiscovery": false
