@@ -1228,7 +1228,7 @@
 					"source": {
 						"type": "ExcelSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"wildcardFileName": {
 								"value": "@activity('Filter Item_header2').output.value[0].name",
@@ -1260,7 +1260,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Item_Header",
+						"referenceName": "Parts_Item_Transaction_Default_Locators",
 						"type": "DatasetReference"
 					}
 				],
@@ -1292,7 +1292,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Parts_Item_Cross_Reference",
+						"referenceName": "Parts_Item_Transaction_Default_Locators",
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {
