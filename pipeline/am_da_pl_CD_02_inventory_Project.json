@@ -1119,12 +1119,9 @@
 					"source": {
 						"type": "ExcelSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
+							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFileName": {
-								"value": "@activity('Filter Cross_Reference').output.value[0].name",
-								"type": "Expression"
-							},
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -1151,7 +1148,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Parts_Item_Cross_Reference",
+						"referenceName": "Item_Header",
 						"type": "DatasetReference"
 					}
 				],
