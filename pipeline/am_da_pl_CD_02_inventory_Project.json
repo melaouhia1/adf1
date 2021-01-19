@@ -1088,7 +1088,10 @@
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"recursive": true,
-						"wildcardFileName": " @activity('Filter Item_Category_Assignment').output.value[0].name",
+						"wildcardFileName": {
+							"value": "@{activity('Filter Cross_Reference').output.value[0].name}",
+							"type": "Expression"
+						},
 						"enablePartitionDiscovery": false
 					}
 				}
