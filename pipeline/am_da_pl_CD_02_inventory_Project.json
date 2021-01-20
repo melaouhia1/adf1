@@ -1511,7 +1511,7 @@
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true,
 						"wildcardFileName": {
-							"value": "@{activity('Filter mfg').output.value[0].name}",
+							"value": "@{activity('Filter Subinventories').output.value[0].name}",
 							"type": "Expression"
 						},
 						"enablePartitionDiscovery": false
