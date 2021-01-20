@@ -8,7 +8,13 @@
 		"ABLBMohamedBlob2_connectionString": {
 			"value": ""
 		},
+		"ADLS2_accountKey": {
+			"value": ""
+		},
 		"ADLSMohamed_accountKey": {
+			"value": ""
+		},
+		"AdventureWorksDW2019_connectionString": {
 			"value": ""
 		},
 		"AzureBlobStorage1_connectionString": {
@@ -71,11 +77,23 @@
 		"SqlServer2_connectionString": {
 			"value": ""
 		},
+		"SqlServerTestStudent_connectionString": {
+			"value": ""
+		},
 		"buildingstorage_connectionString": {
+			"value": ""
+		},
+		"dsadve2_accountKey": {
 			"value": ""
 		},
 		"linkedService1_connectionString": {
 			"value": ""
+		},
+		"linkedService2_connectionString": {
+			"value": ""
+		},
+		"ADLS2_properties_typeProperties_url": {
+			"value": "https://mohamedstorage.dfs.core.windows.net"
 		},
 		"ADLSMohamed_properties_typeProperties_url": {
 			"value": "https://mohamedstoragelake.dfs.core.windows.net"
@@ -107,11 +125,41 @@
 		"HttpServer1_properties_typeProperties_userName": {
 			"value": "mohamed"
 		},
+		"dsadve2_properties_typeProperties_url": {
+			"value": "https://mohamedstoragelake.dfs.core.windows.net"
+		},
 		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
 			"value": "@{addhours(trigger().scheduledTime, -24)}"
 		},
 		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd": {
 			"value": "@trigger().scheduledTime"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "mohamedserversql.database.windows.net"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "mohamed"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "mohamed"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "mohamed"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
 		},
 		"containerUri": {
 			"value": ""

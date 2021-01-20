@@ -13,6 +13,984 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqParts_Item_Header')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "DESCRIPTION",
+						"type": "varchar"
+					},
+					{
+						"name": "DESCRIPTION_ESA",
+						"type": "varchar"
+					},
+					{
+						"name": "ORANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "TEMPLATE_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "LIST_PRICE_PER_UNIT",
+						"type": "varchar"
+					},
+					{
+						"name": "UOM_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "WEIGHT_UOM_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "UNIT_WEIGHT",
+						"type": "varchar"
+					},
+					{
+						"name": "VOLUME_UOM_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "UNIT_VOLUME",
+						"type": "varchar"
+					},
+					{
+						"name": "MIN_MINMAX_QUANTITY",
+						"type": "varchar"
+					},
+					{
+						"name": "MAX_MINMAX_QUANTITY",
+						"type": "varchar"
+					},
+					{
+						"name": "FULL_LEAD_TIME",
+						"type": "varchar"
+					},
+					{
+						"name": "FIXED_LOT_MULTIPLIER",
+						"type": "varchar"
+					},
+					{
+						"name": "FIXED_ORDER_QUANTITY",
+						"type": "varchar"
+					},
+					{
+						"name": "MINIMUM_ORDER_QUANTITY",
+						"type": "varchar"
+					},
+					{
+						"name": "MAXIMUM_ORDER_QUANTITY",
+						"type": "varchar"
+					},
+					{
+						"name": "LONG_DESCRIPTION",
+						"type": "varchar"
+					},
+					{
+						"name": "ITEM_INV_APPLICATION",
+						"type": "varchar"
+					},
+					{
+						"name": "TRANSACTION_CONDITION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "ADJUSTMENT_ACCOUNT",
+						"type": "varchar"
+					},
+					{
+						"name": "CORRECTION_ACCOUNT",
+						"type": "varchar"
+					},
+					{
+						"name": "SALES_COST_ACCOUNT",
+						"type": "varchar"
+					},
+					{
+						"name": "FOUR_DIGIT_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "PE_EXT_ATTRIBUTE1",
+						"type": "varchar"
+					},
+					{
+						"name": "PE_EXT_ATTRIBUTE2",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Header"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlBank')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Identification FK",
+						"type": "varchar"
+					},
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "ElevatorBank_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "ElevatorBank_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "ElevatorBank_BankName",
+						"type": "varchar"
+					},
+					{
+						"name": "ElevatorBank_AccessCode",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "BANK"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlController')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Equipment Id FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Controller_Name1",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "Controller"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlCustomerBillToContactsidl')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDriveType')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Equipment Id FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "DriveType_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_Name1",
+						"type": "varchar"
+					},
+					{
+						"name": "DriveType_Name2",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "DriveType"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlIdentification')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_GovernmentID",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_NickName",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_BillingReference",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_DownInd",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_RegisteredNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_MfgYear",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_WarrantyStartDate",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_WarrantyEndDate",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_InstallDate",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_HandoverDate",
+						"type": "varchar"
+					},
+					{
+						"name": "AnnualSafetyTest_LastInspectionDate",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_JobNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_FactorySerialNo",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_Smart_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_Smart_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_Smart_InstallationDate",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_SmartMAX_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_SmartMAX_ExternalID",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "Identification"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlMFG')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "MANUFACTURER",
+						"type": "varchar"
+					},
+					{
+						"name": "DESCRIPTION",
+						"type": "varchar"
+					},
+					{
+						"name": "PART_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_MFG_Part_Number"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlMFG_Part_Number')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "MANUFACTURER",
+						"type": "varchar"
+					},
+					{
+						"name": "DESCRIPTION",
+						"type": "varchar"
+					},
+					{
+						"name": "PART_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "inventory.[Parts_MFG_Part_Number"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlParts_Item_Category_Assignment')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "CATEGORY_SET_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "CONCAT_CATEGORY_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "ORANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Category_Assignment"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlParts_Item_Cross_Reference')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "CROSS_REFERENCE_TYPE",
+						"type": "varchar"
+					},
+					{
+						"name": "CROSS_REFERENCE",
+						"type": "varchar"
+					},
+					{
+						"name": "DESCRIPTION",
+						"type": "varchar"
+					},
+					{
+						"name": "ORGANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Cross_Reference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlParts_Item_Transaction_Default_Locators')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ORGANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "SUBINVENTORY_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Transaction_Default_Locators"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlParts_Item_Transaction_Default_Subinventories')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Transaction_Default_Subinventories"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlSpeed')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "varchar"
+					},
+					{
+						"name": "Equipment Id FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Speed_ViewID",
+						"type": "varchar"
+					},
+					{
+						"name": "Speed_FPM",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "Speed"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlSubinventories')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "ORGANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "SUBINVENTORY_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Transaction_Default_Subinventories"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTAzureSqlParts_Item_Category_Assignment')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ITEM_NUMBER",
+						"type": "varchar"
+					},
+					{
+						"name": "CATEGORY_SET_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "CONCAT_CATEGORY_NAME",
+						"type": "varchar"
+					},
+					{
+						"name": "ORANIZATION_CODE",
+						"type": "varchar"
+					},
+					{
+						"name": "ORG_NAME",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Item_Category_Assignment"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTCustomerHeader')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "Customer_Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_Party_Reference_Number",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_Account_Reference_Number",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_Type",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_Profile",
+						"type": "varchar"
+					},
+					{
+						"name": "Payment_Method_Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Payment_Method_Primary_Flag",
+						"type": "varchar"
+					},
+					{
+						"name": "Global_Customer_Flag",
+						"type": "varchar"
+					},
+					{
+						"name": "Origin_(AR)",
+						"type": "varchar"
+					},
+					{
+						"name": "Primary_ID_Type",
+						"type": "varchar"
+					},
+					{
+						"name": "Primary_ID_Validation_Digit",
+						"type": "varchar"
+					},
+					{
+						"name": "Taxpayer_ID",
+						"type": "varchar"
+					},
+					{
+						"name": "Fiscal_Classification_Type_Code",
+						"type": "varchar"
+					},
+					{
+						"name": "Fiscal_Classification_Code",
+						"type": "varchar"
+					},
+					{
+						"name": "Effective_Date_From",
+						"type": "varchar"
+					},
+					{
+						"name": "Document_Type_(CO)",
+						"type": "varchar"
+					},
+					{
+						"name": "Taxpayer_ID_(CO)",
+						"type": "varchar"
+					},
+					{
+						"name": "Nature_(CO)",
+						"type": "varchar"
+					},
+					{
+						"name": "Regimen_(CO)",
+						"type": "varchar"
+					},
+					{
+						"name": "Special_Customer_Flag",
+						"type": "varchar"
+					},
+					{
+						"name": "Operating_Unit_Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Customer_Class_Code",
+						"type": "varchar"
+					},
+					{
+						"name": "Payment_Term_Name",
+						"type": "varchar"
+					},
+					{
+						"name": "Order_Number_of_the_Cedula_(GT)",
+						"type": "varchar"
+					},
+					{
+						"name": "Register_Number_of_the_Cedula_(GT)",
+						"type": "varchar"
+					},
+					{
+						"name": "Document_Type_(SV)",
+						"type": "varchar"
+					},
+					{
+						"name": "Contributor_Registry_Number_(SV)",
+						"type": "varchar"
+					},
+					{
+						"name": "Person_Category_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Person_Type_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Document_Type_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Document_Number_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Last_Name_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Second_Last_Name_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "First_Name_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Middle_Name_(PE)",
+						"type": "varchar"
+					},
+					{
+						"name": "Origin",
+						"type": "varchar"
+					},
+					{
+						"name": "Nature",
+						"type": "varchar"
+					},
+					{
+						"name": "Document_Type_(UY)",
+						"type": "varchar"
+					},
+					{
+						"name": "Perception_Agent_(PE)",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "customer",
+					"table": "header"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTEQUIPMENT')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "UnitId FK",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Floors",
+						"type": "varchar"
+					},
+					{
+						"name": "NumberofFrontOpenings",
+						"type": "varchar"
+					},
+					{
+						"name": "NumberofRearOpenings",
+						"type": "varchar"
+					},
+					{
+						"name": "Unit_CapacityLbs",
+						"type": "varchar"
+					},
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "unit",
+					"table": "EQUIPMENT"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase5",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "buildingCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Data",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HashKey",
+						"type": "varbinary"
+					},
+					{
+						"name": "ETL_Load_Date_Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "inventory",
+					"table": "Parts_Inventory_Transactions"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -241,1677 +1219,6 @@
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable4DimAccount')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "AccountKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ParentAccountKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "AccountCodeAlternateKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ParentAccountCodeAlternateKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "AccountDescription",
-						"type": "nvarchar"
-					},
-					{
-						"name": "AccountType",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CustomMembers",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ValueType",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CustomMemberOptions",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "DimAccount"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlUILDING')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "identification FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Building_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Name_en",
-						"type": "varchar"
-					},
-					{
-						"name": "Name_local",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "BUILDING"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqladdress')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Operating Unit Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Header Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Site Use Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary Site Use Flag",
-						"type": "varchar"
-					},
-					{
-						"name": " Location",
-						"type": "varchar"
-					},
-					{
-						"name": "Bill To Orig Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 1",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 2",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 3",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Line 4",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Lines Phonetic",
-						"type": "varchar"
-					},
-					{
-						"name": "City",
-						"type": "varchar"
-					},
-					{
-						"name": "Province",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "County",
-						"type": "varchar"
-					},
-					{
-						"name": "Postal Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Country",
-						"type": "varchar"
-					},
-					{
-						"name": "Receivables Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Revenue Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Tax Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Freight Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Clearing Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unbilled Receivables Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Unearned Revenue Account",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Primary Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Profile",
-						"type": "varchar"
-					},
-					{
-						"name": "Site Use Tax Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Time Zone",
-						"type": "varchar"
-					},
-					{
-						"name": "Language",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor Class at Account Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor Class at Account Site Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Use Cust Site Profile Flag at Account Site Use",
-						"type": "varchar"
-					},
-					{
-						"name": "Economic Activity",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Term Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Concept Code (CR)",
-						"type": "varchar"
-					},
-					{
-						"name": "Giro (CL)",
-						"type": "varchar"
-					},
-					{
-						"name": "US Remit-to Address Mapping",
-						"type": "varchar"
-					},
-					{
-						"name": "US Tax Area Id",
-						"type": "varchar"
-					},
-					{
-						"name": "Union Local",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID User Override",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Last Checked",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Assignment Result",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Confidence Indicator",
-						"type": "varchar"
-					},
-					{
-						"name": "TAID Precision",
-						"type": "varchar"
-					},
-					{
-						"name": "CRM Account",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "address"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlbuilding')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "ExternalBuildingId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingName_local",
-						"type": "varchar"
-					},
-					{
-						"name": "StreetAddress_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "City_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Postcode",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "MainTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "SubTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerNo",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfTotalUnits",
-						"type": "varchar"
-					},
-					{
-						"name": "SumOfUnitsInService",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "OfficeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHours",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleHoursViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTime",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitsScheduleTimeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "TargetCallRate",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunTypeName",
-						"type": "varchar"
-					},
-					{
-						"name": "RunViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunName",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "BHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "AHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "Notes",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BHContactRoleName",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "AHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "AHContactRoleViewName",
-						"type": "varchar"
-					},
-					{
-						"name": "State",
-						"type": "varchar"
-					},
-					{
-						"name": "ViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Name",
-						"type": "varchar"
-					},
-					{
-						"name": "TimeZone",
-						"type": "varchar"
-					},
-					{
-						"name": "CustomerCode",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "customer",
-					"table": "Building"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlcustomerContactpoints')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Operating Unit Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Header Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact Point Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact Point Status",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact point Purpose",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Country Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Area Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Extension",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Line Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Email Address",
-						"type": "varchar"
-					},
-					{
-						"name": "Email Format",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "customerContactpoints"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlcustomerbillTocontacts')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Operating Unit Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Header Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Address Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact Point Reference",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact_First_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact_Last_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Contact Point Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Country Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Area Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Telephone Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Phone Extension",
-						"type": "varchar"
-					},
-					{
-						"name": "EMAIL Address",
-						"type": "varchar"
-					},
-					{
-						"name": "Invoice Delivery Method",
-						"type": "varchar"
-					},
-					{
-						"name": "Column 14",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "customerbillTocontacts"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlheader')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Customer Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Party Reference Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Account Reference Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Profile",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Method Primary Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Global Customer Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Origin (AR)",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary ID Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary ID Validation Digit",
-						"type": "varchar"
-					},
-					{
-						"name": "Taxpayer ID",
-						"type": "varchar"
-					},
-					{
-						"name": "Fiscal Classification Type Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Fiscal Classification Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Effective Date From",
-						"type": "varchar"
-					},
-					{
-						"name": "Document Type (CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Taxpayer ID (CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Nature (CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Regimen (CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Special Customer Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Operating Unit Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer Class Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment Term Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Order Number of the Cedula (GT)",
-						"type": "varchar"
-					},
-					{
-						"name": "Register Number of the Cedula (GT)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document Type (SV)",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor Regristry number (SV)",
-						"type": "varchar"
-					},
-					{
-						"name": "Person Category (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Person Type (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document Type (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document Number (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Last Name (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Second Last Name (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "First Name (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Middle Name (PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Origin",
-						"type": "varchar"
-					},
-					{
-						"name": "Nature",
-						"type": "varchar"
-					},
-					{
-						"name": "Document Type (UY)",
-						"type": "varchar"
-					},
-					{
-						"name": "Perception Agent (PE)",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Header stg"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlmaintenance')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Array_MaintenanceRun",
-						"type": "varchar"
-					},
-					{
-						"name": "MaintenanceRun_RouteNo_TerritoryCode",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "maintenance"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlquery')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlunit')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Unit_ID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "TechnicianNotes",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "unit"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Azuremaintenance')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Array_MaintenanceRun",
-						"type": "varchar"
-					},
-					{
-						"name": "MaintenanceRun_RouteNo_TerritoryCode",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "maintenance"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BUILDING1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "identification FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Building_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Name_en",
-						"type": "varchar"
-					},
-					{
-						"name": "Name_local",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "BUILDING"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BuildingName_en')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ADLSMohamed",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "customerdm11032020"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BuildingToJson')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Buildingsql')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Building_ExternalBuildingId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_BuildingName_local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_BuildingName_en",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Height",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_StreetAddress_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_StreetAddress_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Suburb_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Suburb_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_City_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_City_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Postcode",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_MainTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_MainTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_MainTypeName_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_SubTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_SubTypeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_SubTypeName_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_BuildingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsStandbybuilding",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_CostingNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_CustomerNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_SumOfTotalUnits",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_SumOfUnitsInService",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_QuickTurnover",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Latitude",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_Longitude",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_OfficeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_OfficeName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_OfficeName_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_TKManagerEmployeeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_TKManagerEmployeeExternalId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_TKManagerName",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsRepairCorres",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsCalendar",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsGeneralCorres",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsCard",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsMonthlyReport",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleHours",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleHoursViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleTime",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleTimeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleDay",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleDayViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_UnitsScheduleDayFrequency",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_TargetCallRate",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_RunInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_RunTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_RunTypeName",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_RunViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_RunName",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_BHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_BHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_BHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_AHSWPResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_AHStopResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_AHOthersResponse",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_Notes",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_PropertyManagerEmployeeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "RunInfo_PropertyManagerEmployeeName",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_BusinessHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactLocation_En",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactLocation_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactPhone2",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactFax",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BusinessHourContactInfo_BHContactRoleName",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_AfterHourContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHSiteContact",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactLocation_En",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactLocation_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactPhone1",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactMobile",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactFax",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactRoleViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactRoleViewName",
-						"type": "varchar"
-					},
-					{
-						"name": "AfterHourContactInfo_AHContactAccessCode",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_BuildingContactInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingContactInfo_ContactViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingContactInfo_ContactExternalId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingContactInfo_ContactName",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingContactInfo_IsBusinessHours",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_VFMCustomerName_En",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_VFMCustomerName_Local",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_VFMCustomerMail",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_VFMMailTemplateSubject",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_VFMMailTemplateContent",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsCustomisedMail",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportFrequencyViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportFrequency",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportTypeViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportType",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_IsReportInvoice",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportSendTo",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportAuditRequired",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportAuditDetail",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_ReportServiceDockets",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_FromProjectId",
-						"type": "varchar"
-					},
-					{
-						"name": "Building_FromProjectLabel",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_BuildingCustomerInfo",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingCustomerInfo_CustomerViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingCustomerInfo_CustomerExternalId",
-						"type": "varchar"
-					},
-					{
-						"name": "BuildingCustomerInfo_CustomerName",
-						"type": "varchar"
-					},
-					{
-						"name": "Array_State",
-						"type": "varchar"
-					},
-					{
-						"name": "State_ViewId",
-						"type": "varchar"
-					},
-					{
-						"name": "State_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Builiding_TimeZone",
-						"type": "varchar"
-					},
-					{
-						"name": "Builiding_CustomerCode",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "customer",
-					"table": "Building"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CosmosDbSqlApiCollection1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "CosmosDb2",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CosmosDbSqlApiCollection",
-				"schema": {},
-				"typeProperties": {
-					"collectionName": "okh"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CosmosDbSqlApiCollection2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "CosmosDb3",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CosmosDbSqlApiCollection",
-				"schema": {},
-				"typeProperties": {
-					"collectionName": "unit"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CustomerBillToContacts')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "Sheet1",
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "ORA_FD02_CustomerContactPoints20201005174313.xlsx",
-						"container": "customercontactpoints"
-					},
-					"firstRowAsHeader": true
-				},
-				"schema": [
-					{
-						"name": "Customer Header Reference",
-						"type": "String"
-					},
-					{
-						"name": "Address Reference",
-						"type": "String"
-					},
-					{
-						"name": "Contact Point Type",
-						"type": "String"
-					},
-					{
-						"name": "Contact Point Status",
-						"type": "String"
-					},
-					{
-						"name": "Primary Flag",
-						"type": "String"
-					},
-					{
-						"name": "Contact point Purpose",
-						"type": "String"
-					},
-					{
-						"name": "Phone Country Code",
-						"type": "String"
-					},
-					{
-						"name": "Phone Area Code",
-						"type": "String"
-					},
-					{
-						"name": "Phone Number",
-						"type": "String"
-					},
-					{
-						"name": "Phone Extension",
-						"type": "String"
-					},
-					{
-						"name": "Phone Line Type",
-						"type": "String"
-					},
-					{
-						"name": "Email Address",
-						"type": "String"
-					},
-					{
-						"name": "Email Format",
-						"type": "String"
-					},
-					{
-						"name": "Operating Unit Name",
-						"type": "String"
-					}
-				]
 			},
 			"dependsOn": []
 		}

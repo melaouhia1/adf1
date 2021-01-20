@@ -11,9 +11,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ABLBMohamedBlob2'"
 		},
+		"ADLS2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS2'"
+		},
 		"ADLSMohamed_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLSMohamed'"
+		},
+		"AdventureWorksDW2019_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AdventureWorksDW2019'"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
@@ -95,13 +103,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SqlServer2'"
 		},
+		"SqlServerTestStudent_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServerTestStudent'"
+		},
 		"buildingstorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'buildingstorage'"
 		},
+		"dsadve2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dsadve2'"
+		},
 		"linkedService1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"linkedService2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
+		},
+		"ADLS2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mohamedstorage.dfs.core.windows.net"
 		},
 		"ADLSMohamed_properties_typeProperties_url": {
 			"type": "string",
@@ -143,6 +167,10 @@
 			"type": "string",
 			"defaultValue": "mohamed"
 		},
+		"dsadve2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mohamedstoragelake.dfs.core.windows.net"
+		},
 		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
 			"type": "string",
 			"defaultValue": "@{addhours(trigger().scheduledTime, -24)}"
@@ -150,6 +178,39 @@
 		"Trigger_s88_properties_CopyPipeline_s88_parameters_windowEnd": {
 			"type": "string",
 			"defaultValue": "@trigger().scheduledTime"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamedserversql.database.windows.net"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
 		},
 		"containerUri": {
 			"type": "string",
@@ -180,6 +241,9 @@
 					},
 					"ABLBMohamedBlob2_connectionString": {
 						"value": "[parameters('ABLBMohamedBlob2_connectionString')]"
+					},
+					"ADLS2_accountKey": {
+						"value": "[parameters('ADLS2_accountKey')]"
 					},
 					"ADLSMohamed_accountKey": {
 						"value": "[parameters('ADLSMohamed_accountKey')]"
@@ -232,8 +296,8 @@
 					"CosmosDb2_connectionString": {
 						"value": "[parameters('CosmosDb2_connectionString')]"
 					},
-					"CosmosDb3_connectionString": {
-						"value": "[parameters('CosmosDb3_connectionString')]"
+					"ADLS2_properties_typeProperties_url": {
+						"value": "[parameters('ADLS2_properties_typeProperties_url')]"
 					},
 					"ADLSMohamed_properties_typeProperties_url": {
 						"value": "[parameters('ADLSMohamed_properties_typeProperties_url')]"
@@ -277,20 +341,59 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"CosmosDb3_connectionString": {
+						"value": "[parameters('CosmosDb3_connectionString')]"
+					},
 					"HttpServer1_password": {
 						"value": "[parameters('HttpServer1_password')]"
 					},
 					"buildingstorage_connectionString": {
 						"value": "[parameters('buildingstorage_connectionString')]"
 					},
+					"dsadve2_accountKey": {
+						"value": "[parameters('dsadve2_accountKey')]"
+					},
 					"linkedService1_connectionString": {
 						"value": "[parameters('linkedService1_connectionString')]"
+					},
+					"linkedService2_connectionString": {
+						"value": "[parameters('linkedService2_connectionString')]"
 					},
 					"HttpServer1_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
 					},
 					"HttpServer1_properties_typeProperties_userName": {
 						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
+					},
+					"dsadve2_properties_typeProperties_url": {
+						"value": "[parameters('dsadve2_properties_typeProperties_url')]"
+					},
+					"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+					},
+					"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+					},
+					"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
 					}
 				}
 			},
@@ -371,9 +474,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"SqlServer1_connectionString": {
-						"value": "[parameters('SqlServer1_connectionString')]"
 					}
 				}
 			},
@@ -394,9 +494,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"SqlServer2_connectionString": {
-						"value": "[parameters('SqlServer2_connectionString')]"
 					}
 				}
 			},
@@ -417,6 +514,98 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_6')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_8",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_8.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AdventureWorksDW2019_connectionString": {
+						"value": "[parameters('AdventureWorksDW2019_connectionString')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_7')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_9",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_9.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer2_connectionString": {
+						"value": "[parameters('SqlServer2_connectionString')]"
+					},
+					"SqlServerTestStudent_connectionString": {
+						"value": "[parameters('SqlServerTestStudent_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_8')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_10",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_10.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_9')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_11",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_11.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
 						"value": "[parameters('Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart')]"
@@ -427,7 +616,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_6')]"
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_10')]"
 			]
 		}
 	]

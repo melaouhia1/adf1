@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "mohamedAD1"
 		},
+		"CosmosDb3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDb3'"
+		},
 		"HttpServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'HttpServer1'"
@@ -15,9 +19,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'buildingstorage'"
 		},
+		"dsadve2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dsadve2'"
+		},
 		"linkedService1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"linkedService2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
@@ -26,12 +38,62 @@
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "mohamed"
+		},
+		"dsadve2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mohamedstoragelake.dfs.core.windows.net"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamedserversql.database.windows.net"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "mohamed2.database.windows.net"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "mohamed"
+		},
+		"integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/CosmosDb3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "CosmosDb",
+				"typeProperties": {
+					"connectionString": "[parameters('CosmosDb3_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/HttpServer1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -66,6 +128,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/dsadve2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('dsadve2_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('dsadve2_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -74,6 +153,19 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('linkedService1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('linkedService2_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -161,6 +253,139 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime3')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"description": "test",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "East US",
+						"nodeSize": "Standard_D8_v3",
+						"numberOfNodes": 2,
+						"maxParallelExecutionsPerNode": 8
+					},
+					"ssisProperties": {
+						"catalogInfo": {
+							"catalogServerEndpoint": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
+							"catalogAdminUserName": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
+							"catalogAdminPassword": {
+								"type": "SecureString",
+								"value": "[parameters('integrationRuntime3_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+							},
+							"catalogPricingTier": "S1"
+						},
+						"edition": "Standard",
+						"licenseType": "LicenseIncluded"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime4')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "East US",
+						"nodeSize": "Standard_D8_v3",
+						"numberOfNodes": 2,
+						"maxParallelExecutionsPerNode": 8
+					},
+					"ssisProperties": {
+						"catalogInfo": {
+							"catalogServerEndpoint": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
+							"catalogAdminUserName": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
+							"catalogAdminPassword": {
+								"type": "SecureString",
+								"value": "[parameters('integrationRuntime4_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+							},
+							"catalogPricingTier": "S1"
+						},
+						"edition": "Standard",
+						"licenseType": "LicenseIncluded"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime5')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "East US",
+						"nodeSize": "Standard_D8_v3",
+						"numberOfNodes": 2,
+						"maxParallelExecutionsPerNode": 8
+					},
+					"ssisProperties": {
+						"edition": "Standard",
+						"licenseType": "LicenseIncluded"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime6')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "East US",
+						"nodeSize": "Standard_D8_v3",
+						"numberOfNodes": 2,
+						"maxParallelExecutionsPerNode": 8
+					},
+					"ssisProperties": {
+						"edition": "Standard",
+						"licenseType": "LicenseIncluded"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime7')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "East US",
+						"nodeSize": "Standard_D8_v3",
+						"numberOfNodes": 2,
+						"maxParallelExecutionsPerNode": 8
+					},
+					"ssisProperties": {
+						"catalogInfo": {
+							"catalogServerEndpoint": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
+							"catalogAdminUserName": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
+							"catalogAdminPassword": {
+								"type": "SecureString",
+								"value": "[parameters('integrationRuntime7_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+							},
+							"catalogPricingTier": "S1"
+						},
+						"edition": "Standard",
+						"licenseType": "LicenseIncluded"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/default')]",
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
 			"apiVersion": "2018-06-01",
@@ -168,6 +393,49 @@
 				"preventDataExfiltration": false
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ssis')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute SSIS package1",
+						"type": "ExecuteSSISPackage",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"packageLocation": {
+								"packagePath": "test/testp/Package1.dtsx",
+								"type": "SSISDB"
+							},
+							"environmentPath": null,
+							"connectVia": {
+								"referenceName": "integrationRuntime3",
+								"type": "IntegrationRuntimeReference"
+							},
+							"loggingLevel": "Basic",
+							"projectConnectionManagers": {},
+							"packageConnectionManagers": {}
+						}
+					}
+				],
+				"folder": {
+					"name": "Training"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime3')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureSpeed')]",
@@ -240,557 +508,6 @@
 				"typeProperties": {
 					"schema": "unit",
 					"table": "Controller"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlBank')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Identification FK",
-						"type": "varchar"
-					},
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_BankName",
-						"type": "varchar"
-					},
-					{
-						"name": "ElevatorBank_AccessCode",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "BANK"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlController')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Equipment Id FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Controller_Name1",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "Controller"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlCustomerBillToContactsidl')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDriveType')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Equipment Id FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "DriveType_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_Name1",
-						"type": "varchar"
-					},
-					{
-						"name": "DriveType_Name2",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "DriveType"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlIdentification')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_GovernmentID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_NickName",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_BillingReference",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_DownInd",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_RegisteredNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_MfgYear",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_WarrantyStartDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_WarrantyEndDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_InstallDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_HandoverDate",
-						"type": "varchar"
-					},
-					{
-						"name": "AnnualSafetyTest_LastInspectionDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_JobNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_FactorySerialNo",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_Smart_InstallationDate",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_SmartMAX_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_SmartMAX_ExternalID",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "Identification"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlSpeed')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "varchar"
-					},
-					{
-						"name": "Equipment Id FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Speed_ViewID",
-						"type": "varchar"
-					},
-					{
-						"name": "Speed_FPM",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "Speed"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTCustomerHeader')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "Customer_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Party_Reference_Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Account_Reference_Number",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Profile",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Method_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Method_Primary_Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Global_Customer_Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Origin_(AR)",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary_ID_Type",
-						"type": "varchar"
-					},
-					{
-						"name": "Primary_ID_Validation_Digit",
-						"type": "varchar"
-					},
-					{
-						"name": "Taxpayer_ID",
-						"type": "varchar"
-					},
-					{
-						"name": "Fiscal_Classification_Type_Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Fiscal_Classification_Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Effective_Date_From",
-						"type": "varchar"
-					},
-					{
-						"name": "Document_Type_(CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Taxpayer_ID_(CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Nature_(CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Regimen_(CO)",
-						"type": "varchar"
-					},
-					{
-						"name": "Special_Customer_Flag",
-						"type": "varchar"
-					},
-					{
-						"name": "Operating_Unit_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Customer_Class_Code",
-						"type": "varchar"
-					},
-					{
-						"name": "Payment_Term_Name",
-						"type": "varchar"
-					},
-					{
-						"name": "Order_Number_of_the_Cedula_(GT)",
-						"type": "varchar"
-					},
-					{
-						"name": "Register_Number_of_the_Cedula_(GT)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document_Type_(SV)",
-						"type": "varchar"
-					},
-					{
-						"name": "Contributor_Registry_Number_(SV)",
-						"type": "varchar"
-					},
-					{
-						"name": "Person_Category_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Person_Type_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document_Type_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Document_Number_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Last_Name_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Second_Last_Name_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "First_Name_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Middle_Name_(PE)",
-						"type": "varchar"
-					},
-					{
-						"name": "Origin",
-						"type": "varchar"
-					},
-					{
-						"name": "Nature",
-						"type": "varchar"
-					},
-					{
-						"name": "Document_Type_(UY)",
-						"type": "varchar"
-					},
-					{
-						"name": "Perception_Agent_(PE)",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "customer",
-					"table": "header"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTEQUIPMENT')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "UnitId FK",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Floors",
-						"type": "varchar"
-					},
-					{
-						"name": "NumberofFrontOpenings",
-						"type": "varchar"
-					},
-					{
-						"name": "NumberofRearOpenings",
-						"type": "varchar"
-					},
-					{
-						"name": "Unit_CapacityLbs",
-						"type": "varchar"
-					},
-					{
-						"name": "ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "unit",
-					"table": "EQUIPMENT"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase5",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "buildingCode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Data",
-						"type": "nvarchar"
-					},
-					{
-						"name": "HashKey",
-						"type": "varbinary"
-					},
-					{
-						"name": "ETL_Load_Date_Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					}
-				],
-				"typeProperties": {
-					"schema": "building",
-					"table": "Viewbuilding_API_adddesd"
 				}
 			},
 			"dependsOn": []
