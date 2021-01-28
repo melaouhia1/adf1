@@ -1,0 +1,9 @@
+{
+	"name": "pipeheader",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
