@@ -1,0 +1,9 @@
+{
+	"name": "pipeinventorytransaction",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
