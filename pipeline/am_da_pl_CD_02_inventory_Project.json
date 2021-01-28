@@ -1548,7 +1548,7 @@
 			},
 			"Parts_Item_Header": {
 				"type": "String",
-				"defaultValue": "Parts_Item_Header"
+				"defaultValue": "CD01_PARTS_HEADER"
 			},
 			"Parts_Item_Transaction_Default_Locators": {
 				"type": "String",
