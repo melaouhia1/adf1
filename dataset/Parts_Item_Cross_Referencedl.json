@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat(formatDateTime(utcnow(),'yyyy-MM-dd'),'ItemCrossReference','_', '.txt')",
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_''ItemCrossReference', '.txt')",
 					"type": "Expression"
 				},
 				"folderPath": "pipe29012021",
