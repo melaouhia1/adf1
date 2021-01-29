@@ -14,6 +14,7 @@
 					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemInventoryTransactions', '.txt')",
 					"type": "Expression"
 				},
+				"folderPath": "pipe29012021",
 				"container": "inventoryoutput"
 			},
 			"columnDelimiter": "|",
