@@ -1,0 +1,9 @@
+{
+	"name": "mfgoutput",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
