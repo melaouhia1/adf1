@@ -10,7 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "Pipe",
+				"fileName": {
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.txt')",
+					"type": "Expression"
+				},
+				"folderPath": "pipe29012021",
 				"container": "inventoryoutput"
 			},
 			"columnDelimiter": "|",
