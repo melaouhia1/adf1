@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "GetMetadataItem_category_assignment",
-				"type": "GetMetadata",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,139 +15,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "ExcelItem_Category_Assignment",
-						"type": "DatasetReference"
-					},
-					"fieldList": [
-						"childItems"
-					],
-					"storeSettings": {
-						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					}
-				}
-			},
-			{
-				"name": "Filter Item_Category_Assignment",
-				"type": "Filter",
-				"dependsOn": [
-					{
-						"activity": "GetMetadataItem_category_assignment",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('GetMetadataItem_category_assignment').output.childItems\n",
-						"type": "Expression"
-					},
-					"condition": {
-						"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Copy data2",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Filter Item_Category_Assignment",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
 					"source": {
-						"type": "ExcelSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": {
-								"value": "@activity('Filter Item_Category_Assignment').output.value[0].name",
-								"type": "Expression"
-							},
-							"enablePartitionDiscovery": false
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "  truncate table [inventory].[Parts_Item_Category_Assignment]",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ExcelItem_Category_Assignment",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTAzureSqlParts_Item_Category_Assignment",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "Copy file to processed Category_Assignment",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy data2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "ExcelSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": {
-								"value": "@activity('Filter Item_Category_Assignment').output.value[0].name",
-								"type": "Expression"
-							},
-							"enablePartitionDiscovery": false
-						}
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT [ITEM_NUMBER]\n      ,[CROSS_REFERENCE_TYPE]\n      ,[CROSS_REFERENCE]\n      ,[DESCRIPTION]\n      ,[ORGANIZATION_CODE]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Cross_Reference]",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -167,56 +44,16 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ExcelItem_Category_Assignment",
+						"referenceName": "AzureSqlParts_Item_Cross_Reference",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Category_Assignmentarchive",
+						"referenceName": "demo1",
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Delete2",
-				"type": "Delete",
-				"dependsOn": [
-					{
-						"activity": "Copy file to processed Category_Assignment",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "Category_Assignmentarchive",
-						"type": "DatasetReference"
-					},
-					"logStorageSettings": {
-						"linkedServiceName": {
-							"referenceName": "ADLS2",
-							"type": "LinkedServiceReference"
-						},
-						"path": "log"
-					},
-					"enableLogging": true,
-					"storeSettings": {
-						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
-						"wildcardFileName": " @activity('Filter Item_Category_Assignment').output.value[0].name",
-						"enablePartitionDiscovery": false
-					}
-				}
 			}
 		],
 		"variables": {
