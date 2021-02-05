@@ -17,7 +17,7 @@
 				"folderPath": "pipe29012021",
 				"container": "inventoryoutput"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": ""
