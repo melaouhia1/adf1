@@ -14,10 +14,13 @@
 					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.txt')",
 					"type": "Expression"
 				},
-				"folderPath": "pipe29012021",
+				"folderPath": {
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders')",
+					"type": "Expression"
+				},
 				"container": "inventoryoutput"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": ""
