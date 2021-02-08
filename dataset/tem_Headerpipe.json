@@ -20,8 +20,8 @@
 				},
 				"container": "inventoryoutput"
 			},
-			"columnDelimiter": ";",
-			"escapeChar": ",",
+			"columnDelimiter": ",",
+			"escapeChar": ",;",
 			"firstRowAsHeader": true,
 			"quoteChar": ""
 		},
