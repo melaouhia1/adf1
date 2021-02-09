@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "delimiter",
+				"name": "delimiter cross reference",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
