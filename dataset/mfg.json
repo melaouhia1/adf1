@@ -11,10 +11,13 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber', '.txt')",
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber', '.csv')",
 					"type": "Expression"
 				},
-				"folderPath": "pipe29012021",
+				"folderPath": {
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber')",
+					"type": "Expression"
+				},
 				"container": "inventoryoutput"
 			},
 			"columnDelimiter": "|",
