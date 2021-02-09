@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.csv')",
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.txt')",
 					"type": "Expression"
 				},
 				"folderPath": {
