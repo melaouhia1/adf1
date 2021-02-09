@@ -54,59 +54,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "delimiter",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT [ITEM_NUMBER]\n      ,[CROSS_REFERENCE_TYPE]\n      ,[CROSS_REFERENCE]\n      ,[DESCRIPTION]\n      ,[ORGANIZATION_CODE]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Cross_Reference]",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "AzureSqlParts_Item_Cross_Reference",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Parts_Item_Cross_Referencedl",
-						"type": "DatasetReference"
-					}
-				]
 			}
 		],
 		"folder": {
