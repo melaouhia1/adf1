@@ -1,0 +1,9 @@
+{
+	"name": "delimiter",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
