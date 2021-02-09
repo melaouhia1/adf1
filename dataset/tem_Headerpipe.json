@@ -20,7 +20,7 @@
 				},
 				"container": "inventoryoutput"
 			},
-			"columnDelimiter": "|",
+			"columnDelimiter": ",",
 			"escapeChar": "",
 			"firstRowAsHeader": true,
 			"quoteChar": ""
