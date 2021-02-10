@@ -10,6 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.csv')",
+					"type": "Expression"
+				},
 				"folderPath": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders')",
 				"container": "inventorydelimiter"
 			},
