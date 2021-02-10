@@ -18,7 +18,7 @@
 					"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemCrossReference')",
 					"type": "Expression"
 				},
-				"container": "inventoryoutput"
+				"container": "inventorydelimiter"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",
