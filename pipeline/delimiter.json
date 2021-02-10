@@ -208,7 +208,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "mfg",
+						"referenceName": "MFGDelimited",
 						"type": "DatasetReference"
 					}
 				]
@@ -652,7 +652,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "dttransaction",
+						"referenceName": "transactionDelimited",
 						"type": "DatasetReference"
 					}
 				]
