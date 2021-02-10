@@ -102,7 +102,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlParts_Item_Transaction_Default_Locatorsdt",
+						"referenceName": "LocatorDelimited",
 						"type": "DatasetReference"
 					}
 				]
