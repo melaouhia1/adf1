@@ -599,7 +599,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "tem_Headerpipe",
+						"referenceName": "tem_HeaderpipeDelimited",
 						"type": "DatasetReference"
 					}
 				]
