@@ -108,7 +108,7 @@
 				]
 			},
 			{
-				"name": "delimiter Subinventories",
+				"name": "idl Subinventories",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
