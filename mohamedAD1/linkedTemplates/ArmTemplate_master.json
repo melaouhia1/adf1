@@ -534,12 +534,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AdventureWorksDW2019_connectionString": {
-						"value": "[parameters('AdventureWorksDW2019_connectionString')]"
-					},
-					"SqlServer1_connectionString": {
-						"value": "[parameters('SqlServer1_connectionString')]"
 					}
 				}
 			},
@@ -560,6 +554,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AdventureWorksDW2019_connectionString": {
+						"value": "[parameters('AdventureWorksDW2019_connectionString')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
 					},
 					"SqlServer2_connectionString": {
 						"value": "[parameters('SqlServer2_connectionString')]"
@@ -606,6 +606,26 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_10')]"
+			]
+		},
+		{
+			"name": "mohamedAD1_ArmTemplate_12",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_12.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart": {
 						"value": "[parameters('Trigger_s88_properties_CopyPipeline_s88_parameters_windowStart')]"
@@ -616,7 +636,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_10')]"
+				"[resourceId('Microsoft.Resources/deployments', 'mohamedAD1_ArmTemplate_11')]"
 			]
 		}
 	]

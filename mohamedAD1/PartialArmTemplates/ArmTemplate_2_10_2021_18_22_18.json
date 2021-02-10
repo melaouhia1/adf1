@@ -1,0 +1,3517 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "mohamedAD1"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/ELT_Inventory')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "am_da_pl_CD_02_inventory_Project",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true
+						}
+					},
+					{
+						"name": "Execute Pipeline2",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Execute Pipeline1",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "idlinventory",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true
+						}
+					},
+					{
+						"name": "Execute Pipeline3",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "Execute Pipeline2",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "delimiter",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true
+						}
+					}
+				],
+				"folder": {
+					"name": "inventory"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/am_da_pl_CD_02_inventory_Project')]",
+				"[concat(variables('factoryId'), '/pipelines/idlinventory')]",
+				"[concat(variables('factoryId'), '/pipelines/delimiter')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/am_da_pl_CD_02_inventory_Project')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Get Metadata_Transactions",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Excel4",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter_transaction",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "Get Metadata_Transactions",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get Metadata_Transactions').output.childItems",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Inventory_Transactions'))",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter_transaction",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter_transaction').output.value[0].name\n\n",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "truncate table [inventory].[Parts_Inventory_Transactions]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Excel4",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Copy file to processed transaction",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy data1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter_transaction').output.value[0].name\n",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Excel4",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete1",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Copy file to processed transaction",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Excel4",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter_transaction').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "GetMetadataItem_category_assignment",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelItem_Category_Assignment",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter Item_Category_Assignment",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "GetMetadataItem_category_assignment",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('GetMetadataItem_category_assignment').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Item_Category_Assignment'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy data2",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter Item_Category_Assignment",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_Category_Assignment').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "  truncate table [inventory].[Parts_Item_Category_Assignment]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelItem_Category_Assignment",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTAzureSqlParts_Item_Category_Assignment",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Copy file to processed Category_Assignment",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy data2",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_Category_Assignment').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelItem_Category_Assignment",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete2",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Copy file to processed Category_Assignment",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelItem_Category_Assignment",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"wildcardFileName": " @activity('Filter Item_Category_Assignment').output.value[0].name",
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "GetMetadataItem_cCross_Reference",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelCross_Reference",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter Cross_Reference",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "GetMetadataItem_cCross_Reference",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('GetMetadataItem_cCross_Reference').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Item_Cross_Reference'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy data3",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter Cross_Reference",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Cross_Reference').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "  truncate table [inventory].[Parts_Item_Cross_Reference]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelCross_Reference",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Copy file to processed Cross_Reference",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy data3",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Cross_Reference').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Parts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Get Item_Header",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Item_Header",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter Item_Header",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "Get Item_Header",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get Item_Header').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Item_Header'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy data3_copy1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter Item_Header",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_Header').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "  truncate table [inventory].[Parts_Item_Header]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Item_Header",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqParts_Item_Header",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Get ITrans_D_Loc",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Parts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter Item_header2",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "Get ITrans_D_Loc",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get ITrans_D_Loc').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Item_Transaction_Default_Locators'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy data3_copy1_copy1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter Item_header2",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_header2').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "truncate table [inventory].[Parts_Item_Transaction_Default_Locators]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Parts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "GetMetadataItem_MFG",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelMFG",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter mfg",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "GetMetadataItem_MFG",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('GetMetadataItem_MFG').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_MFG_Part_Number'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy mfg",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter mfg",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter mfg').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "truncate table [inventory].[Parts_MFG_Part_Number]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelMFG",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlMFG",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Get_Default_Subinventories",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelDefault_Subinventories",
+								"type": "DatasetReference"
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Filter Subinventories",
+						"type": "Filter",
+						"dependsOn": [
+							{
+								"activity": "Get_Default_Subinventories",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get_Default_Subinventories').output.childItems\n",
+								"type": "Expression"
+							},
+							"condition": {
+								"value": "@startswith(item().name,variables('Parts_Item_Transaction_Default_Locators_subinventory'))\n",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "Copy Subinventories",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Filter Subinventories",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Subinventories').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"preCopyScript": "truncate table [inventory].[Parts_Item_Transaction_Default_Subinventories]",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelDefault_Subinventories",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlSubinventories",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete2_copy1",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Copy file to processed Cross_Reference",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Parts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter Cross_Reference').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Copy file to processed Cross_Reference_copy1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy data3_copy1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_Header').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Item_Header",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete2_copy1_copy1",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Copy file to processed Cross_Reference_copy1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Parts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter Item_Header').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "Copy file to processed Cross_Reference_copy1_copy1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy data3_copy1_copy1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Item_header2').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Parts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete2_copy1_copy1_copy1",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Copy file to processed Cross_Reference_copy1_copy1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Parts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter Item_header2').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "mfg",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy mfg",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter mfg').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelMFG",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete3",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "mfg",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelMFG",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter mfg').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					},
+					{
+						"name": "mfg_copy1",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Copy Subinventories",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"wildcardFileName": {
+										"value": "@activity('Filter Subinventories').output.value[0].name",
+										"type": "Expression"
+									},
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ExcelDefault_Subinventories",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText10",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Delete3_copy1",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "mfg_copy1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ExcelDefault_Subinventories",
+								"type": "DatasetReference"
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ADLS2",
+									"type": "LinkedServiceReference"
+								},
+								"path": "log"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"wildcardFileName": {
+									"value": "@{activity('Filter Subinventories').output.value[0].name}",
+									"type": "Expression"
+								},
+								"enablePartitionDiscovery": false
+							}
+						}
+					}
+				],
+				"variables": {
+					"Parts_Inventory_Transactions": {
+						"type": "String",
+						"defaultValue": "Parts_Inventory_Transactions"
+					},
+					"Parts_Item_Category_Assignment": {
+						"type": "String",
+						"defaultValue": "Parts_Item_Category_Assignment"
+					},
+					"Parts_Item_Cross_Reference": {
+						"type": "String",
+						"defaultValue": "Parts_Item_Cross_Reference"
+					},
+					"Parts_Item_Header": {
+						"type": "String",
+						"defaultValue": "CD01_PARTS_HEADER"
+					},
+					"Parts_Item_Transaction_Default_Locators": {
+						"type": "String",
+						"defaultValue": "Parts_Item_Transaction_Default_Locators"
+					},
+					"Parts_MFG_Part_Number": {
+						"type": "String",
+						"defaultValue": "Parts_MFG_Part_Number"
+					},
+					"Parts_Item_Transaction_Default_Locators_subinventory": {
+						"type": "String",
+						"defaultValue": "Parts_Item_Transaction_Default_Subinventories"
+					},
+					"emptyinteger": {
+						"type": "String",
+						"defaultValue": "\"\""
+					}
+				},
+				"folder": {
+					"name": "inventory"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Excel4')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/delimiter')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "delimiter cross reference",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT [ITEM_NUMBER]\n      ,[CROSS_REFERENCE_TYPE]\n      ,[CROSS_REFERENCE]\n      ,[DESCRIPTION]\n      ,[ORGANIZATION_CODE]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Cross_Reference]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Parts_Item_Cross_Reference_delimiter",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Item_Transaction_Default_Locators",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "LocatorDelimited",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "delimiter Subinventories",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Transaction_Default_Subinventories]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlSubinventories",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "SubinventoriesDelimited",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "MFG",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT  [MANUFACTURER]\n      ,[DESCRIPTION]\n      ,[PART_NUMBER]\n      ,[ITEM_NUMBER]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_MFG_Part_Number]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlMFG",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "MFGDelimited",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Header",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT [ITEM_NUMBER]\n      ,[DESCRIPTION]\n      ,COALESCE('',[DESCRIPTION_ESA]) as [DESCRIPTION_ESA]\n      ,[ORANIZATION_CODE]\n      ,[TEMPLATE_NAME]\n      ,[LIST_PRICE_PER_UNIT]\n      ,[UOM_CODE]\n\t    ,COALESCE('',[WEIGHT_UOM_CODE]) as [WEIGHT_UOM_CODE]\n         ,COALESCE('',[UNIT_WEIGHT]) as [UNIT_WEIGHT]\n       ,COALESCE('',[VOLUME_UOM_CODE]) as [VOLUME_UOM_CODE]\n       ,COALESCE('',[UNIT_VOLUME]) as [UNIT_VOLUME]\n        ,COALESCE('',[MIN_MINMAX_QUANTITY]) as [MIN_MINMAX_QUANTITY]\n       ,COALESCE('',[MAX_MINMAX_QUANTITY]) as [MAX_MINMAX_QUANTITY]\n       ,COALESCE('',[FULL_LEAD_TIME]) as [FULL_LEAD_TIME]\n    ,COALESCE('',[FIXED_LOT_MULTIPLIER]) as [FIXED_LOT_MULTIPLIER]\n      ,COALESCE('',[FIXED_ORDER_QUANTITY]) as [FIXED_ORDER_QUANTITY]\n           ,COALESCE('',[MINIMUM_ORDER_QUANTITY]) as [MINIMUM_ORDER_QUANTITY]\n       ,COALESCE('',[MAXIMUM_ORDER_QUANTITY]) as [MAXIMUM_ORDER_QUANTITY]\n            ,COALESCE('',[LONG_DESCRIPTION]) as [LONG_DESCRIPTION]\n\t\t\t,COALESCE('',[ITEM_INV_APPLICATION]) as [ITEM_INV_APPLICATION]\n      \t,COALESCE('',[TRANSACTION_CONDITION_CODE]) as [TRANSACTION_CONDITION_CODE]\n     \t,COALESCE('',[ADJUSTMENT_ACCOUNT]) as [ADJUSTMENT_ACCOUNT]\n   ,COALESCE('',[CORRECTION_ACCOUNT]) as [CORRECTION_ACCOUNT]\n      ,COALESCE('',[SALES_COST_ACCOUNT]) as [SALES_COST_ACCOUNT]\n      ,COALESCE('',[FOUR_DIGIT_CODE]) as [FOUR_DIGIT_CODE]\n        , [ORG_NAME]\n        ,COALESCE('',[PE_EXT_ATTRIBUTE1]) as [PE_EXT_ATTRIBUTE1] \n           ,COALESCE('',[PE_EXT_ATTRIBUTE2]) as [PE_EXT_ATTRIBUTE2] \n   \n  FROM [inventory].[Parts_Item_Header]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ITEM_NUMBER",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ITEM_NUMBER",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DESCRIPTION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "DESCRIPTION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DESCRIPTION_ESA",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "DESCRIPTION_ESA",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ORANIZATION_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ORANIZATION_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TEMPLATE_NAME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TEMPLATE_NAME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "LIST_PRICE_PER_UNIT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "LIST_PRICE_PER_UNIT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "WEIGHT_UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "WEIGHT_UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UNIT_WEIGHT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UNIT_WEIGHT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "VOLUME_UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "VOLUME_UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UNIT_VOLUME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UNIT_VOLUME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MIN_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MIN_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MAX_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MAX_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FULL_LEAD_TIME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FULL_LEAD_TIME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FIXED_LOT_MULTIPLIER",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FIXED_LOT_MULTIPLIER",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FIXED_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FIXED_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MINIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MINIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MAXIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MAXIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "LONG_DESCRIPTION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "LONG_DESCRIPTION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ITEM_INV_APPLICATION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ITEM_INV_APPLICATION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TRANSACTION_CONDITION_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TRANSACTION_CONDITION_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ADJUSTMENT_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ADJUSTMENT_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "CORRECTION_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "CORRECTION_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SALES_COST_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "SALES_COST_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FOUR_DIGIT_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FOUR_DIGIT_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ORG_NAME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ORG_NAME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PE_EXT_ATTRIBUTE1",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "PE_EXT_ATTRIBUTE1",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PE_EXT_ATTRIBUTE2",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "PE_EXT_ATTRIBUTE2",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqParts_Item_Header",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "tem_HeaderpipeDelimited",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "transaction",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[TRANSACTION_QUANTITY]\n      ,[TRANSACTION_DATE]\n      ,[TRANSACTION_REFERENCE]\n      ,[LOCATOR_NAME]\n      ,[TRANSACTION_COST]\n        ,COALESCE('',[FM_SERIAL_NUMBER]) as [FM_SERIAL_NUMBER]\n\t\t  ,COALESCE('',[TO_SERIAL_NUMBER]) as [TO_SERIAL_NUMBER]\n      \n      ,[Distribution_Account]\n      ,[ORG_NAME]\n\t  \t\t  ,COALESCE('',[PE_EXT_ATTRIBUTE1]) as [PE_EXT_ATTRIBUTE1]\n       ,COALESCE('',[PE_EXT_ATTRIBUTE2]) as [PE_EXT_ATTRIBUTE2]\n   \n  FROM [inventory].[Parts_Inventory_Transactions]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "transactionDelimited",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "inventory"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Parts_Item_Cross_Reference_delimiter')]",
+				"[concat(variables('factoryId'), '/datasets/LocatorDelimited')]",
+				"[concat(variables('factoryId'), '/datasets/SubinventoriesDelimited')]",
+				"[concat(variables('factoryId'), '/datasets/MFGDelimited')]",
+				"[concat(variables('factoryId'), '/datasets/tem_HeaderpipeDelimited')]",
+				"[concat(variables('factoryId'), '/datasets/transactionDelimited')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/idlinventory')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Pipe cross reference",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT [ITEM_NUMBER]\n      ,[CROSS_REFERENCE_TYPE]\n      ,[CROSS_REFERENCE]\n      ,[DESCRIPTION]\n      ,[ORGANIZATION_CODE]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Cross_Reference]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Cross_Reference",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Parts_Item_Cross_Referencedl",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Item_Transaction_Default_Locators",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Transaction_Default_Locators",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlParts_Item_Transaction_Default_Locatorsdt",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "idl Subinventories",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Transaction_Default_Subinventories]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlSubinventories",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "dtAzureSqlSubinventories",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "MFG",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT  [MANUFACTURER]\n      ,[DESCRIPTION]\n      ,[PART_NUMBER]\n      ,[ITEM_NUMBER]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_MFG_Part_Number]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlMFG",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "mfg",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Header",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "SELECT [ITEM_NUMBER]\n      ,[DESCRIPTION]\n      ,COALESCE('',[DESCRIPTION_ESA]) as [DESCRIPTION_ESA]\n      ,[ORANIZATION_CODE]\n      ,[TEMPLATE_NAME]\n      ,[LIST_PRICE_PER_UNIT]\n      ,[UOM_CODE]\n\t    ,COALESCE('',[WEIGHT_UOM_CODE]) as [WEIGHT_UOM_CODE]\n         ,COALESCE('',[UNIT_WEIGHT]) as [UNIT_WEIGHT]\n       ,COALESCE('',[VOLUME_UOM_CODE]) as [VOLUME_UOM_CODE]\n       ,COALESCE('',[UNIT_VOLUME]) as [UNIT_VOLUME]\n        ,COALESCE('',[MIN_MINMAX_QUANTITY]) as [MIN_MINMAX_QUANTITY]\n       ,COALESCE('',[MAX_MINMAX_QUANTITY]) as [MAX_MINMAX_QUANTITY]\n       ,COALESCE('',[FULL_LEAD_TIME]) as [FULL_LEAD_TIME]\n    ,COALESCE('',[FIXED_LOT_MULTIPLIER]) as [FIXED_LOT_MULTIPLIER]\n      ,COALESCE('',[FIXED_ORDER_QUANTITY]) as [FIXED_ORDER_QUANTITY]\n           ,COALESCE('',[MINIMUM_ORDER_QUANTITY]) as [MINIMUM_ORDER_QUANTITY]\n       ,COALESCE('',[MAXIMUM_ORDER_QUANTITY]) as [MAXIMUM_ORDER_QUANTITY]\n            ,COALESCE('',[LONG_DESCRIPTION]) as [LONG_DESCRIPTION]\n\t\t\t,COALESCE('',[ITEM_INV_APPLICATION]) as [ITEM_INV_APPLICATION]\n      \t,COALESCE('',[TRANSACTION_CONDITION_CODE]) as [TRANSACTION_CONDITION_CODE]\n     \t,COALESCE('',[ADJUSTMENT_ACCOUNT]) as [ADJUSTMENT_ACCOUNT]\n   ,COALESCE('',[CORRECTION_ACCOUNT]) as [CORRECTION_ACCOUNT]\n      ,COALESCE('',[SALES_COST_ACCOUNT]) as [SALES_COST_ACCOUNT]\n      ,COALESCE('',[FOUR_DIGIT_CODE]) as [FOUR_DIGIT_CODE]\n        , [ORG_NAME]\n        ,COALESCE('',[PE_EXT_ATTRIBUTE1]) as [PE_EXT_ATTRIBUTE1] \n           ,COALESCE('',[PE_EXT_ATTRIBUTE2]) as [PE_EXT_ATTRIBUTE2] \n   \n  FROM [inventory].[Parts_Item_Header]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ITEM_NUMBER",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ITEM_NUMBER",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DESCRIPTION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "DESCRIPTION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "DESCRIPTION_ESA",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "DESCRIPTION_ESA",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ORANIZATION_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ORANIZATION_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TEMPLATE_NAME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TEMPLATE_NAME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "LIST_PRICE_PER_UNIT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "LIST_PRICE_PER_UNIT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "WEIGHT_UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "WEIGHT_UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UNIT_WEIGHT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UNIT_WEIGHT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "VOLUME_UOM_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "VOLUME_UOM_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "UNIT_VOLUME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "UNIT_VOLUME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MIN_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MIN_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MAX_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MAX_MINMAX_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FULL_LEAD_TIME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FULL_LEAD_TIME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FIXED_LOT_MULTIPLIER",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FIXED_LOT_MULTIPLIER",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FIXED_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FIXED_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MINIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MINIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "MAXIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "MAXIMUM_ORDER_QUANTITY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "LONG_DESCRIPTION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "LONG_DESCRIPTION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ITEM_INV_APPLICATION",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ITEM_INV_APPLICATION",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TRANSACTION_CONDITION_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "TRANSACTION_CONDITION_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ADJUSTMENT_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ADJUSTMENT_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "CORRECTION_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "CORRECTION_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SALES_COST_ACCOUNT",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "SALES_COST_ACCOUNT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FOUR_DIGIT_CODE",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "FOUR_DIGIT_CODE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ORG_NAME",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "ORG_NAME",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PE_EXT_ATTRIBUTE1",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "PE_EXT_ATTRIBUTE1",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PE_EXT_ATTRIBUTE2",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "PE_EXT_ATTRIBUTE2",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqParts_Item_Header",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "tem_Headerpipe",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "transaction",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "AzureSqlSource",
+								"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[TRANSACTION_QUANTITY]\n      ,[TRANSACTION_DATE]\n      ,[TRANSACTION_REFERENCE]\n      ,[LOCATOR_NAME]\n      ,[TRANSACTION_COST]\n        ,COALESCE('',[FM_SERIAL_NUMBER]) as [FM_SERIAL_NUMBER]\n\t\t  ,COALESCE('',[TO_SERIAL_NUMBER]) as [TO_SERIAL_NUMBER]\n      \n      ,[Distribution_Account]\n      ,[ORG_NAME]\n\t  \t\t  ,COALESCE('',[PE_EXT_ATTRIBUTE1]) as [PE_EXT_ATTRIBUTE1]\n       ,COALESCE('',[PE_EXT_ATTRIBUTE2]) as [PE_EXT_ATTRIBUTE2]\n   \n  FROM [inventory].[Parts_Inventory_Transactions]",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "dttransaction",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "inventory"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Parts_Item_Cross_Referencedl')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlParts_Item_Transaction_Default_Locatorsdt')]",
+				"[concat(variables('factoryId'), '/datasets/dtAzureSqlSubinventories')]",
+				"[concat(variables('factoryId'), '/datasets/mfg')]",
+				"[concat(variables('factoryId'), '/datasets/tem_Headerpipe')]",
+				"[concat(variables('factoryId'), '/datasets/dttransaction')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlParts_Item_Transaction_Default_Locatorsdt')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionLocator', '.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionLocator')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CrossReference')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "Pipe",
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Excel4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLS2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "transaction",
+						"fileSystem": "inventory"
+					},
+					"sheetIndex": 0,
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LocatorDelimited')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionLocator', '.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionLocator')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MFGDelimited')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber', '.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Parts_Item_Cross_Reference_delimiter')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemCrossReference', '.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemCrossReference')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Parts_Item_Cross_Referencedl')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemCrossReference', '.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemCrossReference')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SubinventoriesDelimited')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionDefaultSubinventories','.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionDefaultSubinventories')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/demo1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "Pipe",
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dtAzureSqlMFG')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "Pipe",
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dtAzureSqlSubinventories')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionDefaultSubinventories','.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemTransactionDefaultSubinventories')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dttransaction')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemInventoryTransactions', '.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemInventoryTransactions')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/mfg')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber', '.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','MFGPartNumber')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tem_Headerpipe')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.csv')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders')",
+							"type": "Expression"
+						},
+						"container": "inventoryoutput"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tem_HeaderpipeDelimited')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders', '.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemHeaders')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/transactionDelimited')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ABLBMohamedBlob2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemInventoryTransactions', '.txt')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@concat(formatDateTime(utcnow(),'yyyyMMdd'),'_CD01_','ItemInventoryTransactions')",
+							"type": "Expression"
+						},
+						"container": "inventorydelimiter"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		}
+	]
+}
