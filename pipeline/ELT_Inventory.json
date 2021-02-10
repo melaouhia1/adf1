@@ -1,0 +1,9 @@
+{
+	"name": "ELT_Inventory",
+	"properties": {
+		"folder": {
+			"name": "inventory"
+		},
+		"annotations": []
+	}
+}
