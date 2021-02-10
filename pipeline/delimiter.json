@@ -155,7 +155,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "dtAzureSqlSubinventories",
+						"referenceName": "SubinventoriesDelimited",
 						"type": "DatasetReference"
 					}
 				]
