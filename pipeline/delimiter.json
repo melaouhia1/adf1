@@ -122,6 +122,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT  [ITEM_NUMBER]\n      ,[ORGANIZATION_CODE]\n      ,[SUBINVENTORY_NAME]\n      ,[ORG_NAME]\n  FROM [inventory].[Parts_Item_Transaction_Default_Subinventories]",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
