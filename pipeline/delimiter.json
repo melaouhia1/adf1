@@ -50,7 +50,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Parts_Item_Cross_Referencedl",
+						"referenceName": "Parts_Item_Cross_Reference_delimiter",
 						"type": "DatasetReference"
 					}
 				]
