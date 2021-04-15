@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntimeJobinsight",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
