@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_e14",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqljobinsight1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterVersions"
+		}
+	}
+}
