@@ -1,0 +1,59 @@
+{
+	"name": "SourceDataset_e14",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "LetterId",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "ProjectId",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "FactoryNo",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "LetterVersion",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "AuditDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "AuditUser",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterVersions"
+		}
+	}
+}
