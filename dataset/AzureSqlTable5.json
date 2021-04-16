@@ -7,7 +7,72 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "instanceid",
+				"type": "varchar"
+			},
+			{
+				"name": "TaskNo",
+				"type": "varchar"
+			},
+			{
+				"name": "IsTKEFactoryOrder",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayStart",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMDuration",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseEnd",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseStart",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalAcceptanceDate",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitAppliedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitRecvdDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Type",
+				"type": "varchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "unit"
