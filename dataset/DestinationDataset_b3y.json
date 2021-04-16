@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_b3y",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqljobinsight",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterGenDetails"
+		}
+	}
+}
