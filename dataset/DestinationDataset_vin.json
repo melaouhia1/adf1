@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_vin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqljobinsight",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterGenDetails"
+		}
+	}
+}
