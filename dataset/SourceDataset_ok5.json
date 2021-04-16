@@ -1,0 +1,30 @@
+{
+	"name": "SourceDataset_ok5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "FolderID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FolderName",
+				"type": "varchar"
+			},
+			{
+				"name": "SourceFileServer",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "Folders"
+		}
+	}
+}
