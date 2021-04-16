@@ -1,0 +1,186 @@
+{
+	"name": "CopyPipeline_LetterGenDetails",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_vin",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "Jobsight.LetterGenDetails"
+					},
+					{
+						"name": "Destination",
+						"value": "Jobsight.LetterGenDetails"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table Jobsight.LetterGenDetails",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "LetterGenId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "LetterGenId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "LetterOrSubFolderId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "LetterOrSubFolderId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GenDate",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "GenDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "GenUser",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "GenUser",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "IsDeleted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "IsDeleted",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "EBSProjectNo",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "EBSProjectNo",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitGroupId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "UnitGroupId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "FactorySerialNo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LetterFullName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LetterFullName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IsAttachment",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "IsAttachment",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "MaterialReleaseForm",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "MaterialReleaseForm",
+									"type": "Boolean"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_vin",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_vin",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
