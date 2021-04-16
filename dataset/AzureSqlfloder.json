@@ -1,0 +1,12 @@
+{
+	"name": "AzureSqlfloder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqljobinsight",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
