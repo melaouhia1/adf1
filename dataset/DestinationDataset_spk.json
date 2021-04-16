@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_spk",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "demo2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterGenDetails1"
+		}
+	}
+}
