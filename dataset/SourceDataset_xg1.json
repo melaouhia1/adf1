@@ -1,0 +1,66 @@
+{
+	"name": "SourceDataset_xg1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "LetterGenId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LetterOrSubFolderId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GenDate",
+				"type": "date"
+			},
+			{
+				"name": "GenUser",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IsDeleted",
+				"type": "bit"
+			},
+			{
+				"name": "EBSProjectNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UnitGroupId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "LetterFullName",
+				"type": "varchar"
+			},
+			{
+				"name": "IsAttachment",
+				"type": "bit"
+			},
+			{
+				"name": "MaterialReleaseForm",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterGenDetails"
+		}
+	}
+}
