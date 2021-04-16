@@ -1,0 +1,9 @@
+{
+	"name": "Folder",
+	"properties": {
+		"folder": {
+			"name": "letter"
+		},
+		"annotations": []
+	}
+}
