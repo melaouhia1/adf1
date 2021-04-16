@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_lt6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlLetterGenDetail",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Jobsight",
+			"table": "LetterGenDetails"
+		}
+	}
+}
