@@ -1,0 +1,88 @@
+{
+	"name": "dtUnitsInfos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "UnitsInfo.csv",
+				"container": "unit"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "instanceid",
+				"type": "String"
+			},
+			{
+				"name": "TaskNo",
+				"type": "String"
+			},
+			{
+				"name": "IsTKEFactoryOrder",
+				"type": "String"
+			},
+			{
+				"name": "DelayStart",
+				"type": "String"
+			},
+			{
+				"name": "NIMAmount",
+				"type": "String"
+			},
+			{
+				"name": "NIMDuration",
+				"type": "String"
+			},
+			{
+				"name": "NIMAuditDate",
+				"type": "String"
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "String"
+			},
+			{
+				"name": "ConstructionUseEnd",
+				"type": "String"
+			},
+			{
+				"name": "ConstructionUseStart",
+				"type": "String"
+			},
+			{
+				"name": "FinalAcceptanceDate",
+				"type": "String"
+			},
+			{
+				"name": "AuditDate",
+				"type": "String"
+			},
+			{
+				"name": "PermitNumber",
+				"type": "String"
+			},
+			{
+				"name": "PermitAppliedDate",
+				"type": "String"
+			},
+			{
+				"name": "PermitRecvdDate",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			}
+		]
+	}
+}
