@@ -13,8 +13,9 @@
 				"fileName": "OpsUnitData.csv",
 				"container": "unit"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
