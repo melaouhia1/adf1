@@ -1,0 +1,9 @@
+{
+	"name": "csvtoSQL",
+	"properties": {
+		"folder": {
+			"name": "unit"
+		},
+		"annotations": []
+	}
+}
