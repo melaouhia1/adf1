@@ -90,8 +90,9 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "instanceid",
 									"type": "String",
-									"ordinal": 1
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "instanceid",
@@ -100,6 +101,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TaskNo",
 									"type": "String",
@@ -107,6 +113,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "IsTKEFactoryOrder",
 									"type": "String",
@@ -114,6 +125,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "DelayStart",
 									"type": "String",
@@ -121,6 +137,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "NIMAmount",
 									"type": "String",
@@ -128,6 +149,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "NIMDuration",
 									"type": "String",
@@ -135,6 +161,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "NIMAuditDate",
 									"type": "String",
@@ -142,6 +173,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FactorySerialNo",
 									"type": "String",
@@ -149,6 +185,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ConstructionUseEnd",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ConstructionUseEnd",
 									"type": "String",
@@ -156,6 +197,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ConstructionUseStart",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ConstructionUseStart",
 									"type": "String",
@@ -163,6 +209,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FinalAcceptanceDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FinalAcceptanceDate",
 									"type": "String",
@@ -170,6 +221,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "AuditDate",
 									"type": "String",
@@ -177,6 +233,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitNumber",
 									"type": "String",
@@ -184,6 +245,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitAppliedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitAppliedDate",
 									"type": "String",
@@ -191,6 +257,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitRecvdDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitRecvdDate",
 									"type": "String",
@@ -198,6 +269,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Type",
 									"type": "String",
