@@ -80,11 +80,131 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"tableOption": "autoCreate"
+						"preCopyScript": "truncate table OpsUnitData",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "instanceid",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "ConstructionUseEnd",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "ConstructionUseStart",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "FinalAcceptanceDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "PermitNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "PermitAppliedDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "PermitRecvdDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
