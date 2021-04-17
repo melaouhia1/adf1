@@ -326,11 +326,202 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table UnitsInfo",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ConstructionUseEnd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ConstructionUseEnd",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ConstructionUseStart",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ConstructionUseStart",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FinalAcceptanceDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FinalAcceptanceDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PermitNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PermitNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PermitAppliedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PermitAppliedDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PermitRecvdDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PermitRecvdDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "ï»¿instanceid",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
