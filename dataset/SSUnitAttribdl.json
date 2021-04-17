@@ -20,6 +20,191 @@
 		},
 		"schema": [
 			{
+				"name": "contractNumber",
+				"type": "String"
+			},
+			{
+				"name": "branchNumber",
+				"type": "String"
+			},
+			{
+				"name": "customerName",
+				"type": "String"
+			},
+			{
+				"name": "installSiteName",
+				"type": "String"
+			},
+			{
+				"name": "Nickname",
+				"type": "String"
+			},
+			{
+				"name": "serialNumber",
+				"type": "String"
+			},
+			{
+				"name": "monthlyBilling",
+				"type": "String"
+			},
+			{
+				"name": "routeNumber",
+				"type": "String"
+			},
+			{
+				"name": "address1",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "postalCode",
+				"type": "String"
+			},
+			{
+				"name": "PM Duration",
+				"type": "String"
+			},
+			{
+				"name": "totalDuration",
+				"type": "String"
+			},
+			{
+				"name": "totalVisits",
+				"type": "String"
+			},
+			{
+				"name": "PM Completed",
+				"type": "String"
+			},
+			{
+				"name": "PM Cancelled",
+				"type": "String"
+			},
+			{
+				"name": "totalCallbackCount",
+				"type": "String"
+			},
+			{
+				"name": "productType",
+				"type": "String"
+			},
+			{
+				"name": "itemDescription",
+				"type": "String"
+			},
+			{
+				"name": "controllerManufacturer",
+				"type": "String"
+			},
+			{
+				"name": "controllerModelName",
+				"type": "String"
+			},
+			{
+				"name": "controllerType",
+				"type": "String"
+			},
+			{
+				"name": "speed",
+				"type": "String"
+			},
+			{
+				"name": "load",
+				"type": "String"
+			},
+			{
+				"name": "numFrontOpenings",
+				"type": "String"
+			},
+			{
+				"name": "numRearOpenings",
+				"type": "String"
+			},
+			{
+				"name": "doorComplexity",
+				"type": "String"
+			},
+			{
+				"name": "machineRoomLocation",
+				"type": "String"
+			},
+			{
+				"name": "hydroJackType",
+				"type": "String"
+			},
+			{
+				"name": "pumpMotorType",
+				"type": "String"
+			},
+			{
+				"name": "driveConfiguration",
+				"type": "String"
+			},
+			{
+				"name": "numberSteps",
+				"type": "String"
+			},
+			{
+				"name": "escalatorRise",
+				"type": "String"
+			},
+			{
+				"name": "escalatorTravel",
+				"type": "String"
+			},
+			{
+				"name": "annualLast",
+				"type": "String"
+			},
+			{
+				"name": "annualNext",
+				"type": "String"
+			},
+			{
+				"name": "periodicLast",
+				"type": "String"
+			},
+			{
+				"name": "periodicNext",
+				"type": "String"
+			},
+			{
+				"name": "fireNext",
+				"type": "String"
+			},
+			{
+				"name": "numberAnnualVisitsRequired",
+				"type": "String"
+			},
+			{
+				"name": "visitsRequiredByLocationOrUnit",
+				"type": "String"
+			},
+			{
+				"name": "hoursRequiredPerVisit",
+				"type": "String"
+			},
+			{
+				"name": "hoursRequiredByLocationOrUnit",
+				"type": "String"
+			},
+			{
+				"name": "ticketTurnedOff",
+				"type": "String"
+			},
+			{
+				"name": "HashKey",
+				"type": "String"
+			},
+			{
+				"name": "ETL_Load_Date_time",
 				"type": "String"
 			}
 		]
