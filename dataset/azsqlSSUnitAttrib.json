@@ -1,0 +1,207 @@
+{
+	"name": "azsqlSSUnitAttrib",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase7",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "contractNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "branchNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customerName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "installSiteName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Nickname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "serialNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "monthlyBilling",
+				"type": "nvarchar"
+			},
+			{
+				"name": "routeNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "address1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "postalCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PM Duration",
+				"type": "nvarchar"
+			},
+			{
+				"name": "totalDuration",
+				"type": "nvarchar"
+			},
+			{
+				"name": "totalVisits",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PM Completed",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PM Cancelled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "totalCallbackCount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "productType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "itemDescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "controllerManufacturer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "controllerModelName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "controllerType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "speed",
+				"type": "nvarchar"
+			},
+			{
+				"name": "load",
+				"type": "nvarchar"
+			},
+			{
+				"name": "numFrontOpenings",
+				"type": "nvarchar"
+			},
+			{
+				"name": "numRearOpenings",
+				"type": "nvarchar"
+			},
+			{
+				"name": "doorComplexity",
+				"type": "nvarchar"
+			},
+			{
+				"name": "machineRoomLocation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "hydroJackType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pumpMotorType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "driveConfiguration",
+				"type": "nvarchar"
+			},
+			{
+				"name": "numberSteps",
+				"type": "nvarchar"
+			},
+			{
+				"name": "escalatorRise",
+				"type": "nvarchar"
+			},
+			{
+				"name": "escalatorTravel",
+				"type": "nvarchar"
+			},
+			{
+				"name": "annualLast",
+				"type": "nvarchar"
+			},
+			{
+				"name": "annualNext",
+				"type": "nvarchar"
+			},
+			{
+				"name": "periodicLast",
+				"type": "nvarchar"
+			},
+			{
+				"name": "periodicNext",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fireNext",
+				"type": "nvarchar"
+			},
+			{
+				"name": "numberAnnualVisitsRequired",
+				"type": "nvarchar"
+			},
+			{
+				"name": "visitsRequiredByLocationOrUnit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "hoursRequiredPerVisit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "hoursRequiredByLocationOrUnit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ticketTurnedOff",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varbinary"
+			},
+			{
+				"name": "ETL_Load_Date_time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SSUnitAttrib"
+		}
+	}
+}
