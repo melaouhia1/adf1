@@ -513,13 +513,6 @@
 									"type": "String",
 									"physicalType": "varchar"
 								}
-							},
-							{
-								"sink": {
-									"name": "ï»¿instanceid",
-									"type": "String",
-									"physicalType": "varchar"
-								}
 							}
 						],
 						"typeConversion": true,
