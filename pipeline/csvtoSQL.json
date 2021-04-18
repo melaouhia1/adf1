@@ -1416,8 +1416,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Floors.IsEnabled",
-									"type": "Byte",
-									"physicalType": "tinyint"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
