@@ -3720,8 +3720,8 @@
 								},
 								"sink": {
 									"name": "Max Master Data",
-									"type": "Byte",
-									"physicalType": "tinyint"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3744,8 +3744,8 @@
 								},
 								"sink": {
 									"name": "ETL_Load_Date_Time",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							}
 						],
