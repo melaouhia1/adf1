@@ -1,0 +1,1150 @@
+{
+	"name": "azsqkORAViewUnit",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ViewUnitId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ExternalUnitId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.building.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.building.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.building.BuildingNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.building.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.building.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.bank.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.bank.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.bank.Name_val",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.bank.AccessCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.office.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.office.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.office.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.UnitGovID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.LiftNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.CustomerBillingRef",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.InService",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.RegisteredNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.YearManufactured",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.WarrantyStart",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.WarrantyEnd",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.CommissionedDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.HandOverDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.UnitSpec",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.GovtInspectionDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.NextGovernmentInspectionDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.JobNumberm",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.MfgWBSNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.SmartViewId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.SmartExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.SmartInstallDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.SmartViewMaxId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.SmartExternalMaxId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.Contract.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.Contract.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.identification.Contract.StartDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.Contract.EndDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.Contract.ServiceproviderName_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.Contract.ServiceproviderName_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.identification.Contract.ContractNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.UnitType.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.UnitType.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.UnitType.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.UnitType.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Factory.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Factory.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Factory.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Factory.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Controller.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Controller.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Controller.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Controller.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Model.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Model.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Model.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Model.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.DriveType.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.DriveType.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.DriveType.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.DriveType.Name_val",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Floors",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Floors.FloorNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Floors.FloorLabel",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Floors.Height",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Floors.IsEnabled",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "unit.Equipment.Floors.Door",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Equipment.Floors.UnitFromDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Floors.CachedToDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.FrontOpening",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.NumberOfStops",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.RearOpening",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Travel",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Passengers",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Load",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Speed.ViewSpeedId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Equipment.Speed.SpeedName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.DefaultScheduling.HoursPerVisit.Value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDaysFrequency",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.DefaultPerformanceTargets.TargetCallRate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsSWP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsStop",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsOther",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.AHSWP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.AHStop",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.ResponseTimes.AHOther",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.UnitNotes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unit.TechnicianUnitNotes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.Type_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.motormanufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.Model_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.MotorVoltage_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.RPM_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.FieldAmps_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.BrakeType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.Frame",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Motor.BrakeVoltage_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.Type_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.Manufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.ACKW_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.ACAmps_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.DCKW_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.DCAmps_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.DCVolts_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.FieldVolts_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.FieldAmps_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.BrushType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Generator.BrushGrade_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Gearbox.Location_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Gearbox.Manufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Gearbox.Model_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.Gearbox.GearRatio_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DriveSheaveDiameter_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DriveSheaveGrooves_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DiverterPulleys_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.Notes_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.ControllerRemplacementYear",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.Notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.Notes_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.ControllerMfg.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Controller.ControllerMfg.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.ControllerModel.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Controller.ControllerModel.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Controller.ControllerType.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Controller.ControllerType.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.NumberOfRopes_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.Diameter_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.Construction_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.WrappingType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.Length_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Suspension.TerminationType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Governor.Type.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Governor.Type.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Governor.Type.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Governor.Type.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Governor.CounterWeightGovernor_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Governor.RopeDiameter_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Governor.Length_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.Type.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Compensation.Type.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rope.Compensation.Type.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.Type.Val_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.NumberofRope_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.Size_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.Construction_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.Length_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Compensation.SheaveOrRoller",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Selector.Type_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Selector.Size_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Selector.Length_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Selector.TerminationType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rope.Notes_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.Doors.Landingdoorstypeid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.Doors.Landingdoorstypeid1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.Landingdoorstypeid2.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.OpeningWidth_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.OpeningHeight_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.EmergencyReleaseFited_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.FireRated",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.DoorClosersFitted",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.Landing[ButtonType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.ButtonVoltage_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.Landing[Manufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.ArrivalGongFitted_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.HallIndicators.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.HallIndicators.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.FrontDoorComplexity.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.FrontDoorComplexity.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Landing.RearDoorComplexity.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Landing.RearDoorComplexity.Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.DoorProtection.Type.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.DoorProtection.Type.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.DoorProtection.Type.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.DoorProtection.Type.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.OperatorModel_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.MechanicalDoorLockInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.cardoormanufacturer_val",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.ButtonType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.BrailleInstalled_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.ButtonManufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.IndiacatorHandicapCompliant_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.GuideShoesType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.CarEmergenctyLightingFitted_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.BufferType_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.PitLadderInstalled_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.HandicapCOPInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.LobbyOnly",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.HallPositionIndicatorInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.HallPositionIndicatorType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.ARDInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.EmergencyLightingInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.CarIndicators.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.CarIndicators.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.CarIndicators.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.CarIndicators.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.CounterweightScreenInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.PitLightingInstalled",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.SafetyGear.Type.ViewId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.SafetyGear.Type.ExternalId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Other.SafetyGear.Type.Name_en",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.SafetyGear.Type.Name_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.SafetyGear.Manufacturer_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.Fitted",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.HandsFree",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.AutoDial",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.PrimaryPhoneNumber_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.SecondaryPhoneNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.TKMaintainedGSMBox",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBosWithDualSim",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBoxSerialNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBoxInstallationDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.PrimarySimCardNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.CommunicationDevice.SecondarySimCardNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Other.Notes_local",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Max Master Data",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "HashKey",
+				"type": "varbinary"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "ORAViewUnit"
+		}
+	}
+}

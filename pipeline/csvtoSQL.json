@@ -560,8 +560,3224 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ViewUnitId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ViewUnitId",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ExternalUnitId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ExternalUnitId",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.building.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.building.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.building.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.building.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.building.BuildingNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.building.BuildingNo",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.building.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.building.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.building.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.building.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.bank.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.bank.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.bank.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.bank.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.bank.Name_val",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.bank.Name_val",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.bank.AccessCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.bank.AccessCode",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.office.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.office.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.office.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.office.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.office.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.office.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.UnitGovID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.UnitGovID",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.LiftNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.LiftNo",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.CustomerBillingRef",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.CustomerBillingRef",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.InService",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.InService",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.RegisteredNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.RegisteredNo",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.YearManufactured",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.YearManufactured",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.WarrantyStart",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.WarrantyStart",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.WarrantyEnd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.WarrantyEnd",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.CommissionedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.CommissionedDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.HandOverDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.HandOverDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.UnitSpec",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.UnitSpec",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.GovtInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.GovtInspectionDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.NextGovernmentInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.NextGovernmentInspectionDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.JobNumberm",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.JobNumberm",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.MfgWBSNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.MfgWBSNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.SmartViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.SmartViewId",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.SmartExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.SmartExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.SmartInstallDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.SmartInstallDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.SmartViewMaxId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.SmartViewMaxId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.SmartExternalMaxId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.SmartExternalMaxId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.StartDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.StartDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.EndDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.EndDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.ServiceproviderName_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.ServiceproviderName_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.ServiceproviderName_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.ServiceproviderName_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.identification.Contract.ContractNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.identification.Contract.ContractNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.UnitType.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.UnitType.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.UnitType.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.UnitType.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.UnitType.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.UnitType.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.UnitType.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.UnitType.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Manufacturer.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Manufacturer.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Manufacturer.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Manufacturer.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Manufacturer.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Manufacturer.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Manufacturer.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Manufacturer.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Factory.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Factory.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Factory.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Factory.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Factory.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Factory.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Factory.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Factory.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Controller.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Controller.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Controller.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Controller.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Controller.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Controller.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Controller.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Controller.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Model.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Model.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Model.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Model.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Model.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Model.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Model.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Model.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.DriveType.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.DriveType.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.DriveType.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.DriveType.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.DriveType.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.DriveType.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.DriveType.Name_val",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.DriveType.Name_val",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.FloorNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.FloorNo",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.FloorLabel",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.FloorLabel",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.Height",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.Height",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.IsEnabled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.IsEnabled",
+									"type": "Byte",
+									"physicalType": "tinyint"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.Door",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.Door",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.UnitFromDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.UnitFromDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Floors.CachedToDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Floors.CachedToDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.FrontOpening",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.FrontOpening",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.NumberOfStops",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.NumberOfStops",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.RearOpening",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.RearOpening",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Travel",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Travel",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Passengers",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Passengers",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Load",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Load",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Speed.ViewSpeedId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Speed.ViewSpeedId",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Equipment.Speed.SpeedName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Equipment.Speed.SpeedName",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceRun.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceRun.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceRun.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceRun.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceRun.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceRun.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.HoursPerVisit.Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.HoursPerVisit.Value",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultScheduling.PreferredServiceDaysFrequency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultScheduling.PreferredServiceDaysFrequency",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.DefaultPerformanceTargets.TargetCallRate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.DefaultPerformanceTargets.TargetCallRate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.BusinessHrsSWP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.BusinessHrsSWP",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.BusinessHrsStop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.BusinessHrsStop",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.BusinessHrsOther",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.BusinessHrsOther",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.AHSWP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.AHSWP",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.AHStop",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.AHStop",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.ResponseTimes.AHOther",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.ResponseTimes.AHOther",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.UnitNotes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.UnitNotes",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "unit.TechnicianUnitNotes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "unit.TechnicianUnitNotes",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.Type_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.motormanufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.motormanufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.Model_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.Model_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.MotorVoltage_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.MotorVoltage_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.RPM_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.RPM_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.FieldAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.FieldAmps_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.BrakeType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.BrakeType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.Frame",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.Frame",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Motor.BrakeVoltage_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Motor.BrakeVoltage_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.Type_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.Manufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.ACKW_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.ACKW_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.ACAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.ACAmps_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.DCKW_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.DCKW_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.DCAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.DCAmps_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.DCVolts_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.DCVolts_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.FieldVolts_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.FieldVolts_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.FieldAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.FieldAmps_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.BrushType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.BrushType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Generator.BrushGrade_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Generator.BrushGrade_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Gearbox.Location_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Gearbox.Location_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Gearbox.Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Gearbox.Manufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Gearbox.Model_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Gearbox.Model_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.Gearbox.GearRatio_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.Gearbox.GearRatio_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.SheaveAndPulleys.DriveSheaveDiameter_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.SheaveAndPulleys.DriveSheaveDiameter_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.SheaveAndPulleys.DriveSheaveGrooves_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.SheaveAndPulleys.DriveSheaveGrooves_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.SheaveAndPulleys.DiverterPulleys_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.SheaveAndPulleys.DiverterPulleys_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Machine.SheaveAndPulleys.Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Machine.SheaveAndPulleys.Notes_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerRemplacementYear",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerRemplacementYear",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.Notes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.Notes",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.Notes_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerMfg.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerMfg.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerMfg.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerMfg.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerModel.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerModel.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerModel.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerModel.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerType.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerType.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Controller.ControllerType.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Controller.ControllerType.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.RopingArrangement.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.RopingArrangement.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.RopingArrangement.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.RopingArrangement.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.RopingArrangement.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.RopingArrangement.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.RopingArrangement.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.RopingArrangement.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.NumberOfRopes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.NumberOfRopes_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.Diameter_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.Diameter_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.Construction_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.Construction_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.WrappingType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.WrappingType",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.Length_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Suspension.TerminationType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Suspension.TerminationType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.Type.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.Type.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.Type.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.Type.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.Type.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.Type.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.Type.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.Type.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.CounterWeightGovernor_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.CounterWeightGovernor_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.RopeDiameter_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.RopeDiameter_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Governor.Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Governor.Length_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Type.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Type.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Type.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Type.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Type.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Type.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Type.Val_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Type.Val_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.NumberofRope_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.NumberofRope_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Size_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Size_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Construction_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Construction_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.Length_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Compensation.SheaveOrRoller",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Compensation.SheaveOrRoller",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Selector.Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Selector.Type_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Selector.Size_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Selector.Size_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Selector.Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Selector.Length_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Selector.TerminationType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Selector.TerminationType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rope.Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rope.Notes_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Doors.Landingdoorstypeid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Doors.Landingdoorstypeid",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Doors.Landingdoorstypeid1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Doors.Landingdoorstypeid1",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Landingdoorstypeid2.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Landingdoorstypeid2.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.OpeningWidth_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.OpeningWidth_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.OpeningHeight_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.OpeningHeight_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.EmergencyReleaseFited_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.EmergencyReleaseFited_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.FireRated",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.FireRated",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.DoorClosersFitted",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.DoorClosersFitted",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Landing[ButtonType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Landing[ButtonType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.ButtonVoltage_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.ButtonVoltage_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.Landing[Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.Landing[Manufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.ArrivalGongFitted_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.ArrivalGongFitted_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.HallIndicators.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.HallIndicators.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.HallIndicators.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.HallIndicators.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.HallIndicators.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.HallIndicators.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.HallIndicators.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.HallIndicators.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.FrontDoorComplexity.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.FrontDoorComplexity.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.FrontDoorComplexity.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.FrontDoorComplexity.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.RearDoorComplexity.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.RearDoorComplexity.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Landing.RearDoorComplexity.Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Landing.RearDoorComplexity.Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.DoorProtection.Type.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.DoorProtection.Type.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.DoorProtection.Type.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.DoorProtection.Type.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.DoorProtection.Type.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.DoorProtection.Type.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.DoorProtection.Type.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.DoorProtection.Type.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.OperatorModel_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.OperatorModel_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.MechanicalDoorLockInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.MechanicalDoorLockInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.cardoormanufacturer_val",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.cardoormanufacturer_val",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.ButtonType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.ButtonType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.BrailleInstalled_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.BrailleInstalled_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.ButtonManufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.ButtonManufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.IndiacatorHandicapCompliant_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.IndiacatorHandicapCompliant_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GuideShoesType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GuideShoesType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.CarEmergenctyLightingFitted_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.CarEmergenctyLightingFitted_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.BufferType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.BufferType_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.PitLadderInstalled_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.PitLadderInstalled_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.HandicapCOPInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.HandicapCOPInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.LobbyOnly",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.LobbyOnly",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.HallPositionIndicatorInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.HallPositionIndicatorInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.HallPositionIndicatorType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.HallPositionIndicatorType",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.ARDInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.ARDInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.EmergencyLightingInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.EmergencyLightingInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.CarIndicators.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.CarIndicators.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.CarIndicators.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.CarIndicators.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.CarIndicators.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.CarIndicators.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.CarIndicators.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.CarIndicators.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionOperator.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionOperator.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionOperator.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionOperator.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionOperator.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionOperator.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionOperator.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionOperator.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionPanelCar.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionPanelCar.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionPanelCar.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionPanelCar.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Car.GeneralConditionPanelCar.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Car.GeneralConditionPanelCar.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.GuideShoesType.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.GuideShoesType.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.GuideShoesType.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.GuideShoesType.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.GuideShoesType.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.GuideShoesType.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.GuideShoesType.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.GuideShoesType.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.CounterweightScreenInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.CounterweightScreenInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.PitLightingInstalled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.PitLightingInstalled",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.SafetyGear.Type.ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.SafetyGear.Type.ViewId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.SafetyGear.Type.ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.SafetyGear.Type.ExternalId",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.SafetyGear.Type.Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.SafetyGear.Type.Name_en",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.SafetyGear.Type.Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.SafetyGear.Type.Name_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.SafetyGear.Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.SafetyGear.Manufacturer_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.Fitted",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.Fitted",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.HandsFree",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.HandsFree",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.AutoDial",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.AutoDial",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.PrimaryPhoneNumber_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.PrimaryPhoneNumber_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.SecondaryPhoneNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.SecondaryPhoneNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.TKMaintainedGSMBox",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.TKMaintainedGSMBox",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.GSMBosWithDualSim",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.GSMBosWithDualSim",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.GSMBoxSerialNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.GSMBoxSerialNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.GSMBoxInstallationDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.GSMBoxInstallationDate",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.PrimarySimCardNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.PrimarySimCardNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.CommunicationDevice.SecondarySimCardNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.CommunicationDevice.SecondarySimCardNumber",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Other.Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Other.Notes_local",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Max Master Data",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Max Master Data",
+									"type": "Byte",
+									"physicalType": "tinyint"
+								}
+							},
+							{
+								"source": {
+									"name": "HashKey",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HashKey",
+									"type": "Byte[]",
+									"physicalType": "varbinary"
+								}
+							},
+							{
+								"source": {
+									"name": "ETL_Load_Date_Time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETL_Load_Date_Time",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dtORAViewUnit",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "azsqkORAViewUnit",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
