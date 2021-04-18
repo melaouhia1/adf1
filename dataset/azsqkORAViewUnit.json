@@ -10,1059 +10,1055 @@
 		"schema": [
 			{
 				"name": "ViewUnitId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "ExternalUnitId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.building.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.building.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.building.BuildingNo",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.building.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.building.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.bank.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.bank.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.bank.Name_val",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.bank.AccessCode",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.office.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.office.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.office.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.UnitGovID",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.LiftNo",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.CustomerBillingRef",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.InService",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.RegisteredNo",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.YearManufactured",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.WarrantyStart",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.WarrantyEnd",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.CommissionedDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.HandOverDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.UnitSpec",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.GovtInspectionDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.NextGovernmentInspectionDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.JobNumberm",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.MfgWBSNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.SmartViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.SmartExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.SmartInstallDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.SmartViewMaxId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.SmartExternalMaxId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.StartDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.EndDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.ServiceproviderName_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.ServiceproviderName_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.identification.Contract.ContractNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Model.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Model.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Model.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Model.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.Name_val",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.FloorNo",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.FloorLabel",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.Height",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.IsEnabled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.Door",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.UnitFromDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.CachedToDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.FrontOpening",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.NumberOfStops",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.RearOpening",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Travel",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Passengers",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Load",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Speed.ViewSpeedId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Equipment.Speed.SpeedName",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.HoursPerVisit.Value",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceDaysFrequency",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.DefaultPerformanceTargets.TargetCallRate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.BusinessHrsSWP",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.BusinessHrsStop",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.BusinessHrsOther",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.AHSWP",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.AHStop",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.ResponseTimes.AHOther",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.UnitNotes",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "unit.TechnicianUnitNotes",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.Type_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.motormanufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.Model_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.MotorVoltage_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.RPM_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.FieldAmps_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.BrakeType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.Frame",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Motor.BrakeVoltage_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.Type_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.Manufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.ACKW_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.ACAmps_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.DCKW_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.DCAmps_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.DCVolts_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.FieldVolts_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.FieldAmps_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.BrushType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Generator.BrushGrade_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Gearbox.Location_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Gearbox.Manufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Gearbox.Model_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.Gearbox.GearRatio_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.SheaveAndPulleys.DriveSheaveDiameter_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.SheaveAndPulleys.DriveSheaveGrooves_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.SheaveAndPulleys.DiverterPulleys_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Machine.SheaveAndPulleys.Notes_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerRemplacementYear",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.Notes",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.Notes_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerMfg.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerMfg.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerModel.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerModel.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerType.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Controller.ControllerType.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.NumberOfRopes_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.Diameter_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.Construction_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.WrappingType",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.Length_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Suspension.TerminationType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.Type.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.Type.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.Type.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.Type.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.CounterWeightGovernor_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.RopeDiameter_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Governor.Length_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.Val_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.NumberofRope_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Size_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Construction_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.Length_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Compensation.SheaveOrRoller",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Selector.Type_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Selector.Size_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Selector.Length_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Selector.TerminationType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Rope.Notes_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Doors.Landingdoorstypeid",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Doors.Landingdoorstypeid1",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Landingdoorstypeid2.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.OpeningWidth_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.OpeningHeight_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.EmergencyReleaseFited_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.FireRated",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.DoorClosersFitted",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Landing[ButtonType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.ButtonVoltage_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.Landing[Manufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.ArrivalGongFitted_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.FrontDoorComplexity.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.FrontDoorComplexity.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.RearDoorComplexity.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Landing.RearDoorComplexity.Name",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.OperatorModel_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.MechanicalDoorLockInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.cardoormanufacturer_val",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.ButtonType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.BrailleInstalled_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.ButtonManufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.IndiacatorHandicapCompliant_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GuideShoesType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.CarEmergenctyLightingFitted_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.BufferType_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.PitLadderInstalled_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.HandicapCOPInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.LobbyOnly",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.HallPositionIndicatorInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.HallPositionIndicatorType",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.ARDInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.EmergencyLightingInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.CounterweightScreenInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.PitLightingInstalled",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.ViewId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.ExternalId",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.Name_en",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.Name_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.SafetyGear.Manufacturer_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.Fitted",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.HandsFree",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.AutoDial",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.PrimaryPhoneNumber_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.SecondaryPhoneNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.TKMaintainedGSMBox",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.GSMBosWithDualSim",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.GSMBoxSerialNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.GSMBoxInstallationDate",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.PrimarySimCardNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.CommunicationDevice.SecondarySimCardNumber",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Other.Notes_local",
-				"type": "nvarchar"
+				"type": "varchar"
 			},
 			{
 				"name": "Max Master Data",
-				"type": "nvarchar"
-			},
-			{
-				"name": "HashKey",
-				"type": "varbinary"
+				"type": "varchar"
 			},
 			{
 				"name": "ETL_Load_Date_Time",
-				"type": "nvarchar"
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
