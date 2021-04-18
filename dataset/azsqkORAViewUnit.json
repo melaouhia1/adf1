@@ -9,11 +9,6 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "id",
-				"type": "int",
-				"precision": 10
-			},
-			{
 				"name": "ViewUnitId",
 				"type": "nvarchar"
 			},
@@ -23,13 +18,11 @@
 			},
 			{
 				"name": "unit.identification.building.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.building.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.building.BuildingNo",
@@ -45,13 +38,11 @@
 			},
 			{
 				"name": "unit.identification.bank.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.bank.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.bank.Name_val",
@@ -63,8 +54,7 @@
 			},
 			{
 				"name": "unit.identification.office.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.office.Name_en",
@@ -140,8 +130,7 @@
 			},
 			{
 				"name": "unit.identification.SmartExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.SmartInstallDate",
@@ -149,23 +138,19 @@
 			},
 			{
 				"name": "unit.identification.SmartViewMaxId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.SmartExternalMaxId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.Contract.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.Contract.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.identification.Contract.StartDate",
@@ -189,13 +174,11 @@
 			},
 			{
 				"name": "unit.Equipment.UnitType.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.UnitType.Name_en",
@@ -207,13 +190,11 @@
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Manufacturer.Name_en",
@@ -225,13 +206,11 @@
 			},
 			{
 				"name": "unit.Equipment.Factory.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Factory.Name_en",
@@ -243,13 +222,11 @@
 			},
 			{
 				"name": "unit.Equipment.Controller.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Controller.Name_en",
@@ -261,13 +238,11 @@
 			},
 			{
 				"name": "unit.Equipment.Model.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Model.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Model.Name_en",
@@ -279,13 +254,11 @@
 			},
 			{
 				"name": "unit.Equipment.DriveType.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.DriveType.Name_en",
@@ -301,8 +274,7 @@
 			},
 			{
 				"name": "unit.Equipment.Floors.FloorNo",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.FloorLabel",
@@ -310,8 +282,7 @@
 			},
 			{
 				"name": "unit.Equipment.Floors.Height",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.IsEnabled",
@@ -320,8 +291,7 @@
 			},
 			{
 				"name": "unit.Equipment.Floors.Door",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.UnitFromDate",
@@ -365,13 +335,11 @@
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
@@ -379,13 +347,11 @@
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
@@ -393,13 +359,11 @@
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceRun.Name_local",
@@ -407,13 +371,11 @@
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
@@ -421,13 +383,11 @@
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
@@ -435,8 +395,7 @@
 			},
 			{
 				"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.HoursPerVisit.Value",
@@ -444,8 +403,7 @@
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
@@ -453,8 +411,7 @@
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
@@ -626,8 +583,7 @@
 			},
 			{
 				"name": "Controller.ControllerMfg.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Controller.ControllerMfg.Name",
@@ -635,8 +591,7 @@
 			},
 			{
 				"name": "Controller.ControllerModel.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Controller.ControllerModel.Name",
@@ -644,8 +599,7 @@
 			},
 			{
 				"name": "Controller.ControllerType.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Controller.ControllerType.Name",
@@ -653,13 +607,11 @@
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Suspension.RopingArrangement.Name",
@@ -695,13 +647,11 @@
 			},
 			{
 				"name": "Rope.Governor.Type.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Governor.Type.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Governor.Type.Name",
@@ -725,13 +675,11 @@
 			},
 			{
 				"name": "Rope.Compensation.Type.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Rope.Compensation.Type.Name_en",
@@ -783,18 +731,15 @@
 			},
 			{
 				"name": "Other.Landing.Doors.Landingdoorstypeid",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.Doors.Landingdoorstypeid1",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.Landingdoorstypeid2.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
@@ -838,13 +783,11 @@
 			},
 			{
 				"name": "Other.Landing.HallIndicators.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.HallIndicators.Name_en",
@@ -856,8 +799,7 @@
 			},
 			{
 				"name": "Other.Landing.FrontDoorComplexity.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.FrontDoorComplexity.Name",
@@ -865,8 +807,7 @@
 			},
 			{
 				"name": "Other.Landing.RearDoorComplexity.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Landing.RearDoorComplexity.Name",
@@ -874,13 +815,11 @@
 			},
 			{
 				"name": "Other.DoorProtection.Type.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.DoorProtection.Type.Name_en",
@@ -960,13 +899,11 @@
 			},
 			{
 				"name": "Other.Car.CarIndicators.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.CarIndicators.Name_en",
@@ -978,13 +915,11 @@
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionOperator.Name_en",
@@ -996,13 +931,11 @@
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.Car.GeneralConditionPanelCar.Name_en",
@@ -1014,13 +947,11 @@
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.CounterWeight.GuideShoesType.Name_en",
@@ -1040,13 +971,11 @@
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
@@ -1058,13 +987,11 @@
 			},
 			{
 				"name": "Other.SafetyGear.Type.ViewId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.ExternalId",
-				"type": "int",
-				"precision": 10
+				"type": "nvarchar"
 			},
 			{
 				"name": "Other.SafetyGear.Type.Name_en",
