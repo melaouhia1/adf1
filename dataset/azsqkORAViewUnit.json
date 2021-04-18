@@ -286,8 +286,7 @@
 			},
 			{
 				"name": "unit.Equipment.Floors.IsEnabled",
-				"type": "tinyint",
-				"precision": 3
+				"type": "nvarchar"
 			},
 			{
 				"name": "unit.Equipment.Floors.Door",
