@@ -1,0 +1,1077 @@
+{
+	"name": "AzureSqlTable7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "ViewUnitId",
+				"type": "varchar"
+			},
+			{
+				"name": "ExternalUnitId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification building ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification building ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification building BuildingNo",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification building Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification building Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification bank ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification bank ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification bank Name_val",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification bank AccessCode",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification office ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification office Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification office Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification UnitGovID",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification LiftNo",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification CustomerBillingRef",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification InService",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification RegisteredNo",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification YearManufactured",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification WarrantyStart",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification WarrantyEnd",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification CommissionedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification HandOverDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification UnitSpec",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification GovtInspectionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification NextGovernmentInspectionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification JobNumberm",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification MfgWBSNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification SmartViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification SmartExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification SmartInstallDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification SmartViewMaxId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification SmartExternalMaxId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract StartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract EndDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract ServiceproviderName_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract ServiceproviderName_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit identification Contract ContractNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment UnitType ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment UnitType ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment UnitType Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment UnitType Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Manufacturer ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Manufacturer ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Manufacturer Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Manufacturer Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Factory ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Factory ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Factory Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Factory Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Controller ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Controller ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Controller Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Controller Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Model ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Model ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Model Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Model Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment DriveType ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment DriveType ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment DriveType Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment DriveType Name_val",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors FloorNo",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors FloorLabel",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors Height",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors IsEnabled",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors Door",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors UnitFromDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Floors CachedToDate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment FrontOpening",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment NumberOfStops",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment RearOpening",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Travel",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Passengers",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Load",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Speed ViewSpeedId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Equipment Speed SpeedName",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance BusinessHoursCallbackRun ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance BusinessHoursCallbackRun ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance BusinessHoursCallbackRun Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance AfterHoursCallbackRun ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance AfterHoursCallbackRun ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance AfterHoursCallbackRun Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceRun ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceRun ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceRun Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSet ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSet ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSet Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSetGroup VIEWId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSetGroup ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit Maintenance MaintenanceScheduleSetGroup Name",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling HoursPerVisit ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling HoursPerVisit Value",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling PreferredServiceTimeWindow ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling PreferredServiceTimeWindow Value",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling PreferredServiceDayOfWeek ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling PreferredServiceDayOfWeek Value",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultScheduling PreferredServiceDaysFrequency",
+				"type": "varchar"
+			},
+			{
+				"name": "unit DefaultPerformanceTargets TargetCallRate",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes BusinessHrsSWP",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes BusinessHrsStop",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes BusinessHrsOther",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes AHSWP",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes AHStop",
+				"type": "varchar"
+			},
+			{
+				"name": "unit ResponseTimes AHOther",
+				"type": "varchar"
+			},
+			{
+				"name": "unit UnitNotes",
+				"type": "varchar"
+			},
+			{
+				"name": "unit TechnicianUnitNotes",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor Type_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor motormanufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor Model_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor MotorVoltage_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor RPM_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor FieldAmps_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor BrakeType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor Frame",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Motor BrakeVoltage_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator Type_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator Manufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator ACKW_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator ACAmps_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator DCKW_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator DCAmps_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator DCVolts_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator FieldVolts_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator FieldAmps_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator BrushType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Generator BrushGrade_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Gearbox Location_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Gearbox Manufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Gearbox Model_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine Gearbox GearRatio_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine SheaveAndPulleys DriveSheaveDiameter_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine SheaveAndPulleys DriveSheaveGrooves_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine SheaveAndPulleys DiverterPulleys_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Machine SheaveAndPulleys Notes_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerRemplacementYear",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller Notes",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller Notes_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerMfg ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerMfg Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerModel ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerModel Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerType ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Controller ControllerType Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension RopingArrangement ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension RopingArrangement ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension RopingArrangement Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension RopingArrangement Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension NumberOfRopes_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension Diameter_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension Construction_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension WrappingType",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension Length_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Suspension TerminationType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor Type ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor Type ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor Type Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor Type Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor CounterWeightGovernor_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor RopeDiameter_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Governor Length_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Type ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Type ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Type Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Type Val_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation NumberofRope_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Size_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Construction_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation Length_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Compensation SheaveOrRoller",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Selector Type_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Selector Size_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Selector Length_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Selector TerminationType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Rope Notes_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Doors Landingdoorstypeid",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Doors Landingdoorstypeid1",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Landingdoorstypeid2 ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Landingdoorstypeid2 Landingdoorstypeid2",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing OpeningWidth_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing OpeningHeight_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing EmergencyReleaseFited_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing FireRated",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing DoorClosersFitted",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Landing ButtonType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing ButtonVoltage_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing Landing Manufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing ArrivalGongFitted_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing HallIndicators ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing HallIndicators ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing HallIndicators Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing HallIndicators Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing FrontDoorComplexity ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing FrontDoorComplexity Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing RearDoorComplexity ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Landing RearDoorComplexity Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Other DoorProtection Type ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other DoorProtection Type ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other DoorProtection Type Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other DoorProtection Type Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car OperatorModel_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car MechanicalDoorLockInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car cardoormanufacturer_val",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car ButtonType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car BrailleInstalled_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car ButtonManufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car IndiacatorHandicapCompliant_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GuideShoesType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car CarEmergenctyLightingFitted_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car BufferType_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car PitLadderInstalled_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car HandicapCOPInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car LobbyOnly",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car HallPositionIndicatorInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car HallPositionIndicatorType",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car ARDInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car EmergencyLightingInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car CarIndicators ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car CarIndicators ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car CarIndicators Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car CarIndicators Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionOperator ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionOperator ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionOperator Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionOperator Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionPanelCar ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionPanelCar ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionPanelCar Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Car GeneralConditionPanelCar Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight GuideShoesType ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight GuideShoesType ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight GuideShoesType Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight GuideShoesType Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight CounterweightScreenInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight PitLightingInstalled",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight NumberOfPitSwitchInstalled ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight NumberOfPitSwitchInstalled ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other SafetyGear Type ViewId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other SafetyGear Type ExternalId",
+				"type": "varchar"
+			},
+			{
+				"name": "Other SafetyGear Type Name_en",
+				"type": "varchar"
+			},
+			{
+				"name": "Other SafetyGear Type Name_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other SafetyGear Manufacturer_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice Fitted",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice HandsFree",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice AutoDial",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice PrimaryPhoneNumber_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice SecondaryPhoneNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice TKMaintainedGSMBox",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice GSMBosWithDualSim",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice GSMBoxSerialNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice GSMBoxInstallationDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice PrimarySimCardNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "Other CommunicationDevice SecondarySimCardNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "Other Notes_local",
+				"type": "varchar"
+			},
+			{
+				"name": "Max Master Data",
+				"type": "varchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "ORAViewUnit"
+		}
+	}
+}
