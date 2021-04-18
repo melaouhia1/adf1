@@ -572,7 +572,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table [stg].[ORAViewUnit]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
