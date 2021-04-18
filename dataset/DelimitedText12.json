@@ -1,0 +1,1084 @@
+{
+	"name": "DelimitedText12",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobTraining",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Stg.ORAViewUnit.csv",
+				"container": "unit"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "ViewUnitId",
+				"type": "String"
+			},
+			{
+				"name": "ExternalUnitId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.building.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.building.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.building.BuildingNo",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.building.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.building.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.bank.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.bank.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.bank.Name_val",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.bank.AccessCode",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.office.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.office.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.office.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.UnitGovID",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.LiftNo",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.CustomerBillingRef",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.InService",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.RegisteredNo",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.YearManufactured",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.WarrantyStart",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.WarrantyEnd",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.CommissionedDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.HandOverDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.UnitSpec",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.GovtInspectionDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.NextGovernmentInspectionDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.JobNumberm",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.MfgWBSNumber",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.SmartViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.SmartExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.SmartInstallDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.SmartViewMaxId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.SmartExternalMaxId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.StartDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.EndDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.ServiceproviderName_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.ServiceproviderName_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.identification.Contract.ContractNumber",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.UnitType.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.UnitType.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.UnitType.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.UnitType.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Manufacturer.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Factory.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Factory.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Factory.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Factory.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Controller.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Controller.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Controller.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Controller.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Model.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Model.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Model.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Model.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.DriveType.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.DriveType.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.DriveType.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.DriveType.Name_val",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.FloorNo",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.FloorLabel",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.Height",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.IsEnabled",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.Door",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.UnitFromDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Floors.CachedToDate",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.FrontOpening",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.NumberOfStops",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.RearOpening",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Travel",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Passengers",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Load",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Speed.ViewSpeedId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Equipment.Speed.SpeedName",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.BusinessHoursCallbackRun.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.AfterHoursCallbackRun.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceRun.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSet.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "unit.Maintenance.MaintenanceScheduleSetGroup.Name",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.HoursPerVisit.Value",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.Value",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.Value",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultScheduling.PreferredServiceDaysFrequency",
+				"type": "String"
+			},
+			{
+				"name": "unit.DefaultPerformanceTargets.TargetCallRate",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsSWP",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsStop",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.BusinessHrsOther",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.AHSWP",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.AHStop",
+				"type": "String"
+			},
+			{
+				"name": "unit.ResponseTimes.AHOther",
+				"type": "String"
+			},
+			{
+				"name": "unit.UnitNotes",
+				"type": "String"
+			},
+			{
+				"name": "unit.TechnicianUnitNotes",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.Type_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.motormanufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.Model_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.MotorVoltage_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.RPM_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.FieldAmps_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.BrakeType_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.Frame",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Motor.BrakeVoltage_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.Type_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.Manufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.ACKW_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.ACAmps_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.DCKW_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.DCAmps_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.DCVolts_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.FieldVolts_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.FieldAmps_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.BrushType_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Generator.BrushGrade_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Gearbox.Location_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Gearbox.Manufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Gearbox.Model_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.Gearbox.GearRatio_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DriveSheaveDiameter_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DriveSheaveGrooves_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.DiverterPulleys_local",
+				"type": "String"
+			},
+			{
+				"name": "Machine.SheaveAndPulleys.Notes_local",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerRemplacementYear",
+				"type": "String"
+			},
+			{
+				"name": "Controller.Notes",
+				"type": "String"
+			},
+			{
+				"name": "Controller.Notes_local",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerMfg.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerMfg.Name",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerModel.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerModel.Name",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerType.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Controller.ControllerType.Name",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.Name",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.RopingArrangement.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.NumberOfRopes_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.Diameter_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.Construction_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.WrappingType",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.Length_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Suspension.TerminationType_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.Type.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.Type.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.Type.Name",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.Type.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.CounterWeightGovernor_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.RopeDiameter_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Governor.Length_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Type.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Type.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Type.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Type.Val_en",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.NumberofRope_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Size_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Construction_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.Length_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Compensation.SheaveOrRoller",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Selector.Type_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Selector.Size_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Selector.Length_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Selector.TerminationType_local",
+				"type": "String"
+			},
+			{
+				"name": "Rope.Notes_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Doors.Landingdoorstypeid",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Doors.Landingdoorstypeid1",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Landingdoorstypeid2.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Landingdoorstypeid2.Landingdoorstypeid2",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.OpeningWidth_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.OpeningHeight_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.EmergencyReleaseFited_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.FireRated",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.DoorClosersFitted",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Landing[ButtonType_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.ButtonVoltage_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.Landing[Manufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.ArrivalGongFitted_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.HallIndicators.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.FrontDoorComplexity.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.FrontDoorComplexity.Name",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.RearDoorComplexity.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Landing.RearDoorComplexity.Name",
+				"type": "String"
+			},
+			{
+				"name": "Other.DoorProtection.Type.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.DoorProtection.Type.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.DoorProtection.Type.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.DoorProtection.Type.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.OperatorModel_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.MechanicalDoorLockInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.cardoormanufacturer_val",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.ButtonType_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.BrailleInstalled_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.ButtonManufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.IndiacatorHandicapCompliant_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GuideShoesType_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.CarEmergenctyLightingFitted_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.BufferType_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.PitLadderInstalled_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.HandicapCOPInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.LobbyOnly",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.HallPositionIndicatorInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.HallPositionIndicatorType",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.ARDInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.EmergencyLightingInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.CarIndicators.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.CarIndicators.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.CarIndicators.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.CarIndicators.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionOperator.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.Car.GeneralConditionPanelCar.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.GuideShoesType.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.CounterweightScreenInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.PitLightingInstalled",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.SafetyGear.Type.ViewId",
+				"type": "String"
+			},
+			{
+				"name": "Other.SafetyGear.Type.ExternalId",
+				"type": "String"
+			},
+			{
+				"name": "Other.SafetyGear.Type.Name_en",
+				"type": "String"
+			},
+			{
+				"name": "Other.SafetyGear.Type.Name_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.SafetyGear.Manufacturer_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.Fitted",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.HandsFree",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.AutoDial",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.PrimaryPhoneNumber_local",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.SecondaryPhoneNumber",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.TKMaintainedGSMBox",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBosWithDualSim",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBoxSerialNumber",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.GSMBoxInstallationDate",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.PrimarySimCardNumber",
+				"type": "String"
+			},
+			{
+				"name": "Other.CommunicationDevice.SecondarySimCardNumber",
+				"type": "String"
+			},
+			{
+				"name": "Other.Notes_local",
+				"type": "String"
+			},
+			{
+				"name": "Max Master Data",
+				"type": "String"
+			},
+			{
+				"name": "HashKey",
+				"type": "String"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "String"
+			}
+		]
+	}
+}
