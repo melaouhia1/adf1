@@ -612,8 +612,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.building.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -624,8 +624,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.building.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -672,8 +672,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.bank.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -684,8 +684,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.bank.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -720,8 +720,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.office.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -948,8 +948,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.SmartExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -972,8 +972,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.SmartViewMaxId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -984,8 +984,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.SmartExternalMaxId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -996,8 +996,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.Contract.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1008,8 +1008,8 @@
 								},
 								"sink": {
 									"name": "unit.identification.Contract.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1080,8 +1080,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.UnitType.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1092,8 +1092,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.UnitType.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1128,8 +1128,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Manufacturer.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1140,8 +1140,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Manufacturer.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1176,8 +1176,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Factory.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1188,8 +1188,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Factory.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1224,8 +1224,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Controller.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1236,8 +1236,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Controller.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1272,8 +1272,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Model.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1284,8 +1284,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Model.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1320,8 +1320,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.DriveType.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1332,8 +1332,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.DriveType.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1380,8 +1380,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Floors.FloorNo",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1404,8 +1404,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Floors.Height",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1428,8 +1428,8 @@
 								},
 								"sink": {
 									"name": "unit.Equipment.Floors.Door",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1560,8 +1560,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.BusinessHoursCallbackRun.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1572,8 +1572,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.BusinessHoursCallbackRun.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1596,8 +1596,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.AfterHoursCallbackRun.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1608,8 +1608,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.AfterHoursCallbackRun.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1632,8 +1632,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceRun.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1644,8 +1644,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceRun.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1668,8 +1668,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceScheduleSet.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1680,8 +1680,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceScheduleSet.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1704,8 +1704,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.VIEWId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1716,8 +1716,8 @@
 								},
 								"sink": {
 									"name": "unit.Maintenance.MaintenanceScheduleSetGroup.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1740,8 +1740,8 @@
 								},
 								"sink": {
 									"name": "unit.DefaultScheduling.HoursPerVisit.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1764,8 +1764,8 @@
 								},
 								"sink": {
 									"name": "unit.DefaultScheduling.PreferredServiceTimeWindow.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -1788,8 +1788,8 @@
 								},
 								"sink": {
 									"name": "unit.DefaultScheduling.PreferredServiceDayOfWeek.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2304,8 +2304,8 @@
 								},
 								"sink": {
 									"name": "Controller.ControllerMfg.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2328,8 +2328,8 @@
 								},
 								"sink": {
 									"name": "Controller.ControllerModel.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2352,8 +2352,8 @@
 								},
 								"sink": {
 									"name": "Controller.ControllerType.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2376,8 +2376,8 @@
 								},
 								"sink": {
 									"name": "Rope.Suspension.RopingArrangement.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2388,8 +2388,8 @@
 								},
 								"sink": {
 									"name": "Rope.Suspension.RopingArrangement.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2496,8 +2496,8 @@
 								},
 								"sink": {
 									"name": "Rope.Governor.Type.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2508,8 +2508,8 @@
 								},
 								"sink": {
 									"name": "Rope.Governor.Type.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2580,8 +2580,8 @@
 								},
 								"sink": {
 									"name": "Rope.Compensation.Type.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2592,8 +2592,8 @@
 								},
 								"sink": {
 									"name": "Rope.Compensation.Type.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2748,8 +2748,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.Doors.Landingdoorstypeid",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2760,8 +2760,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.Doors.Landingdoorstypeid1",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2772,8 +2772,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.Landingdoorstypeid2.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2904,8 +2904,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.HallIndicators.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2916,8 +2916,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.HallIndicators.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2952,8 +2952,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.FrontDoorComplexity.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -2976,8 +2976,8 @@
 								},
 								"sink": {
 									"name": "Other.Landing.RearDoorComplexity.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3000,8 +3000,8 @@
 								},
 								"sink": {
 									"name": "Other.DoorProtection.Type.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3012,8 +3012,8 @@
 								},
 								"sink": {
 									"name": "Other.DoorProtection.Type.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3252,8 +3252,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.CarIndicators.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3264,8 +3264,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.CarIndicators.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3300,8 +3300,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.GeneralConditionOperator.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3312,8 +3312,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.GeneralConditionOperator.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3348,8 +3348,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.GeneralConditionPanelCar.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3360,8 +3360,8 @@
 								},
 								"sink": {
 									"name": "Other.Car.GeneralConditionPanelCar.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3396,8 +3396,8 @@
 								},
 								"sink": {
 									"name": "Other.CounterWeight.GuideShoesType.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3408,8 +3408,8 @@
 								},
 								"sink": {
 									"name": "Other.CounterWeight.GuideShoesType.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3468,8 +3468,8 @@
 								},
 								"sink": {
 									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3480,8 +3480,8 @@
 								},
 								"sink": {
 									"name": "Other.CounterWeight.NumberOfPitSwitchInstalled.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3516,8 +3516,8 @@
 								},
 								"sink": {
 									"name": "Other.SafetyGear.Type.ViewId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
@@ -3528,8 +3528,8 @@
 								},
 								"sink": {
 									"name": "Other.SafetyGear.Type.ExternalId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "nvarchar"
 								}
 							},
 							{
