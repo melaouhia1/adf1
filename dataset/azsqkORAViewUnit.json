@@ -1055,8 +1055,7 @@
 			},
 			{
 				"name": "Max Master Data",
-				"type": "tinyint",
-				"precision": 3
+				"type": "nvarchar"
 			},
 			{
 				"name": "HashKey",
@@ -1064,9 +1063,7 @@
 			},
 			{
 				"name": "ETL_Load_Date_Time",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
