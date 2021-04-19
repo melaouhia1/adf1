@@ -20,6 +20,95 @@
 		},
 		"schema": [
 			{
+				"name": "BranchId",
+				"type": "String"
+			},
+			{
+				"name": "BranchName",
+				"type": "String"
+			},
+			{
+				"name": "LegacyBranchNo",
+				"type": "String"
+			},
+			{
+				"name": "RegionId",
+				"type": "String"
+			},
+			{
+				"name": "IsDisabled",
+				"type": "String"
+			},
+			{
+				"name": "OracleBranchNo",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zipcode",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "Fax",
+				"type": "String"
+			},
+			{
+				"name": "Lat",
+				"type": "String"
+			},
+			{
+				"name": "Long",
+				"type": "String"
+			},
+			{
+				"name": "UTCOffset",
+				"type": "String"
+			},
+			{
+				"name": "AuditDate",
+				"type": "String"
+			},
+			{
+				"name": "AuditUser",
+				"type": "String"
+			},
+			{
+				"name": "DistributorNo",
+				"type": "String"
+			},
+			{
+				"name": "OverrideGroupId",
+				"type": "String"
+			},
+			{
+				"name": "BranchCrews",
+				"type": "String"
+			},
+			{
+				"name": "IsEBSTandEEnabled",
+				"type": "String"
+			},
+			{
+				"name": "EBSTandEEnabledDate",
+				"type": "String"
+			},
+			{
+				"name": "EBSRollBackDate",
 				"type": "String"
 			}
 		]
