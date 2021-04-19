@@ -3782,7 +3782,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table [stg].[Branch]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
