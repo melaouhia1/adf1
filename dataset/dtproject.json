@@ -1,0 +1,428 @@
+{
+	"name": "dtproject",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ProjectInfo_0418.csv",
+				"container": "unit"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ProjectId",
+				"type": "String"
+			},
+			{
+				"name": "EBSProjectID",
+				"type": "String"
+			},
+			{
+				"name": "BranchNo",
+				"type": "String"
+			},
+			{
+				"name": "BranchName",
+				"type": "String"
+			},
+			{
+				"name": "EBSProjectNo",
+				"type": "String"
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "StartDate",
+				"type": "String"
+			},
+			{
+				"name": "CloseDate",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zip",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyDuration",
+				"type": "String"
+			},
+			{
+				"name": "RetentionPct",
+				"type": "String"
+			},
+			{
+				"name": "BookingPkgRecDate",
+				"type": "String"
+			},
+			{
+				"name": "ContractBookedDate",
+				"type": "String"
+			},
+			{
+				"name": "LD",
+				"type": "String"
+			},
+			{
+				"name": "LDDate",
+				"type": "String"
+			},
+			{
+				"name": "LDCostPerDay",
+				"type": "String"
+			},
+			{
+				"name": "PackageToSalesDate",
+				"type": "String"
+			},
+			{
+				"name": "ExecutionAndReturnDate",
+				"type": "String"
+			},
+			{
+				"name": "ModifyAndReturnDate",
+				"type": "String"
+			},
+			{
+				"name": "POTOSalesDate",
+				"type": "String"
+			},
+			{
+				"name": "ReceivedExecDocDate",
+				"type": "String"
+			},
+			{
+				"name": "ReleaseToCreditDate",
+				"type": "String"
+			},
+			{
+				"name": "PreliminaryNoticesDate",
+				"type": "String"
+			},
+			{
+				"name": "CertifiedPayroll",
+				"type": "String"
+			},
+			{
+				"name": "BillOfSale",
+				"type": "String"
+			},
+			{
+				"name": "MaterialOnSite",
+				"type": "String"
+			},
+			{
+				"name": "SupervisorPayrollNo",
+				"type": "String"
+			},
+			{
+				"name": "PctDueBeforeTurnover",
+				"type": "String"
+			},
+			{
+				"name": "Superintendent",
+				"type": "String"
+			},
+			{
+				"name": "LRIncreaseBooked",
+				"type": "String"
+			},
+			{
+				"name": "MRIBooked",
+				"type": "String"
+			},
+			{
+				"name": "GCBinders",
+				"type": "String"
+			},
+			{
+				"name": "OMManuals",
+				"type": "String"
+			},
+			{
+				"name": "LastVisitDate",
+				"type": "String"
+			},
+			{
+				"name": "VisitedBy",
+				"type": "String"
+			},
+			{
+				"name": "GCBindersDate",
+				"type": "String"
+			},
+			{
+				"name": "InsertsDeliveredDate",
+				"type": "String"
+			},
+			{
+				"name": "PostBidSurveyDue",
+				"type": "String"
+			},
+			{
+				"name": "PostBidSurveyComplete",
+				"type": "String"
+			},
+			{
+				"name": "PostBidSurveyCompleteDate",
+				"type": "String"
+			},
+			{
+				"name": "InsertsDeliveredComplete",
+				"type": "String"
+			},
+			{
+				"name": "Construction",
+				"type": "String"
+			},
+			{
+				"name": "PercentComplete",
+				"type": "String"
+			},
+			{
+				"name": "ProjectedEfficiency",
+				"type": "String"
+			},
+			{
+				"name": "RollbackProjectedEfficiency",
+				"type": "String"
+			},
+			{
+				"name": "EstHours",
+				"type": "String"
+			},
+			{
+				"name": "ActHours",
+				"type": "String"
+			},
+			{
+				"name": "RollbackEstHours",
+				"type": "String"
+			},
+			{
+				"name": "IsBidProject",
+				"type": "String"
+			},
+			{
+				"name": "IsAdminProject",
+				"type": "String"
+			},
+			{
+				"name": "OriginalContractAmount",
+				"type": "String"
+			},
+			{
+				"name": "CurrentContractAmount",
+				"type": "String"
+			},
+			{
+				"name": "DiscreteHours",
+				"type": "String"
+			},
+			{
+				"name": "SalesRep",
+				"type": "String"
+			},
+			{
+				"name": "InvoicedAmount",
+				"type": "String"
+			},
+			{
+				"name": "RecievedAmount",
+				"type": "String"
+			},
+			{
+				"name": "AuditUser",
+				"type": "String"
+			},
+			{
+				"name": "AuditDate",
+				"type": "String"
+			},
+			{
+				"name": "WarrantyNIM",
+				"type": "String"
+			},
+			{
+				"name": "TrackingNumber",
+				"type": "String"
+			},
+			{
+				"name": "OMManualsSentDate",
+				"type": "String"
+			},
+			{
+				"name": "PercentBilled",
+				"type": "String"
+			},
+			{
+				"name": "PercentPaid",
+				"type": "String"
+			},
+			{
+				"name": "MaintenanceContractSold",
+				"type": "String"
+			},
+			{
+				"name": "SentToOZDate",
+				"type": "String"
+			},
+			{
+				"name": "ProjInsOrUpdDate",
+				"type": "String"
+			},
+			{
+				"name": "HasFirstCarReview",
+				"type": "String"
+			},
+			{
+				"name": "HasFCR90prct",
+				"type": "String"
+			},
+			{
+				"name": "NoOf20PrctOnFCR",
+				"type": "String"
+			},
+			{
+				"name": "OPPORTUNITYID",
+				"type": "String"
+			},
+			{
+				"name": "COLLECTIONSPECIALIST",
+				"type": "String"
+			},
+			{
+				"name": "CONTRACTADMINISTRATOR",
+				"type": "String"
+			},
+			{
+				"name": "CREDITMANAGER",
+				"type": "String"
+			},
+			{
+				"name": "OPERATIONSDIRECTOR",
+				"type": "String"
+			},
+			{
+				"name": "SALESDIRECTOR",
+				"type": "String"
+			},
+			{
+				"name": "OPERATIONCOORDINATOR",
+				"type": "String"
+			},
+			{
+				"name": "OPERATIONMANAGER",
+				"type": "String"
+			},
+			{
+				"name": "PORTFOLIOANALYST",
+				"type": "String"
+			},
+			{
+				"name": "PORTFOLIOAPPROVER",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTSPORTFOLIOOWNER",
+				"type": "String"
+			},
+			{
+				"name": "PROGRAMMANAGER",
+				"type": "String"
+			},
+			{
+				"name": "PROJECTSTAFFINGOWNER",
+				"type": "String"
+			},
+			{
+				"name": "REGIONALCONTROLLER",
+				"type": "String"
+			},
+			{
+				"name": "REGIONALPRESIDENT",
+				"type": "String"
+			},
+			{
+				"name": "REGIONALVICEPRESIDENT",
+				"type": "String"
+			},
+			{
+				"name": "smara",
+				"type": "String"
+			},
+			{
+				"name": "REGIONALVICEPRESIDENTSALES",
+				"type": "String"
+			},
+			{
+				"name": "SALESCOORDINATOR",
+				"type": "String"
+			},
+			{
+				"name": "FCTPctComplete",
+				"type": "String"
+			},
+			{
+				"name": "FCTLowPctComplete",
+				"type": "String"
+			},
+			{
+				"name": "FCRPerformedDt",
+				"type": "String"
+			},
+			{
+				"name": "MTStatrtDt",
+				"type": "String"
+			},
+			{
+				"name": "NoOfInsertsDelivered",
+				"type": "String"
+			},
+			{
+				"name": "ProjectHold",
+				"type": "String"
+			},
+			{
+				"name": "DelayedUntilDt",
+				"type": "String"
+			}
+		]
+	}
+}
