@@ -1,0 +1,73 @@
+{
+	"name": "AzureSqconatct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Address",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "Zipcode",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "ContactID",
+				"type": "varchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Email",
+				"type": "varchar"
+			},
+			{
+				"name": "ContactType",
+				"type": "varchar"
+			},
+			{
+				"name": "Title",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectId",
+				"type": "varchar"
+			},
+			{
+				"name": "GeneralContractor",
+				"type": "varchar"
+			},
+			{
+				"name": "IsPrimaryContact",
+				"type": "varchar"
+			},
+			{
+				"name": "OldContactId",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "contact"
+		}
+	}
+}
