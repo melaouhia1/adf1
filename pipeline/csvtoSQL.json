@@ -4113,7 +4113,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "trncate table [stg].[contact]",
+						"preCopyScript": "truncate table [stg].[contact]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
