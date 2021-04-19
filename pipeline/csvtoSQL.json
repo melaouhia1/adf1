@@ -3770,8 +3770,320 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BranchId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BranchId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BranchName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LegacyBranchNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LegacyBranchNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RegionId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RegionId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsDisabled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsDisabled",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OracleBranchNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OracleBranchNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Address",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Address",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "City",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Zipcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Zipcode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Phone",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Fax",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Fax",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Lat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Lat",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Long",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Long",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UTCOffset",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UTCOffset",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuditUser",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AuditUser",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DistributorNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DistributorNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OverrideGroupId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OverrideGroupId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BranchCrews",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BranchCrews",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsEBSTandEEnabled",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsEBSTandEEnabled",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EBSTandEEnabledDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EBSTandEEnabledDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EBSRollBackDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EBSRollBackDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dtbranch",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "azsqlbranch",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
