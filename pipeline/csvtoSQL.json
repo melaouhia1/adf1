@@ -5574,6 +5574,888 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Copy data4",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table [stg].[unit group] ",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ProjectId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProjectId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ReferenceNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ReferenceNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "StartDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "StartDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PercentComplete",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PercentComplete",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ProjectedEfficiency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProjectedEfficiency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RollbackProjectedEfficiency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RollbackProjectedEfficiency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstHours",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstHours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActHours",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActHours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RollbackEstHours",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RollbackEstHours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscreteHours",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DiscreteHours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuditUser",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AuditUser",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitGroupId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UnitGroupId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EBSTaskId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EBSTaskId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FinishDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FinishDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LobId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LobId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UnitType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UnitType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProductType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CompleteDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CompleteDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FinalDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FinalDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TemplateType",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TemplateType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "InstanceID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "InstanceID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Template",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Template",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Stops",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Stops",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMDuration",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMAmount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RevenueAmount",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RevenueAmount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BillingAmount",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BillingAmount",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CompletionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CompletionDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TaskNo",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NumberOfUnits",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NumberOfUnits",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EBSProjectId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EBSProjectId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RollbackPercent",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RollbackPercent",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TargetDPS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TargetDPS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ParentTaskId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ParentTaskId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PctHrsUsed",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PctHrsUsed",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ProjectedEffPct",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProjectedEffPct",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActualOTHrs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActualOTHrs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMScore",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMScore",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NIMAuditDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActLaborRate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActLaborRate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstLaborRate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstLaborRate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstMaterial",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstMaterial",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActMaterial",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActMaterial",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstLabor",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstLabor",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActLabor",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActLabor",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstMisc",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstMisc",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ActMisc",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ActMisc",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "COAmt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COAmt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ContractAmt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ContractAmt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BilledAmt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BilledAmt",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Actrev",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Actrev",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OfficeEfficiency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OfficeEfficiency",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EstOTHrs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EstOTHrs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ParentEBSTaskId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ParentEBSTaskId",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BIDOTHrs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BIDOTHrs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "OzGroupName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OzGroupName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsTKEFactoryOrder",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FirstCarInGrp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FirstCarInGrp",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ManpowerCSD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ManpowerCSD",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsLeadTimeEnable",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsLeadTimeEnable",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "IsInActive",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IsInActive",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UGInsUpdDate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UGInsUpdDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "JumpCheckBox",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "JumpCheckBox",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FCRPrct",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FCRPrct",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DelayStart",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SplitHour",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SplitHour",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DelayedStartOzStatusCd",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DelayedStartOzStatusCd",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DelayedStartOzMessage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DelayedStartOzMessage",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dtunitgroup",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "azunitgroup",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {
