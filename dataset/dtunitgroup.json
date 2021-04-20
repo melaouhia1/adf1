@@ -20,6 +20,279 @@
 		},
 		"schema": [
 			{
+				"name": "UnitGroupId",
+				"type": "String"
+			},
+			{
+				"name": "ProjectId",
+				"type": "String"
+			},
+			{
+				"name": "EBSTaskId",
+				"type": "String"
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "String"
+			},
+			{
+				"name": "StartDate",
+				"type": "String"
+			},
+			{
+				"name": "FinishDate",
+				"type": "String"
+			},
+			{
+				"name": "LobId",
+				"type": "String"
+			},
+			{
+				"name": "UnitType",
+				"type": "String"
+			},
+			{
+				"name": "ProductType",
+				"type": "String"
+			},
+			{
+				"name": "CompleteDate",
+				"type": "String"
+			},
+			{
+				"name": "FinalDate",
+				"type": "String"
+			},
+			{
+				"name": "TemplateType",
+				"type": "String"
+			},
+			{
+				"name": "InstanceID",
+				"type": "String"
+			},
+			{
+				"name": "Template",
+				"type": "String"
+			},
+			{
+				"name": "Stops",
+				"type": "String"
+			},
+			{
+				"name": "NIMDuration",
+				"type": "String"
+			},
+			{
+				"name": "NIMAmount",
+				"type": "String"
+			},
+			{
+				"name": "RevenueAmount",
+				"type": "String"
+			},
+			{
+				"name": "BillingAmount",
+				"type": "String"
+			},
+			{
+				"name": "CompletionDate",
+				"type": "String"
+			},
+			{
+				"name": "TaskNo",
+				"type": "String"
+			},
+			{
+				"name": "NumberOfUnits",
+				"type": "String"
+			},
+			{
+				"name": "EBSProjectId",
+				"type": "String"
+			},
+			{
+				"name": "RollbackPercent",
+				"type": "String"
+			},
+			{
+				"name": "EstHours",
+				"type": "String"
+			},
+			{
+				"name": "ActHours",
+				"type": "String"
+			},
+			{
+				"name": "RollbackEstHours",
+				"type": "String"
+			},
+			{
+				"name": "PercentComplete",
+				"type": "String"
+			},
+			{
+				"name": "ProjectedEfficiency",
+				"type": "String"
+			},
+			{
+				"name": "RollbackProjectedEfficiency",
+				"type": "String"
+			},
+			{
+				"name": "TargetDPS",
+				"type": "String"
+			},
+			{
+				"name": "DiscreteHours",
+				"type": "String"
+			},
+			{
+				"name": "ParentTaskId",
+				"type": "String"
+			},
+			{
+				"name": "AuditUser",
+				"type": "String"
+			},
+			{
+				"name": "AuditDate",
+				"type": "String"
+			},
+			{
+				"name": "PctHrsUsed",
+				"type": "String"
+			},
+			{
+				"name": "ProjectedEffPct",
+				"type": "String"
+			},
+			{
+				"name": "ActualOTHrs",
+				"type": "String"
+			},
+			{
+				"name": "NIMScore",
+				"type": "String"
+			},
+			{
+				"name": "NIMAuditDate",
+				"type": "String"
+			},
+			{
+				"name": "ActLaborRate",
+				"type": "String"
+			},
+			{
+				"name": "EstLaborRate",
+				"type": "String"
+			},
+			{
+				"name": "EstMaterial",
+				"type": "String"
+			},
+			{
+				"name": "ActMaterial",
+				"type": "String"
+			},
+			{
+				"name": "EstLabor",
+				"type": "String"
+			},
+			{
+				"name": "ActLabor",
+				"type": "String"
+			},
+			{
+				"name": "EstMisc",
+				"type": "String"
+			},
+			{
+				"name": "ActMisc",
+				"type": "String"
+			},
+			{
+				"name": "COAmt",
+				"type": "String"
+			},
+			{
+				"name": "ContractAmt",
+				"type": "String"
+			},
+			{
+				"name": "BilledAmt",
+				"type": "String"
+			},
+			{
+				"name": "Actrev",
+				"type": "String"
+			},
+			{
+				"name": "OfficeEfficiency",
+				"type": "String"
+			},
+			{
+				"name": "EstOTHrs",
+				"type": "String"
+			},
+			{
+				"name": "ParentEBSTaskId",
+				"type": "String"
+			},
+			{
+				"name": "BIDOTHrs",
+				"type": "String"
+			},
+			{
+				"name": "OzGroupName",
+				"type": "String"
+			},
+			{
+				"name": "IsTKEFactoryOrder",
+				"type": "String"
+			},
+			{
+				"name": "FirstCarInGrp",
+				"type": "String"
+			},
+			{
+				"name": "ManpowerCSD",
+				"type": "String"
+			},
+			{
+				"name": "IsLeadTimeEnable",
+				"type": "String"
+			},
+			{
+				"name": "IsInActive",
+				"type": "String"
+			},
+			{
+				"name": "UGInsUpdDate",
+				"type": "String"
+			},
+			{
+				"name": "JumpCheckBox",
+				"type": "String"
+			},
+			{
+				"name": "FCRPrct",
+				"type": "String"
+			},
+			{
+				"name": "DelayStart",
+				"type": "String"
+			},
+			{
+				"name": "SplitHour",
+				"type": "String"
+			},
+			{
+				"name": "DelayedStartOzStatusCd",
+				"type": "String"
+			},
+			{
+				"name": "DelayedStartOzMessage",
 				"type": "String"
 			}
 		]
