@@ -1,0 +1,293 @@
+{
+	"name": "azunitgroup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProjectId",
+				"type": "varchar"
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "varchar"
+			},
+			{
+				"name": "StartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PercentComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectedEfficiency",
+				"type": "varchar"
+			},
+			{
+				"name": "RollbackProjectedEfficiency",
+				"type": "varchar"
+			},
+			{
+				"name": "EstHours",
+				"type": "varchar"
+			},
+			{
+				"name": "ActHours",
+				"type": "varchar"
+			},
+			{
+				"name": "RollbackEstHours",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscreteHours",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditUser",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitGroupId",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSTaskId",
+				"type": "varchar"
+			},
+			{
+				"name": "FinishDate",
+				"type": "varchar"
+			},
+			{
+				"name": "LobId",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitType",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductType",
+				"type": "varchar"
+			},
+			{
+				"name": "CompleteDate",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalDate",
+				"type": "varchar"
+			},
+			{
+				"name": "TemplateType",
+				"type": "varchar"
+			},
+			{
+				"name": "InstanceID",
+				"type": "varchar"
+			},
+			{
+				"name": "Template",
+				"type": "varchar"
+			},
+			{
+				"name": "Stops",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMDuration",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "RevenueAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "BillingAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "CompletionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "TaskNo",
+				"type": "varchar"
+			},
+			{
+				"name": "NumberOfUnits",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSProjectId",
+				"type": "varchar"
+			},
+			{
+				"name": "RollbackPercent",
+				"type": "varchar"
+			},
+			{
+				"name": "TargetDPS",
+				"type": "varchar"
+			},
+			{
+				"name": "ParentTaskId",
+				"type": "varchar"
+			},
+			{
+				"name": "PctHrsUsed",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectedEffPct",
+				"type": "varchar"
+			},
+			{
+				"name": "ActualOTHrs",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMScore",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ActLaborRate",
+				"type": "varchar"
+			},
+			{
+				"name": "EstLaborRate",
+				"type": "varchar"
+			},
+			{
+				"name": "EstMaterial",
+				"type": "varchar"
+			},
+			{
+				"name": "ActMaterial",
+				"type": "varchar"
+			},
+			{
+				"name": "EstLabor",
+				"type": "varchar"
+			},
+			{
+				"name": "ActLabor",
+				"type": "varchar"
+			},
+			{
+				"name": "EstMisc",
+				"type": "varchar"
+			},
+			{
+				"name": "ActMisc",
+				"type": "varchar"
+			},
+			{
+				"name": "COAmt",
+				"type": "varchar"
+			},
+			{
+				"name": "ContractAmt",
+				"type": "varchar"
+			},
+			{
+				"name": "BilledAmt",
+				"type": "varchar"
+			},
+			{
+				"name": "Actrev",
+				"type": "varchar"
+			},
+			{
+				"name": "OfficeEfficiency",
+				"type": "varchar"
+			},
+			{
+				"name": "EstOTHrs",
+				"type": "varchar"
+			},
+			{
+				"name": "ParentEBSTaskId",
+				"type": "varchar"
+			},
+			{
+				"name": "BIDOTHrs",
+				"type": "varchar"
+			},
+			{
+				"name": "OzGroupName",
+				"type": "varchar"
+			},
+			{
+				"name": "IsTKEFactoryOrder",
+				"type": "varchar"
+			},
+			{
+				"name": "FirstCarInGrp",
+				"type": "varchar"
+			},
+			{
+				"name": "ManpowerCSD",
+				"type": "varchar"
+			},
+			{
+				"name": "IsLeadTimeEnable",
+				"type": "varchar"
+			},
+			{
+				"name": "IsInActive",
+				"type": "varchar"
+			},
+			{
+				"name": "UGInsUpdDate",
+				"type": "varchar"
+			},
+			{
+				"name": "JumpCheckBox",
+				"type": "varchar"
+			},
+			{
+				"name": "FCRPrct",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayStart",
+				"type": "varchar"
+			},
+			{
+				"name": "SplitHour",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayedStartOzStatusCd",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayedStartOzMessage",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "unit group"
+		}
+	}
+}
