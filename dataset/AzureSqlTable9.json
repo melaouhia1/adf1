@@ -10,8 +10,7 @@
 		"schema": [
 			{
 				"name": "InstanceId",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "Type",
@@ -31,21 +30,15 @@
 			},
 			{
 				"name": "InstallDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "varchar"
 			},
 			{
 				"name": "Floors",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "Doors",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "AssetNo",
@@ -57,9 +50,7 @@
 			},
 			{
 				"name": "Sequence",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "UnitDesignator",
@@ -71,9 +62,7 @@
 			},
 			{
 				"name": "MaxLoad",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "Rise",
@@ -81,9 +70,7 @@
 			},
 			{
 				"name": "Speed",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "OEMControlMotor",
@@ -91,9 +78,7 @@
 			},
 			{
 				"name": "Ropes",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "OEMJack",
@@ -117,36 +102,27 @@
 			},
 			{
 				"name": "LastSafeInspectionDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "varchar"
 			},
 			{
 				"name": "NextSafeInspectionDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "varchar"
 			},
 			{
 				"name": "FrontOpenings",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "RearOpenings",
-				"type": "decimal",
-				"precision": 8,
-				"scale": 2
+				"type": "varchar"
 			},
 			{
 				"name": "Engineered",
-				"type": "bit"
+				"type": "varchar"
 			},
 			{
 				"name": "UnitStatusId",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "ReferenceNo",
@@ -154,8 +130,7 @@
 			},
 			{
 				"name": "EBSProjectId",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "PermitNumber",
@@ -163,39 +138,39 @@
 			},
 			{
 				"name": "PermitAppliedDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "FinalInspectionDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "FinalAcceptanceDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "TempUseStart",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "TempUseEnd",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "MRFReceived",
-				"type": "bit"
+				"type": "varchar"
 			},
 			{
 				"name": "MRFReceivedDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "SynergyWiringsReceived",
-				"type": "bit"
+				"type": "varchar"
 			},
 			{
 				"name": "SynergyWiringsReceivedDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "WarrantyNIM",
@@ -207,47 +182,43 @@
 			},
 			{
 				"name": "ApprovalsReceived",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "FinalsSent",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "ConstructionUseStart",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "ConstructionUseEnd",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "LongestLeadTime",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "OMManualDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "AuditUser",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "AuditDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "varchar"
 			},
 			{
 				"name": "PreInstallQuestionID",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "PreInstallAnswer",
-				"type": "bit"
+				"type": "varchar"
 			},
 			{
 				"name": "BuildingType",
@@ -263,20 +234,19 @@
 			},
 			{
 				"name": "UnitGroupId",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
 				"name": "IsInActive",
-				"type": "bit"
+				"type": "varchar"
 			},
 			{
 				"name": "UnitInsUpdDate",
-				"type": "date"
+				"type": "varchar"
 			},
 			{
 				"name": "PermitRecvdDate",
-				"type": "date"
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
