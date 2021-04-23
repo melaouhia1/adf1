@@ -1,0 +1,287 @@
+{
+	"name": "AzureSqlTable9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase8",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "InstanceId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Type",
+				"type": "varchar"
+			},
+			{
+				"name": "TypeDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "SerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "InstallDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Floors",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "Doors",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "AssetNo",
+				"type": "varchar"
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Sequence",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "UnitDesignator",
+				"type": "varchar"
+			},
+			{
+				"name": "DoorComplexity",
+				"type": "varchar"
+			},
+			{
+				"name": "MaxLoad",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "Rise",
+				"type": "varchar"
+			},
+			{
+				"name": "Speed",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "OEMControlMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "Ropes",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "OEMJack",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMPumpMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMJackType",
+				"type": "varchar"
+			},
+			{
+				"name": "TypePumpMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "HYDValveInfo",
+				"type": "varchar"
+			},
+			{
+				"name": "LastSafeInspectionDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NextSafeInspectionDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FrontOpenings",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "RearOpenings",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "Engineered",
+				"type": "bit"
+			},
+			{
+				"name": "UnitStatusId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSProjectId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PermitNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitAppliedDate",
+				"type": "date"
+			},
+			{
+				"name": "FinalInspectionDate",
+				"type": "date"
+			},
+			{
+				"name": "FinalAcceptanceDate",
+				"type": "date"
+			},
+			{
+				"name": "TempUseStart",
+				"type": "date"
+			},
+			{
+				"name": "TempUseEnd",
+				"type": "date"
+			},
+			{
+				"name": "MRFReceived",
+				"type": "bit"
+			},
+			{
+				"name": "MRFReceivedDate",
+				"type": "date"
+			},
+			{
+				"name": "SynergyWiringsReceived",
+				"type": "bit"
+			},
+			{
+				"name": "SynergyWiringsReceivedDate",
+				"type": "date"
+			},
+			{
+				"name": "WarrantyNIM",
+				"type": "varchar"
+			},
+			{
+				"name": "TrackingNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "ApprovalsReceived",
+				"type": "date"
+			},
+			{
+				"name": "FinalsSent",
+				"type": "date"
+			},
+			{
+				"name": "ConstructionUseStart",
+				"type": "date"
+			},
+			{
+				"name": "ConstructionUseEnd",
+				"type": "date"
+			},
+			{
+				"name": "LongestLeadTime",
+				"type": "date"
+			},
+			{
+				"name": "OMManualDate",
+				"type": "date"
+			},
+			{
+				"name": "AuditUser",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AuditDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PreInstallQuestionID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PreInstallAnswer",
+				"type": "bit"
+			},
+			{
+				"name": "BuildingType",
+				"type": "varchar"
+			},
+			{
+				"name": "MachineRoom",
+				"type": "varchar"
+			},
+			{
+				"name": "DoorType",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitGroupId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IsInActive",
+				"type": "bit"
+			},
+			{
+				"name": "UnitInsUpdDate",
+				"type": "date"
+			},
+			{
+				"name": "PermitRecvdDate",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Unit"
+		}
+	}
+}
