@@ -41,8 +41,8 @@
 								},
 								"sink": {
 									"name": "InstanceId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -101,8 +101,8 @@
 								},
 								"sink": {
 									"name": "InstallDate",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -113,10 +113,8 @@
 								},
 								"sink": {
 									"name": "Floors",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -127,10 +125,8 @@
 								},
 								"sink": {
 									"name": "Doors",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -165,10 +161,8 @@
 								},
 								"sink": {
 									"name": "Sequence",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -203,10 +197,8 @@
 								},
 								"sink": {
 									"name": "MaxLoad",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -229,10 +221,8 @@
 								},
 								"sink": {
 									"name": "Speed",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -255,10 +245,8 @@
 								},
 								"sink": {
 									"name": "Ropes",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -329,8 +317,8 @@
 								},
 								"sink": {
 									"name": "LastSafeInspectionDate",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -341,8 +329,8 @@
 								},
 								"sink": {
 									"name": "NextSafeInspectionDate",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -353,10 +341,8 @@
 								},
 								"sink": {
 									"name": "FrontOpenings",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -367,10 +353,8 @@
 								},
 								"sink": {
 									"name": "RearOpenings",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 2,
-									"precision": 8
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -381,8 +365,8 @@
 								},
 								"sink": {
 									"name": "Engineered",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -393,8 +377,8 @@
 								},
 								"sink": {
 									"name": "UnitStatusId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -417,8 +401,8 @@
 								},
 								"sink": {
 									"name": "EBSProjectId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -441,8 +425,8 @@
 								},
 								"sink": {
 									"name": "PermitAppliedDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -453,8 +437,8 @@
 								},
 								"sink": {
 									"name": "FinalInspectionDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -465,8 +449,8 @@
 								},
 								"sink": {
 									"name": "FinalAcceptanceDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -477,8 +461,8 @@
 								},
 								"sink": {
 									"name": "TempUseStart",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -489,8 +473,8 @@
 								},
 								"sink": {
 									"name": "TempUseEnd",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -501,8 +485,8 @@
 								},
 								"sink": {
 									"name": "MRFReceived",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -513,8 +497,8 @@
 								},
 								"sink": {
 									"name": "MRFReceivedDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -525,8 +509,8 @@
 								},
 								"sink": {
 									"name": "SynergyWiringsReceived",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -537,8 +521,8 @@
 								},
 								"sink": {
 									"name": "SynergyWiringsReceivedDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -573,8 +557,8 @@
 								},
 								"sink": {
 									"name": "ApprovalsReceived",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -585,8 +569,8 @@
 								},
 								"sink": {
 									"name": "FinalsSent",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -597,8 +581,8 @@
 								},
 								"sink": {
 									"name": "ConstructionUseStart",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -609,8 +593,8 @@
 								},
 								"sink": {
 									"name": "ConstructionUseEnd",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -621,8 +605,8 @@
 								},
 								"sink": {
 									"name": "LongestLeadTime",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -633,8 +617,8 @@
 								},
 								"sink": {
 									"name": "OMManualDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -645,8 +629,8 @@
 								},
 								"sink": {
 									"name": "AuditUser",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -657,8 +641,8 @@
 								},
 								"sink": {
 									"name": "AuditDate",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -669,8 +653,8 @@
 								},
 								"sink": {
 									"name": "PreInstallQuestionID",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -681,8 +665,8 @@
 								},
 								"sink": {
 									"name": "PreInstallAnswer",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -729,8 +713,8 @@
 								},
 								"sink": {
 									"name": "UnitGroupId",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -741,8 +725,8 @@
 								},
 								"sink": {
 									"name": "IsInActive",
-									"type": "Boolean",
-									"physicalType": "bit"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -753,8 +737,8 @@
 								},
 								"sink": {
 									"name": "UnitInsUpdDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -765,8 +749,8 @@
 								},
 								"sink": {
 									"name": "PermitRecvdDate",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
