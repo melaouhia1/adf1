@@ -1,0 +1,28 @@
+{
+	"name": "DelimitedText23",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "stgOraViewUnit.csv",
+				"folderPath": "unit04",
+				"container": "unit"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
