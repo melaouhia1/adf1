@@ -1,0 +1,261 @@
+{
+	"name": "SqlServerTable3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "UnitId",
+				"type": "varchar"
+			},
+			{
+				"name": "InstanceId",
+				"type": "varchar"
+			},
+			{
+				"name": "Type",
+				"type": "varchar"
+			},
+			{
+				"name": "TypeDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "SerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "InstallDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Floors",
+				"type": "varchar"
+			},
+			{
+				"name": "Doors",
+				"type": "varchar"
+			},
+			{
+				"name": "AssetNo",
+				"type": "varchar"
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Sequence",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitDesignator",
+				"type": "varchar"
+			},
+			{
+				"name": "DoorComplexity",
+				"type": "varchar"
+			},
+			{
+				"name": "MaxLoad",
+				"type": "varchar"
+			},
+			{
+				"name": "Rise",
+				"type": "varchar"
+			},
+			{
+				"name": "Speed",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMControlMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "Ropes",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMJack",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMPumpMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "OEMJackType",
+				"type": "varchar"
+			},
+			{
+				"name": "TypePumpMotor",
+				"type": "varchar"
+			},
+			{
+				"name": "HYDValveInfo",
+				"type": "varchar"
+			},
+			{
+				"name": "LastSafeInspectionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "NextSafeInspectionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "FrontOpenings",
+				"type": "varchar"
+			},
+			{
+				"name": "RearOpenings",
+				"type": "varchar"
+			},
+			{
+				"name": "Engineered",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitStatusId",
+				"type": "varchar"
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSProjectId",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitAppliedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalInspectionDate",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalAcceptanceDate",
+				"type": "varchar"
+			},
+			{
+				"name": "TempUseStart",
+				"type": "varchar"
+			},
+			{
+				"name": "TempUseEnd",
+				"type": "varchar"
+			},
+			{
+				"name": "MRFReceived",
+				"type": "varchar"
+			},
+			{
+				"name": "MRFReceivedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "SynergyWiringsReceived",
+				"type": "varchar"
+			},
+			{
+				"name": "SynergyWiringsReceivedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyNIM",
+				"type": "varchar"
+			},
+			{
+				"name": "TrackingNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "ApprovalsReceived",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalsSent",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseStart",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseEnd",
+				"type": "varchar"
+			},
+			{
+				"name": "LongestLeadTime",
+				"type": "varchar"
+			},
+			{
+				"name": "OMManualDate",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditUser",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PreInstallQuestionID",
+				"type": "varchar"
+			},
+			{
+				"name": "PreInstallAnswer",
+				"type": "varchar"
+			},
+			{
+				"name": "BuildingType",
+				"type": "varchar"
+			},
+			{
+				"name": "MachineRoom",
+				"type": "varchar"
+			},
+			{
+				"name": "DoorType",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitGroupId",
+				"type": "varchar"
+			},
+			{
+				"name": "IsInActive",
+				"type": "varchar"
+			},
+			{
+				"name": "UnitInsUpdDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitRecvdDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "JSUnit"
+		}
+	}
+}
