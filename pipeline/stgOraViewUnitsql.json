@@ -1334,6 +1334,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor Type_local",
 									"type": "String",
@@ -1341,6 +1346,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor motormanufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor motormanufacturer_local",
 									"type": "String",
@@ -1348,6 +1358,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor Model_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor Model_local",
 									"type": "String",
@@ -1355,6 +1370,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor MotorVoltage_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor MotorVoltage_local",
 									"type": "String",
@@ -1362,6 +1382,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor RPM_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor RPM_local",
 									"type": "String",
@@ -1369,6 +1394,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor FieldAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor FieldAmps_local",
 									"type": "String",
@@ -1376,6 +1406,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor BrakeType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor BrakeType_local",
 									"type": "String",
@@ -1383,6 +1418,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor Framel",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor Frame",
 									"type": "String",
@@ -1390,6 +1430,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Motor BrakeVoltage_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Motor BrakeVoltage_local",
 									"type": "String",
@@ -1397,6 +1442,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator Type_local",
 									"type": "String",
@@ -1404,6 +1454,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator Manufacturer_local",
 									"type": "String",
@@ -1411,6 +1466,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator ACKW_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator ACKW_local",
 									"type": "String",
@@ -1418,6 +1478,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator ACAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator ACAmps_local",
 									"type": "String",
@@ -1425,6 +1490,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator DCKW_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator DCKW_local",
 									"type": "String",
@@ -1432,6 +1502,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator DCAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator DCAmps_local",
 									"type": "String",
@@ -1439,6 +1514,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator DCVolts_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator DCVolts_local",
 									"type": "String",
@@ -1446,6 +1526,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator FieldVolts_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator FieldVolts_local",
 									"type": "String",
@@ -1453,6 +1538,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator FieldAmps_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator FieldAmps_local",
 									"type": "String",
@@ -1460,6 +1550,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator BrushType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator BrushType_local",
 									"type": "String",
@@ -1467,6 +1562,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Generator BrushGrade_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Generator BrushGrade_local",
 									"type": "String",
@@ -1474,6 +1574,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Gearbox Location_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Gearbox Location_local",
 									"type": "String",
@@ -1481,6 +1586,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Gearbox Manufacturer_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Gearbox Manufacturer_local",
 									"type": "String",
@@ -1488,6 +1598,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Gearbox Model_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Gearbox Model_local",
 									"type": "String",
@@ -1495,6 +1610,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine Gearbox GearRatio_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine Gearbox GearRatio_local",
 									"type": "String",
@@ -1502,6 +1622,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine SheaveAndPulleys DriveSheaveDiameter_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine SheaveAndPulleys DriveSheaveDiameter_local",
 									"type": "String",
@@ -1509,6 +1634,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine SheaveAndPulleys DriveSheaveGrooves_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine SheaveAndPulleys DriveSheaveGrooves_local",
 									"type": "String",
@@ -1516,6 +1646,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine SheaveAndPulleys DiverterPulleys_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine SheaveAndPulleys DiverterPulleys_local",
 									"type": "String",
@@ -1523,6 +1658,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Machine SheaveAndPulleys Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Machine SheaveAndPulleys Notes_local",
 									"type": "String",
@@ -1530,6 +1670,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerRemplacementYear",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerRemplacementYear",
 									"type": "String",
@@ -1537,6 +1682,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller Notes",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller Notes",
 									"type": "String",
@@ -1544,6 +1694,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller Notes_local",
 									"type": "String",
@@ -1551,6 +1706,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerMfg ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerMfg ViewId",
 									"type": "String",
@@ -1558,6 +1718,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerMfg Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerMfg Name",
 									"type": "String",
@@ -1565,6 +1730,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerModel ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerModel ViewId",
 									"type": "String",
@@ -1572,6 +1742,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerModel Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerModel Name",
 									"type": "String",
@@ -1579,6 +1754,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerModel Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerType ViewId",
 									"type": "String",
@@ -1586,6 +1766,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Controller ControllerType Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Controller ControllerType Name",
 									"type": "String",
@@ -1593,6 +1778,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension RopingArrangement ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension RopingArrangement ViewId",
 									"type": "String",
@@ -1600,6 +1790,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension RopingArrangement ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension RopingArrangement ExternalId",
 									"type": "String",
@@ -1607,6 +1802,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension RopingArrangement Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension RopingArrangement Name",
 									"type": "String",
@@ -1614,6 +1814,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension RopingArrangement Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension RopingArrangement Name_local",
 									"type": "String",
@@ -1621,6 +1826,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension NumberOfRopes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension NumberOfRopes_local",
 									"type": "String",
@@ -1628,6 +1838,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension Diameter_locall",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension Diameter_local",
 									"type": "String",
@@ -1635,6 +1850,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension Construction_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension Construction_local",
 									"type": "String",
@@ -1642,6 +1862,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension WrappingType",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension WrappingType",
 									"type": "String",
@@ -1649,6 +1874,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension Length_local",
 									"type": "String",
@@ -1656,6 +1886,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Suspension TerminationType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Suspension TerminationType_local",
 									"type": "String",
@@ -1663,6 +1898,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor Type ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor Type ViewId",
 									"type": "String",
@@ -1670,6 +1910,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor Type ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor Type ExternalId",
 									"type": "String",
@@ -1677,6 +1922,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor Type Name",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor Type Name",
 									"type": "String",
@@ -1684,6 +1934,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor Type Name_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor Type Name_local",
 									"type": "String",
@@ -1691,6 +1946,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor CounterWeightGovernor_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor CounterWeightGovernor_local",
 									"type": "String",
@@ -1698,6 +1958,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor RopeDiameter_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor RopeDiameter_local",
 									"type": "String",
@@ -1705,6 +1970,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Governor Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Governor Length_local",
 									"type": "String",
@@ -1712,6 +1982,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Type ViewId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Type ViewId",
 									"type": "String",
@@ -1719,6 +1994,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Type ExternalId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Type ExternalId",
 									"type": "String",
@@ -1726,6 +2006,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Type Name_en",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Type Name_en",
 									"type": "String",
@@ -1733,6 +2018,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Type Val_en",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Type Val_en",
 									"type": "String",
@@ -1740,6 +2030,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation NumberofRope_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation NumberofRope_local",
 									"type": "String",
@@ -1747,6 +2042,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Size_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Size_local",
 									"type": "String",
@@ -1754,6 +2054,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Construction_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Construction_local",
 									"type": "String",
@@ -1761,6 +2066,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation Length_local",
 									"type": "String",
@@ -1768,6 +2078,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Compensation SheaveOrRoller",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Compensation SheaveOrRoller",
 									"type": "String",
@@ -1775,6 +2090,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Selector Type_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Selector Type_local",
 									"type": "String",
@@ -1782,6 +2102,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Selector Size_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Selector Size_local",
 									"type": "String",
@@ -1789,6 +2114,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Selector Length_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Selector Length_local",
 									"type": "String",
@@ -1796,6 +2126,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Selector TerminationType_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Selector TerminationType_local",
 									"type": "String",
@@ -1803,6 +2138,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rope Notes_local",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rope Notes_local",
 									"type": "String",
@@ -1810,6 +2150,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Doors Landingdoorstypeidl",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Other Landing Doors Landingdoorstypeid",
 									"type": "String",
@@ -1817,6 +2162,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Doors Landingdoorstypeid1",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Other Landing Doors Landingdoorstypeid1",
 									"type": "String",
@@ -1824,6 +2174,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Landingdoorstypeid2 ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing Landingdoorstypeid2 ViewId",
 									"type": "String",
@@ -1831,6 +2186,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Landingdoorstypeid2 Landingdoorstypeid2",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing Landingdoorstypeid2 Landingdoorstypeid2",
 									"type": "String",
@@ -1838,6 +2198,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing OpeningWidth_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing OpeningWidth_local",
 									"type": "String",
@@ -1845,6 +2210,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing OpeningHeight_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing OpeningHeight_local",
 									"type": "String",
@@ -1852,6 +2222,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing EmergencyReleaseFited_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing EmergencyReleaseFited_local",
 									"type": "String",
@@ -1859,6 +2234,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing FireRated",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing FireRated",
 									"type": "String",
@@ -1866,6 +2246,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing DoorClosersFitted",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing DoorClosersFitted",
 									"type": "String",
@@ -1873,6 +2258,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Landing ButtonType_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing Landing ButtonType_local",
 									"type": "String",
@@ -1880,6 +2270,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing ButtonVoltage_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing ButtonVoltage_local",
 									"type": "String",
@@ -1887,6 +2282,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing Landing Manufacturer_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing Landing Manufacturer_local",
 									"type": "String",
@@ -1894,6 +2294,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing ArrivalGongFitted_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing ArrivalGongFitted_local",
 									"type": "String",
@@ -1901,6 +2306,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing HallIndicators ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing HallIndicators ViewId",
 									"type": "String",
@@ -1908,6 +2318,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing HallIndicators ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing HallIndicators ExternalId",
 									"type": "String",
@@ -1915,6 +2330,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing HallIndicators Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing HallIndicators Name_en",
 									"type": "String",
@@ -1922,6 +2342,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing HallIndicators Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing HallIndicators Name_local",
 									"type": "String",
@@ -1929,6 +2354,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing FrontDoorComplexity ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing FrontDoorComplexity ViewId",
 									"type": "String",
@@ -1936,6 +2366,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing FrontDoorComplexity Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing FrontDoorComplexity Name",
 									"type": "String",
@@ -1943,6 +2378,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing RearDoorComplexity ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing RearDoorComplexity ViewId",
 									"type": "String",
@@ -1950,6 +2390,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Landing RearDoorComplexity Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Landing RearDoorComplexity Name",
 									"type": "String",
@@ -1957,6 +2402,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other DoorProtection Type ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other DoorProtection Type ViewId",
 									"type": "String",
@@ -1964,6 +2414,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other DoorProtection Type ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other DoorProtection Type ExternalId",
 									"type": "String",
@@ -1971,6 +2426,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other DoorProtection Type Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other DoorProtection Type Name_en",
 									"type": "String",
@@ -1978,6 +2438,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other DoorProtection Type Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other DoorProtection Type Name_local",
 									"type": "String",
@@ -1985,6 +2450,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car OperatorModel_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car OperatorModel_local",
 									"type": "String",
@@ -1992,6 +2462,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car MechanicalDoorLockInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car MechanicalDoorLockInstalled",
 									"type": "String",
@@ -1999,6 +2474,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car cardoormanufacturer_val",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car cardoormanufacturer_val",
 									"type": "String",
@@ -2006,6 +2486,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car ButtonType_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car ButtonType_local",
 									"type": "String",
@@ -2013,6 +2498,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car BrailleInstalled_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car BrailleInstalled_local",
 									"type": "String",
@@ -2020,6 +2510,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car ButtonManufacturer_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car ButtonManufacturer_local",
 									"type": "String",
@@ -2027,6 +2522,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car IndiacatorHandicapCompliant_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car IndiacatorHandicapCompliant_local",
 									"type": "String",
@@ -2034,6 +2534,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GuideShoesType_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GuideShoesType_local",
 									"type": "String",
@@ -2041,6 +2546,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car CarEmergenctyLightingFitted_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car CarEmergenctyLightingFitted_local",
 									"type": "String",
@@ -2048,6 +2558,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car BufferType_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car BufferType_local",
 									"type": "String",
@@ -2055,6 +2570,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car PitLadderInstalled_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car PitLadderInstalled_local",
 									"type": "String",
@@ -2062,6 +2582,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car HandicapCOPInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car HandicapCOPInstalled",
 									"type": "String",
@@ -2069,6 +2594,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car LobbyOnly",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car LobbyOnly",
 									"type": "String",
@@ -2076,6 +2606,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car HallPositionIndicatorInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car HallPositionIndicatorInstalled",
 									"type": "String",
@@ -2083,6 +2618,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car HallPositionIndicatorType",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car HallPositionIndicatorType",
 									"type": "String",
@@ -2090,6 +2630,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car ARDInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car ARDInstalled",
 									"type": "String",
@@ -2097,6 +2642,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car EmergencyLightingInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car EmergencyLightingInstalled",
 									"type": "String",
@@ -2104,6 +2654,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car CarIndicators ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car CarIndicators ViewId",
 									"type": "String",
@@ -2111,6 +2666,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car CarIndicators ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car CarIndicators ExternalId",
 									"type": "String",
@@ -2118,6 +2678,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car CarIndicators Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car CarIndicators Name_en",
 									"type": "String",
@@ -2125,6 +2690,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car CarIndicators Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car CarIndicators Name_local",
 									"type": "String",
@@ -2132,6 +2702,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionOperator ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionOperator ViewId",
 									"type": "String",
@@ -2139,6 +2714,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionOperator ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionOperator ExternalId",
 									"type": "String",
@@ -2153,6 +2733,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionOperator Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionOperator Name_local",
 									"type": "String",
@@ -2160,6 +2745,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionPanelCar ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionPanelCar ViewId",
 									"type": "String",
@@ -2167,6 +2757,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionPanelCar ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionPanelCar ExternalId",
 									"type": "String",
@@ -2174,6 +2769,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionPanelCar Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionPanelCar Name_en",
 									"type": "String",
@@ -2181,6 +2781,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionPanelCar Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionPanelCar Name_local",
 									"type": "String",
@@ -2188,6 +2793,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight GuideShoesType ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight GuideShoesType ViewId",
 									"type": "String",
@@ -2195,6 +2805,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight GuideShoesType ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight GuideShoesType ExternalId",
 									"type": "String",
@@ -2202,6 +2817,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight GuideShoesType Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight GuideShoesType Name_en",
 									"type": "String",
@@ -2209,6 +2829,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight GuideShoesType Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight GuideShoesType Name_local",
 									"type": "String",
@@ -2216,6 +2841,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight CounterweightScreenInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight CounterweightScreenInstalled",
 									"type": "String",
@@ -2223,6 +2853,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight PitLightingInstalled",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight PitLightingInstalled",
 									"type": "String",
@@ -2230,6 +2865,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight NumberOfPitSwitchInstalled ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight NumberOfPitSwitchInstalled ViewId",
 									"type": "String",
@@ -2237,6 +2877,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight NumberOfPitSwitchInstalled ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight NumberOfPitSwitchInstalled ExternalId",
 									"type": "String",
@@ -2251,6 +2896,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_local",
 									"type": "String",
@@ -2258,6 +2908,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other SafetyGear Type ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other SafetyGear Type ViewId",
 									"type": "String",
@@ -2265,6 +2920,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other SafetyGear Type ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other SafetyGear Type ExternalId",
 									"type": "String",
@@ -2272,6 +2932,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other SafetyGear Type Name_en",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other SafetyGear Type Name_en",
 									"type": "String",
@@ -2279,6 +2944,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other SafetyGear Type Name_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other SafetyGear Type Name_local",
 									"type": "String",
@@ -2286,6 +2956,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other SafetyGear Manufacturer_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other SafetyGear Manufacturer_local",
 									"type": "String",
@@ -2293,6 +2968,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice Fitted",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice Fitted",
 									"type": "String",
@@ -2300,6 +2980,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice HandsFree",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice HandsFree",
 									"type": "String",
@@ -2307,6 +2992,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice AutoDial",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice AutoDial",
 									"type": "String",
@@ -2314,6 +3004,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice PrimaryPhoneNumber_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice PrimaryPhoneNumber_local",
 									"type": "String",
@@ -2321,6 +3016,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice SecondaryPhoneNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice SecondaryPhoneNumber",
 									"type": "String",
@@ -2328,6 +3028,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice TKMaintainedGSMBox",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice TKMaintainedGSMBox",
 									"type": "String",
@@ -2335,6 +3040,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice GSMBosWithDualSim",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice GSMBosWithDualSim",
 									"type": "String",
@@ -2342,6 +3052,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice GSMBoxSerialNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice GSMBoxSerialNumber",
 									"type": "String",
@@ -2349,6 +3064,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice GSMBoxInstallationDate",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice GSMBoxInstallationDate",
 									"type": "String",
@@ -2356,6 +3076,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice PrimarySimCardNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice PrimarySimCardNumber",
 									"type": "String",
@@ -2363,6 +3088,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CommunicationDevice SecondarySimCardNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other CommunicationDevice SecondarySimCardNumber",
 									"type": "String",
@@ -2370,6 +3100,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Notes_local",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "Other Notes_local",
 									"type": "String",
