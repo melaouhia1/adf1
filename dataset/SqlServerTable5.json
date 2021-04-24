@@ -1,0 +1,93 @@
+{
+	"name": "SqlServerTable5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "NIMDuration",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "TaskNo",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "NIMAuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "IsTKEFactoryOrder",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayStart",
+				"type": "varchar"
+			},
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "instanceid",
+				"type": "varchar"
+			},
+			{
+				"name": "FactorySerialNo",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseEnd",
+				"type": "varchar"
+			},
+			{
+				"name": "ConstructionUseStart",
+				"type": "varchar"
+			},
+			{
+				"name": "FinalAcceptanceDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitAppliedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PermitRecvdDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Type",
+				"type": "varchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SView_NIOpsUnit"
+		}
+	}
+}
