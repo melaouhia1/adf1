@@ -29,443 +29,443 @@
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification building ViewId",
+				"name": "unit.identification building ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification building ExternalId",
+				"name": "unit.identification building ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification building BuildingNo",
+				"name": "unit.identification building BuildingNo",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification building Name_en",
+				"name": "unit.identification building Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification building Name_local",
+				"name": "unit.identification building Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification bank ViewId",
+				"name": "unit.identification bank ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification bank ExternalId",
+				"name": "unit.identification bank ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification bank Name_val",
+				"name": "unit.identification bank Name_val",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification bank AccessCode",
+				"name": "unit.identification bank AccessCode",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification office ViewId",
+				"name": "unit.identification office ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification office Name_en",
+				"name": "unit.identification office Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification office Name_local",
+				"name": "unit.identification office Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification UnitGovID",
+				"name": "unit.identification UnitGovID",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification LiftNo",
+				"name": "unit.identification LiftNo",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification CustomerBillingRef",
+				"name": "unit.identification CustomerBillingRef",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification InService",
+				"name": "unit.identification InService",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification RegisteredNo",
+				"name": "unit.identification RegisteredNo",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification YearManufactured",
+				"name": "unit.identification YearManufactured",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification WarrantyStart",
+				"name": "unit.identification WarrantyStart",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification WarrantyEnd",
+				"name": "unit.identification WarrantyEnd",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification CommissionedDate",
+				"name": "unit.identification CommissionedDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification HandOverDate",
+				"name": "unit.identification HandOverDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification UnitSpec",
+				"name": "unit.identification UnitSpec",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification GovtInspectionDate",
+				"name": "unit.identification GovtInspectionDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification NextGovernmentInspectionDate",
+				"name": "unit.identification NextGovernmentInspectionDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification JobNumberm",
+				"name": "unit.identification JobNumberm",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification MfgWBSNumber",
+				"name": "unit.identification MfgWBSNumber",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification SmartViewId",
+				"name": "unit.identification SmartViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification SmartExternalId",
+				"name": "unit.identification SmartExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification SmartInstallDate",
+				"name": "unit.identification SmartInstallDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification SmartViewMaxId",
+				"name": "unit.identification SmartViewMaxId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification SmartExternalMaxId",
+				"name": "unit.identification SmartExternalMaxId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract ViewId",
+				"name": "unit.identification Contract ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract ExternalId",
+				"name": "unit.identification Contract ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract StartDate",
+				"name": "unit.identification Contract StartDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract EndDate",
+				"name": "unit.identification Contract EndDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract ServiceproviderName_en",
+				"name": "unit.identification Contract ServiceproviderName_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract ServiceproviderName_local",
+				"name": "unit.identification Contract ServiceproviderName_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit identification Contract ContractNumber",
+				"name": "unit.identification Contract ContractNumber",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment UnitType ViewId",
+				"name": "unit.Equipment UnitType ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment UnitType ExternalId",
+				"name": "unit.Equipment UnitType ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment UnitType Name_en",
+				"name": "unit.Equipment UnitType Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment UnitType Name_local",
+				"name": "unit.Equipment UnitType Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Manufacturer ViewId",
+				"name": "unit.Equipment Manufacturer ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Manufacturer ExternalId",
+				"name": "unit.Equipment Manufacturer ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Manufacturer Name_en",
+				"name": "unit.Equipment Manufacturer Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Manufacturer Name_local",
+				"name": "unit.Equipment Manufacturer Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Factory ViewId",
+				"name": "unit.Equipment Factory ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Factory ExternalId",
+				"name": "unit.Equipment Factory ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Factory Name_en",
+				"name": "unit.Equipment Factory Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Factory Name_local",
+				"name": "unit.Equipment Factory Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Controller ViewId",
+				"name": "unit.Equipment Controller ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Controller ExternalId",
+				"name": "unit.Equipment Controller ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Controller Name_en",
+				"name": "unit.Equipment Controller Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Controller Name_local",
+				"name": "unit.Equipment Controller Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Model ViewId",
+				"name": "unit.Equipment Model ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Model ExternalId",
+				"name": "unit.Equipment Model ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Model Name_en",
+				"name": "unit.Equipment Model Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Model Name_local",
+				"name": "unit.Equipment Model Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment DriveType ViewId",
+				"name": "unit.Equipment DriveType ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment DriveType ExternalId",
+				"name": "unit.Equipment DriveType ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment DriveType Name_en",
+				"name": "unit.Equipment DriveType Name_en",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment DriveType Name_val",
+				"name": "unit.Equipment DriveType Name_val",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors",
+				"name": "unit.Equipment Floors",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors FloorNo",
+				"name": "unit.Equipment Floors FloorNo",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors FloorLabel",
+				"name": "unit.Equipment Floors FloorLabel",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors Height",
+				"name": "unit.Equipment Floors Height",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors IsEnabled",
+				"name": "unit.Equipment Floors IsEnabled",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors Door",
+				"name": "unit.Equipment Floors Door",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors UnitFromDate",
+				"name": "unit.Equipment Floors UnitFromDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Floors CachedToDate",
+				"name": "unit.Equipment Floors CachedToDate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment FrontOpening",
+				"name": "unit.Equipment FrontOpening",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment NumberOfStops",
+				"name": "unit.Equipment NumberOfStops",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment RearOpening",
+				"name": "unit.Equipment RearOpening",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Travel",
+				"name": "unit.Equipment Travel",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Passengers",
+				"name": "unit.Equipment Passengers",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Load",
+				"name": "unit.Equipment Load",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Speed ViewSpeedId",
+				"name": "unit.Equipment Speed ViewSpeedId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Equipment Speed SpeedName",
+				"name": "unit.Equipment Speed SpeedName",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance BusinessHoursCallbackRun ViewId",
+				"name": "unit.Maintenance BusinessHoursCallbackRun ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance BusinessHoursCallbackRun ExternalId",
+				"name": "unit.Maintenance BusinessHoursCallbackRun ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance BusinessHoursCallbackRun Name_local",
+				"name": "unit.Maintenance BusinessHoursCallbackRun Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance AfterHoursCallbackRun ViewId",
+				"name": "unit.Maintenance AfterHoursCallbackRun ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance AfterHoursCallbackRun ExternalId",
+				"name": "unit.Maintenance AfterHoursCallbackRun ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance AfterHoursCallbackRun Name_local",
+				"name": "unit.Maintenance AfterHoursCallbackRun Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceRun ViewId",
+				"name": "unit.Maintenance MaintenanceRun ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceRun ExternalId",
+				"name": "unit.Maintenance MaintenanceRun ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceRun Name_local",
+				"name": "unit.Maintenance MaintenanceRun Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSet ViewId",
+				"name": "unit.Maintenance MaintenanceScheduleSet ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSet ExternalId",
+				"name": "unit.Maintenance MaintenanceScheduleSet ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSet Name_local",
+				"name": "unit.Maintenance MaintenanceScheduleSet Name_local",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSetGroup VIEWId",
+				"name": "unit.Maintenance MaintenanceScheduleSetGroup VIEWId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSetGroup ExternalId",
+				"name": "unit.Maintenance MaintenanceScheduleSetGroup ExternalId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit Maintenance MaintenanceScheduleSetGroup Name",
+				"name": "unit.Maintenance MaintenanceScheduleSetGroup Name",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling HoursPerVisit ViewId",
+				"name": "unit.DefaultScheduling HoursPerVisit ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling HoursPerVisit Value",
+				"name": "unit.DefaultScheduling HoursPerVisit Value",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling PreferredServiceTimeWindow ViewId",
+				"name": "unit.DefaultScheduling PreferredServiceTimeWindow ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling PreferredServiceTimeWindow Value",
+				"name": "unit.DefaultScheduling PreferredServiceTimeWindow Value",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling PreferredServiceDayOfWeek ViewId",
+				"name": "unit.DefaultScheduling PreferredServiceDayOfWeek ViewId",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling PreferredServiceDayOfWeek Value",
+				"name": "unit.DefaultScheduling PreferredServiceDayOfWeek Value",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultScheduling PreferredServiceDaysFrequency",
+				"name": "unit.DefaultScheduling PreferredServiceDaysFrequency",
 				"type": "varchar"
 			},
 			{
-				"name": "unit DefaultPerformanceTargets TargetCallRate",
+				"name": "unit.DefaultPerformanceTargets TargetCallRate",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes BusinessHrsSWP",
+				"name": "unit.ResponseTimes BusinessHrsSWP",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes BusinessHrsStop",
+				"name": "unit.ResponseTimes BusinessHrsStop",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes BusinessHrsOther",
+				"name": "unit.ResponseTimes BusinessHrsOther",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes AHSWP",
+				"name": "unit.ResponseTimes AHSWP",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes AHStop",
+				"name": "unit.ResponseTimes AHStop",
 				"type": "varchar"
 			},
 			{
-				"name": "unit ResponseTimes AHOther",
+				"name": "unit.ResponseTimes AHOther",
 				"type": "varchar"
 			},
 			{
-				"name": "unit UnitNotes",
+				"name": "unit.UnitNotes",
 				"type": "varchar"
 			},
 			{
-				"name": "unit TechnicianUnitNotes",
+				"name": "unit.TechnicianUnitNotes",
 				"type": "varchar"
 			},
 			{
