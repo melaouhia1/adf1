@@ -1198,6 +1198,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.Maintenance MaintenanceScheduleSetGroup ExternalId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.Maintenance MaintenanceScheduleSetGroup ExternalId",
 									"type": "String",
@@ -1205,6 +1210,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.Maintenance MaintenanceScheduleSetGroup Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.Maintenance MaintenanceScheduleSetGroup Name",
 									"type": "String",
@@ -1212,6 +1222,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling HoursPerVisit ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling HoursPerVisit ViewId",
 									"type": "String",
@@ -1219,6 +1234,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling HoursPerVisit Value",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling HoursPerVisit Value",
 									"type": "String",
@@ -1226,6 +1246,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling PreferredServiceTimeWindow ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling PreferredServiceTimeWindow ViewId",
 									"type": "String",
@@ -1233,6 +1258,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling PreferredServiceTimeWindow Value",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling PreferredServiceTimeWindow Value",
 									"type": "String",
@@ -1240,6 +1270,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling PreferredServiceDayOfWeek ViewId",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling PreferredServiceDayOfWeek ViewId",
 									"type": "String",
@@ -1247,6 +1282,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling PreferredServiceDayOfWeek Value",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling PreferredServiceDayOfWeek Value",
 									"type": "String",
@@ -1254,6 +1294,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultScheduling PreferredServiceDaysFrequency",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultScheduling PreferredServiceDaysFrequency",
 									"type": "String",
@@ -1261,6 +1306,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.DefaultPerformanceTargets TargetCallRate",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.DefaultPerformanceTargets TargetCallRate",
 									"type": "String",
@@ -1268,6 +1318,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes BusinessHrsSWP",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes BusinessHrsSWP",
 									"type": "String",
@@ -1275,6 +1330,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes BusinessHrsStop",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes BusinessHrsStop",
 									"type": "String",
@@ -1282,6 +1342,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes BusinessHrsOther",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes BusinessHrsOther",
 									"type": "String",
@@ -1289,6 +1354,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes AHSWP",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes AHSWP",
 									"type": "String",
@@ -1296,6 +1366,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes AHStop",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes AHStop",
 									"type": "String",
@@ -1303,6 +1378,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "unit.ResponseTimes AHOther",
+									"type": "String",
+									"physicalType": "varchar"
+								},
 								"sink": {
 									"name": "unit.ResponseTimes AHOther",
 									"type": "String",
