@@ -695,18 +695,6 @@
 							},
 							{
 								"source": {
-									"name": "unit.Equipment Factory Name_en",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "unit.Equipment Controller ViewId",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
 									"name": "unit.Equipment Controller ViewId",
 									"type": "String",
 									"physicalType": "String"
@@ -1835,7 +1823,7 @@
 							},
 							{
 								"source": {
-									"name": "Controller ControllerModel Name",
+									"name": "Controller ControllerType ViewId",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -2789,7 +2777,6 @@
 								},
 								"sink": {
 									"name": "Other Car GeneralConditionOperator ViewId",
-									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
@@ -2806,9 +2793,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other Car GeneralConditionOperator Name_en"
+								},
 								"sink": {
 									"name": "Other Car GeneralConditionOperator Name_en",
-									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
@@ -2969,9 +2958,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_en"
+								},
 								"sink": {
 									"name": "Other CounterWeight NumberOfPitSwitchInstalled Name_en",
-									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
