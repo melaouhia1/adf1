@@ -35,8 +35,9 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "UnitId",
 									"type": "String",
-									"ordinal": 1
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "UnitId",
@@ -45,6 +46,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "InstanceId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "InstanceId",
 									"type": "String",
@@ -52,6 +58,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Type",
 									"type": "String",
@@ -59,6 +70,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TypeDescription",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TypeDescription",
 									"type": "String",
@@ -66,6 +82,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "SerialNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "SerialNo",
 									"type": "String",
@@ -73,6 +94,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Status",
 									"type": "String",
@@ -80,6 +106,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "InstallDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "InstallDate",
 									"type": "String",
@@ -87,6 +118,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Floors",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Floors",
 									"type": "String",
@@ -94,6 +130,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Doors",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Doors",
 									"type": "String",
@@ -101,6 +142,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "AssetNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "AssetNo",
 									"type": "String",
@@ -108,6 +154,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FactorySerialNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FactorySerialNo",
 									"type": "String",
@@ -115,6 +166,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Sequence",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Sequence",
 									"type": "String",
@@ -122,6 +178,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "UnitDesignator",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "UnitDesignator",
 									"type": "String",
@@ -129,6 +190,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DoorComplexity",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "DoorComplexity",
 									"type": "String",
@@ -136,6 +202,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "MaxLoad",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "MaxLoad",
 									"type": "String",
@@ -143,6 +214,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Rise",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Rise",
 									"type": "String",
@@ -150,6 +226,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Speed",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Speed",
 									"type": "String",
@@ -157,6 +238,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OEMControlMotor",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OEMControlMotor",
 									"type": "String",
@@ -164,6 +250,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Ropes",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Ropes",
 									"type": "String",
@@ -171,6 +262,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OEMJack",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OEMJack",
 									"type": "String",
@@ -178,6 +274,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OEMPumpMotor",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OEMPumpMotor",
 									"type": "String",
@@ -185,6 +286,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OEMJackType",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OEMJackType",
 									"type": "String",
@@ -192,6 +298,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TypePumpMotor",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TypePumpMotor",
 									"type": "String",
@@ -199,6 +310,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "HYDValveInfo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "HYDValveInfo",
 									"type": "String",
@@ -206,6 +322,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "LastSafeInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "LastSafeInspectionDate",
 									"type": "String",
@@ -213,6 +334,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "NextSafeInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "NextSafeInspectionDate",
 									"type": "String",
@@ -220,6 +346,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FrontOpenings",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FrontOpenings",
 									"type": "String",
@@ -227,6 +358,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "RearOpenings",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "RearOpenings",
 									"type": "String",
@@ -234,6 +370,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "Engineered",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "Engineered",
 									"type": "String",
@@ -241,6 +382,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "UnitStatusId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "UnitStatusId",
 									"type": "String",
@@ -248,6 +394,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ReferenceNo",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ReferenceNo",
 									"type": "String",
@@ -255,6 +406,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "EBSProjectId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "EBSProjectId",
 									"type": "String",
@@ -262,6 +418,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitNumber",
 									"type": "String",
@@ -269,6 +430,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitAppliedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitAppliedDate",
 									"type": "String",
@@ -276,6 +442,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FinalInspectionDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FinalInspectionDate",
 									"type": "String",
@@ -283,6 +454,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FinalAcceptanceDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FinalAcceptanceDate",
 									"type": "String",
@@ -290,6 +466,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TempUseStart",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TempUseStart",
 									"type": "String",
@@ -297,6 +478,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TempUseEnd",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TempUseEnd",
 									"type": "String",
@@ -304,6 +490,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "MRFReceived",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "MRFReceived",
 									"type": "String",
@@ -311,6 +502,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "MRFReceivedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "MRFReceivedDate",
 									"type": "String",
@@ -318,6 +514,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "SynergyWiringsReceived",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "SynergyWiringsReceived",
 									"type": "String",
@@ -325,6 +526,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "SynergyWiringsReceivedDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "SynergyWiringsReceivedDate",
 									"type": "String",
@@ -332,6 +538,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "WarrantyNIM",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "WarrantyNIM",
 									"type": "String",
@@ -339,6 +550,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TrackingNumber",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TrackingNumber",
 									"type": "String",
@@ -346,6 +562,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ApprovalsReceived",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ApprovalsReceived",
 									"type": "String",
@@ -353,6 +574,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FinalsSent",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FinalsSent",
 									"type": "String",
@@ -360,6 +586,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ConstructionUseStart",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ConstructionUseStart",
 									"type": "String",
@@ -367,6 +598,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ConstructionUseEnd",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ConstructionUseEnd",
 									"type": "String",
@@ -374,6 +610,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "LongestLeadTime",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "LongestLeadTime",
 									"type": "String",
@@ -381,6 +622,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OMManualDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OMManualDate",
 									"type": "String",
@@ -388,6 +634,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "AuditUser",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "AuditUser",
 									"type": "String",
@@ -395,6 +646,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "AuditDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "AuditDate",
 									"type": "String",
@@ -402,6 +658,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PreInstallQuestionID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PreInstallQuestionID",
 									"type": "String",
@@ -409,6 +670,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PreInstallAnswer",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PreInstallAnswer",
 									"type": "String",
@@ -416,6 +682,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "BuildingType",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "BuildingType",
 									"type": "String",
@@ -423,6 +694,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "MachineRoom",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "MachineRoom",
 									"type": "String",
@@ -430,6 +706,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DoorType",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "DoorType",
 									"type": "String",
@@ -437,6 +718,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "UnitGroupId",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "UnitGroupId",
 									"type": "String",
@@ -444,6 +730,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "IsInActive",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "IsInActive",
 									"type": "String",
@@ -451,6 +742,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "UnitInsUpdDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "UnitInsUpdDate",
 									"type": "String",
@@ -458,6 +754,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "PermitRecvdDate",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "PermitRecvdDate",
 									"type": "String",
@@ -474,13 +775,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText18",
+						"referenceName": "DelimitedText19",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SqlServerTable3",
+						"referenceName": "SqlServerTable4",
 						"type": "DatasetReference"
 					}
 				]
