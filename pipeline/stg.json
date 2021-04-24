@@ -1,0 +1,9 @@
+{
+	"name": "stg",
+	"properties": {
+		"folder": {
+			"name": "unit"
+		},
+		"annotations": []
+	}
+}
