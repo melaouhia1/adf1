@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_lxr",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "stgOraViewUnit"
+		}
+	}
+}
