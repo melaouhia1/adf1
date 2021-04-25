@@ -1,0 +1,9 @@
+{
+	"name": "stgOraViewUnit",
+	"properties": {
+		"folder": {
+			"name": "unit"
+		},
+		"annotations": []
+	}
+}
