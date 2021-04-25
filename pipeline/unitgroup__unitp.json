@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT *,GETDATE()\n  FROM [stg].[unitgroup__unit]\n ",
+						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT *,GETDATE() AS ETLdateload\n  FROM [stg].[unitgroup__unit]\n ",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
