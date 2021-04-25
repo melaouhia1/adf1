@@ -22,7 +22,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "truncate table unitgroup__unit",
+						"preCopyScript": "truncate table [stg].[unitgroup__unit]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
