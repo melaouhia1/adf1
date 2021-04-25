@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
+						"sqlReaderQuery": "/****** Script for SelectTopNRows command from SSMS  ******/\nSELECT *,GETDATE()\n  FROM [stg].[unitgroup__unit]\n ",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -219,6 +220,13 @@
 									"name": "Type",
 									"type": "String",
 									"physicalType": "varchar"
+								}
+							},
+							{
+								"sink": {
+									"name": "DATETIMEetl",
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							}
 						],
