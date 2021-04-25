@@ -1,0 +1,9 @@
+{
+	"name": "stgOraViewUnitsqltoazure",
+	"properties": {
+		"folder": {
+			"name": "unit"
+		},
+		"annotations": []
+	}
+}
