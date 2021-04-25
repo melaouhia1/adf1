@@ -223,6 +223,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ETLdateload",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
 								"sink": {
 									"name": "DATETIMEetl",
 									"type": "DateTime",
