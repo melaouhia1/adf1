@@ -21,7 +21,9 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table  [stg].[stgOraViewUnit]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
