@@ -1,0 +1,489 @@
+{
+	"name": "AzureSqljsproject",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProjectId",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSProjectID",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchId",
+				"type": "varchar"
+			},
+			{
+				"name": "EBSProjectNo",
+				"type": "varchar"
+			},
+			{
+				"name": "ReferenceNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Source",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "varchar"
+			},
+			{
+				"name": "StartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "CloseDate",
+				"type": "varchar"
+			},
+			{
+				"name": "Address",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "Zip",
+				"type": "varchar"
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "County",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectManagerPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "VicePresidentPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchManagerPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "ServiceManagerPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectAccountantPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "BillingAdministratorPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyDuration",
+				"type": "varchar"
+			},
+			{
+				"name": "RetentionPct",
+				"type": "varchar"
+			},
+			{
+				"name": "BookingPkgRecDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ContractBookedDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ContractTypeTKE",
+				"type": "varchar"
+			},
+			{
+				"name": "TaxExempt",
+				"type": "varchar"
+			},
+			{
+				"name": "LD",
+				"type": "varchar"
+			},
+			{
+				"name": "LDDate",
+				"type": "varchar"
+			},
+			{
+				"name": "LDCostPerDay",
+				"type": "varchar"
+			},
+			{
+				"name": "PackageToSalesDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ExecutionAndReturnDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifyAndReturnDate",
+				"type": "varchar"
+			},
+			{
+				"name": "POTOSalesDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ReceivedExecDocDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ReleaseToCreditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PreliminaryNoticesDate",
+				"type": "varchar"
+			},
+			{
+				"name": "CertifiedPayroll",
+				"type": "varchar"
+			},
+			{
+				"name": "BillOfSale",
+				"type": "varchar"
+			},
+			{
+				"name": "MaterialOnSite",
+				"type": "varchar"
+			},
+			{
+				"name": "SupervisorPayrollNo",
+				"type": "varchar"
+			},
+			{
+				"name": "PctDueBeforeTurnover",
+				"type": "varchar"
+			},
+			{
+				"name": "Superintendent",
+				"type": "varchar"
+			},
+			{
+				"name": "LRIncreaseBooked",
+				"type": "varchar"
+			},
+			{
+				"name": "MRIBooked",
+				"type": "varchar"
+			},
+			{
+				"name": "GCBinders",
+				"type": "varchar"
+			},
+			{
+				"name": "OMManuals",
+				"type": "varchar"
+			},
+			{
+				"name": "LastVisitDate",
+				"type": "varchar"
+			},
+			{
+				"name": "VisitedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "GCBindersDate",
+				"type": "varchar"
+			},
+			{
+				"name": "InsertsDeliveredDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PostBidSurveyDue",
+				"type": "varchar"
+			},
+			{
+				"name": "PostBidSurveyComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "PostBidSurveyCompleteDate",
+				"type": "varchar"
+			},
+			{
+				"name": "InsertsDeliveredComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "Construction",
+				"type": "varchar"
+			},
+			{
+				"name": "PercentComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectedEfficiency",
+				"type": "varchar"
+			},
+			{
+				"name": "RollbackProjectedEfficiency",
+				"type": "varchar"
+			},
+			{
+				"name": "EstHours",
+				"type": "varchar"
+			},
+			{
+				"name": "ActHours",
+				"type": "varchar"
+			},
+			{
+				"name": "RollbackEstHours",
+				"type": "varchar"
+			},
+			{
+				"name": "IsBidProject",
+				"type": "varchar"
+			},
+			{
+				"name": "IsAdminProject",
+				"type": "varchar"
+			},
+			{
+				"name": "OriginalContractAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "CurrentContractAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscreteHours",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesRep",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoicedAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "RecievedAmount",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditUser",
+				"type": "varchar"
+			},
+			{
+				"name": "AuditDate",
+				"type": "varchar"
+			},
+			{
+				"name": "IsBidJob",
+				"type": "varchar"
+			},
+			{
+				"name": "IsEnabled",
+				"type": "varchar"
+			},
+			{
+				"name": "WarrantyNIM",
+				"type": "varchar"
+			},
+			{
+				"name": "TrackingNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "OMManualsSentDate",
+				"type": "varchar"
+			},
+			{
+				"name": "PercentBilled",
+				"type": "varchar"
+			},
+			{
+				"name": "PercentPaid",
+				"type": "varchar"
+			},
+			{
+				"name": "MaintenanceContractSold",
+				"type": "varchar"
+			},
+			{
+				"name": "SentToOZ",
+				"type": "varchar"
+			},
+			{
+				"name": "SentToOZDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjInsOrUpdDate",
+				"type": "varchar"
+			},
+			{
+				"name": "HasFirstCarReview",
+				"type": "varchar"
+			},
+			{
+				"name": "HasFCR90prct",
+				"type": "varchar"
+			},
+			{
+				"name": "NoOf20PrctOnFCR",
+				"type": "varchar"
+			},
+			{
+				"name": "OPPORTUNITYID",
+				"type": "varchar"
+			},
+			{
+				"name": "COLLECTIONSPECIALIST",
+				"type": "varchar"
+			},
+			{
+				"name": "CONTRACTADMINISTRATOR",
+				"type": "varchar"
+			},
+			{
+				"name": "CREDITMANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "OPERATIONSDIRECTOR",
+				"type": "varchar"
+			},
+			{
+				"name": "SALESDIRECTOR",
+				"type": "varchar"
+			},
+			{
+				"name": "FOREMAN",
+				"type": "varchar"
+			},
+			{
+				"name": "OPERATIONCOORDINATOR",
+				"type": "varchar"
+			},
+			{
+				"name": "OPERATIONMANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "PORTFOLIOANALYST",
+				"type": "varchar"
+			},
+			{
+				"name": "PORTFOLIOAPPROVER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTSPORTFOLIOOWNER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROGRAMMANAGER",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECTSTAFFINGOWNER",
+				"type": "varchar"
+			},
+			{
+				"name": "REGIONALCONTROLLER",
+				"type": "varchar"
+			},
+			{
+				"name": "REGIONALPRESIDENT",
+				"type": "varchar"
+			},
+			{
+				"name": "REGIONALVICEPRESIDENT",
+				"type": "varchar"
+			},
+			{
+				"name": "REGIONALVICEPRESIDENTOPS",
+				"type": "varchar"
+			},
+			{
+				"name": "REGIONALVICEPRESIDENTSALES",
+				"type": "varchar"
+			},
+			{
+				"name": "SALESCOORDINATOR",
+				"type": "varchar"
+			},
+			{
+				"name": "FCTPctComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "FCTLowPctComplete",
+				"type": "varchar"
+			},
+			{
+				"name": "FCRPerformedDt",
+				"type": "varchar"
+			},
+			{
+				"name": "NoOfAbv20PrctUnits",
+				"type": "varchar"
+			},
+			{
+				"name": "NoOfAbv90PrctUnits",
+				"type": "varchar"
+			},
+			{
+				"name": "FCRColor",
+				"type": "varchar"
+			},
+			{
+				"name": "IsModTrackerProj",
+				"type": "varchar"
+			},
+			{
+				"name": "MTStatrtDt",
+				"type": "varchar"
+			},
+			{
+				"name": "NoOfInsertsDelivered",
+				"type": "varchar"
+			},
+			{
+				"name": "ProjectHold",
+				"type": "varchar"
+			},
+			{
+				"name": "DelayedUntilDt",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "jsproject"
+		}
+	}
+}
