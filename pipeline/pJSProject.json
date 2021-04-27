@@ -1,0 +1,9 @@
+{
+	"name": "pJSProject",
+	"properties": {
+		"folder": {
+			"name": "project/ingest"
+		},
+		"annotations": []
+	}
+}
