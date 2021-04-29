@@ -27,8 +27,7 @@
 						}
 					},
 					"sink": {
-						"type": "SqlServerSink",
-						"preCopyScript": "truncate table contact"
+						"type": "SqlServerSink"
 					},
 					"enableStaging": false,
 					"translator": {
