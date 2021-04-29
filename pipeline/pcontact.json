@@ -21,7 +21,7 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "SqlServerSink"
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -211,7 +211,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SqlServercontact",
+						"referenceName": "azuresqlSqlServercontact",
 						"type": "DatasetReference"
 					}
 				]
