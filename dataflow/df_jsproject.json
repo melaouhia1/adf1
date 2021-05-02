@@ -1,0 +1,12 @@
+{
+	"name": "df_jsproject",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
+			"script": ""
+		}
+	}
+}
