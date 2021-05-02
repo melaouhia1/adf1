@@ -28,7 +28,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "truncate table [stg].[dimoffice]",
+						"preCopyScript": "truncate table [stg].[dimbranch]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
