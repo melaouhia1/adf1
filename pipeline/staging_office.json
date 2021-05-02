@@ -49,30 +49,6 @@
 							},
 							{
 								"source": {
-									"name": "HashKey",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "HashKey",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ETL_Load_Date_Time",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ETL_Load_Date_Time",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
 									"name": "Id",
 									"type": "String",
 									"physicalType": "String"
