@@ -481,7 +481,7 @@
 				"type": "varchar"
 			},
 			{
-				"name": "Hashvalue",
+				"name": "[Hashvalue_dest]",
 				"type": "varchar"
 			}
 		],
