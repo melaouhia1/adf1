@@ -1,0 +1,53 @@
+{
+	"name": "DelimitedtBranch",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dimbranch.csv",
+				"folderPath": "contact29042021/1-5-2021",
+				"container": "unit"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Id",
+				"type": "String"
+			},
+			{
+				"name": "SiteId",
+				"type": "String"
+			},
+			{
+				"name": "RegionId",
+				"type": "String"
+			},
+			{
+				"name": "NumericCode",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "HashKey",
+				"type": "String"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "String"
+			}
+		]
+	}
+}
