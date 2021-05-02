@@ -1,0 +1,9 @@
+{
+	"name": "staging_office",
+	"properties": {
+		"folder": {
+			"name": "unit/ingest"
+		},
+		"annotations": []
+	}
+}
