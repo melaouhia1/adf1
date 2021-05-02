@@ -21,6 +21,43 @@
 		},
 		"schema": [
 			{
+				"name": "Id",
+				"type": "String"
+			},
+			{
+				"name": "BranchId",
+				"type": "String"
+			},
+			{
+				"name": "StructureId",
+				"type": "String"
+			},
+			{
+				"name": "SiteId",
+				"type": "String"
+			},
+			{
+				"name": "Code",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "HashKey",
+				"type": "String"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
 				"type": "String"
 			}
 		]
