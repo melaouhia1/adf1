@@ -9,15 +9,15 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "BranchId",
+				"name": "Name",
 				"type": "varchar"
 			},
 			{
-				"name": "BranchName",
+				"name": "Id",
 				"type": "varchar"
 			},
 			{
-				"name": "LegacyBranchNo",
+				"name": "SiteId",
 				"type": "varchar"
 			},
 			{
@@ -25,79 +25,7 @@
 				"type": "varchar"
 			},
 			{
-				"name": "IsDisabled",
-				"type": "varchar"
-			},
-			{
-				"name": "OracleBranchNo",
-				"type": "varchar"
-			},
-			{
-				"name": "Address",
-				"type": "varchar"
-			},
-			{
-				"name": "City",
-				"type": "varchar"
-			},
-			{
-				"name": "State",
-				"type": "varchar"
-			},
-			{
-				"name": "Zipcode",
-				"type": "varchar"
-			},
-			{
-				"name": "Phone",
-				"type": "varchar"
-			},
-			{
-				"name": "Fax",
-				"type": "varchar"
-			},
-			{
-				"name": "Lat",
-				"type": "varchar"
-			},
-			{
-				"name": "Long",
-				"type": "varchar"
-			},
-			{
-				"name": "UTCOffset",
-				"type": "varchar"
-			},
-			{
-				"name": "AuditDate",
-				"type": "varchar"
-			},
-			{
-				"name": "AuditUser",
-				"type": "varchar"
-			},
-			{
-				"name": "DistributorNo",
-				"type": "varchar"
-			},
-			{
-				"name": "OverrideGroupId",
-				"type": "varchar"
-			},
-			{
-				"name": "BranchCrews",
-				"type": "varchar"
-			},
-			{
-				"name": "IsEBSTandEEnabled",
-				"type": "varchar"
-			},
-			{
-				"name": "EBSTandEEnabledDate",
-				"type": "varchar"
-			},
-			{
-				"name": "EBSRollBackDate",
+				"name": "NumericCode",
 				"type": "varchar"
 			}
 		],
