@@ -1,0 +1,57 @@
+{
+	"name": "AzureSqloffice_stg",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "HashKey",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_Load_Date_Time",
+				"type": "varchar"
+			},
+			{
+				"name": "Id",
+				"type": "varchar"
+			},
+			{
+				"name": "SiteId",
+				"type": "varchar"
+			},
+			{
+				"name": "BranchId",
+				"type": "varchar"
+			},
+			{
+				"name": "StructureId",
+				"type": "varchar"
+			},
+			{
+				"name": "Code",
+				"type": "varchar"
+			},
+			{
+				"name": "Address",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "dimoffice"
+		}
+	}
+}
