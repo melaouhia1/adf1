@@ -1,0 +1,9 @@
+{
+	"name": "pipelinedimbranch",
+	"properties": {
+		"folder": {
+			"name": "unit/ingest"
+		},
+		"annotations": []
+	}
+}
